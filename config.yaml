@@ -1,0 +1,80 @@
+sdk_context:
+  clone_url: "https://github.com/0xrohitgarg/videodb-python"
+  clone_dir: "context/sdk/source"
+  sphinx_config_dir: "context/sdk/sphinx_config"
+  output_dir: "context/sdk/context"
+  commit_message: "Add Sphinx markdown build output (sdk_build)"
+  branch_name: "sdk-context-branch"
+
+docs_context:
+  doc_tree:
+    scrape_config:
+      script: "context/docs/crawl_coda_tree.py"
+      output: "context/docs/doc_tree.json"
+      url: "https://docs.videodb.io"
+      selector: "data-coda-ui-id"
+      selector_value: "page-list"
+  include:
+    - "Welcome to VideoDB Docs"
+    - "Quick Start Guide/*"
+    - "Visual Search and Indexing/*"
+  prompts:
+    prompt_folder: "context/prompts"
+    default_prompt: "default_docs.txt"
+  base_url: "https://docs.videodb.io"
+  tree_file: "context/docs/doc_tree.json"
+  output_file: "context/docs/docs_context.md"
+  script_path: "context/docs/process_docs.py" # New field for script path
+  branch_name: "docs-context-update"
+  commit_message: "Add combined Markdown output for docs context"
+  llm: "gemini"
+
+examples_context:
+  clone_url: "https://github.com/video-db/videodb-cookbook"
+  clone_dir: "context/examples/source"
+  include:
+    - "quickstart/*"
+    - "guides/*.ipynb"
+  exclude:
+    - "guides/VideoDB_Search_and_Evaluation.ipynb"
+  prompts:
+    prompt_folder: "context/prompts"
+    default_prompt: "default_ipynb.txt"
+    custom_prompts:
+      - pattern: "quickstart/Multimodal_Quickstart.ipynb"
+        prompt: "custom_2.txt"
+  output_file: "context/examples/examples_context.md"
+  script_path: "context/examples/process_examples.py" # New field for script path
+  branch_name: "examples-context-update"
+  commit_message: "Add combined Markdown output for examples context"
+
+llms_txt_file:
+  merge_script_path: "context/merge_llms_txt.py"
+  input_files:
+    - name: Instructions
+      file_path: "context/instructions/prompt.md"
+    - name: SDK Context
+      file_path: "context/sdk/context/index.md"
+    - name: Docs Context
+      file_path: "context/docs/docs_context.md"
+    - name: Examples Context
+      file_path: "context/examples/examples_context.md"
+  output_files:
+    - name: llms_full_txt
+      file_path: "context/llms-full.txt"
+    - name: llms_full_md
+      file_path: "context/llms-full.md"
+  layout: |
+    {{FILE1}}
+
+    {{FILE2}}
+
+    {{FILE3}}
+
+    {{FILE4}}
+
+token_count:
+  script_path: "context/count_tokens.py"
+  tiktoken_encoding_model: "gpt-4"
+  token_breakdown_file: "token_breakdown.png"
+  readme_shields_file: "readme_shields.json"

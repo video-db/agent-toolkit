@@ -1,0 +1,95 @@
+name: Update Master Markdown File and Tag
+
+on:
+  push:
+    # Trigger when any markdown file is changed (adjust paths as needed)
+    paths:
+      - "**/*.md"
+  workflow_dispatch:
+
+jobs:
+  update-master:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yq
+
+      - name: Parse Configuration
+        id: parse_config
+        run: |
+          MERGE_SCRIPT_PATH=$(yq '.llms_txt_file.merge_script_path // "context_examples/process_examples.py"' config.yaml)
+          COUNT_TOKENS_SCRIPT_PATH=$(yq '.token_count.script_path // "context_examples/process_examples.py"' config.yaml)
+
+          echo "merge_script_path=$MERGE_SCRIPT_PATH" >> $GITHUB_OUTPUT
+          echo "count_tokens_script_path=$COUNT_TOKENS_SCRIPT_PATH" >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Create Virtual Environment and Install Dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install .
+
+      - name: Run Master File Generation Script
+        run: |
+          source venv/bin/activate
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          python ${{ steps.parse_config.outputs.merge_script_path}}
+          python ${{ steps.parse_config.outputs.count_tokens_script_path }}
+
+      - name: Commit and Push Master File
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Add the output file specified in config.yaml.
+          git add . 
+          git commit -m "Update master file with latest changes" || echo "No changes to commit."
+          git push
+
+      - name: Create New Tag (Minor Version Bump)
+        run: |
+          # Fetch all tags
+              git fetch --tags
+
+              # List all tags that match v<major>.<minor>, sort descending by version
+              LATEST_TAG=$(git tag -l 'v[0-9]*.[0-9]*' --sort=-v:refname | head -n 1)
+
+              # If none found, default to v0.0
+              if [ -z "$LATEST_TAG" ]; then
+                LATEST_TAG="v0.0"
+              fi
+
+              echo "Latest matching tag: $LATEST_TAG"
+
+              # Parse out major/minor from LATEST_TAG if it matches v#.#, else default to 0.0
+              if [[ $LATEST_TAG =~ ^v([0-9]+)\.([0-9]+)$ ]]; then
+                MAJOR="${BASH_REMATCH[1]}"
+                MINOR="${BASH_REMATCH[2]}"
+              else
+                MAJOR=0
+                MINOR=0
+              fi
+
+              # Start by incrementing the minor
+              NEW_MINOR=$((MINOR+1))
+
+              # If v<major>.<new_minor> already exists, keep incrementing until we find a free one
+              while git rev-parse -q --verify "refs/tags/v${MAJOR}.${NEW_MINOR}" >/dev/null; do
+                NEW_MINOR=$((NEW_MINOR+1))
+              done
+
+              NEW_TAG="v${MAJOR}.${NEW_MINOR}"
+              echo "Creating new tag: $NEW_TAG"
+
+              git tag "$NEW_TAG"
+              git push origin "$NEW_TAG"
