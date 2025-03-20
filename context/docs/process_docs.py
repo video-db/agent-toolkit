@@ -154,7 +154,7 @@ class DocsHandler:
             )
             print(f"💰 Tokens Used {tokens_used}")
             output += (
-                f"# {element} [Source Link]({self.base_url}/{self.href})\n\n"
+                f"# {element} [Source Link]({self.base_url}{href})\n\n"
                 + simplified
                 + "\n\n---\n\n"
             )

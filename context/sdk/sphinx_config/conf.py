@@ -16,7 +16,7 @@ author = "videodb"
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../sdk_source"))  # Adjust path to SDK
+sys.path.insert(0, os.path.abspath("../source"))  # Adjust path to SDK
 
 # Output format
 markdown_builder = {

@@ -1,5 +1,5 @@
 sdk_context:
-  clone_url: "https://github.com/0xrohitgarg/videodb-python"
+  clone_url: "https://github.com/video-db/videodb-python"
   clone_dir: "context/sdk/source"
   sphinx_config_dir: "context/sdk/sphinx_config"
   output_dir: "context/sdk/context"
