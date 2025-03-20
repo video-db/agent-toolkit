@@ -164,7 +164,7 @@ class DocsHandler:
         refined_prompt_path = os.path.join(prompt_folder, refined_prompt_file)
         with open(refined_prompt_path, "r", encoding="utf-8") as f:
             refined_prompt = f.read()
-        tokens_used, refined_content = simplify_content_with_llm(
+        refined_content, tokens_used, = simplify_content_with_llm(
             refined_prompt, output, self.llm
         )
         print(f"💰 Summarizing tokens used {tokens_used}")
