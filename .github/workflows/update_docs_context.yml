@@ -7,6 +7,9 @@ jobs:
   scrape-doc-tree:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -63,6 +66,8 @@ jobs:
   build-docs-context:
     needs: scrape-doc-tree
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       PROJECT_ID: ${{ secrets.PROJECT_ID }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
