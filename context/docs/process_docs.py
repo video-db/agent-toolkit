@@ -159,7 +159,13 @@ class DocsHandler:
                 + "\n\n---\n\n"
             )
 
-        return output
+        prompt_folder = self.prompt_config.get("prompt_folder", "")
+        refined_prompt_file = self.prompt_config.get("fine_refinment_prompt", "")
+        refined_prompt_path = os.path.join(prompt_folder, refined_prompt_file)
+        with open(refined_prompt_path, "r", encoding="utf-8") as f:
+            refined_prompt = f.read()
+        refined_content = simplify_content_with_llm(refined_prompt, output)
+        return refined_content
 
 
 if __name__ == "__main__":

@@ -21,6 +21,7 @@ docs_context:
   prompts:
     prompt_folder: "context/prompts"
     default_prompt: "default_docs.txt"
+    fine_refinment_prompt: "refine_docs.txt"
   base_url: "https://docs.videodb.io"
   tree_file: "context/docs/doc_tree.json"
   output_file: "context/docs/docs_context.md"
@@ -40,6 +41,7 @@ examples_context:
   prompts:
     prompt_folder: "context/prompts"
     default_prompt: "default_ipynb.txt"
+    fine_refinment_prompt: "refine_ipynb.txt"
     custom_prompts:
       - pattern: "quickstart/Multimodal_Quickstart.ipynb"
         prompt: "custom_2.txt"
