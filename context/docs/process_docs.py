@@ -158,17 +158,7 @@ class DocsHandler:
                 + simplified
                 + "\n\n---\n\n"
             )
-
-        prompt_folder = self.prompt_config.get("prompt_folder", "")
-        refined_prompt_file = self.prompt_config.get("fine_refinment_prompt", "")
-        refined_prompt_path = os.path.join(prompt_folder, refined_prompt_file)
-        with open(refined_prompt_path, "r", encoding="utf-8") as f:
-            refined_prompt = f.read()
-        refined_content, tokens_used, = simplify_content_with_llm(
-            refined_prompt, output, self.llm
-        )
-        print(f"💰 Summarizing tokens used {tokens_used}")
-        return refined_content
+        return output
 
 
 if __name__ == "__main__":
