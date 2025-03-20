@@ -1,0 +1,96 @@
+name: Update SDK Context
+
+on:
+  workflow_dispatch: # Manually triggered via GitHub Actions UI or via respository dispatch
+  repository_dispatch:
+    types: [sdk-context-update]
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yq
+
+      - name: Parse Configuration
+        id: parse_config
+        run: |
+          # Read from config.yaml (sdk_context) with fallback defaults
+          CLONE_URL=$(yq '.sdk_context.clone_url // "https://github.com/video-db/videodb-python"' config.yaml)
+          CLONE_DIR=$(yq '.sdk_context.clone_dir // "sdk_source"' config.yaml)
+          SPHINX_CONFIG_DIR=$(yq '.sdk_context.sphinx_config_dir // "sphinx_config"' config.yaml)
+          OUTPUT_DIR=$(yq '.sdk_context.output_dir // "sdk_build"' config.yaml)
+          COMMIT_MESSAGE=$(yq '.sdk_context.commit_message // "Add Sphinx markdown build output (sdk_build)"' config.yaml)
+          BRANCH_NAME=$(yq '.sdk_context.branch_name // "sdk-context-branch"' config.yaml)
+
+          echo "clone_url=$CLONE_URL" >> $GITHUB_OUTPUT
+          echo "clone_dir=$CLONE_DIR" >> $GITHUB_OUTPUT
+          echo "sphinx_config_dir=$SPHINX_CONFIG_DIR" >> $GITHUB_OUTPUT
+          echo "output_dir=$OUTPUT_DIR" >> $GITHUB_OUTPUT
+          echo "commit_message=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+
+      - name: Clone SDK Repository
+        run: |
+          git clone ${{ steps.parse_config.outputs.clone_url }} ${{ steps.parse_config.outputs.clone_dir }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Create Virtual Environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+
+      - name: Install Dependencies
+        run: |
+          source venv/bin/activate
+          pip install -r ${{ steps.parse_config.outputs.clone_dir }}/requirements.txt
+          pip install myst-parser sphinx sphinx-markdown-builder
+
+      - name: Build Sphinx Docs
+        run: |
+          source venv/bin/activate
+          sphinx-build -b markdown \
+            ${{ steps.parse_config.outputs.sphinx_config_dir }} \
+            ${{ steps.parse_config.outputs.output_dir }}
+
+      - name: Remove Cloned Repository
+        run: rm -rf ${{ steps.parse_config.outputs.clone_dir }}
+
+      - name: Commit and Push SDK Build Folder
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b ${{ steps.parse_config.outputs.branch_name }}
+
+          # Add only the generated output folder
+          git pull origin main
+          git add ${{ steps.parse_config.outputs.output_dir }}
+          git commit -m ${{ steps.parse_config.outputs.commit_message }}
+
+          # Force push to new branch
+          git push --force --set-upstream origin ${{ steps.parse_config.outputs.branch_name }}
+
+      - name: Create Pull Request
+        run: |
+          gh pr create \
+            --base main \
+            --head ${{ steps.parse_config.outputs.branch_name }} \
+            --title ${{ steps.parse_config.outputs.commit_message }} \
+            --body "This PR adds the latest markdown build output from Sphinx." || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

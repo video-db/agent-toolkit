@@ -1,0 +1,149 @@
+name: Update Docs Context
+
+on:
+  workflow_dispatch: # Manually triggered via GitHub Actions UI
+
+jobs:
+  scrape-doc-tree:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yq
+
+      - name: Parse Config for Doc Tree Scraper
+        id: config
+        run: |
+          SCRIPT=$(yq '.docs_context.doc_tree.scrape_config.script' config.yaml)
+          OUTPUT=$(yq '.docs_context.doc_tree.scrape_config.output' config.yaml)
+          URL=$(yq '.docs_context.doc_tree.scrape_config.url' config.yaml)
+          SELECTOR=$(yq '.docs_context.doc_tree.scrape_config.selector' config.yaml)
+          SELECTOR_VALUE=$(yq '.docs_context.doc_tree.scrape_config.selector_value' config.yaml)
+          echo "script=$SCRIPT" >> $GITHUB_OUTPUT
+          echo "output=$OUTPUT" >> $GITHUB_OUTPUT
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "selector=$SELECTOR" >> $GITHUB_OUTPUT
+          echo "selector_value=$SELECTOR_VALUE" >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Create Virtual Environment and Install Dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          # Install dependencies from your pyproject.toml (assumed at repo root)
+          pip install .
+
+      - name: Run Doc Tree Scraper
+        run: |
+          source venv/bin/activate
+          python ${{ steps.config.outputs.script }} ${{ steps.config.outputs.output }} \
+            --url ${{ steps.config.outputs.url }} \
+            --selector ${{ steps.config.outputs.selector }} \
+            --selector-value ${{ steps.config.outputs.selector_value }}
+
+      - name: Commit and Push Doc Tree
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Add the output file specified in config.yaml.
+          git add . 
+          git commit -m "Update doc tree with latest changes" || echo "No changes to commit."
+          git push
+
+  build-docs-context:
+    needs: scrape-doc-tree
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      PROJECT_ID: ${{ secrets.PROJECT_ID }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+
+    steps:
+      - name: Checkout This Repo
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yq
+
+      - name: Parse Configuration
+        id: parse_config
+        run: |
+          # Read from config.yaml (examples_context) with fallback defaults
+          CLONE_URL=$(yq '.docs_context.clone_url // "https://github.com/your-username/your-notebook-repo"' config.yaml)
+          CLONE_DIR=$(yq '.docs_context.clone_dir // "examples_source"' config.yaml)
+          SCRIPT_PATH=$(yq '.docs_context.script_path // "context_examples/process_examples.py"' config.yaml)
+          BRANCH_NAME=$(yq '.docs_context.branch_name // "examples-md-update"' config.yaml)
+          COMMIT_MESSAGE=$(yq '.docs_context.commit_message // "Add combined Markdown output for examples context"' config.yaml)
+          OUTPUT_FILE=$(yq '.docs_context.output_file' config.yaml)
+
+
+          echo "clone_url=$CLONE_URL" >> $GITHUB_OUTPUT
+          echo "clone_dir=$CLONE_DIR" >> $GITHUB_OUTPUT
+          echo "script_path=$SCRIPT_PATH" >> $GITHUB_OUTPUT
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "commit_message=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
+          echo "output_file=$OUTPUT_FILE" >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Create Virtual Environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+
+      - name: Install Dependencies Using pyproject.toml
+        run: |
+          source venv/bin/activate
+          # Installs dependencies as specified in your pyproject.toml (assumed to be at repo root)
+          pip install .
+
+      - name: Run Docs Processing
+        run: |
+          source venv/bin/activate
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          python ${{ steps.parse_config.outputs.script_path }}
+
+      - name: Remove Cloned Repository
+        run: rm -rf ${{ steps.parse_config.outputs.clone_dir }}
+
+      - name: Commit and Push Combined MD
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b ${{ steps.parse_config.outputs.branch_name }}
+          git add ${{ steps.parse_config.outputs.output_file}}
+          git commit -m ${{ steps.parse_config.outputs.commit_message }}
+          git push --force --set-upstream origin ${{ steps.parse_config.outputs.branch_name }}
+
+      - name: Create Pull Request
+        run: |
+          gh pr create \
+            --base main \
+            --head ${{ steps.parse_config.outputs.branch_name }} \
+            --title ${{ steps.parse_config.outputs.commit_message }} \
+            --body "This PR adds the simplified Markdown output from the example notebooks." || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

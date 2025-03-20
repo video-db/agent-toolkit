@@ -1,0 +1,2 @@
+Remove redutant information from the below text.
+Don't touch heading 1

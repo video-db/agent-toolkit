@@ -1,0 +1,450 @@
+[
+    {
+        "element": "Welcome to VideoDB Docs",
+        "href": "/",
+        "children": []
+    },
+    {
+        "element": "Quick Start Guide",
+        "href": "/quick-start-guide-38",
+        "children": [
+            {
+                "element": "How Accurate is Your Search?",
+                "href": "/how-accurate-is-your-search-88",
+                "children": []
+            },
+            {
+                "element": "Video Indexing Guide",
+                "href": "/video-indexing-guide-101",
+                "children": []
+            },
+            {
+                "element": "Semantic Search",
+                "href": "/semantic-search-89",
+                "children": []
+            },
+            {
+                "element": "Collections",
+                "href": "/collections-68",
+                "children": []
+            },
+            {
+                "element": "Public Collections",
+                "href": "/public-collections-102",
+                "children": []
+            },
+            {
+                "element": "Callback Details",
+                "href": "/callback-details-66",
+                "children": []
+            },
+            {
+                "element": "Ref: Subtitle Styles",
+                "href": "/ref-subtitle-styles-57",
+                "children": []
+            },
+            {
+                "element": "Language Support",
+                "href": "/language-support-79",
+                "children": []
+            },
+            {
+                "element": "Guide: Subtitles",
+                "href": "/guide-subtitles-73",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Visual Search and Indexing",
+        "href": "/visual-search-and-indexing-80",
+        "children": [
+            {
+                "element": "Scene Extraction Algorithms",
+                "href": "/scene-extraction-algorithms-84",
+                "children": []
+            },
+            {
+                "element": "Custom Annotations",
+                "href": "/custom-annotations-81",
+                "children": []
+            },
+            {
+                "element": "Scene-Level Metadata: Smarter Video Search & Retrieval",
+                "href": "/scene-level-metadata-smarter-video-search-retrieval-107",
+                "children": []
+            },
+            {
+                "element": "Advanced Visual Search Pipelines",
+                "href": "/advanced-visual-search-pipelines-82",
+                "children": []
+            },
+            {
+                "element": "Playground for Scene Extractions",
+                "href": "/playground-for-scene-extractions-83",
+                "children": []
+            },
+            {
+                "element": "Deep Dive into Prompt Engineering : Mastering Video Scene Indexing",
+                "href": "/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Multimodal Search",
+        "href": "/multimodal-search-90",
+        "children": [
+            {
+                "element": "Multimodal Search: Quickstart",
+                "href": "/multimodal-search-quickstart-91",
+                "children": []
+            },
+            {
+                "element": "Conference Slide Scraper with VideoDB",
+                "href": "/conference-slide-scraper-with-videodb-92",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Dynamic Video Streams",
+        "href": "/dynamic-video-streams-44",
+        "children": [
+            {
+                "element": "Ref: TextAsset",
+                "href": "/ref-textasset-74",
+                "children": []
+            },
+            {
+                "element": "Guide : TextAsset",
+                "href": "/guide-textasset-75",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Director - Video Agent Framework",
+        "href": "/director-video-agent-framework-98",
+        "children": [
+            {
+                "element": "Agent Creation Playbook",
+                "href": "/agent-creation-playbook-103",
+                "children": []
+            },
+            {
+                "element": "How I Built a CRM-integrated Sales Assistant Agent in 1 Hour",
+                "href": "/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106",
+                "children": []
+            },
+            {
+                "element": "Make Your Video Sound Studio Quality with Voice Cloning",
+                "href": "/make-your-video-sound-studio-quality-with-voice-cloning-105",
+                "children": []
+            },
+            {
+                "element": "Setup Director Locally",
+                "href": "/setup-director-locally-104",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Open Source Tools",
+        "href": "/open-source-tools-94",
+        "children": [
+            {
+                "element": "LlamaIndex VideoDB Retriever",
+                "href": "/llamaindex-videodb-retriever-58",
+                "children": []
+            },
+            {
+                "element": "PromptClip:  Use Power of LLM to Create Clips",
+                "href": "/promptclip-use-power-of-llm-to-create-clips-52",
+                "children": []
+            },
+            {
+                "element": "StreamRAG: Connect ChatGPT to VideoDB",
+                "href": "/streamrag-connect-chatgpt-to-videodb-43",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Examples and Tutorials",
+        "href": "/examples-and-tutorials-35",
+        "children": [
+            {
+                "element": "Dubbing - Replace Soundtrack with New Audio",
+                "href": "/dubbing-replace-soundtrack-with-new-audio-49",
+                "children": []
+            },
+            {
+                "element": "Beep curse words in real-time",
+                "href": "/beep-curse-words-in-real-time-53",
+                "children": []
+            },
+            {
+                "element": "Remove Unwanted Content from videos",
+                "href": "/remove-unwanted-content-from-videos-5",
+                "children": []
+            },
+            {
+                "element": "Instant Clips of Your Favorite Characters",
+                "href": "/instant-clips-of-your-favorite-characters-3",
+                "children": []
+            },
+            {
+                "element": "Insert Dynamic Ads in real-time",
+                "href": "/insert-dynamic-ads-in-real-time-7",
+                "children": []
+            },
+            {
+                "element": "Adding Brand Elements with VideoDB",
+                "href": "/adding-brand-elements-with-videodb-76",
+                "children": []
+            },
+            {
+                "element": "Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration",
+                "href": "/revolutionize-video-editing-with-videodb-effortless-ad-placement-8",
+                "children": []
+            },
+            {
+                "element": "Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage",
+                "href": "/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59",
+                "children": []
+            },
+            {
+                "element": "Elevating Trailers with Automated Narration",
+                "href": "/elevating-trailers-with-automated-narration-60",
+                "children": []
+            },
+            {
+                "element": "Add Intro/Outro to Videos",
+                "href": "/add-intro-outro-to-videos-61",
+                "children": []
+            },
+            {
+                "element": "Enhancing Video Captions with VideoDB Subtitle Styling",
+                "href": "/enhancing-video-captions-with-videodb-subtitle-styling-62",
+                "children": []
+            },
+            {
+                "element": "Audio overlay + Video + Timeline",
+                "href": "/audio-overlay-video-timeline-63",
+                "children": []
+            },
+            {
+                "element": "Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs",
+                "href": "/building-dynamic-video-streams-with-videodb-integrating-custom-d-85",
+                "children": []
+            },
+            {
+                "element": "Adding AI Generated Voiceovers with VideoDB and LOVO",
+                "href": "/adding-ai-generated-voiceovers-with-videodb-and-lovo-70",
+                "children": []
+            },
+            {
+                "element": "AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB",
+                "href": "/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71",
+                "children": []
+            },
+            {
+                "element": "Fun with Keyword Search",
+                "href": "/fun-with-keyword-search-77",
+                "children": []
+            },
+            {
+                "element": "AWS Rekognition and VideoDB - Intelligent Video Clips",
+                "href": "/aws-rekognition-and-videodb-intelligent-video-clips-4",
+                "children": []
+            },
+            {
+                "element": "AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video",
+                "href": "/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6",
+                "children": []
+            },
+            {
+                "element": "Overlay a Word-Counter on Video Stream",
+                "href": "/overlay-a-word-counter-on-video-stream-86",
+                "children": []
+            },
+            {
+                "element": "Generate Automated Video Outputs with Text Prompts | DALL-E + ElevenLabs + OpenAI + VideoDB",
+                "href": "/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Edge of Knowledge",
+        "href": "/edge-of-knowledge-10",
+        "children": [
+            {
+                "element": "Building Intelligent Machines",
+                "href": "/building-intelligent-machines-16",
+                "children": [
+                    {
+                        "element": "Part 1 - Define Intelligence",
+                        "href": "/part-1-define-intelligence-17",
+                        "children": []
+                    },
+                    {
+                        "element": "Part 2 - Observe and Respond",
+                        "href": "/part-2-observe-and-respond-18",
+                        "children": []
+                    },
+                    {
+                        "element": "Part 3 - Training a Model",
+                        "href": "/part-3-training-a-model-19",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "element": "Society of Machines",
+                "href": "/society-of-machines-20",
+                "children": [
+                    {
+                        "element": "Society of Machines",
+                        "href": "/society-of-machines-23",
+                        "children": []
+                    },
+                    {
+                        "element": "Autonomy - Do we have the choice?",
+                        "href": "/autonomy-do-we-have-the-choice-21",
+                        "children": []
+                    },
+                    {
+                        "element": "Emergence - An Intelligence of the collective",
+                        "href": "/emergence-an-intelligence-of-the-collective-22",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "element": "Drafts",
+                "href": "/drafts-24",
+                "children": []
+            },
+            {
+                "element": "From Language Models to World Models: The Next Frontier in AI",
+                "href": "/from-language-models-to-world-models-the-next-frontier-in-ai-65",
+                "children": []
+            },
+            {
+                "element": "The Future Series",
+                "href": "/the-future-series-78",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Building World's First Video Database",
+        "href": "/building-worlds-first-video-database-25",
+        "children": [
+            {
+                "element": "Multimedia: From MP3/MP4 to the Future with VideoDB",
+                "href": "/multimedia-from-mp3-mp4-to-the-future-with-videodb-26",
+                "children": []
+            },
+            {
+                "element": "Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web",
+                "href": "/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27",
+                "children": []
+            },
+            {
+                "element": "Dynamic Video Streams",
+                "href": "/dynamic-video-streams-50",
+                "children": []
+            },
+            {
+                "element": "Why do we need a Video Database Now?",
+                "href": "/why-do-we-need-a-video-database-now-41",
+                "children": []
+            },
+            {
+                "element": "What's a Video Database ?",
+                "href": "/whats-a-video-database-36",
+                "children": []
+            },
+            {
+                "element": "Enhancing AI-Driven Multimedia Applications",
+                "href": "/enhancing-ai-driven-multimedia-applications-37",
+                "children": []
+            },
+            {
+                "element": "Misalignment of Today's Web",
+                "href": "/misalignment-of-todays-web-67",
+                "children": []
+            },
+            {
+                "element": "Beyond Traditional Video Infrastructure",
+                "href": "/beyond-traditional-video-infrastructure-28",
+                "children": []
+            },
+            {
+                "element": "Research Grants",
+                "href": "/research-grants-96",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Team",
+        "href": "/team-46",
+        "children": [
+            {
+                "element": "Internship: Build the Future of AI-Powered Video Infrastructure",
+                "href": "/internship-build-the-future-of-ai-powered-video-infrastructure-97",
+                "children": []
+            },
+            {
+                "element": "Ashutosh Trivedi",
+                "href": "/ashutosh-trivedi-32",
+                "children": [
+                    {
+                        "element": "Playlists",
+                        "href": "/playlists-33",
+                        "children": []
+                    },
+                    {
+                        "element": "Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015",
+                        "href": "/talks-solving-logical-puzzles-with-natural-language-processing-p-34",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "element": "Ashish",
+                "href": "/ashish-45",
+                "children": []
+            },
+            {
+                "element": "Shivani Desai",
+                "href": "/shivani-desai-48",
+                "children": []
+            },
+            {
+                "element": "Gaurav Tyagi",
+                "href": "/gaurav-tyagi-51",
+                "children": []
+            },
+            {
+                "element": "Rohit Garg",
+                "href": "/rohit-garg-64",
+                "children": []
+            }
+        ]
+    },
+    {
+        "element": "Customer Love",
+        "href": "/customer-love-42",
+        "children": []
+    },
+    {
+        "element": "Temp Doc",
+        "href": "/temp-doc-54",
+        "children": []
+    }
+]
