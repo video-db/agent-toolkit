@@ -9,11 +9,9 @@ To add the MCP server in any config driven MCP Client, following is how the comm
         "--directory",
         "/path/to/directory/mcp-server-videodb",
         "run",
-        "main.py"
+        "main.py",
+        "--api-key=your-videodb-api-key"
       ],
-      "env": {
-        "VIDEODB_API_KEY": "your-videodb-api-key"
-      }
     }
   }
 }

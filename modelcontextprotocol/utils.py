@@ -16,12 +16,6 @@ def handle_videodb_tools_error(func):
     @wraps(func)
     async def wrapper(*args, **kwargs):
         try:
-            api_key = os.getenv("VIDEODB_API_KEY")
-            if not api_key:
-                return {
-                    "error": "Missing API key. Please set the VIDEODB_API_KEY environment variable."
-                }
-
             return await func(*args, **kwargs)
 
         except AuthenticationError as auth_error:

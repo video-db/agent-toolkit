@@ -1,5 +1,6 @@
 import os
 import requests
+import argparse
 import videodb
 from constants import LLM_FULL_TXT_URL
 from mcp.server.fastmcp import FastMCP
@@ -77,6 +78,42 @@ async def get_context():
             video_information += f"name:{video.name} | video_id:{video.id}\n"
         video_information += "\n"
     return video_information
+
+
+@mcp.tool(
+    name="search_video_by_title",
+    description="Retrieves information about a video based on the title. Use this to get video details such as video_id and collection_id by name.",
+)
+@handle_videodb_tools_error
+async def search_video_by_title(title: str):
+    conn = videodb.connect(api_key="sk-gaC0BqhR3VXLVjtrgKzr-pxBzbPOitygOdnT3lWGnjg")
+    collections = conn.get_collections()
+    final_videos = []
+    for coll in collections:
+        videos = coll.get_videos()
+
+        for video in videos:
+            video_name = getattr(video, "name", None)
+
+            if (
+                video_name
+                and isinstance(video_name, str)
+                and title.lower() in video_name.lower()
+            ):
+                final_videos.append(
+                    {
+                        "video_id": video.id,
+                        "collection_id": video.collection_id,
+                        "name": video.name,
+                        "description": video.description,
+                        "stream_url": video.stream_url,
+                        "length": video.length,
+                    }
+                )
+    return {
+        "videos": final_videos,
+        "message": f"Found {len(final_videos)} videos with the title '{title}'",
+    }
 
 
 @mcp.tool(
@@ -494,5 +531,24 @@ async def add_subtitle(
     return stream_url
 
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Run the VideoDB MCP server.")
+    parser.add_argument(
+        "--api-key",
+        type=str,
+        required=True,
+        help="The VideoDB API key required to connect to the VideoDB service.",
+    )
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
+    args = parse_arguments()
+
+    if args.api_key:
+        os.environ["VIDEODB_API_KEY"] = args.api_key
+    else:
+        raise ValueError(
+            "Error: The VideoDB API Key is a must to use the MCP Server. Pass it with the --api-key argument"
+        )
     mcp.run(transport="stdio")
