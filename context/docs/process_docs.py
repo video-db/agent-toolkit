@@ -141,6 +141,7 @@ class DocsHandler:
                 selected.append((full_path, href, element))
 
         output = ""
+        total_tokens_used = 0
         for full_path, href, element in selected:
             # Build full URL based on the href value.
             url = self.base_url.rstrip("/") + href if href.startswith("/") else href
@@ -153,11 +154,13 @@ class DocsHandler:
                 prompt_text, content, self.llm
             )
             print(f"💰 Tokens Used {tokens_used}")
+            total_tokens_used += tokens_used
             output += (
                 f"# {element} [Source Link]({self.base_url}{href})\n\n"
                 + simplified
                 + "\n\n---\n\n"
             )
+        print(f"💰 💰 Total Tokens Used : {total_tokens_used}")
         return output
 
 

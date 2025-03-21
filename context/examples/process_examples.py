@@ -132,6 +132,7 @@ class IPYNBHandler:
         """
         ipynb_files = self.get_ipynb_files_from_globs()
         combined_content = ""
+        total_tokens_used = 0
 
         for ipynb_file in ipynb_files:
             if not os.path.exists(ipynb_file):
@@ -148,6 +149,7 @@ class IPYNBHandler:
             )
             file_title = os.path.basename(ipynb_file).replace(".ipynb", "")
             print(f"💰 Tokens Used {tokens_used}")
+            total_tokens_used += tokens_used
             source_link = ipynb_file.replace(
                 self.clone_dir, f"{self.clone_url}/blob/main"
             )
@@ -156,7 +158,7 @@ class IPYNBHandler:
                 + simplified_content
                 + "\n\n---\n\n"
             )
-
+        print(f" 💰 💰 Tokens Used : {total_tokens_used}")
         return combined_content
 
 
