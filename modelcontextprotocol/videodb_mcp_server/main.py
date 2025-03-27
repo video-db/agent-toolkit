@@ -43,9 +43,11 @@ def code_assistant() -> str:
 
 
 @mcp.tool(name="call_director", description=DIRECTOR_CALL_DESCRIPTION)
-async def call_director(text_message: str) -> dict[str, Any]:
+async def call_director(
+    text_message: str, session_id: str | None = None
+) -> dict[str, Any]:
     url = DIRECTOR_API
-    timeout = 30
+    timeout = 3000
     headers = {"x-access-token": os.getenv("VIDEODB_API_KEY")}
     sio = socketio.Client()
     response_data = None
@@ -57,7 +59,7 @@ async def call_director(text_message: str) -> dict[str, Any]:
             "sender": "user",
             "conv_id": str(int(time.time() * 1000)),
             "msg_id": str(int(time.time() * 1000) + 1),
-            "session_id": str(uuid.uuid4()),
+            "session_id": session_id if session_id else str(uuid.uuid4()),
             "content": [{"type": "text", "text": text_message}],
             "agents": [],
             "collection_id": "default",

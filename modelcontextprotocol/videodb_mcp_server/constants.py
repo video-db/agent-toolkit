@@ -1,6 +1,6 @@
 LLM_FULL_TXT_URL = "https://videodb.io/llms-full.txt"
 
-DIRECTOR_API = "https://api1.director.videodb.io/"
+DIRECTOR_API = "http://54.91.138.38:8000"
 
 DIRECTOR_CALL_DESCRIPTION = """
 The Director tool orchestrates specialized agents within the VideoDB server, efficiently handling multimedia and video-related queries. Clients should send queries that Director can interpret clearly, specifying tasks in natural language. Director will then delegate these queries to appropriate agents for optimized results, utilizing defaults and contextual information if explicit parameters are not provided.
@@ -50,4 +50,6 @@ Director handles queries such as:
   - Provide detailed cost information and usage estimates
 
 Clients should provide queries clearly aligned with Director's capabilities, allowing Director to use contextual defaults when explicit parameters like IDs or collection details are not specified.
+
+IMPORTANT: if you have a previous response of this method with an appropriate session_id, please provide that session_id in the next request to continue the conversation.
 """.strip()
