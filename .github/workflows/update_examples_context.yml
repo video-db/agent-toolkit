@@ -38,7 +38,7 @@ jobs:
           BRANCH_NAME=$(yq '.examples_context.branch_name // "examples-md-update"' config.yaml)
           COMMIT_MESSAGE=$(yq '.examples_context.commit_message // "Add combined Markdown output for examples context"' config.yaml)
           OUTPUT_FILE=$(yq '.examples_context.output_file // "videodb_helper/context_examples/context/index_ipynb.md"' config.yaml)
-          OUTPUT_FRAGMENTS=$(yq '.docs_context.output_fragments' config.yaml)
+          OUTPUT_FRAGMENTS=$(yq '.examples_context.output_fragments' config.yaml)
 
 
           echo "clone_url=$CLONE_URL" >> $GITHUB_OUTPUT
