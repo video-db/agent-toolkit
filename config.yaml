@@ -6,29 +6,29 @@ sdk_context:
   commit_message: "Add Sphinx markdown build output (sdk_build)"
   branch_name: "sdk-context-branch"
 
-docs_context:
-  doc_tree:
-    scrape_config:
-      script: "context/docs/crawl_coda_tree.py"
-      output: "context/docs/doc_tree.json"
-      url: "https://docs.videodb.io"
-      selector: "data-coda-ui-id"
-      selector_value: "page-list"
-  include:
-    - "Welcome to VideoDB Docs"
-    - "Quick Start Guide/*"
-    - "Visual Search and Indexing/*"
-  prompts:
-    prompt_folder: "context/prompts"
-    default_prompt: "default_docs.txt"
-  base_url: "https://docs.videodb.io"
-  tree_file: "context/docs/doc_tree.json"
-  output_file: "context/docs/docs_context.md"
-  output_fragments: "context/docs/fragments"
-  script_path: "context/docs/process_docs.py" # New field for script path
-  branch_name: "docs-context-update"
-  commit_message: "Add combined Markdown output for docs context"
-  llm: "gemini"
+# docs_context:
+#   doc_tree:
+#     scrape_config:
+#       script: "context/docs/crawl_coda_tree.py"
+#       output: "context/docs/doc_tree.json"
+#       url: "https://docs.videodb.io"
+#       selector: "data-coda-ui-id"
+#       selector_value: "page-list"
+#   include:
+#     - "Welcome to VideoDB Docs"
+#     - "Quick Start Guide/*"
+#     - "Visual Search and Indexing/*"
+#   prompts:
+#     prompt_folder: "context/prompts"
+#     default_prompt: "default_docs.txt"
+#   base_url: "https://docs.videodb.io"
+#   tree_file: "context/docs/doc_tree.json"
+#   output_file: "context/docs/docs_context.md"
+#   output_fragments: "context/docs/fragments"
+#   script_path: "context/docs/process_docs.py" # New field for script path
+#   branch_name: "docs-context-update"
+#   commit_message: "Add combined Markdown output for docs context"
+#   llm: "gemini"
 
 examples_context:
   clone_url: "https://github.com/video-db/videodb-cookbook"
