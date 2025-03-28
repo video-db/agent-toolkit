@@ -1,6 +1,265 @@
 # Video Indexing Guide [Source Link](https://docs.videodb.io/video-indexing-guide-101)
 
-Error fetching https://docs.videodb.io/video-indexing-guide-101: Request Timeout: Failed to scrape URL as the request timed out. Request timed out - No additional error details provided.
+VideoDB Documentation
+
+Pages
+
+[Welcome to VideoDB Docs](https://docs.videodb.io/)
+
+[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+
+[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+
+[Semantic Search](https://docs.videodb.io/semantic-search-89)
+
+[Collections](https://docs.videodb.io/collections-68)
+
+[Public Collections](https://docs.videodb.io/public-collections-102)
+
+[Callback Details](https://docs.videodb.io/callback-details-66)
+
+[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+
+[Language Support](https://docs.videodb.io/language-support-79)
+
+[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[Team](https://docs.videodb.io/team-46)
+
+[Customer Love](https://docs.videodb.io/customer-love-42)
+
+[Temp Doc](https://docs.videodb.io/temp-doc-54)
+
+Quick Start Guide
+
+# Video Indexing Guide
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1B2-caHqnTfx2gRVEXn3p9n0nAd6U641m?usp=sharing)
+
+## Unlocking the Power of Video Indexing with VideoDB
+
+Imagine sitting down to rewatch your favorite movie, eager to revisit that thrilling car chase or the moment the hero delivers the iconic one-liner. You load up the video, and the hunt begins: sliding the playback bar, overshooting, rewinding, and starting all over again. Frustrating, isn’t it?
+
+Now, think about listening to a five-hour podcast filled with fascinating information. You remember the host diving into quantum entanglement somewhere in the middle, but where exactly? Do you scrub through the audio hoping to find it or simply give up?
+
+What if you could skip all this frustration and instantly jump to the exact part you’re looking for, every single time?
+
+That’s the magic of indexes in VideoDB. They act as maps for your videos, marking key points and making it effortless to navigate directly to the content that matters most to you.
+
+![With and without indexes.png](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-xCH0NsktsH/dc4386c92bbfb54d3a13f716e26a61be5d3d636f84833ae9754479684204466e5fb7dd042d7dca65ff25d2be5518ab991e182632cb7396db342bd925248988cae35c6997d1d4e9e38521fb65deb0f65b57e73483d0493f55ccfa57358d52ab0650c16661?auto=format%2Ccompress&fit=max)
+
+### What Are Indexes in VideoDB?
+
+Indexes in VideoDB are like your personal guide to video content, turning complex, unstructured media into something searchable and organized. Think of them as metadata-powered assistants that help you locate not just spoken words, but also visuals—timestamping everything along the way.
+
+Here’s how it works:
+
+Videos are organized into Collections, much like folders contain files on your computer.
+
+Each video is a continuous stream of visuals, audio, or both.
+
+Indexing divides videos into scenes based on the prompts provided.
+
+Videos can have multiple indexes, each focused on a specific aspect of the video. The focus of the index is determined by the prompts you use when creating it.
+
+Example: Imagine you’re working with a video of someone giving a speech on stage:
+
+If you prompt, “Describe the environment”, the index will capture details like the lighting, background, and stage setup.
+
+If you prompt, “Describe the person”, the index will focus on their clothing, expressions, and gestures.
+
+```python
+# Upload the video to a collection
+video = coll.upload(
+url ="Public URL of the video"
+)
+
+# Index to capture the environment details
+environment_index_id = video.index_scenes(
+prompt ="Describe the environment"
+)
+
+# Index to capture details of the speaker
+person_index_id = video.index_scenes(
+prompt ="Describe the person"
+)
+```
+
+This flexibility lets you create multiple indexes for the same content, tailored to your unique needs. With multimodal indexing, VideoDB combines spoken content and visual scenes, giving you a complete understanding of your video.
+
+![Multiple Indexes.png](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-ipnspuoNXW/79b0a70998275eb92411e6258de3afef749a5116181c895a50f9273ccf13f714c434cf1e52ec93d5b26832152a1bb3441a7d2125ed788289da4caa88650cd9c181326406dac62d0835fb77863c8f04fb9137b7c9a44a74479a3c4a153d96df2fb0b1f4c0?auto=format%2Ccompress&fit=max)
+
+### Types of Indexes in VideoDB
+
+Spoken Content Index
+
+What It Is:
+Using Automatic Speech Recognition (ASR), VideoDB transcribes spoken words into text, with every word precisely timestamped. This allows you to search for phrases or keywords and instantly navigate to those moments.
+
+Scenarios Where It Shines:
+
+Educational Content:
+Imagine being a student studying for exams. Your professor’s lecture spans hours of video, but you recall a brief mention of plate tectonics. Instead of scrubbing through the entire video, you type “plate tectonics” into VideoDB, and the index directs you to the exact timestamp.
+
+Customer Support Recordings:
+A support representative analyzing a 10-minute customer call needs to find when the customer raised a key issue. With spoken content indexing, they can pinpoint the moment within seconds, speeding up the process.
+
+Media Libraries:
+Think of a five-hour podcast on astronomy. You’re only interested in the section where the host discusses quantum entanglement. Instead of wading through hours of audio, spoken content indexing takes you directly to that part, saving valuable time.
+
+Scene/Visual Index
+
+What It Is:
+Visual indexing analyzes video content by detecting scene boundaries, objects, and actions. It timestamps and tags these elements, making it easy to locate specific scenes or objects.
+
+Scenarios Where It Shines:
+
+Surveillance Footage:
+You’re a security analyst reviewing hours of highway CCTV recordings. A red sedan was involved in a robbery, and you need to find every instance of it. Manually combing through footage would take hours—or days. Scene indexing filters the footage to show only the moments where the red sedan appears, dramatically speeding up your investigation.
+
+Sports Highlights:
+A sports editor needs to compile a highlight reel of all the dropped catches in a cricket match. Instead of watching the entire game, scene indexing identifies each relevant moment, making the editing process faster and more efficient.
+
+## How We Can Use Multiple Indexes While Searching a Collection or Video
+
+Now that we’ve explored how indexing works, let’s dive into how we can use multiple scene indexes to retrieve the exact segments we need from videos.
+
+Whenever we need to retrieve a specific segment, we rely on the indexes we’ve created. A single scene index might sometimes suffice, but often, especially when we’re looking for nuanced or layered results, one index isn’t enough. This is where multiple scene indexes come into play—allowing us to combine or filter results for more precise retrieval.
+
+Think of it like how our brain processes complex memories. Memory recall is often multi-layered.
+
+For instance, if you think about rainy days when school was closed, your brain might simultaneously recall the image of raindrops falling, the sound of thunder, and even the earthy smell after the rain. Together, these layers of memory build a vivid and detailed recollection.
+
+In a similar way, VideoDB’s indexing system allows you to create and use multiple scene indexes, each capturing a different aspect of the video. By combining or intersecting results from these indexes, you can refine your search for better accuracy and relevance. We will explore this with a practical example:
+
+### Multi-Index Search
+
+Let’s return to the robbery investigation example. You’re analyzing hours of CCTV footage, and witnesses report that the suspect used a red sedan that was driving recklessly.
+
+To narrow down the search, you create two scene indexes:
+
+Scene Index 1: Focused on the color and model of vehicles passing through the streets.
+
+Scene Index 2: Focused on the movement patterns of vehicles (e.g., speeding, swerving).
+
+Here’s how you’d use these indexes:
+
+First, use Scene Index 1 to filter all footage where red sedans appear.
+
+Then, apply Scene Index 2 to further narrow it down to moments where the red sedans were driving recklessly.
+
+By layering these two indexes, you can pinpoint the exact segments of footage most relevant to the investigation.
+
+```python
+# Upload the video to a collection and create two scene index
+video = coll.upload( url ="Public URL of the video")
+
+car_index = video.index_scenes( prompt ="Identify the color and model of each car")
+
+mov_index = video.index_scenes( prompt ="Analyze the movement pattern of each car")
+
+# Perform search for 'red sedans' on car index
+car_result = video.search(
+query ="Show all the segments where a 'red sedan' appears in the scene",
+index_type = IndexType.scene,
+index_id = car_index_id
+)
+
+# Perform search for 'reckless driving' on movement index
+mov_result = video.search(
+query ="Show all the segments where a car is driving recklessly",
+index_type = IndexType.scene,
+index_id = mov_index_id
+)
+
+# Combine the search results using an intersection function
+multi_index_result = get_intersection( car_result, mov_result )
+
+# Generate a streamable link from the multi index result
+stream_link = video.generate_stream(multi_index_result)
+```
+
+The intersection function combines the results of both indexes, ensuring that only segments where both conditions (e.g., 'red sedan' and 'reckless driving') are met are returned.
+
+### Bonus Example
+
+```python
+# Indexing the color ofeach car
+vehicle_index = traffic_video.index_scenes(
+extraction_type=SceneExtractionType.time_based,
+extraction_config={"time":1,"frame_count":1},
+prompt="Identify the color and type of each vehicle"
+)
+```
+
+In the extraction\_config parameter, we set the time to 1 second and frame\_count to 1. This is because detecting the color of each car only requires a single frame, which is sufficient to determine its color.
+
+```python
+# Indexing the motion of each car
+wait_index = traffic_video.index_scenes(
+extraction_type=SceneExtractionType.time_based,
+extraction_config={"time":4,"frame_count":5},
+prompt="Identify when a car is stopping"
+)
+```
+
+For the extraction\_config parameter, we've set time to 4 seconds and frame\_count to 5. This configuration is necessary because to detect whether a car has stopped, we need to observe its relative position across multiple frames within a 4-second interval. If the car's position remains consistent across these frames, it indicates that the car has come to a stop.
+
+### Conclusion
+
+By using multiple indexes, VideoDB doesn’t just save time—it transforms how you interact with videos. Whether you’re working with spoken content, visual elements, or a combination, indexing empowers you to retrieve highly accurate and context-specific results.
+
+The ability to structure unorganized video content into searchable, interactive data opens up endless possibilities for developers and creators. From managing large media libraries to analyzing hours of surveillance footage or building smarter educational tools, VideoDB’s indexing technology enables you to:
+
+Focus on the exact parts of your content that matter.
+
+Save time and effort while improving accuracy and efficiency.
+
+You can read more about visual indexing pipeline 👉
+
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+Check Multimodal indexing and search pipeline at
+
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+Unlocking the Power of Video Indexing with VideoDB
+
+What Are Indexes in VideoDB?
+
+Types of Indexes in VideoDB
+
+How We Can Use Multiple Indexes While Searching a Collection or Video
+
+Multi-Index Search
+
+Bonus Example
+
+Conclusion
+
+Want to print your doc?
+
+This is not the way.
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (Ctrl+P) instead.
 
 
 ---

@@ -1,0 +1,284 @@
+# Ref: Subtitle Styles [Source Link](https://docs.videodb.io/ref-subtitle-styles-57)
+
+VideoDB Documentation
+
+Pages
+
+Welcome to VideoDB Docs
+Quick Start Guide
+How Accurate is Your Search?
+Video Indexing Guide
+Semantic Search
+Collections
+Public Collections
+Callback Details
+Ref: Subtitle Styles
+Language Support
+Guide: Subtitles
+Visual Search and Indexing
+Multimodal Search
+Dynamic Video Streams
+Director - Video Agent Framework
+Open Source Tools
+Examples and Tutorials
+Edge of Knowledge
+Building World's First Video Database
+Team
+Customer Love
+Temp Doc
+
+Quick Start Guide
+
+Ref: Subtitle Styles
+
+video.add\_subtitle(SubtitleStyle()) function supports many parameters for styling your captions or subtitles according to your brand and guidelines. You can create your own
+
+Typography and Style
+Color and Effects
+Positioning and Margins
+Text Transformation
+Borders and Shadow,
+
+This document provides an API Reference to the parameters of SubtitleStyle function.
+
+Checkout
+Guide: Subtitles
+
+to dive deep into the outputs of these parameters
+
+## Import
+
+Import SubtitleStyle from VideoDB module
+
+```python
+from videodb import SubtitleStyle, connect
+
+conn =connect()
+coll = conn.get_collection()
+video = coll.get_video("MY_VIDEO_ID")
+video.add_subtitle(
+    SubtitleStyle(
+        font_name=<>,
+        font_size=<>,
+        spacing=<>,
+        ....
+        ....
+    )
+)
+```
+
+## SubtitleStyle
+
+This function supports following parameters for styling 👇
+
+### font\_name
+
+The name of the font to use for the subtitles.
+
+Default: "Arial"
+Type: str
+
+Checkout List of
+Supported Fonts
+
+### font\_size
+
+The size of the subtitle text in points.
+
+Default: 18
+Type: float
+
+### primary\_colour
+
+The color of the main subtitle text in &HBBGGRR or &HAABBGGRR format. Checkout
+Color Format
+for the details.
+
+Default: "&H00FFFFFF" (white)
+Type: str
+
+### secondary\_colour
+
+The color used for secondary effects like karaoke
+
+Default: "&H000000FF" (red)
+Type: str
+
+Checkout
+Color Format
+for the format details.
+
+### outline\_colour
+
+The color of the text outline.
+
+Default: "&H00000000" (black)
+Type: str
+
+Checkout
+Color Format
+for the format details.
+
+### back\_colour
+
+The background color of the subtitle box
+
+Default: "&H00000000" (black)
+Type: str
+
+Checkout
+Color Format
+for the format details.
+
+### bold
+
+Indicates if the subtitle text is bold.
+
+Default: False
+Type: bool
+
+### italic
+
+Indicates if the subtitle text is italicized.
+
+Default: False
+Type: bool
+
+### underline
+
+Indicates if the subtitle text is underlined.
+
+Default: False
+Type: bool
+
+### strike\_out
+
+Indicates if the subtitle text has a strikethrough.
+
+Default: False
+Type: bool
+
+### scale\_x
+
+The horizontal scale of the subtitle text in percentage.
+
+Default: 1.0 (100%, no scaling)
+Type: float
+
+### scale\_y
+
+The vertical scale of the subtitle text in percentage.
+
+Default: 1.0 (100%, no scaling)
+Type: float
+
+### spacing
+
+Space between characters in pixels.
+
+Default: 0
+Type: float
+
+### angle
+
+The rotation angle of the subtitle text in degrees.
+
+Default: 0 (no rotation)
+Type: float
+
+### border\_style
+
+The style of the border around the text
+
+Default: SubtitleBorderStyle.outline
+Type: int or SubtitleBorderStyle
+
+This field accepts following value.
+
+SubtitleBorderStyle.no\_border or 1
+SubtitleBorderStyle.opaque\_box or 3
+SubtitleBorderStyle.outline or 4
+
+Usage:
+
+```python
+from videodb import SubtitleStyle, SubtitleBorderStyle, connect
+
+conn =connect()
+coll = conn.get_collection()
+video = coll.get_video("MY_VIDEO_ID")
+video.add_subtitle(
+    SubtitleStyle(
+        border_style=SubtitleBorderStyle.outline
+    )
+)
+```
+
+### outline
+
+The width (px) of the outline around the text.
+
+Default: 1.0 (px)
+Type: float
+
+### shadow
+
+The depth of the shadow behind the text in pixels.
+
+Default: 0.0
+Type: float
+
+### alignment
+
+The position of the subtitle text on the screen, typically an enumerated type following the SSA/ASS standard.
+
+Default: SubtitleAlignment.bottom\_center
+Type: SubtitleAlignment or int
+
+This field accepts following value.
+
+SubtitleAlignment.bottom\_left or 1
+SubtitleAlignment.bottom\_center or 2
+SubtitleAlignment.bottom\_right or 3
+SubtitleAlignment.middle\_left or 8, 9
+SubtitleAlignment.middle\_center or 10
+
+Import
+
+SubtitleStyle
+font\_name
+font\_size
+primary\_colour
+secondary\_colour
+outline\_colour
+back\_colour
+bold
+italic
+underline
+strike\_out
+scale\_x
+scale\_y
+spacing
+angle
+border\_style
+outline
+shadow
+alignment
+margin\_l
+margin\_r
+margin\_v
+
+Color Format
+Supported Fonts
+
+Want to print your doc?
+
+This is not the way.
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+CtrlP
+) instead.
+
+
+---
+

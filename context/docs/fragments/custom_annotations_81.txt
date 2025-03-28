@@ -1,4 +1,4 @@
-# Welcome to VideoDB Docs [Source Link](https://docs.videodb.io/)
+# Custom Annotations [Source Link](https://docs.videodb.io/custom-annotations-81)
 
 ![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
 
@@ -6,7 +6,7 @@ VideoDB Documentation
 
 Pages
 
-[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
 \\
 Welcome to VideoDB Docs](https://docs.videodb.io/)
 
@@ -58,7 +58,7 @@ Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-8
 \\
 Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
 
-[![](https://cdn.coda.io/icons/svg/color/edit-column.svg)\\
+[![icon picker](https://cdn.coda.io/icons/svg/color/edit-column.svg)\\
 \\
 Custom Annotations](https://docs.videodb.io/custom-annotations-81)
 
@@ -354,291 +354,124 @@ Customer Love](https://docs.videodb.io/customer-love-42)
 \\
 Temp Doc](https://docs.videodb.io/temp-doc-54)
 
-![](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-CrhoacPlde/c28540a214a0f5fd7560cc8e3375e2165623225c13993c82e8558403f355550d132c3e135370f7b0f23bf79c226b8fc6fa61e924f13a5f773827edfd5a9dba5d89ad08e4d45dafae37f0eb42406a906f8c3b501286425b6a8e7273eb36d3042b2fa94db6?auto=format%2Ccompress&fit=crop&w=720&ar=4%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.48199378761405554&fp-z=1)
+Visual Search and Indexing
 
-# ![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg) Welcome to VideoDB Docs
+# ![icon picker](https://cdn.coda.io/icons/svg/color/edit-column.svg)         Custom Annotations
 
-Video Database for your AI Applications
+⁠
 
-Hello 🙏
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/guides/scene-index/custom_annotations.ipynb)
 
-Happy to see you here!
+⁠
+
+⁠
+
+Enhance your understanding of videos by using our simple annotation and tagging pipeline. To enable this, you can create a new Scene object. Then, pass your annotations in the description field and index them using index\_scenes() function.
+
+⁠
+
+![Screenshot 2024-07-04 at 12.23.02 PM.jpg](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-sFF1gD6ccn/2b6d908fe9b544290d09b9d340cfa6ad521c2972dfe9756d8fe83c2d23a780a9838651fdfdf681a6eabb393922d6be3bd616d8af5e3b3edf3442b9f292d748a9660886c1bff1ece139e09954eec5c71a2748f019da510b9240d16fa88d5801faa410f129?auto=format%2Ccompress&fit=max)
+
+⁠
+
+⁠
+
+![light](https://cdn.coda.io/icons/svg/color/light.svg)
+
+VideoDB allows multiple indexes on video objects. This is advantageous as it allows you to attach additional context to each scene, enhancing the search functionality.
+
+## Scene:
 
 ![info](https://cdn.coda.io/icons/svg/color/info.svg)
 
-### Latest Updates
+A Scene object describes a unique event in the video. From a timeline perspective it’s a timestamp range.
+
+video\_id : id of the video object
+
+start : seconds
+
+end : seconds
+
+description : string description
+
+Each scene object has another attribute, frames, which contains a list of
+
+[Frame](https://docs.videodb.io/advanced-visual-search-pipelines-82)
 
 ⁠
 
-[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+objects. However, we don't need them here for custom annotation pipelines because we are bringing the description from outside.
+
+### Create a new Scene
+
+Create new Scene objects and add your custom annotation as description.
+
+from videodb.scene import Scene
+
+\# create scene object and patch your description
+
+scene1 = Scene(
+
+video\_id=video.id,
+
+start=0,
+
+end=100,
+
+description="Detective Martin is being interviewed by the police.",)
+
+scene2 = Scene(
+
+video\_id=video.id,
+
+start=600,
+
+end=900,
+
+description="A religious gathering. People are praying and singing")
+
+\# create a list of scene objects
+
+scenes = \[scene1, scene2\]
+
+### Index and search scenes
+
+Index using the list of scene objects and use the index\_id for search
+
+from videodb import IndexType
+
+#create new index and assign it a name
+
+index\_id = video.index\_scenes(scenes=scenes, name="My Custom Annotations#1")
+
+\# search using the index\_id
+
+res = video.search(query="religious gathering", index\_type=IndexType.scene, index\_id=index\_id)
+
+res.play()
+
+![ok](https://cdn.coda.io/icons/svg/color/ok.svg)
+
+Custom annotations unlock additional features
+
+Adding application context into the search pipeline.
+
+Generate unique descriptions from your own custom vision model.
+
+Index manual annotations.
+
+Read more about Scene object in
+
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
 
 ⁠
 
-— AI video agents framework for next-gen video interactions and workflows
+Scene:
 
-📖 Listen for a quick walkthrough of this doc 👇
+Create a new Scene
 
-⁠
-
-The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk
-
-The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk - YouTube
-
-VideoDB
-
-115 subscribers
-
-[The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk](https://www.youtube.com/watch?v=3RtUuxQeZgc)
-
-VideoDB
-
-Search
-
-Info
-
-Shopping
-
-Tap to unmute
-
-If playback doesn't begin shortly, try restarting your device.
-
-You're signed out
-
-Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
-
-CancelConfirm
-
-Share
-
-Include playlist
-
-An error occurred while retrieving sharing information. Please try again later.
-
-Watch later
-
-Share
-
-Copy link
-
-[Watch on](https://www.youtube.com/watch?v=3RtUuxQeZgc&embeds_referring_euri=https%3A%2F%2Fcdn.iframe.ly%2F)
-
-0:00
-
-/ •Live
-
-•
-
-[Watch on YouTube](https://www.youtube.com/watch?v=3RtUuxQeZgc "Watch on YouTube")
-
-⁠
-
-⁠
-
-⁠
-
-### Quick Start
-
-Get your API key at
-
-[VideoDB Console](https://console.videodb.io/auth)
-
-⁠
-
-⁠
-
-Use our
-
-[Python SDK](https://github.com/video-db/videodb-python)
-
-⁠
-
-to build.
-
-Here’s our
-
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-⁠
-
-Checkout
-
-[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
-Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
-
-⁠
-
-Check
-
-[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Open Source Tools](https://docs.videodb.io/open-source-tools-94)
-
-⁠
-
-to help you build
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
-Research Grants](https://docs.videodb.io/research-grants-96)
-
-⁠
-
-### Explore More
-
-Follow us on
-
-[Github](https://github.com/video-db)
-
-⁠
-
-⁠
-
-Engage with us on our
-
-[Discord](https://discord.gg/py9P639jGz)
-
-⁠
-
-Checkout our
-
-[Youtube](https://www.youtube.com/@video_db)
-
-⁠
-
-⁠
-
-Talk to our
-
-[Pricing Assistant](https://chat.openai.com/g/g-VucvsTaEn-videodb-pricing)
-
-⁠
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
-Customer Love](https://docs.videodb.io/customer-love-42)
-
-⁠
-
-### Edge of Knowledge
-
-Today we are witnessing once a lifetime revolution on internet. We are deep thinkers of AI and here’s our deep dive and fundamental AI series.
-
-A series on basics and fundamentals of ML
-
-[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
-Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-⁠
-
-A series on Agents - The future of internet 👉
-
-[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
-Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-⁠
-
-### Curiosity
-
-Curious to know about Video Database and its principles 👉
-
-[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
-What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
-Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-Video-Database-Now-41)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
-The Future Series](https://docs.videodb.io/the-future-series-78)
-
-⁠
-
-### Theory for deep divers
-
-Want to go deep into the audio video systems 👉
-
-⁠
-
-[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
-Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
-Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
-Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-⁠
-
-### Team
-
-We specialize in developing cutting-edge AI applications for multimedia, We are a diverse group of experts in multimedia, AI and innovative user experience design.
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
-Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
-Ashish](https://docs.videodb.io/ashish-45)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
-Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
-Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
-Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-⁠
-
-... and a few more hard working individuals who don’t care about their name being here. 🙌
-
-⁠
+Index and search scenes
 
 Want to print your doc?
 
@@ -651,30 +484,6 @@ Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 CtrlP
 
 ) instead.
-
-![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
-
-VideoDB Documentation
-
-Pages
-
-[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
-\\
-Welcome to VideoDB Docs](https://docs.videodb.io/)
-
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
-\\
-Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
-
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
-\\
-Multimodal Search](https://docs.videodb.io/multimodal-search-90)
-
-
 
 ---
 

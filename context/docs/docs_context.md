@@ -1,36 +1,362 @@
 # Welcome to VideoDB Docs [Source Link](https://docs.videodb.io/)
 
+![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
+
 VideoDB Documentation
 
 Pages
 
-[Welcome to VideoDB Docs](https://docs.videodb.io/)
+[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+\\
+Welcome to VideoDB Docs](https://docs.videodb.io/)
 
-[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
+\\
+Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
 
-[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+[![](https://cdn.coda.io/icons/svg/color/wash-your-hands.svg)\\
+\\
+How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
 
-[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
 
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Semantic Search](https://docs.videodb.io/semantic-search-89)
 
-[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+[![](https://cdn.coda.io/icons/svg/color/binders-folder.svg)\\
+\\
+Collections](https://docs.videodb.io/collections-68)
 
-[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+[![](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
+\\
+Public Collections](https://docs.videodb.io/public-collections-102)
 
-[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+[![](https://cdn.coda.io/icons/svg/color/callback.svg)\\
+\\
+Callback Details](https://docs.videodb.io/callback-details-66)
 
-[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
 
-[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+[![](https://cdn.coda.io/icons/svg/color/customer-support.svg)\\
+\\
+Language Support](https://docs.videodb.io/language-support-79)
 
-[Team](https://docs.videodb.io/team-46)
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
 
-[Customer Love](https://docs.videodb.io/customer-love-42)
+[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
+\\
+Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
 
-[Temp Doc](https://docs.videodb.io/temp-doc-54)
+[![](https://cdn.coda.io/icons/svg/color/landscape.svg)\\
+\\
+Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
 
-# Welcome to VideoDB Docs
+[![](https://cdn.coda.io/icons/svg/color/edit-column.svg)\\
+\\
+Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+
+[![](https://cdn.coda.io/icons/svg/color/search-property.svg)\\
+\\
+Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+
+[![](https://cdn.coda.io/icons/svg/color/football.svg)\\
+\\
+Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+
+[![](https://cdn.coda.io/icons/svg/color/scuba-pressure-gauge.svg)\\
+\\
+Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
+
+[![](https://cdn.coda.io/icons/svg/color/poll-topic.svg)\\
+\\
+Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
+
+[![](https://cdn.coda.io/icons/svg/color/e-learning.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
+
+[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[![](https://cdn.coda.io/icons/svg/color/open-book.svg)\\
+\\
+Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
+
+[![](https://cdn.coda.io/icons/svg/color/bag-front-view.svg)\\
+\\
+How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
+
+[![](https://cdn.coda.io/icons/svg/color/voice-recognition-scan.svg)\\
+\\
+Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
+
+[![](https://cdn.coda.io/icons/svg/color/console.svg)\\
+\\
+Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
+
+[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[![llama](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/c2b3a994-6140-40a9-93ff-d87aa37f2860?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
+
+[![](https://cdn.coda.io/icons/svg/color/command-line.svg)\\
+\\
+PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
+
+[![](https://cdn.coda.io/icons/svg/color/day-camera.svg)\\
+\\
+StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
+
+[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
+\\
+Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[![](https://cdn.coda.io/icons/svg/color/audible.svg)\\
+\\
+Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
+
+[![](https://cdn.coda.io/icons/svg/color/adware-free.svg)\\
+\\
+Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
+
+[![](https://cdn.coda.io/icons/svg/color/insert-white-space.svg)\\
+\\
+Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
+
+[![](https://cdn.coda.io/icons/svg/color/mac-client.svg)\\
+\\
+Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
+
+[![](https://cdn.coda.io/icons/svg/color/adverb.svg)\\
+\\
+Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
+
+[![](https://cdn.coda.io/icons/svg/color/medium-volume.svg)\\
+\\
+Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
+
+[![](https://cdn.coda.io/icons/svg/color/camera-automation.svg)\\
+\\
+Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
+
+[![](https://cdn.coda.io/icons/svg/color/video-trimming.svg)\\
+\\
+Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
+
+[![](https://cdn.coda.io/icons/svg/color/high-volume.svg)\\
+\\
+Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
+
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
+
+[![](https://cdn.coda.io/icons/svg/color/billboard.svg)\\
+\\
+AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
+
+[![](https://cdn.coda.io/icons/svg/color/search.svg)\\
+\\
+Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
+
+[![](https://cdn.coda.io/icons/svg/color/counter.svg)\\
+\\
+Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
+
+[![](https://cdn.coda.io/icons/svg/color/handle-with-care.svg)\\
+\\
+Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+
+[![](https://cdn.coda.io/icons/svg/color/centre-of-gravity.svg)\\
+\\
+Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
+
+[![](https://cdn.coda.io/icons/svg/color/panel-and-foot-outlet.svg)\\
+\\
+Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
+
+[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-20)
+
+[![](https://cdn.coda.io/icons/svg/color/groups.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-23)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
+
+[![](https://cdn.coda.io/icons/svg/color/back-to-draft.svg)\\
+\\
+Drafts](https://docs.videodb.io/drafts-24)
+
+[![](https://cdn.coda.io/icons/svg/color/one-to-many.svg)\\
+\\
+From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
+
+[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
+\\
+The Future Series](https://docs.videodb.io/the-future-series-78)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
+\\
+Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+
+[![](https://cdn.coda.io/icons/svg/color/synchronize.svg)\\
+\\
+Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
+
+[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+
+[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
+\\
+Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+
+[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
+\\
+What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+
+[![](https://cdn.coda.io/icons/svg/color/ai.svg)\\
+\\
+Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+
+[![](https://cdn.coda.io/icons/svg/color/fff.svg)\\
+\\
+Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
+
+[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
+\\
+Research Grants](https://docs.videodb.io/research-grants-96)
+
+[![](https://cdn.coda.io/icons/svg/color/the-dragon-team.svg)\\
+\\
+Team](https://docs.videodb.io/team-46)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
+
+[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
+\\
+Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+
+[![](https://cdn.coda.io/icons/svg/color/fast-forward.svg)\\
+\\
+Playlists](https://docs.videodb.io/playlists-33)
+
+[![](https://cdn.coda.io/icons/svg/color/1.svg)\\
+\\
+Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
+
+[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
+\\
+Ashish](https://docs.videodb.io/ashish-45)
+
+[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
+\\
+Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+
+[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
+\\
+Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+
+[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
+\\
+Customer Love](https://docs.videodb.io/customer-love-42)
+
+[![](https://cdn.coda.io/icons/svg/color/llama.svg)\\
+\\
+Temp Doc](https://docs.videodb.io/temp-doc-54)
+
+![](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-CrhoacPlde/c28540a214a0f5fd7560cc8e3375e2165623225c13993c82e8558403f355550d132c3e135370f7b0f23bf79c226b8fc6fa61e924f13a5f773827edfd5a9dba5d89ad08e4d45dafae37f0eb42406a906f8c3b501286425b6a8e7273eb36d3042b2fa94db6?auto=format%2Ccompress&fit=crop&w=720&ar=4%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.48199378761405554&fp-z=1)
+
+# ![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg) Welcome to VideoDB Docs
 
 Video Database for your AI Applications
 
@@ -38,19 +364,78 @@ Hello 🙏
 
 Happy to see you here!
 
+![info](https://cdn.coda.io/icons/svg/color/info.svg)
+
 ### Latest Updates
 
+⁠
+
+[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
 Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+⁠
 
 — AI video agents framework for next-gen video interactions and workflows
 
 📖 Listen for a quick walkthrough of this doc 👇
 
+⁠
+
 The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk
 
 The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk - YouTube
 
+VideoDB
+
+115 subscribers
+
 [The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk](https://www.youtube.com/watch?v=3RtUuxQeZgc)
+
+VideoDB
+
+Search
+
+Info
+
+Shopping
+
+Tap to unmute
+
+If playback doesn't begin shortly, try restarting your device.
+
+You're signed out
+
+Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+
+CancelConfirm
+
+Share
+
+Include playlist
+
+An error occurred while retrieving sharing information. Please try again later.
+
+Watch later
+
+Share
+
+Copy link
+
+[Watch on](https://www.youtube.com/watch?v=3RtUuxQeZgc&embeds_referring_euri=https%3A%2F%2Fcdn.iframe.ly%2F)
+
+0:00
+
+/ •Live
+
+•
+
+[Watch on YouTube](https://www.youtube.com/watch?v=3RtUuxQeZgc "Watch on YouTube")
+
+⁠
+
+⁠
+
+⁠
 
 ### Quick Start
 
@@ -58,27 +443,47 @@ Get your API key at
 
 [VideoDB Console](https://console.videodb.io/auth)
 
+⁠
+
+⁠
+
 Use our
 
 [Python SDK](https://github.com/video-db/videodb-python)
+
+⁠
 
 to build.
 
 Here’s our
 
-[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
+Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+⁠
 
 Checkout
 
-[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
+Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+⁠
 
 Check
 
-[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+⁠
 
 to help you build
 
-[Research Grants](https://docs.videodb.io/research-grants-96)
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
+Research Grants](https://docs.videodb.io/research-grants-96)
+
+⁠
 
 ### Explore More
 
@@ -86,19 +491,38 @@ Follow us on
 
 [Github](https://github.com/video-db)
 
+⁠
+
+⁠
+
 Engage with us on our
 
 [Discord](https://discord.gg/py9P639jGz)
+
+⁠
 
 Checkout our
 
 [Youtube](https://www.youtube.com/@video_db)
 
+⁠
+
+⁠
+
 Talk to our
 
 [Pricing Assistant](https://chat.openai.com/g/g-VucvsTaEn-videodb-pricing)
 
-[Customer Love](https://docs.videodb.io/customer-love-42)
+⁠
+
+⁠
+
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
+Customer Love](https://docs.videodb.io/customer-love-42)
+
+⁠
 
 ### Edge of Knowledge
 
@@ -106,59 +530,150 @@ Today we are witnessing once a lifetime revolution on internet. We are deep thin
 
 A series on basics and fundamentals of ML
 
-[Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+
+⁠
 
 A series on Agents - The future of internet 👉
 
-[Society of Machines](https://docs.videodb.io/society-of-machines-20)
+[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
+Society of Machines](https://docs.videodb.io/society-of-machines-20)
+
+⁠
 
 ### Curiosity
 
 Curious to know about Video Database and its principles 👉
 
-[What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
+What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
 
-[Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+⁠
 
-[The Future Series](https://docs.videodb.io/the-future-series-78)
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
+Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-Video-Database-Now-41)
+
+⁠
+
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
+The Future Series](https://docs.videodb.io/the-future-series-78)
+
+⁠
 
 ### Theory for deep divers
 
 Want to go deep into the audio video systems 👉
 
-[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+⁠
 
-[Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
 
-[Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+⁠
 
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
+Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+
+⁠
+
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+
+⁠
+
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+
+⁠
 
 ### Team
 
 We specialize in developing cutting-edge AI applications for multimedia, We are a diverse group of experts in multimedia, AI and innovative user experience design.
 
-[Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+⁠
 
-[Ashish](https://docs.videodb.io/ashish-45)
+[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
+Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
 
-[Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+⁠
 
-[Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+⁠
 
-[Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
+Ashish](https://docs.videodb.io/ashish-45)
+
+⁠
+
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
+Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+
+⁠
+
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+
+⁠
+
+⁠
+
+[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
+Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+
+⁠
 
 ... and a few more hard working individuals who don’t care about their name being here. 🙌
+
+⁠
 
 Want to print your doc?
 
 This is not the way.
+
+![](https://cdn.coda.io/assets/6ee7d0564a67/img/import_google_docs.png)
 
 Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 
 CtrlP
 
 ) instead.
+
+![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
+
+VideoDB Documentation
+
+Pages
+
+[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+\\
+Welcome to VideoDB Docs](https://docs.videodb.io/)
+
+[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
+\\
+Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
+\\
+Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
 
 
 ---
@@ -408,7 +923,7 @@ dynamic\_score\_percentage: Adaptive filtering mechanism:
 
 Useful when there is a significant gap between top results and tail results after score\_threshold filter. Retains top x% of the score range.
 
-Calculation: dynamic\_threshold = max\_score \- (range \* dynamic\_score\_percentage)
+Calculation: dynamic\_threshold = max\_score \- (range \\* dynamic\_score\_percentage)
 
 default: 20%
 
@@ -464,7 +979,7 @@ Want to print your doc?
 
 This is not the way.
 
-![](https://cdn.coda.io/assets/6ee7d0564a67/img/import_google_docs.png)
+![](https://cdn.coda.io/assets/2462459f3eb1/img/import_google_docs.png)
 
 Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 
@@ -477,103 +992,57 @@ CtrlP
 
 # Video Indexing Guide [Source Link](https://docs.videodb.io/video-indexing-guide-101)
 
-![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
-
 VideoDB Documentation
 
 Pages
 
-[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
-\\
-Welcome to VideoDB Docs](https://docs.videodb.io/)
+[Welcome to VideoDB Docs](https://docs.videodb.io/)
 
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
 
-[![](https://cdn.coda.io/icons/svg/color/wash-your-hands.svg)\\
-\\
-How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
 
-[![icon picker](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
-\\
-Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
 
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
-\\
-Semantic Search](https://docs.videodb.io/semantic-search-89)
+[Semantic Search](https://docs.videodb.io/semantic-search-89)
 
-[![](https://cdn.coda.io/icons/svg/color/binders-folder.svg)\\
-\\
-Collections](https://docs.videodb.io/collections-68)
+[Collections](https://docs.videodb.io/collections-68)
 
-[![](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
-\\
-Public Collections](https://docs.videodb.io/public-collections-102)
+[Public Collections](https://docs.videodb.io/public-collections-102)
 
-[![](https://cdn.coda.io/icons/svg/color/callback.svg)\\
-\\
-Callback Details](https://docs.videodb.io/callback-details-66)
+[Callback Details](https://docs.videodb.io/callback-details-66)
 
-[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
-\\
-Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
 
-[![](https://cdn.coda.io/icons/svg/color/customer-support.svg)\\
-\\
-Language Support](https://docs.videodb.io/language-support-79)
+[Language Support](https://docs.videodb.io/language-support-79)
 
-[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
-\\
-Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
 
-[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
-\\
-Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
 
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
-\\
-Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
 
-[![](https://cdn.coda.io/icons/svg/color/e-learning.svg)\\
-\\
-Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
 
-[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-\\
-Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
 
-[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-\\
-Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
 
-[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
-\\
-Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
 
-[![](https://cdn.coda.io/icons/svg/color/centre-of-gravity.svg)\\
-\\
-Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
 
-[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-\\
-Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
 
-[![](https://cdn.coda.io/icons/svg/color/the-dragon-team.svg)\\
-\\
-Team](https://docs.videodb.io/team-46)
+[Team](https://docs.videodb.io/team-46)
 
-[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
-\\
-Customer Love](https://docs.videodb.io/customer-love-42)
+[Customer Love](https://docs.videodb.io/customer-love-42)
 
-[![](https://cdn.coda.io/icons/svg/color/llama.svg)\\
-\\
-Temp Doc](https://docs.videodb.io/temp-doc-54)
+[Temp Doc](https://docs.videodb.io/temp-doc-54)
 
 Quick Start Guide
 
-# ![icon picker](https://cdn.coda.io/icons/svg/color/video-call.svg) Video Indexing Guide
+# Video Indexing Guide
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1B2-caHqnTfx2gRVEXn3p9n0nAd6U641m?usp=sharing)
 
@@ -724,9 +1193,8 @@ The intersection function combines the results of both indexes, ensuring that on
 
 ### Bonus Example
 
-Indexing the color ofeach car
-
 ```python
+# Indexing the color ofeach car
 vehicle_index = traffic_video.index_scenes(
 extraction_type=SceneExtractionType.time_based,
 extraction_config={"time":1,"frame_count":1},
@@ -736,9 +1204,8 @@ prompt="Identify the color and type of each vehicle"
 
 In the extraction\_config parameter, we set the time to 1 second and frame\_count to 1. This is because detecting the color of each car only requires a single frame, which is sufficient to determine its color.
 
-Indexing the motion of each car
-
 ```python
+# Indexing the motion of each car
 wait_index = traffic_video.index_scenes(
 extraction_type=SceneExtractionType.time_based,
 extraction_config={"time":4,"frame_count":5},
@@ -758,17 +1225,13 @@ Focus on the exact parts of your content that matter.
 
 Save time and effort while improving accuracy and efficiency.
 
-![info](https://cdn.coda.io/icons/svg/color/info.svg)
-
 You can read more about visual indexing pipeline 👉
 
-[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
-Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
 
 Check Multimodal indexing and search pipeline at
 
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
-Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
 
 Unlocking the Power of Video Indexing with VideoDB
 
@@ -788,9 +1251,7 @@ Want to print your doc?
 
 This is not the way.
 
-![](https://cdn.coda.io/assets/6ee7d0564a67/img/import_google_docs.png)
-
-Try clicking the ⋯ next to your doc name or using a keyboard shortcut (CtrlP) instead.
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (Ctrl+P) instead.
 
 
 ---
@@ -1153,7 +1614,7 @@ Temp Doc](https://docs.videodb.io/temp-doc-54)
 
 Quick Start Guide
 
-# ![icon picker](https://cdn.coda.io/icons/svg/color/clear-search.svg) Semantic Search
+# ![icon picker](https://cdn.coda.io/icons/svg/color/clear-search.svg)         Semantic Search
 
 Semantic search operates on the conceptual meaning of a query rather than simple string matching. This approach allows for more intelligent and context-aware results. Key Features of Semantic Search:
 
@@ -1187,7 +1648,13 @@ Each returned document is assigned a relevance score.
 
 Scores typically reflect the degree of semantic similarity to the query.
 
+⁠
+
 ![5. Semantic Search Parameters.png](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-_WgNBDTBko/d969dd1f4e58b5bd8de41807f5aef19f5a7004b8830f958ec8857400fcda563da6769c420d3aec09842c0a8f1143e2bb2a152ea098e3f28a77699553f6187a8b64a79a74a4d98ffc655040a23bd0ea0ea2e7623e16b84f1cc888926f33057858c2a1e3bf?auto=format%2Ccompress&fit=max)
+
+⁠
+
+⁠
 
 Want to print your doc?
 
@@ -1201,62 +1668,367 @@ CtrlP
 
 ) instead.
 
-
 ---
 
 # Collections [Source Link](https://docs.videodb.io/collections-68)
+
+![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
 
 VideoDB Documentation
 
 Pages
 
-[Welcome to VideoDB Docs](https://docs.videodb.io/)
+[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+\\
+Welcome to VideoDB Docs](https://docs.videodb.io/)
 
-[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
+\\
+Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
 
-[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+[![](https://cdn.coda.io/icons/svg/color/wash-your-hands.svg)\\
+\\
+How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
 
-[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
 
-[Semantic Search](https://docs.videodb.io/semantic-search-89)
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Semantic Search](https://docs.videodb.io/semantic-search-89)
 
-[Collections](https://docs.videodb.io/collections-68)
+[![icon picker](https://cdn.coda.io/icons/svg/color/binders-folder.svg)\\
+\\
+Collections](https://docs.videodb.io/collections-68)
 
-[Public Collections](https://docs.videodb.io/public-collections-102)
+[![](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
+\\
+Public Collections](https://docs.videodb.io/public-collections-102)
 
-[Callback Details](https://docs.videodb.io/callback-details-66)
+[![](https://cdn.coda.io/icons/svg/color/callback.svg)\\
+\\
+Callback Details](https://docs.videodb.io/callback-details-66)
 
-[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
 
-[Language Support](https://docs.videodb.io/language-support-79)
+[![](https://cdn.coda.io/icons/svg/color/customer-support.svg)\\
+\\
+Language Support](https://docs.videodb.io/language-support-79)
 
-[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
 
-[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
+\\
+Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
 
-[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+[![](https://cdn.coda.io/icons/svg/color/landscape.svg)\\
+\\
+Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
 
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+[![](https://cdn.coda.io/icons/svg/color/edit-column.svg)\\
+\\
+Custom Annotations](https://docs.videodb.io/custom-annotations-81)
 
-[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+[![](https://cdn.coda.io/icons/svg/color/search-property.svg)\\
+\\
+Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
 
-[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
 
-[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+[![](https://cdn.coda.io/icons/svg/color/football.svg)\\
+\\
+Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
 
-[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+[![](https://cdn.coda.io/icons/svg/color/scuba-pressure-gauge.svg)\\
+\\
+Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
 
-[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Multimodal Search](https://docs.videodb.io/multimodal-search-90)
 
-[Team](https://docs.videodb.io/team-46)
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
 
-[Customer Love](https://docs.videodb.io/customer-love-42)
+[![](https://cdn.coda.io/icons/svg/color/poll-topic.svg)\\
+\\
+Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
 
-[Temp Doc](https://docs.videodb.io/temp-doc-54)
+[![](https://cdn.coda.io/icons/svg/color/e-learning.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
+
+[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[![](https://cdn.coda.io/icons/svg/color/open-book.svg)\\
+\\
+Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
+
+[![](https://cdn.coda.io/icons/svg/color/bag-front-view.svg)\\
+\\
+How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
+
+[![](https://cdn.coda.io/icons/svg/color/voice-recognition-scan.svg)\\
+\\
+Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
+
+[![](https://cdn.coda.io/icons/svg/color/console.svg)\\
+\\
+Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
+
+[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[![llama](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/c2b3a994-6140-40a9-93ff-d87aa37f2860?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
+
+[![](https://cdn.coda.io/icons/svg/color/command-line.svg)\\
+\\
+PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
+
+[![](https://cdn.coda.io/icons/svg/color/day-camera.svg)\\
+\\
+StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
+
+[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
+\\
+Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[![](https://cdn.coda.io/icons/svg/color/audible.svg)\\
+\\
+Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
+
+[![](https://cdn.coda.io/icons/svg/color/adware-free.svg)\\
+\\
+Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
+
+[![](https://cdn.coda.io/icons/svg/color/insert-white-space.svg)\\
+\\
+Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
+
+[![](https://cdn.coda.io/icons/svg/color/mac-client.svg)\\
+\\
+Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
+
+[![](https://cdn.coda.io/icons/svg/color/adverb.svg)\\
+\\
+Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
+
+[![](https://cdn.coda.io/icons/svg/color/medium-volume.svg)\\
+\\
+Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
+
+[![](https://cdn.coda.io/icons/svg/color/camera-automation.svg)\\
+\\
+Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
+
+[![](https://cdn.coda.io/icons/svg/color/video-trimming.svg)\\
+\\
+Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
+
+[![](https://cdn.coda.io/icons/svg/color/high-volume.svg)\\
+\\
+Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
+
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
+
+[![](https://cdn.coda.io/icons/svg/color/billboard.svg)\\
+\\
+AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
+
+[![](https://cdn.coda.io/icons/svg/color/search.svg)\\
+\\
+Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
+
+[![](https://cdn.coda.io/icons/svg/color/counter.svg)\\
+\\
+Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
+
+[![](https://cdn.coda.io/icons/svg/color/handle-with-care.svg)\\
+\\
+Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+
+[![](https://cdn.coda.io/icons/svg/color/centre-of-gravity.svg)\\
+\\
+Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
+
+[![](https://cdn.coda.io/icons/svg/color/panel-and-foot-outlet.svg)\\
+\\
+Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
+
+[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-20)
+
+[![](https://cdn.coda.io/icons/svg/color/groups.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-23)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
+
+[![](https://cdn.coda.io/icons/svg/color/back-to-draft.svg)\\
+\\
+Drafts](https://docs.videodb.io/drafts-24)
+
+[![](https://cdn.coda.io/icons/svg/color/one-to-many.svg)\\
+\\
+From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
+
+[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
+\\
+The Future Series](https://docs.videodb.io/the-future-series-78)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
+\\
+Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+
+[![](https://cdn.coda.io/icons/svg/color/synchronize.svg)\\
+\\
+Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
+
+[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+
+[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
+\\
+Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+
+[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
+\\
+What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+
+[![](https://cdn.coda.io/icons/svg/color/ai.svg)\\
+\\
+Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+
+[![](https://cdn.coda.io/icons/svg/color/fff.svg)\\
+\\
+Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
+
+[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
+\\
+Research Grants](https://docs.videodb.io/research-grants-96)
+
+[![](https://cdn.coda.io/icons/svg/color/the-dragon-team.svg)\\
+\\
+Team](https://docs.videodb.io/team-46)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
+
+[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
+\\
+Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+
+[![](https://cdn.coda.io/icons/svg/color/fast-forward.svg)\\
+\\
+Playlists](https://docs.videodb.io/playlists-33)
+
+[![](https://cdn.coda.io/icons/svg/color/1.svg)\\
+\\
+Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
+
+[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
+\\
+Ashish](https://docs.videodb.io/ashish-45)
+
+[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
+\\
+Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+
+[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
+\\
+Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+
+[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
+\\
+Customer Love](https://docs.videodb.io/customer-love-42)
+
+[![](https://cdn.coda.io/icons/svg/color/llama.svg)\\
+\\
+Temp Doc](https://docs.videodb.io/temp-doc-54)
 
 Quick Start Guide
 
-# Collections
+# ![icon picker](https://cdn.coda.io/icons/svg/color/binders-folder.svg)         Collections
 
 Collections are simple way to organize your uploads. Working with collections is straightforward. This helps in media organization and search efficiency.
 
@@ -1380,216 +2152,396 @@ play\_stream(stream\_url)
 
 Checkout
 
-[Public Collections](https://docs.videodb.io/public-collections-102)
+[![](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
+Public Collections](https://docs.videodb.io/public-collections-102)
+
+⁠
 
 to understand easy sharing of your collection with others.
 
 Checkout
 
-[Callback Details](https://docs.videodb.io/callback-details-66)
+[![](https://cdn.coda.io/icons/svg/color/callback.svg)\\
+Callback Details](https://docs.videodb.io/callback-details-66)
+
+⁠
 
 for asynchronous upload and indexing opearations.
-
-Upload media to a Collection
-
-List all the media in a Collection (video/audio/image)
-
-Search inside a Collection
-
-More on Collection
 
 Want to print your doc?
 
 This is not the way.
 
-Try clicking the ⋯ next to your doc name or using a keyboard shortcut (CtrlP) instead.
+![](https://cdn.coda.io/assets/6ee7d0564a67/img/import_google_docs.png)
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+
+CtrlP
+
+) instead.
 
 
 ---
 
 # Public Collections [Source Link](https://docs.videodb.io/public-collections-102)
 
+![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
+
 VideoDB Documentation
 
 Pages
 
-[Welcome to VideoDB Docs](https://docs.videodb.io/)
-
-[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
-
-[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
-
-[Semantic Search](https://docs.videodb.io/semantic-search-89)
-
-[Collections](https://docs.videodb.io/collections-68)
-
-[Public Collections](https://docs.videodb.io/public-collections-102)
-
-[Callback Details](https://docs.videodb.io/callback-details-66)
-
-[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
-
-[Language Support](https://docs.videodb.io/language-support-79)
-
-[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
-
-[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
-
-[Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
-
-[Custom Annotations](https://docs.videodb.io/custom-annotations-81)
-
-[Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
-
-[Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
-
-[Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
-
-[Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
-
-[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
-
-[Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
-
-[Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
-
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
-
-[Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
-
-[Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
-
-[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
-
-[Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
-
-[How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
-
-[Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
-
-[Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
-
-[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
-
-[LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
-
-[PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
-
-[StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
-
-[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
-
-[Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
-
-[Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
-
-[Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
-
-[Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
-
-[Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
-
-[Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
-
-[Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
-
-[Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
-
-[Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
-
-[Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
-
-[Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
-
-[Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
-
-[Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
-
-[Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
-
-[AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
-
-[Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
-
-[AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
-
-[AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
-
-[Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
-
-[Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
-
-[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
-
-[Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-[Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
-
-[Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
-
-[Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
-
-[Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-[Society of Machines](https://docs.videodb.io/society-of-machines-23)
-
-[Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
-
-[Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
-
-[Drafts](https://docs.videodb.io/drafts-24)
-
-[From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
-
-[The Future Series](https://docs.videodb.io/the-future-series-78)
-
-[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-[Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-[Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
-
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-[Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
-
-[What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-[Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
-
-[Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-[Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
-
-[Research Grants](https://docs.videodb.io/research-grants-96)
-
-[Team](https://docs.videodb.io/team-46)
-
-[Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
-
-[Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-[Playlists](https://docs.videodb.io/playlists-33)
-
-[Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
-
-[Ashish](https://docs.videodb.io/ashish-45)
-
-[Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-[Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-[Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-[Customer Love](https://docs.videodb.io/customer-love-42)
-
-[Temp Doc](https://docs.videodb.io/temp-doc-54)
+[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+\\
+Welcome to VideoDB Docs](https://docs.videodb.io/)
+
+[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
+\\
+Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+[![](https://cdn.coda.io/icons/svg/color/wash-your-hands.svg)\\
+\\
+How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Semantic Search](https://docs.videodb.io/semantic-search-89)
+
+[![](https://cdn.coda.io/icons/svg/color/binders-folder.svg)\\
+\\
+Collections](https://docs.videodb.io/collections-68)
+
+[![icon picker](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
+\\
+Public Collections](https://docs.videodb.io/public-collections-102)
+
+[![](https://cdn.coda.io/icons/svg/color/callback.svg)\\
+\\
+Callback Details](https://docs.videodb.io/callback-details-66)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+
+[![](https://cdn.coda.io/icons/svg/color/customer-support.svg)\\
+\\
+Language Support](https://docs.videodb.io/language-support-79)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+
+[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
+\\
+Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+[![](https://cdn.coda.io/icons/svg/color/landscape.svg)\\
+\\
+Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+
+[![](https://cdn.coda.io/icons/svg/color/edit-column.svg)\\
+\\
+Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+
+[![](https://cdn.coda.io/icons/svg/color/search-property.svg)\\
+\\
+Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+
+[![](https://cdn.coda.io/icons/svg/color/football.svg)\\
+\\
+Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+
+[![](https://cdn.coda.io/icons/svg/color/scuba-pressure-gauge.svg)\\
+\\
+Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
+
+[![](https://cdn.coda.io/icons/svg/color/poll-topic.svg)\\
+\\
+Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
+
+[![](https://cdn.coda.io/icons/svg/color/e-learning.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
+
+[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[![](https://cdn.coda.io/icons/svg/color/open-book.svg)\\
+\\
+Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
+
+[![](https://cdn.coda.io/icons/svg/color/bag-front-view.svg)\\
+\\
+How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
+
+[![](https://cdn.coda.io/icons/svg/color/voice-recognition-scan.svg)\\
+\\
+Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
+
+[![](https://cdn.coda.io/icons/svg/color/console.svg)\\
+\\
+Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
+
+[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[![llama](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/c2b3a994-6140-40a9-93ff-d87aa37f2860?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
+
+[![](https://cdn.coda.io/icons/svg/color/command-line.svg)\\
+\\
+PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
+
+[![](https://cdn.coda.io/icons/svg/color/day-camera.svg)\\
+\\
+StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
+
+[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
+\\
+Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[![](https://cdn.coda.io/icons/svg/color/audible.svg)\\
+\\
+Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
+
+[![](https://cdn.coda.io/icons/svg/color/adware-free.svg)\\
+\\
+Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
+
+[![](https://cdn.coda.io/icons/svg/color/insert-white-space.svg)\\
+\\
+Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
+
+[![](https://cdn.coda.io/icons/svg/color/mac-client.svg)\\
+\\
+Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
+
+[![](https://cdn.coda.io/icons/svg/color/adverb.svg)\\
+\\
+Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
+
+[![](https://cdn.coda.io/icons/svg/color/medium-volume.svg)\\
+\\
+Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
+
+[![](https://cdn.coda.io/icons/svg/color/camera-automation.svg)\\
+\\
+Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
+
+[![](https://cdn.coda.io/icons/svg/color/video-trimming.svg)\\
+\\
+Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
+
+[![](https://cdn.coda.io/icons/svg/color/high-volume.svg)\\
+\\
+Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
+
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
+
+[![](https://cdn.coda.io/icons/svg/color/billboard.svg)\\
+\\
+AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
+
+[![](https://cdn.coda.io/icons/svg/color/search.svg)\\
+\\
+Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
+
+[![](https://cdn.coda.io/icons/svg/color/counter.svg)\\
+\\
+Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
+
+[![](https://cdn.coda.io/icons/svg/color/handle-with-care.svg)\\
+\\
+Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+
+[![](https://cdn.coda.io/icons/svg/color/centre-of-gravity.svg)\\
+\\
+Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
+
+[![](https://cdn.coda.io/icons/svg/color/panel-and-foot-outlet.svg)\\
+\\
+Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
+
+[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-20)
+
+[![](https://cdn.coda.io/icons/svg/color/groups.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-23)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
+
+[![](https://cdn.coda.io/icons/svg/color/back-to-draft.svg)\\
+\\
+Drafts](https://docs.videodb.io/drafts-24)
+
+[![](https://cdn.coda.io/icons/svg/color/one-to-many.svg)\\
+\\
+From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
+
+[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
+\\
+The Future Series](https://docs.videodb.io/the-future-series-78)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
+\\
+Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+
+[![](https://cdn.coda.io/icons/svg/color/synchronize.svg)\\
+\\
+Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
+
+[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+
+[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
+\\
+Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+
+[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
+\\
+What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+
+[![](https://cdn.coda.io/icons/svg/color/ai.svg)\\
+\\
+Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+
+[![](https://cdn.coda.io/icons/svg/color/fff.svg)\\
+\\
+Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
+
+[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
+\\
+Research Grants](https://docs.videodb.io/research-grants-96)
+
+[![](https://cdn.coda.io/icons/svg/color/the-dragon-team.svg)\\
+\\
+Team](https://docs.videodb.io/team-46)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
+
+[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
+\\
+Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+
+[![](https://cdn.coda.io/icons/svg/color/fast-forward.svg)\\
+\\
+Playlists](https://docs.videodb.io/playlists-33)
+
+[![](https://cdn.coda.io/icons/svg/color/1.svg)\\
+\\
+Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
+
+[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
+\\
+Ashish](https://docs.videodb.io/ashish-45)
+
+[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
+\\
+Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+
+[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
+\\
+Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+
+[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
+\\
+Customer Love](https://docs.videodb.io/customer-love-42)
+
+[![](https://cdn.coda.io/icons/svg/color/llama.svg)\\
+\\
+Temp Doc](https://docs.videodb.io/temp-doc-54)
 
 Quick Start Guide
 
-# Public Collections
+# ![icon picker](https://cdn.coda.io/icons/svg/color/magazine.svg) Public Collections
 
 Public Collections allow you to share a collection of media (videos, audios, images) and intelligence with anyone. When a collection is public:
 
@@ -1599,7 +2551,7 @@ Anyone can list and use the indexes of this collection and access the scene desc
 
 By default, all new collections are private unless explicitly made public.
 
-## 1\. Creating a New Public Collection
+## 1. Creating a New Public Collection
 
 When you create a new collection using create\_collection function, you can mark it public by setting the is\_public parameter to True. This makes the collection immediately accessible to other users (read-only) by sharing the collection ID with them.
 
@@ -1613,7 +2565,7 @@ is\_public=True
 
 )
 
-print(public\_collection.is\_public)\# Should print True
+print(public\_collection.is\_public)# Should print True
 
 Parameters:
 
@@ -1623,7 +2575,7 @@ description: (Required) A string describing the collection.
 
 is\_public: (Optional, boolean) Defaults to False. Set to True to make the collection public.
 
-## 2\. Changing Collection Visibility
+## 2. Changing Collection Visibility
 
 You can always toggle visibility of any existing collection. Use make\_public() to make any collection public, or make\_public() to switch it back to your private collection.
 
@@ -1631,15 +2583,15 @@ You can always toggle visibility of any existing collection. Use make\_public() 
 
 public\_collection.make\_private()
 
-print(public\_collection.is\_public)\# Should print False
+print(public\_collection.is\_public)# Should print False
 
 \# Make collection public again
 
 public\_collection.make\_public()
 
-print(public\_collection.is\_public)\# Should print True
+print(public\_collection.is\_public)# Should print True
 
-## 3\. Accessing a Public Collection
+## 3. Accessing a Public Collection
 
 Any user can access a public collection using its collection ID. Once you have the collection object, you can retrieve videos, audios, or images within it.
 
@@ -1673,11 +2625,11 @@ collection = conn.get\_collection("c-c0a2c223-e377-4625-94bf-910501c2a31c")
 
 videos = collection.list\_videos()
 
-\#Stock Market Ticker 01
+#Stock Market Ticker 01
 
 video = collection.get\_video("m-z-0194c27c-f30c-7803-b2ca-8f1026c940a2")
 
-## 4\. Working with Scene Collections and Scene Indexes (Videos)
+## 4. Working with Scene Collections and Scene Indexes (Videos)
 
 You can list and retrieve scene collections and scene indexes for a public video.
 
@@ -1739,7 +2691,6 @@ CtrlP
 
 ) instead.
 
-
 ---
 
 # Callback Details [Source Link](https://docs.videodb.io/callback-details-66)
@@ -1748,179 +2699,49 @@ VideoDB Documentation
 
 Pages
 
-[Welcome to VideoDB Docs](https://docs.videodb.io/)
+Welcome to VideoDB Docs
 
-[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+Quick Start Guide
 
-[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+How Accurate is Your Search?
 
-[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+Video Indexing Guide
 
-[Semantic Search](https://docs.videodb.io/semantic-search-89)
+Semantic Search
 
-[Collections](https://docs.videodb.io/collections-68)
+Collections
 
-[Public Collections](https://docs.videodb.io/public-collections-102)
+Public Collections
 
-[Callback Details](https://docs.videodb.io/callback-details-66)
+Callback Details
 
-[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+Ref: Subtitle Styles
 
-[Language Support](https://docs.videodb.io/language-support-79)
+Language Support
 
-[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+Guide: Subtitles
 
-[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+Visual Search and Indexing
 
-[Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+Multimodal Search
 
-[Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+Dynamic Video Streams
 
-[Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+Director - Video Agent Framework
 
-[Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+Open Source Tools
 
-[Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+Examples and Tutorials
 
-[Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+Edge of Knowledge
 
-[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+Building World's First Video Database
 
-[Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
+Team
 
-[Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
+Customer Love
 
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
-
-[Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
-
-[Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
-
-[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
-
-[Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
-
-[How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
-
-[Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
-
-[Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
-
-[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
-
-[LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
-
-[PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
-
-[StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
-
-[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
-
-[Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
-
-[Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
-
-[Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
-
-[Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
-
-[Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
-
-[Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
-
-[Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
-
-[Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
-
-[Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
-
-[Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
-
-[Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
-
-[Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
-
-[Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
-
-[Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
-
-[AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
-
-[Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
-
-[AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
-
-[AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
-
-[Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
-
-[Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
-
-[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
-
-[Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-[Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
-
-[Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
-
-[Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
-
-[Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-[Society of Machines](https://docs.videodb.io/society-of-machines-23)
-
-[Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
-
-[Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
-
-[Drafts](https://docs.videodb.io/drafts-24)
-
-[From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
-
-[The Future Series](https://docs.videodb.io/the-future-series-78)
-
-[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-[Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-[Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
-
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-[Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
-
-[What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-[Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
-
-[Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-[Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
-
-[Research Grants](https://docs.videodb.io/research-grants-96)
-
-[Team](https://docs.videodb.io/team-46)
-
-[Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
-
-[Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-[Playlists](https://docs.videodb.io/playlists-33)
-
-[Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
-
-[Ashish](https://docs.videodb.io/ashish-45)
-
-[Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-[Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-[Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-[Customer Love](https://docs.videodb.io/customer-love-42)
-
-[Temp Doc](https://docs.videodb.io/temp-doc-54)
+Temp Doc
 
 Quick Start Guide
 
@@ -1930,11 +2751,50 @@ Quick Start Guide
 
 You can pass callback url in upload function. Here are the details of callback responses.
 
+coll.upload(url="S3\_LINK\_HERE", callback\_url="<your callback url>")
+
 ### 👍🏼 Successful Video Upload
+
+{
+"success":true,
+"data":{
+"id":"m-\*\*",
+"collection\_id":"c-\*\*",
+"name":"What is AWS? | Amazon Web Services",
+"extension":"mp4",
+"size":"13294233",
+"length":"191.146667",
+"stream\_url":"https://stream.videodb.io/v3/published/xxx/xx/x.m3u8",
+"player\_url":"https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/xxx/xx/x.m3u8"
+}
+}
 
 ### 👍🏼 Successful Audio Upload
 
+{
+"success":true,
+"data":{
+"id":"a-\*\*",
+"collection\_id":"c-\*\*",
+"name":"What is AWS? | Amazon Web Services",
+"extension":"mp3",
+"size":"13294233",
+"length":"191.146667"
+}
+}
+
 ### 👍🏼 Successful Image upload
+
+{
+"success":true,
+"data":{
+"id":"img-\*\*",
+"collection\_id":"c-\*\*",
+"name":"What is AWS? | Amazon Web Services",
+"extension":"jpg",
+"size":"13294233"
+}
+}
 
 ## Errors in Upload
 
@@ -1944,27 +2804,21 @@ If the uploaded file is corrupted 👎🏻
 
 If the file is Invalid or wrong media\_type is passed in the upload function.
 
-Upload function supported media\_type is available in the class MediaType which are 👉🏼 \["video", "image", "audio"\]
+Upload function supported media\_type is available in the class MediaType which are 👉🏼 ["video", "image", "audio"]
 
 ### Issue with Download 🔴
 
 If the download link is incorrect/ private or our servers are not able to download file from the link.
 
-⁠
-
 # Index spoken words
 
 Indexing a video is an asynchronous job. We do provide progress bar on our python sdk for developer experience. But it’s only good for communicating the progress on Jupyter or colab notebooks.
-
-⁠
 
 When you move it to to production, you can use callbacks for your backend workflows. Pass callback url while calling the function
 
 ### Successfully Indexed 👍🏼
 
 ### Error in Indexing job 👎🏻
-
-⁠
 
 # Index scenes
 
@@ -1984,16 +2838,298 @@ Want to print your doc?
 
 This is not the way.
 
-Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
-
-CtrlP
-
-) instead.
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (CtrlP) instead.
 
 
 ---
 
 # Ref: Subtitle Styles [Source Link](https://docs.videodb.io/ref-subtitle-styles-57)
+
+VideoDB Documentation
+
+Pages
+
+Welcome to VideoDB Docs
+Quick Start Guide
+How Accurate is Your Search?
+Video Indexing Guide
+Semantic Search
+Collections
+Public Collections
+Callback Details
+Ref: Subtitle Styles
+Language Support
+Guide: Subtitles
+Visual Search and Indexing
+Multimodal Search
+Dynamic Video Streams
+Director - Video Agent Framework
+Open Source Tools
+Examples and Tutorials
+Edge of Knowledge
+Building World's First Video Database
+Team
+Customer Love
+Temp Doc
+
+Quick Start Guide
+
+Ref: Subtitle Styles
+
+video.add\_subtitle(SubtitleStyle()) function supports many parameters for styling your captions or subtitles according to your brand and guidelines. You can create your own
+
+Typography and Style
+Color and Effects
+Positioning and Margins
+Text Transformation
+Borders and Shadow,
+
+This document provides an API Reference to the parameters of SubtitleStyle function.
+
+Checkout
+Guide: Subtitles
+
+to dive deep into the outputs of these parameters
+
+## Import
+
+Import SubtitleStyle from VideoDB module
+
+```python
+from videodb import SubtitleStyle, connect
+
+conn =connect()
+coll = conn.get_collection()
+video = coll.get_video("MY_VIDEO_ID")
+video.add_subtitle(
+    SubtitleStyle(
+        font_name=<>,
+        font_size=<>,
+        spacing=<>,
+        ....
+        ....
+    )
+)
+```
+
+## SubtitleStyle
+
+This function supports following parameters for styling 👇
+
+### font\_name
+
+The name of the font to use for the subtitles.
+
+Default: "Arial"
+Type: str
+
+Checkout List of
+Supported Fonts
+
+### font\_size
+
+The size of the subtitle text in points.
+
+Default: 18
+Type: float
+
+### primary\_colour
+
+The color of the main subtitle text in &HBBGGRR or &HAABBGGRR format. Checkout
+Color Format
+for the details.
+
+Default: "&H00FFFFFF" (white)
+Type: str
+
+### secondary\_colour
+
+The color used for secondary effects like karaoke
+
+Default: "&H000000FF" (red)
+Type: str
+
+Checkout
+Color Format
+for the format details.
+
+### outline\_colour
+
+The color of the text outline.
+
+Default: "&H00000000" (black)
+Type: str
+
+Checkout
+Color Format
+for the format details.
+
+### back\_colour
+
+The background color of the subtitle box
+
+Default: "&H00000000" (black)
+Type: str
+
+Checkout
+Color Format
+for the format details.
+
+### bold
+
+Indicates if the subtitle text is bold.
+
+Default: False
+Type: bool
+
+### italic
+
+Indicates if the subtitle text is italicized.
+
+Default: False
+Type: bool
+
+### underline
+
+Indicates if the subtitle text is underlined.
+
+Default: False
+Type: bool
+
+### strike\_out
+
+Indicates if the subtitle text has a strikethrough.
+
+Default: False
+Type: bool
+
+### scale\_x
+
+The horizontal scale of the subtitle text in percentage.
+
+Default: 1.0 (100%, no scaling)
+Type: float
+
+### scale\_y
+
+The vertical scale of the subtitle text in percentage.
+
+Default: 1.0 (100%, no scaling)
+Type: float
+
+### spacing
+
+Space between characters in pixels.
+
+Default: 0
+Type: float
+
+### angle
+
+The rotation angle of the subtitle text in degrees.
+
+Default: 0 (no rotation)
+Type: float
+
+### border\_style
+
+The style of the border around the text
+
+Default: SubtitleBorderStyle.outline
+Type: int or SubtitleBorderStyle
+
+This field accepts following value.
+
+SubtitleBorderStyle.no\_border or 1
+SubtitleBorderStyle.opaque\_box or 3
+SubtitleBorderStyle.outline or 4
+
+Usage:
+
+```python
+from videodb import SubtitleStyle, SubtitleBorderStyle, connect
+
+conn =connect()
+coll = conn.get_collection()
+video = coll.get_video("MY_VIDEO_ID")
+video.add_subtitle(
+    SubtitleStyle(
+        border_style=SubtitleBorderStyle.outline
+    )
+)
+```
+
+### outline
+
+The width (px) of the outline around the text.
+
+Default: 1.0 (px)
+Type: float
+
+### shadow
+
+The depth of the shadow behind the text in pixels.
+
+Default: 0.0
+Type: float
+
+### alignment
+
+The position of the subtitle text on the screen, typically an enumerated type following the SSA/ASS standard.
+
+Default: SubtitleAlignment.bottom\_center
+Type: SubtitleAlignment or int
+
+This field accepts following value.
+
+SubtitleAlignment.bottom\_left or 1
+SubtitleAlignment.bottom\_center or 2
+SubtitleAlignment.bottom\_right or 3
+SubtitleAlignment.middle\_left or 8, 9
+SubtitleAlignment.middle\_center or 10
+
+Import
+
+SubtitleStyle
+font\_name
+font\_size
+primary\_colour
+secondary\_colour
+outline\_colour
+back\_colour
+bold
+italic
+underline
+strike\_out
+scale\_x
+scale\_y
+spacing
+angle
+border\_style
+outline
+shadow
+alignment
+margin\_l
+margin\_r
+margin\_v
+
+Color Format
+Supported Fonts
+
+Want to print your doc?
+
+This is not the way.
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+CtrlP
+) instead.
+
+
+---
+
+# Language Support [Source Link](https://docs.videodb.io/language-support-79)
+
+![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
 
 VideoDB Documentation
 
@@ -2105,7 +3241,7 @@ Pages
 
 [Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
 
-[Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+[Generate Automated Video Outputs with Text Prompts | DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
 
 [Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
 
@@ -2172,505 +3308,6 @@ Pages
 [Customer Love](https://docs.videodb.io/customer-love-42)
 
 [Temp Doc](https://docs.videodb.io/temp-doc-54)
-
-Quick Start Guide
-
-# Ref: Subtitle Styles
-
-video.add\_subtitle(SubtitleStyle())function supports many parameters for styling your captions or subtitles according to your brand and guidelines. You can create your own
-
-Typography and Style
-
-Color and Effects
-
-Positioning and Margins
-
-Text Transformation
-
-Borders and Shadow,
-
-This document provides an API Reference to the parameters of SubtitleStylefunction.
-
-Checkout
-
-[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
-
-to dive deep into the outputs of these parameters
-
-## Import
-
-Import SubtitleStyle from VideoDB module
-
-from videodb import SubtitleStyle, connect
-
-conn =connect()
-
-coll = conn.get\_collection()
-
-video = coll.get\_video("MY\_VIDEO\_ID")
-
-video.add\_subtitle(
-
-SubtitleStyle(
-
-font\_name=<>,
-
-font\_size=<>,
-
-spacing=<>,
-
-....
-
-....
-
-)
-
-)
-
-## SubtitleStyle
-
-This function supports following parameters for styling 👇
-
-### font\_name
-
-The name of the font to use for the subtitles.
-
-Default: "Arial"
-
-Type:str
-
-Checkout List of
-
-[Supported Fonts](https://docs.videodb.io/ref-subtitle-styles-57)
-
-### font\_size
-
-The size of the subtitle text in points.
-
-Default: 18
-
-Type:float
-
-### primary\_colour
-
-The color of the main subtitle text in &HBBGGRR or&HAABBGGRR format. Checkout
-
-[Color Format](https://docs.videodb.io/ref-subtitle-styles-57)
-
-for the details.
-
-Default: "&H00FFFFFF" (white)
-
-Type:str
-
-### secondary\_colour
-
-The color used for secondary effects like karaoke
-
-Default:"&H000000FF"(red)
-
-Type:str
-
-Checkout
-
-[Color Format](https://docs.videodb.io/ref-subtitle-styles-57)
-
-for the format details.
-
-### outline\_colour
-
-The color of the text outline.
-
-Default: "&H00000000" (black)
-
-Type:str
-
-Checkout
-
-[Color Format](https://docs.videodb.io/ref-subtitle-styles-57)
-
-for the format details.
-
-### back\_colour
-
-The background color of the subtitle box
-
-Default: "&H00000000" (black)
-
-Type:str
-
-Checkout
-
-[Color Format](https://docs.videodb.io/ref-subtitle-styles-57)
-
-for the format details.
-
-### bold
-
-Indicates if the subtitle text is bold.
-
-Default: False
-
-Type: bool
-
-### italic
-
-Indicates if the subtitle text is italicized.
-
-Default: False
-
-Type: bool
-
-### underline
-
-Indicates if the subtitle text is underlined.
-
-Default: False
-
-Type: bool
-
-### strike\_out
-
-Indicates if the subtitle text has a strikethrough.
-
-Default: False
-
-Type: bool
-
-### scale\_x
-
-The horizontal scale of the subtitle text in percentage.
-
-Default: 1.0(100%, no scaling)
-
-Type:float
-
-### scale\_y
-
-The vertical scale of the subtitle text in percentage.
-
-Default: 1.0 (100%, no scaling)
-
-Type:float
-
-### spacing
-
-Space between characters in pixels.
-
-Default: 0
-
-Type:float
-
-### angle
-
-The rotation angle of the subtitle text in degrees.
-
-Default: 0 (no rotation)
-
-Type:float
-
-### border\_style
-
-The style of the border around the text
-
-Default:SubtitleBorderStyle.outline
-
-Type:int orSubtitleBorderStyle
-
-This field accepts following value.
-
-SubtitleBorderStyle.no\_borderor1
-
-SubtitleBorderStyle.opaque\_box or3
-
-SubtitleBorderStyle.outline or4
-
-Usage:
-
-from videodb import SubtitleStyle,SubtitleBorderStyle, connect
-
-conn =connect()
-
-coll = conn.get\_collection()
-
-video = coll.get\_video("MY\_VIDEO\_ID")
-
-video.add\_subtitle(
-
-SubtitleStyle(
-
-border\_style=SubtitleBorderStyle.outline
-
-)
-
-)
-
-### outline
-
-The width (px) of the outline around the text.
-
-Default: 1.0(px)
-
-Type:float
-
-### shadow
-
-The depth of the shadow behind the text in pixels.
-
-Default: 0.0
-
-Type:float
-
-### alignment
-
-The position of the subtitle text on the screen, typically an enumerated type following the SSA/ASS standard.
-
-Default: SubtitleAlignment.bottom\_center
-
-Type:SubtitleAlignmentor int
-
-This field accepts following value.
-
-SubtitleAlignment.bottom\_leftor1
-
-SubtitleAlignment.bottom\_center or2
-
-SubtitleAlignment.bottom\_rightor 3
-
-SubtitleAlignment.middle\_left or 8, 9
-
-SubtitleAlignment.middle\_centeror10
-
-SubtitleAlignment.middle\_rightor 11
-
-SubtitleAlignment.top\_leftor4,5
-
-SubtitleAlignment.top\_center or6
-
-SubtitleAlignment.top\_rightor7
-
-Usage:
-
-from videodb import SubtitleStyle, SubtitleAlignment, connect
-
-conn =connect()
-
-coll = conn.get\_collection()
-
-video = coll.get\_video("MY\_VIDEO\_ID")
-
-video.add\_subtitle(
-
-SubtitleStyle(
-
-alignment=SubtitleAlignment.middle\_center
-
-)
-
-)
-
-### margin\_l
-
-The left margin in pixels.
-
-Default: 10
-
-Type:int
-
-### margin\_r
-
-The right margin in pixels.
-
-Default: 10
-
-Type:int
-
-### margin\_v
-
-The vertical margin (both top and bottom) in pixels.
-
-Default: 10
-
-Type:int
-
-## Color Format
-
-SubtitleStyle accepts colors in the &HBBGGRR hexadecimal format, where the sequence represents the blue, green, and red components,
-
-&H prefix is required in this color format.
-
-And when transparency is needed, an alpha value is placed at the beginning, yielding &HAABBGGRR.
-
-## Supported Fonts
-
-Currently VideoDB supports following Fonts 👇
-
-​
-
-​
-
-Checkout
-
-[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
-
-to dive deep into the outputs of these parameters.
-
-Import
-
-SubtitleStyle
-
-font\_name
-
-font\_size
-
-primary\_colour
-
-secondary\_colour
-
-outline\_colour
-
-back\_colour
-
-bold
-
-italic
-
-underline
-
-strike\_out
-
-scale\_x
-
-scale\_y
-
-spacing
-
-angle
-
-border\_style
-
-outline
-
-shadow
-
-alignment
-
-margin\_l
-
-margin\_r
-
-margin\_v
-
-Color Format
-
-Supported Fonts
-
-Want to print your doc?
-
-This is not the way.
-
-Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
-
-CtrlP
-
-) instead.
-
-
----
-
-# Language Support [Source Link](https://docs.videodb.io/language-support-79)
-
-VideoDB Documentation
-
-Pages
-
-Welcome to VideoDB Docs
-Quick Start Guide
-How Accurate is Your Search?
-Video Indexing Guide
-Semantic Search
-Collections
-Public Collections
-Callback Details
-Ref: Subtitle Styles
-Language Support
-Guide: Subtitles
-Visual Search and Indexing
-Scene Extraction Algorithms
-Custom Annotations
-Scene-Level Metadata: Smarter Video Search & Retrieval
-Advanced Visual Search Pipelines
-Playground for Scene Extractions
-Deep Dive into Prompt Engineering : Mastering Video Scene Indexing
-Multimodal Search
-Multimodal Search: Quickstart
-Conference Slide Scraper with VideoDB
-Dynamic Video Streams
-Ref: TextAsset
-Guide : TextAsset
-Director - Video Agent Framework
-Agent Creation Playbook
-How I Built a CRM-integrated Sales Assistant Agent in 1 Hour
-Make Your Video Sound Studio Quality with Voice Cloning
-Setup Director Locally
-Open Source Tools
-LlamaIndex VideoDB Retriever
-PromptClip: Use Power of LLM to Create Clips
-StreamRAG: Connect ChatGPT to VideoDB
-Examples and Tutorials
-Dubbing - Replace Soundtrack with New Audio
-Beep curse words in real-time
-Remove Unwanted Content from videos
-Instant Clips of Your Favorite Characters
-Insert Dynamic Ads in real-time
-Adding Brand Elements with VideoDB
-Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration
-Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage
-Elevating Trailers with Automated Narration
-Add Intro/Outro to Videos
-Enhancing Video Captions with VideoDB Subtitle Styling
-Audio overlay + Video + Timeline
-Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs
-Adding AI Generated Voiceovers with VideoDB and LOVO
-AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB
-Fun with Keyword Search
-AWS Rekognition and VideoDB - Intelligent Video Clips
-AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video
-Overlay a Word-Counter on Video Stream
-Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB
-Edge of Knowledge
-Building Intelligent Machines
-Part 1 - Define Intelligence
-Part 2 - Observe and Respond
-Part 3 - Training a Model
-Society of Machines
-Society of Machines
-Autonomy - Do we have the choice?
-Emergence - An Intelligence of the collective
-Drafts
-From Language Models to World Models: The Next Frontier in AI
-The Future Series
-Building World's First Video Database
-Multimedia: From MP3/MP4 to the Future with VideoDB
-Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web
-Dynamic Video Streams
-Why do we need a Video Database Now?
-What's a Video Database ?
-Enhancing AI-Driven Multimedia Applications
-Misalignment of Today's Web
-Beyond Traditional Video Infrastructure
-Research Grants
-Team
-Internship: Build the Future of AI-Powered Video Infrastructure
-Ashutosh Trivedi
-Playlists
-Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015
-Ashish
-Shivani Desai
-Gaurav Tyagi
-Rohit Garg
-Customer Love
-Temp Doc
 
 Quick Start Guide
 
@@ -2736,7 +3373,9 @@ Want to print your doc?
 
 This is not the way.
 
-Try clicking the ⋯ next to your doc name or using a keyboard shortcut (CtrlP) instead.
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+CtrlP
+) instead.
 
 
 ---
@@ -2956,6 +3595,7 @@ Before proceeding, ensure access to
 Get your API key from
 
 [VideoDB Console](https://console.videodb.io/)
+
 . ( Free for first 50 uploads, No credit card required ) 🎉
 
 import os
@@ -2991,7 +3631,9 @@ video.index\_spoken\_words()
 To add subtitles to your video you can use video.add\_subtitle() .
 
 This method returns a
+
 [streaming link](https://docs.videodb.io/unraveling-multimedia-from-mp3-mp4-to-the-future-with-videodb-26#_luGNZ)
+
 , that you can play using play\_stream() method
 
 from videodb import play\_stream
@@ -3054,8 +3696,6 @@ strike\_out=False
 
 play\_stream(stream\_url)
 
-![1 (1).png](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-eA02oPyF0t/bf09e67ea357e286e052404972177a064b28ff474d30581b06b6533b7cf360d8f5f4b5e60c79844e9e37a03f4333c96f40c5af94fd0de5d639daef63fa24eb3a99c20a1e24f69eeddb33c3b12c909ea7352b69b7b6d9317ba36b406a846ae88efd63857e?auto=format%2Ccompress&fit=max)
-
 ### 2\. Color and Effects
 
 Configure color of Subtitle by passing following parameters to SubtitleStyle() class
@@ -3096,8 +3736,6 @@ back\_colour ="&H803B3B3B",
 
 play\_stream(stream\_url)
 
-![2.png](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-Ha_PSqmsVS/a6ebda91ff28cf30672254c305371b13fb09a4cb6d90506a80c2bd3a4b7f2a2a35e3145a00ef2e3e0094b6ca07b826a2e9639c59b62d1289d47011adc24e03c809b80ce2f2a6b18fdbeae134ca13fea6c03cb9b31fe9f82d24a8ef8e85e28446efb56cf9?auto=format%2Ccompress&fit=max)
-
 ### 3\. Position and Margins
 
 Configure alignment and position of Subtitle by passing following parameters to SubtitleStyle() class
@@ -3132,8 +3770,6 @@ margin\_v =20,
 
 play\_stream(stream\_url)
 
-![3.png](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-Ns4CGsQJtg/c7141f3d370e816e200096c04723829d596f81c180b943782d9c8c38645d444e9dc3a836ce866b6936bdbe9cca770eafd7decad46b52a3221d1f34b892139827ca84142b65712f74cb858c5af13dfb4554d8714936e4deb1ddb3f97f63caad16219fa3bb?auto=format%2Ccompress&fit=max)
-
 ### 4\. Text Transformation
 
 Transform the text size and spacing by passing following parameters to SubtitleStyle() class
@@ -3161,8 +3797,6 @@ angle=0,
 )
 
 play\_stream(stream\_url)
-
-![4 (1).png](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-2KhyB-qvsP/22c8db309f6cac65a380027a9ae88e2f368e8be2f5e7f8eb2dbdb8b9e5d6575ec0a667a86a35a8641302270288da8a5e151e8ae782d8f1535be6c8425b3ad83aaf52688120a46613d79d5c7a8b791d6d835b15662758635492b820daeffa939c55a02a15?auto=format%2Ccompress&fit=max)
 
 ### 5\. Borders and Shadow
 
@@ -3193,8 +3827,6 @@ border\_style=SubtitleBorderStyle.no\_border,
 )
 
 play\_stream(stream\_url)
-
-![5.png](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-kWlndGvEzi/58b98f25313ddc0fc3f1b9fc1a2cafc0d9412970a541b320738008682a206b75e7d40ac3121ed202d04b274362c95cf36236837bd59e9027efc7ea04063567c9d63058cbdc4803bdd1a569694f4eb1c5f1a37f47c55bbe2564a0382e945e0f1966a83450?auto=format%2Ccompress&fit=max)
 
 ## 👨‍💻 Next Steps
 
@@ -3249,179 +3881,93 @@ VideoDB Documentation
 
 Pages
 
-[Welcome to VideoDB Docs](https://docs.videodb.io/)
-
-[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
-
-[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
-
-[Semantic Search](https://docs.videodb.io/semantic-search-89)
-
-[Collections](https://docs.videodb.io/collections-68)
-
-[Public Collections](https://docs.videodb.io/public-collections-102)
-
-[Callback Details](https://docs.videodb.io/callback-details-66)
-
-[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
-
-[Language Support](https://docs.videodb.io/language-support-79)
-
-[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
-
-[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
-
-[Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
-
-[Custom Annotations](https://docs.videodb.io/custom-annotations-81)
-
-[Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
-
-[Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
-
-[Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
-
-[Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
-
-[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
-
-[Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
-
-[Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
-
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
-
-[Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
-
-[Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
-
-[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
-
-[Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
-
-[How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
-
-[Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
-
-[Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
-
-[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
-
-[LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
-
-[PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
-
-[StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
-
-[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
-
-[Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
-
-[Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
-
-[Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
-
-[Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
-
-[Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
-
-[Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
-
-[Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
-
-[Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
-
-[Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
-
-[Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
-
-[Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
-
-[Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
-
-[Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
-
-[Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
-
-[AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
-
-[Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
-
-[AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
-
-[AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
-
-[Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
-
-[Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
-
-[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
-
-[Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-[Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
-
-[Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
-
-[Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
-
-[Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-[Society of Machines](https://docs.videodb.io/society-of-machines-23)
-
-[Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
-
-[Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
-
-[Drafts](https://docs.videodb.io/drafts-24)
-
-[From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
-
-[The Future Series](https://docs.videodb.io/the-future-series-78)
-
-[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-[Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-[Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
-
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-[Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
-
-[What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-[Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
-
-[Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-[Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
-
-[Research Grants](https://docs.videodb.io/research-grants-96)
-
-[Team](https://docs.videodb.io/team-46)
-
-[Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
-
-[Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-[Playlists](https://docs.videodb.io/playlists-33)
-
-[Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
-
-[Ashish](https://docs.videodb.io/ashish-45)
-
-[Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-[Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-[Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-[Customer Love](https://docs.videodb.io/customer-love-42)
-
-[Temp Doc](https://docs.videodb.io/temp-doc-54)
+*   [Welcome to VideoDB Docs](https://docs.videodb.io/)
+*   [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+*   [How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+*   [Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+*   [Semantic Search](https://docs.videodb.io/semantic-search-89)
+*   [Collections](https://docs.videodb.io/collections-68)
+*   [Public Collections](https://docs.videodb.io/public-collections-102)
+*   [Callback Details](https://docs.videodb.io/callback-details-66)
+*   [Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+*   [Language Support](https://docs.videodb.io/language-support-79)
+*   [Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+*   [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+*   [Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+*   [Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+*   [Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+*   [Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+*   [Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+*   [Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+*   [Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+*   [Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
+*   [Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
+*   [Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+*   [Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
+*   [Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
+*   [Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+*   [Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
+*   [How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
+*   [Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
+*   [Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
+*   [Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+*   [LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
+*   [PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
+*   [StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
+*   [Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+*   [Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
+*   [Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
+*   [Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
+*   [Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
+*   [Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
+*   [Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
+*   [Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
+*   [Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
+*   [Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
+*   [Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
+*   [Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
+*   [Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
+*   [Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
+*   [Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
+*   [AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
+*   [Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
+*   [AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
+*   [AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
+*   [Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
+*   [Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+*   [Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+*   [Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+*   [Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
+*   [Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
+*   [Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
+*   [Society of Machines](https://docs.videodb.io/society-of-machines-20)
+*   [Society of Machines](https://docs.videodb.io/society-of-machines-23)
+*   [Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
+*   [Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
+*   [Drafts](https://docs.videodb.io/drafts-24)
+*   [From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
+*   [The Future Series](https://docs.videodb.io/the-future-series-78)
+*   [Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+*   [Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+*   [Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
+*   [Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+*   [Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+*   [What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+*   [Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
+*   [Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+*   [Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
+*   [Research Grants](https://docs.videodb.io/research-grants-96)
+*   [Team](https://docs.videodb.io/team-46)
+*   [Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
+*   [Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+*   [Playlists](https://docs.videodb.io/playlists-33)
+*   [Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
+*   [Ashish](https://docs.videodb.io/ashish-45)
+*   [Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+*   [Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+*   [Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+*   [Customer Love](https://docs.videodb.io/customer-love-42)
+*   [Temp Doc](https://docs.videodb.io/temp-doc-54)
 
 Visual Search and Indexing
 
@@ -3430,6 +3976,8 @@ Visual Search and Indexing
 ## SceneExtractionType
 
 A video is a series of images that are called frames, these frames can be processed using multimodal modals or computer vision pipelines. There are many ways to identify the temporal change of concepts in the video.
+
+![Screenshot 2024-07-04 at 11.41.39 AM.jpg](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-HozdUmjeH4/7f7ec6d342e7b6ecb573aeeddb6e11b4d4529edb0b8188204fe1e2ca0545d2eda1b47369bbd32647998a8e1ec1cc326a800581717aa979ef19fb20850c76011cf4fb690f8a31cd48f44d7567597e85af1e57085261c25f70d5ef5cd5d74ae26f5c7909aa?auto=format%2Ccompress&fit=max)
 
 SceneExtractionTypeand extraction\_configcan be used with two functions as parameters for scene identification.
 
@@ -3443,33 +3991,31 @@ Checkout
 
 for Scene and Frame object details.
 
+![Screenshot 2024-07-04 at 12.03.45 PM.jpg](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-YvzJ_wnCaf/689685ceab587445941fd8ded3ad89320d6995c066afd3f33f4f323db6bd1fceed4fd86d74fd1b4fd29b9d7cd58bb7919aeea0377e1341dab6fbf8e1c36ad1a074cf87c9606417597c8e810e29baa6fdaf52645800b8350c05176de46d97810914dcf77b?auto=format%2Ccompress&fit=max)
+
 Time based extraction is a simple way to break video into scenes. You define a frequency at which you want to split the video in scenes, for example, you may consider every 10 second as a one scene. This method is useful when you have no information about the nature of video or the video is random & dynamic. You can even create scenes with 1 second time interval.
 
 This method has following extraction\_config:
 
-time : The interval (in seconds) at which scenes are segmented. Default value is 10 — which means every 10 seconds segment is a scene.
-
-frame\_count: The number of frames to extract per scene. This allows you to increase the number of frames collected for more context. Default value is 1.
-
-select\_frames: A list of frames to select from each segment. The list can contain strings from \["first", "middle", or "last"\] which selects the respective frames. Default value is \["first"\]
+*   time : The interval (in seconds) at which scenes are segmented. Default value is 10 — which means every 10 seconds segment is a scene.
+*   frame\_count: The number of frames to extract per scene. This allows you to increase the number of frames collected for more context. Default value is 1.
+*   select\_frames: A list of frames to select from each segment. The list can contain strings from \["first", "middle", or "last"\] which selects the respective frames. Default value is \["first"\]
 
 Note: You can use either select\_frames or frame\_count strategy to extract frames for the scene.
 
-wait\_index= traffic\_video.index\_scenes(
-
-extraction\_type=SceneExtractionType.time\_based,
-
-extraction\_config={"time":4,"frame\_count":5},
-
+```python
+wait_index= traffic_video.index_scenes(
+extraction_type=SceneExtractionType.time_based,
+extraction_config={"time":4,"frame_count":5},
 prompt="Identify when multiple cars are slowing down or waiting. Mention that cars are waiting or stopping and also specify the lane as left, middle, or right. For example, you can say \`cars in the middle lanes are waiting\`.",
-
-name="wait\_index"
-
+name="wait_index"
 )
 
-extraction\_type=SceneExtractionType.time\_based,
+extraction_type=SceneExtractionType.time_based,
+extraction_config={"time":10,"select_frames":['first']},
+```
 
-extraction\_config={"time":10,"select\_frames":\['first'\]},
+![Screenshot 2024-07-04 at 12.13.39 PM.jpg](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-mwUiTJAjy5/8a6f84690e08bd9f79e83f541b72bc040dc6655ef5801cf27918d1c5e0acc2f5455f8a60b441ca513ea59d5e169bcd9a5bb219617b7b51bca6263d46e8b2cee70bd5ce8433351ca4bcabbc578af1d6aa91b54ec65bcca6ae5f523fbdc5c72fae926fa0fe?auto=format%2Ccompress&fit=max)
 
 Videos share context between timestamps. A scene is a logical segment of a video that completes a concept. You can identify scene changes based on visual content within the video.
 
@@ -3477,23 +4023,21 @@ Key factors for calculating changes are significant changes in the visual conten
 
 This method has following extraction\_config:
 
-threshold: Determines the sensitivity of the model towards scene changes within the video. Default value is 20, which known to be good for detecting camera shot changes from a video.
+*   threshold: Determines the sensitivity of the model towards scene changes within the video. Default value is 20, which known to be good for detecting camera shot changes from a video.
+*   frame\_count: Accepts a number that specifies how many frames to pick from each shot. Default value is 1. Increasing this number will result in more frames being selected from each shot, which could provide a more detailed analysis of the scene.
 
-frame\_count: Accepts a number that specifies how many frames to pick from each shot. Default value is 1. Increasing this number will result in more frames being selected from each shot, which could provide a more detailed analysis of the scene.
-
-extraction\_type=SceneExtractionType.shot\_based,
-
-extraction\_config={"threshold":20, "frame\_count":4},
+```python
+extraction_type=SceneExtractionType.shot_based,
+extraction_config={"threshold":20, "frame_count":4},
+```
 
 Want to print your doc?
 
 This is not the way.
 
-Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+![](https://cdn.coda.io/assets/2462459f3eb1/img/import_google_docs.png)
 
-CtrlP
-
-) instead.
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (CtrlP) instead.
 
 
 ---
@@ -3995,85 +4539,47 @@ VideoDB Documentation
 
 Pages
 
-[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
-\\
-Welcome to VideoDB Docs](https://docs.videodb.io/)
+[Welcome to VideoDB Docs](https://docs.videodb.io/)
 
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
 
-[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
-\\
-Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
 
-[![](https://cdn.coda.io/icons/svg/color/landscape.svg)\\
-\\
-Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+[Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
 
-[![](https://cdn.coda.io/icons/svg/color/edit-column.svg)\\
-\\
-Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+[Custom Annotations](https://docs.videodb.io/custom-annotations-81)
 
-[![icon picker](https://cdn.coda.io/icons/svg/color/search-property.svg)\\
-\\
-Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+[Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
 
-[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
-\\
-Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+[Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
 
-[![](https://cdn.coda.io/icons/svg/color/football.svg)\\
-\\
-Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+[Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
 
-[![](https://cdn.coda.io/icons/svg/color/scuba-pressure-gauge.svg)\\
-\\
-Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+[Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
 
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
-\\
-Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
 
-[![](https://cdn.coda.io/icons/svg/color/e-learning.svg)\\
-\\
-Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
 
-[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-\\
-Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
 
-[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-\\
-Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
 
-[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
-\\
-Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
 
-[![](https://cdn.coda.io/icons/svg/color/centre-of-gravity.svg)\\
-\\
-Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
 
-[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-\\
-Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
 
-[![](https://cdn.coda.io/icons/svg/color/the-dragon-team.svg)\\
-\\
-Team](https://docs.videodb.io/team-46)
+[Team](https://docs.videodb.io/team-46)
 
-[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
-\\
-Customer Love](https://docs.videodb.io/customer-love-42)
+[Customer Love](https://docs.videodb.io/customer-love-42)
 
-[![](https://cdn.coda.io/icons/svg/color/llama.svg)\\
-\\
-Temp Doc](https://docs.videodb.io/temp-doc-54)
+[Temp Doc](https://docs.videodb.io/temp-doc-54)
 
 Visual Search and Indexing
 
-# ![icon picker](https://cdn.coda.io/icons/svg/color/search-property.svg) Scene-Level Metadata: Smarter Video Search & Retrieval
+# ![icon picker](https://cdn.coda.io/icons/svg/color/search-property.svg)         Scene-Level Metadata: Smarter Video Search & Retrieval
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OuqMdG44liBMQ0eG1xDDcZW-UK-Hr0ji?usp=sharing)
 
@@ -4161,7 +4667,7 @@ extraction\_config={"time":2,"select\_frames":\["middle"\]}
 
 )
 
-scenes = scene\_collection.scenes # Fetch extracted scenes
+scenes = scene\_collection.scenes \# Fetch extracted scenes
 
 ### Step 2: Assign Metadata to Each Scene
 
@@ -4175,7 +4681,7 @@ for scene in scenes:
 
 action\_type = scene.describe('Select one: \["chase", "turn", "overtake", "crash"\]')
 
-# use prompt to index contextual information that you need to search in vectors.
+\# use prompt to index contextual information that you need to search in vectors.
 
 # use metadata to add structured information to each scene.
 
@@ -4221,7 +4727,7 @@ search\_results = video.search(
 
 query="A thrilling overtaking maneuver",
 
-filter=\[{"action\_type":"overtake"}\],# Apply metadata filter
+filter=\[{"action\_type":"overtake"}\],\# Apply metadata filter
 
 search\_type=SearchType.semantic,
 
@@ -4231,7 +4737,7 @@ scene\_index\_id=scene\_index\_id
 
 )
 
-search\_results.play()# View the retrieved scenes
+search\_results.play()\# View the retrieved scenes
 
 ### Example 2: Finding Chase Scenes in the Race
 
@@ -4241,7 +4747,7 @@ search\_results = video.search(
 
 query="An aggressive chase on the track",
 
-filter=\[{"action\_type":"chase"}\],# Apply metadata filter
+filter=\[{"action\_type":"chase"}\],\# Apply metadata filter
 
 search\_type=SearchType.semantic,
 
@@ -4374,7 +4880,7 @@ Want to print your doc?
 
 This is not the way.
 
-![](https://cdn.coda.io/assets/6ee7d0564a67/img/import_google_docs.png)
+![](https://cdn.coda.io/assets/2462459f3eb1/img/import_google_docs.png)
 
 Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 
@@ -4387,187 +4893,363 @@ CtrlP
 
 # Advanced Visual Search Pipelines [Source Link](https://docs.videodb.io/advanced-visual-search-pipelines-82)
 
+![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
+
 VideoDB Documentation
 
 Pages
 
-[Welcome to VideoDB Docs](https://docs.videodb.io/)
-
-[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
-
-[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
-
-[Semantic Search](https://docs.videodb.io/semantic-search-89)
-
-[Collections](https://docs.videodb.io/collections-68)
-
-[Public Collections](https://docs.videodb.io/public-collections-102)
-
-[Callback Details](https://docs.videodb.io/callback-details-66)
-
-[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
-
-[Language Support](https://docs.videodb.io/language-support-79)
-
-[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
-
-[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
-
-[Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
-
-[Custom Annotations](https://docs.videodb.io/custom-annotations-81)
-
-[Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
-
-[Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
-
-[Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
-
-[Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
-
-[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
-
-[Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
-
-[Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
-
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
-
-[Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
-
-[Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
-
-[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
-
-[Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
-
-[How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
-
-[Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
-
-[Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
-
-[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
-
-[LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
-
-[PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
-
-[StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
-
-[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
-
-[Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
-
-[Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
-
-[Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
-
-[Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
-
-[Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
-
-[Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
-
-[Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
-
-[Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
-
-[Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
-
-[Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
-
-[Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
-
-[Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
-
-[Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
-
-[Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
-
-[AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
-
-[Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
-
-[AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
-
-[AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
-
-[Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
-
-[Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
-
-[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
-
-[Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-[Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
-
-[Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
-
-[Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
-
-[Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-[Society of Machines](https://docs.videodb.io/society-of-machines-23)
-
-[Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
-
-[Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
-
-[Drafts](https://docs.videodb.io/drafts-24)
-
-[From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
-
-[The Future Series](https://docs.videodb.io/the-future-series-78)
-
-[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-[Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-[Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
-
-[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-[Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
-
-[What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-[Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
-
-[Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-[Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
-
-[Research Grants](https://docs.videodb.io/research-grants-96)
-
-[Team](https://docs.videodb.io/team-46)
-
-[Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
-
-[Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-[Playlists](https://docs.videodb.io/playlists-33)
-
-[Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
-
-[Ashish](https://docs.videodb.io/ashish-45)
-
-[Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-[Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-[Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-[Customer Love](https://docs.videodb.io/customer-love-42)
-
-[Temp Doc](https://docs.videodb.io/temp-doc-54)
+[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+\\
+Welcome to VideoDB Docs](https://docs.videodb.io/)
+
+[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
+\\
+Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+[![](https://cdn.coda.io/icons/svg/color/wash-your-hands.svg)\\
+\\
+How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Semantic Search](https://docs.videodb.io/semantic-search-89)
+
+[![](https://cdn.coda.io/icons/svg/color/binders-folder.svg)\\
+\\
+Collections](https://docs.videodb.io/collections-68)
+
+[![](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
+\\
+Public Collections](https://docs.videodb.io/public-collections-102)
+
+[![](https://cdn.coda.io/icons/svg/color/callback.svg)\\
+\\
+Callback Details](https://docs.videodb.io/callback-details-66)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+
+[![](https://cdn.coda.io/icons/svg/color/customer-support.svg)\\
+\\
+Language Support](https://docs.videodb.io/language-support-79)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+
+[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
+\\
+Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+[![](https://cdn.coda.io/icons/svg/color/landscape.svg)\\
+\\
+Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+
+[![](https://cdn.coda.io/icons/svg/color/edit-column.svg)\\
+\\
+Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+
+[![](https://cdn.coda.io/icons/svg/color/search-property.svg)\\
+\\
+Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+
+[![icon picker](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+
+[![](https://cdn.coda.io/icons/svg/color/football.svg)\\
+\\
+Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+
+[![](https://cdn.coda.io/icons/svg/color/scuba-pressure-gauge.svg)\\
+\\
+Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
+
+[![](https://cdn.coda.io/icons/svg/color/poll-topic.svg)\\
+\\
+Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
+
+[![](https://cdn.coda.io/icons/svg/color/e-learning.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
+
+[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[![](https://cdn.coda.io/icons/svg/color/open-book.svg)\\
+\\
+Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
+
+[![](https://cdn.coda.io/icons/svg/color/bag-front-view.svg)\\
+\\
+How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
+
+[![](https://cdn.coda.io/icons/svg/color/voice-recognition-scan.svg)\\
+\\
+Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
+
+[![](https://cdn.coda.io/icons/svg/color/console.svg)\\
+\\
+Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
+
+[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[![llama](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/c2b3a994-6140-40a9-93ff-d87aa37f2860?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
+
+[![](https://cdn.coda.io/icons/svg/color/command-line.svg)\\
+\\
+PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
+
+[![](https://cdn.coda.io/icons/svg/color/day-camera.svg)\\
+\\
+StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
+
+[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
+\\
+Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[![](https://cdn.coda.io/icons/svg/color/audible.svg)\\
+\\
+Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
+
+[![](https://cdn.coda.io/icons/svg/color/adware-free.svg)\\
+\\
+Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
+
+[![](https://cdn.coda.io/icons/svg/color/insert-white-space.svg)\\
+\\
+Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
+
+[![](https://cdn.coda.io/icons/svg/color/mac-client.svg)\\
+\\
+Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
+
+[![](https://cdn.coda.io/icons/svg/color/adverb.svg)\\
+\\
+Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
+
+[![](https://cdn.coda.io/icons/svg/color/medium-volume.svg)\\
+\\
+Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
+
+[![](https://cdn.coda.io/icons/svg/color/camera-automation.svg)\\
+\\
+Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
+
+[![](https://cdn.coda.io/icons/svg/color/video-trimming.svg)\\
+\\
+Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
+
+[![](https://cdn.coda.io/icons/svg/color/high-volume.svg)\\
+\\
+Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
+
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
+
+[![](https://cdn.coda.io/icons/svg/color/billboard.svg)\\
+\\
+AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
+
+[![](https://cdn.coda.io/icons/svg/color/search.svg)\\
+\\
+Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
+
+[![](https://cdn.coda.io/icons/svg/color/counter.svg)\\
+\\
+Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
+
+[![](https://cdn.coda.io/icons/svg/color/handle-with-care.svg)\\
+\\
+Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+
+[![](https://cdn.coda.io/icons/svg/color/centre-of-gravity.svg)\\
+\\
+Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
+
+[![](https://cdn.coda.io/icons/svg/color/panel-and-foot-outlet.svg)\\
+\\
+Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
+
+[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-20)
+
+[![](https://cdn.coda.io/icons/svg/color/groups.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-23)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
+
+[![](https://cdn.coda.io/icons/svg/color/back-to-draft.svg)\\
+\\
+Drafts](https://docs.videodb.io/drafts-24)
+
+[![](https://cdn.coda.io/icons/svg/color/one-to-many.svg)\\
+\\
+From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
+
+[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
+\\
+The Future Series](https://docs.videodb.io/the-future-series-78)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
+\\
+Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+
+[![](https://cdn.coda.io/icons/svg/color/synchronize.svg)\\
+\\
+Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
+
+[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+
+[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
+\\
+Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+
+[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
+\\
+What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+
+[![](https://cdn.coda.io/icons/svg/color/ai.svg)\\
+\\
+Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+
+[![](https://cdn.coda.io/icons/svg/color/fff.svg)\\
+\\
+Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
+
+[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
+\\
+Research Grants](https://docs.videodb.io/research-grants-96)
+
+[![](https://cdn.coda.io/icons/svg/color/the-dragon-team.svg)\\
+\\
+Team](https://docs.videodb.io/team-46)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
+
+[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
+\\
+Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+
+[![](https://cdn.coda.io/icons/svg/color/fast-forward.svg)\\
+\\
+Playlists](https://docs.videodb.io/playlists-33)
+
+[![](https://cdn.coda.io/icons/svg/color/1.svg)\\
+\\
+Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
+
+[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
+\\
+Ashish](https://docs.videodb.io/ashish-45)
+
+[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
+\\
+Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+
+[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
+\\
+Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+
+[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
+\\
+Customer Love](https://docs.videodb.io/customer-love-42)
+
+[![](https://cdn.coda.io/icons/svg/color/llama.svg)\\
+\\
+Temp Doc](https://docs.videodb.io/temp-doc-54)
 
 Visual Search and Indexing
 
-# Advanced Visual Search Pipelines
+# ![icon picker](https://cdn.coda.io/icons/svg/color/search-more.svg)         Advanced Visual Search Pipelines
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/guides/scene-index/advanced_visual_search.ipynb)
 
@@ -4576,6 +5258,8 @@ Let's deep dive into Scene and Frame objects
 ### Scene
 
 A Scene object describes a unique event in the video. From a timeline perspective it’s a timestamp range.
+
+![info](https://cdn.coda.io/icons/svg/color/info.svg)
 
 video\_id : id of the video object
 
@@ -4590,6 +5274,8 @@ Each scene object has an attribute frames, that has list of Frame objects.
 ### Frame
 
 Each Scene can be described by a list of frames. Each Frame object primarily has the URL of the image and its description field.
+
+![info](https://cdn.coda.io/icons/svg/color/info.svg)
 
 id : ID of the frame object
 
@@ -4607,11 +5293,15 @@ scene\_id : id of the scene object
 
 We provide you with easy-to-use Objects and Functions to bring flexibility in designing your visual understanding pipeline. With these tools, you have the freedom to:
 
-*   Extract scene according to your use case.
-*   Go to frame level abstraction.
-*   Assign label, custom model description for each frame.
-*   Use of multiple models, prompts for each scene or frame to convert information to text.
-*   Send multiple frames to vision model for better temporal activity understanding.
+Extract scene according to your use case.
+
+Go to frame level abstraction.
+
+Assign label, custom model description for each frame.
+
+Use of multiple models, prompts for each scene or frame to convert information to text.
+
+Send multiple frames to vision model for better temporal activity understanding.
 
 ### extract\_scenes()
 
@@ -4621,19 +5311,20 @@ This function accepts the extraction\_type and extraction\_config and returns a
 
 object, which keep information about all the extracted scene lists.
 
-[Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+Checkout
+
+[![](https://cdn.coda.io/icons/svg/color/landscape.svg)\\
+Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
 
 for more details.
 
-```
-scene_collection = video.extract_scenes(
+scene\_collection = video.extract\_scenes(
 
-extraction_type=SceneExtractionType.time_based,
+extraction\_type=SceneExtractionType.time\_based,
 
-extraction_config={"time": 30, "select_frames": \["middle"\]},
+extraction\_config={"time": 30, "select\_frames": \["middle"\]},
 
 )
-```
 
 ### Capture Temporal Change
 
@@ -4643,24 +5334,21 @@ You have freedom to iterate through each scene and frame level to describe the i
 
 Get scene collection
 
-```
-scene_collection = video.get_scene_collection("scene_collection_id")
-```
+scene\_collection = video.get\_scene\_collection("scene\_collection\_id")
 
 ### Iterate through each scene and frame
 
 Iterate over scenes and frames and attach description coming from external pipeline be it custom CV pipeline or custom model descriptions.
 
-```
-print("This is scene collection id", scene_collection.id)
+print("This is scene collection id", scene\_collection.id)
 
-print("This is scene collection config", scene_collection.config)
+print("This is scene collection config", scene\_collection.config)
 
-# get scene from collection
+\# get scene from collection
 
-scenes = scene_collection.scenes
+scenes = scene\_collection.scenes
 
-# Iterate through each scene
+\# Iterate through each scene
 
 for scene in scenes:
 
@@ -4670,32 +5358,33 @@ print(f"Scene Duration {scene.start}-{scene.end}")
 
 for frame in scene.frames:
 
-print(f"Frame at {frame.frame_time} {frame.url}")
+print(f"Frame at {frame.frame\_time} {frame.url}")
 
 frame.description = "bring text from external sources/ pipeline"
 
 )
-```
 
 ### Create Scene by custom annotation
 
 These annotations can come from your application or from external vision model, if you extract the description using any vision LLM
 
-```
 for scene in scenes:
 
 scene.description = "summary of frame level description"
-```
 
 Using this pipeline, you have the freedom to design your own flow. In the example above, we’ve described each frame in the scene independently, but some vision models allow multiple images in one go as well. Feel free to customise your flow as per your needs.
 
-*   Experiment with sending multiple frames to a vision model.
-*   Utilize prompts to describe multiple frames, then assign these descriptions to the scene.
-*   Integrate your own vision model into the pipeline.
+Experiment with sending multiple frames to a vision model.
+
+Utilize prompts to describe multiple frames, then assign these descriptions to the scene.
+
+Integrate your own vision model into the pipeline.
+
+![light](https://cdn.coda.io/icons/svg/color/light.svg)
 
 We’ll soon be adding more details and strategies for effective and advanced multimodal search. We welcome your input on what strategies have worked best in your specific use cases
 
-Here’s our
+Here’s our 🎙️
 
 [Discord](https://discord.gg/py9P639jGz)
 
@@ -4703,23 +5392,21 @@ channel where we brainstorm about such ideas.
 
 Once you have a description of each scene in place, you can index and search for the information using the following functions.
 
-```
 from videodb import IndexType
 
 #create new index and assign a name to it
 
-index_id = video.index_scenes(scenes=scenes, name="My Custom Model")
+index\_id = video.index\_scenes(scenes=scenes, name="My Custom Model")
 
-# search using the index_id
+\# search using the index\_id
 
 res = video.search(query="first 29 sec",
 
-index_type=IndexType.scene,
+index\_type=IndexType.scene,
 
-index_id=index_id)
+index\_id=index\_id)
 
 res.play()
-```
 
 Scene
 
@@ -4737,9 +5424,13 @@ Want to print your doc?
 
 This is not the way.
 
-![](https://cdn.coda.io/assets/6ee7d0564a67/img/import_google_docs.png)
+![](https://cdn.coda.io/assets/2462459f3eb1/img/import_google_docs.png)
 
-Try clicking the ⋯ next to your doc name or using a keyboard shortcut (CtrlP) instead.
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+
+CtrlP
+
+) instead.
 
 
 ---
@@ -4752,185 +5443,365 @@ VideoDB Documentation
 
 Pages
 
-[![](https://cdn.coda.io/icons/svg/color/align-center.svg) Welcome to VideoDB Docs](https://docs.videodb.io/)
-
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg) Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-[![](https://cdn.coda.io/icons/svg/color/wash-your-hands.svg) How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
-
-[![](https://cdn.coda.io/icons/svg/color/video-call.svg) Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
-
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg) Semantic Search](https://docs.videodb.io/semantic-search-89)
-
-[![](https://cdn.coda.io/icons/svg/color/binders-folder.svg) Collections](https://docs.videodb.io/collections-68)
-
-[![](https://cdn.coda.io/icons/svg/color/magazine.svg) Public Collections](https://docs.videodb.io/public-collections-102)
-
-[![](https://cdn.coda.io/icons/svg/color/callback.svg) Callback Details](https://docs.videodb.io/callback-details-66)
-
-[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg) Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
-
-[![](https://cdn.coda.io/icons/svg/color/customer-support.svg) Language Support](https://docs.videodb.io/language-support-79)
-
-[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg) Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
-
-[![](https://cdn.coda.io/icons/svg/color/asteroid.svg) Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
-
-[![](https://cdn.coda.io/icons/svg/color/landscape.svg) Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
-
-[![](https://cdn.coda.io/icons/svg/color/edit-column.svg) Custom Annotations](https://docs.videodb.io/custom-annotations-81)
-
-[![](https://cdn.coda.io/icons/svg/color/search-property.svg) Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
-
-[![](https://cdn.coda.io/icons/svg/color/search-more.svg) Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
-
-[![icon picker](https://cdn.coda.io/icons/svg/color/football.svg) Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
-
-[![](https://cdn.coda.io/icons/svg/color/scuba-pressure-gauge.svg) Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
-
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg) Multimodal Search](https://docs.videodb.io/multimodal-search-90)
-
-[![](https://cdn.coda.io/icons/svg/color/search-more.svg) Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
-
-[![](https://cdn.coda.io/icons/svg/color/poll-topic.svg) Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
-
-[![](https://cdn.coda.io/icons/svg/color/e-learning.svg) Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
-
-[![](https://cdn.coda.io/icons/svg/color/text-box.svg) Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
-
-[![](https://cdn.coda.io/icons/svg/color/text-box.svg) Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
-
-[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF) Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
-
-[![](https://cdn.coda.io/icons/svg/color/open-book.svg) Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
-
-[![](https://cdn.coda.io/icons/svg/color/bag-front-view.svg) How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
-
-[![](https://cdn.coda.io/icons/svg/color/voice-recognition-scan.svg) Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
-
-[![](https://cdn.coda.io/icons/svg/color/console.svg) Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
-
-[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF) Open Source Tools](https://docs.videodb.io/open-source-tools-94)
-
-[![llama](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/c2b3a994-6140-40a9-93ff-d87aa37f2860?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF) LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
-
-[![](https://cdn.coda.io/icons/svg/color/command-line.svg) PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
-
-[![](https://cdn.coda.io/icons/svg/color/day-camera.svg) StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
-
-[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg) Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
-
-[![](https://cdn.coda.io/icons/svg/color/audible.svg) Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
-
-[![](https://cdn.coda.io/icons/svg/color/adware-free.svg) Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
-
-[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg) Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
-
-[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg) Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
-
-[![](https://cdn.coda.io/icons/svg/color/insert-white-space.svg) Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
-
-[![](https://cdn.coda.io/icons/svg/color/mac-client.svg) Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
-
-[![](https://cdn.coda.io/icons/svg/color/adverb.svg) Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
-
-[![](https://cdn.coda.io/icons/svg/color/medium-volume.svg) Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
-
-[![](https://cdn.coda.io/icons/svg/color/camera-automation.svg) Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
-
-[![](https://cdn.coda.io/icons/svg/color/video-trimming.svg) Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
-
-[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg) Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
-
-[![](https://cdn.coda.io/icons/svg/color/high-volume.svg) Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
-
-[![](https://cdn.coda.io/icons/svg/color/video-call.svg) Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
-
-[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg) Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
-
-[![](https://cdn.coda.io/icons/svg/color/billboard.svg) AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
-
-[![](https://cdn.coda.io/icons/svg/color/search.svg) Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
-
-[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg) AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
-
-[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg) AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
-
-[![](https://cdn.coda.io/icons/svg/color/counter.svg) Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
-
-[![](https://cdn.coda.io/icons/svg/color/handle-with-care.svg) Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
-
-[![](https://cdn.coda.io/icons/svg/color/centre-of-gravity.svg) Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
-
-[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg) Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg) Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
-
-[![](https://cdn.coda.io/icons/svg/color/panel-and-foot-outlet.svg) Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
-
-[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg) Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
-
-[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg) Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-[![](https://cdn.coda.io/icons/svg/color/groups.svg) Society of Machines](https://docs.videodb.io/society-of-machines-23)
-
-[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg) Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg) Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
-
-[![](https://cdn.coda.io/icons/svg/color/back-to-draft.svg) Drafts](https://docs.videodb.io/drafts-24)
-
-[![](https://cdn.coda.io/icons/svg/color/one-to-many.svg) From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
-
-[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg) The Future Series](https://docs.videodb.io/the-future-series-78)
-
-[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF) Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-[![](https://cdn.coda.io/icons/svg/color/video.svg) Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-[![](https://cdn.coda.io/icons/svg/color/synchronize.svg) Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
-
-[![](https://cdn.coda.io/icons/svg/color/bridge.svg) Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg) Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
-
-[![](https://cdn.coda.io/icons/svg/color/questions.svg) What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-[![](https://cdn.coda.io/icons/svg/color/ai.svg) Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg) Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-[![](https://cdn.coda.io/icons/svg/color/fff.svg) Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
-
-[![](https://cdn.coda.io/icons/svg/color/biotech.svg) Research Grants](https://docs.videodb.io/research-grants-96)
-
-[![](https://cdn.coda.io/icons/svg/color/the-dragon-team.svg) Team](https://docs.videodb.io/team-46)
-
-[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF) Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
-
-[![](https://cdn.coda.io/icons/svg/color/light.svg) Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-[![](https://cdn.coda.io/icons/svg/color/fast-forward.svg) Playlists](https://docs.videodb.io/playlists-33)
-
-[![](https://cdn.coda.io/icons/svg/color/1.svg) Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
-
-[![](https://cdn.coda.io/icons/svg/color/rocket.svg) Ashish](https://docs.videodb.io/ashish-45)
-
-[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg) Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg) Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-[![](https://cdn.coda.io/icons/svg/color/under-computer.svg) Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-[![](https://cdn.coda.io/icons/svg/color/like.svg) Customer Love](https://docs.videodb.io/customer-love-42)
-
-[![](https://cdn.coda.io/icons/svg/color/llama.svg) Temp Doc](https://docs.videodb.io/temp-doc-54)
+[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+\\
+Welcome to VideoDB Docs](https://docs.videodb.io/)
+
+[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
+\\
+Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+[![](https://cdn.coda.io/icons/svg/color/wash-your-hands.svg)\\
+\\
+How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Semantic Search](https://docs.videodb.io/semantic-search-89)
+
+[![](https://cdn.coda.io/icons/svg/color/binders-folder.svg)\\
+\\
+Collections](https://docs.videodb.io/collections-68)
+
+[![](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
+\\
+Public Collections](https://docs.videodb.io/public-collections-102)
+
+[![](https://cdn.coda.io/icons/svg/color/callback.svg)\\
+\\
+Callback Details](https://docs.videodb.io/callback-details-66)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+
+[![](https://cdn.coda.io/icons/svg/color/customer-support.svg)\\
+\\
+Language Support](https://docs.videodb.io/language-support-79)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+
+[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
+\\
+Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+[![](https://cdn.coda.io/icons/svg/color/landscape.svg)\\
+\\
+Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+
+[![](https://cdn.coda.io/icons/svg/color/edit-column.svg)\\
+\\
+Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+
+[![](https://cdn.coda.io/icons/svg/color/search-property.svg)\\
+\\
+Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+
+[![icon picker](https://cdn.coda.io/icons/svg/color/football.svg)\\
+\\
+Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+
+[![](https://cdn.coda.io/icons/svg/color/scuba-pressure-gauge.svg)\\
+\\
+Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+
+[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
+\\
+Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+\\
+Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
+
+[![](https://cdn.coda.io/icons/svg/color/poll-topic.svg)\\
+\\
+Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
+
+[![](https://cdn.coda.io/icons/svg/color/e-learning.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
+
+[![](https://cdn.coda.io/icons/svg/color/text-box.svg)\\
+\\
+Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
+
+[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[![](https://cdn.coda.io/icons/svg/color/open-book.svg)\\
+\\
+Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
+
+[![](https://cdn.coda.io/icons/svg/color/bag-front-view.svg)\\
+\\
+How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
+
+[![](https://cdn.coda.io/icons/svg/color/voice-recognition-scan.svg)\\
+\\
+Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
+
+[![](https://cdn.coda.io/icons/svg/color/console.svg)\\
+\\
+Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
+
+[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[![llama](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/c2b3a994-6140-40a9-93ff-d87aa37f2860?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
+
+[![](https://cdn.coda.io/icons/svg/color/command-line.svg)\\
+\\
+PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
+
+[![](https://cdn.coda.io/icons/svg/color/day-camera.svg)\\
+\\
+StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
+
+[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
+\\
+Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[![](https://cdn.coda.io/icons/svg/color/audible.svg)\\
+\\
+Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
+
+[![](https://cdn.coda.io/icons/svg/color/adware-free.svg)\\
+\\
+Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
+
+[![](https://cdn.coda.io/icons/svg/color/insert-white-space.svg)\\
+\\
+Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
+
+[![](https://cdn.coda.io/icons/svg/color/mac-client.svg)\\
+\\
+Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
+
+[![](https://cdn.coda.io/icons/svg/color/adverb.svg)\\
+\\
+Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
+
+[![](https://cdn.coda.io/icons/svg/color/medium-volume.svg)\\
+\\
+Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
+
+[![](https://cdn.coda.io/icons/svg/color/camera-automation.svg)\\
+\\
+Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
+
+[![](https://cdn.coda.io/icons/svg/color/video-trimming.svg)\\
+\\
+Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
+
+[![](https://cdn.coda.io/icons/svg/color/closed-captioning.svg)\\
+\\
+Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
+
+[![](https://cdn.coda.io/icons/svg/color/high-volume.svg)\\
+\\
+Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
+
+[![](https://cdn.coda.io/icons/svg/color/video-call.svg)\\
+\\
+Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
+
+[![](https://cdn.coda.io/icons/svg/color/billboard.svg)\\
+\\
+AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
+
+[![](https://cdn.coda.io/icons/svg/color/search.svg)\\
+\\
+Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
+
+[![](https://cdn.coda.io/icons/svg/color/find-and-replace.svg)\\
+\\
+AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
+
+[![](https://cdn.coda.io/icons/svg/color/find-user-male.svg)\\
+\\
+AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
+
+[![](https://cdn.coda.io/icons/svg/color/counter.svg)\\
+\\
+Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
+
+[![](https://cdn.coda.io/icons/svg/color/handle-with-care.svg)\\
+\\
+Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+
+[![](https://cdn.coda.io/icons/svg/color/centre-of-gravity.svg)\\
+\\
+Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
+\\
+Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
+
+[![](https://cdn.coda.io/icons/svg/color/panel-and-foot-outlet.svg)\\
+\\
+Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
+
+[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-20)
+
+[![](https://cdn.coda.io/icons/svg/color/groups.svg)\\
+\\
+Society of Machines](https://docs.videodb.io/society-of-machines-23)
+
+[![](https://cdn.coda.io/icons/svg/color/the-flash-sign.svg)\\
+\\
+Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
+
+[![](https://cdn.coda.io/icons/svg/color/back-to-draft.svg)\\
+\\
+Drafts](https://docs.videodb.io/drafts-24)
+
+[![](https://cdn.coda.io/icons/svg/color/one-to-many.svg)\\
+\\
+From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
+
+[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
+\\
+The Future Series](https://docs.videodb.io/the-future-series-78)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
+\\
+Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+
+[![](https://cdn.coda.io/icons/svg/color/synchronize.svg)\\
+\\
+Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
+
+[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
+\\
+Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+
+[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
+\\
+Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+
+[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
+\\
+What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+
+[![](https://cdn.coda.io/icons/svg/color/ai.svg)\\
+\\
+Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+
+[![](https://cdn.coda.io/icons/svg/color/fff.svg)\\
+\\
+Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
+
+[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
+\\
+Research Grants](https://docs.videodb.io/research-grants-96)
+
+[![](https://cdn.coda.io/icons/svg/color/the-dragon-team.svg)\\
+\\
+Team](https://docs.videodb.io/team-46)
+
+[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
+\\
+Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
+
+[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
+\\
+Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+
+[![](https://cdn.coda.io/icons/svg/color/fast-forward.svg)\\
+\\
+Playlists](https://docs.videodb.io/playlists-33)
+
+[![](https://cdn.coda.io/icons/svg/color/1.svg)\\
+\\
+Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
+
+[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
+\\
+Ashish](https://docs.videodb.io/ashish-45)
+
+[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
+\\
+Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+
+[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
+\\
+Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+
+[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
+\\
+Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+
+[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
+\\
+Customer Love](https://docs.videodb.io/customer-love-42)
+
+[![](https://cdn.coda.io/icons/svg/color/llama.svg)\\
+\\
+Temp Doc](https://docs.videodb.io/temp-doc-54)
 
 Visual Search and Indexing
 
-# ![icon picker](https://cdn.coda.io/icons/svg/color/football.svg) Playground for Scene Extractions
+# ![icon picker](https://cdn.coda.io/icons/svg/color/football.svg)         Playground for Scene Extractions
+
+⁠
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/guides/scene-index/playground_scene_extraction.ipynb)
+
+⁠
+
+⁠
 
 ## Playground: Extract Scenes without Indexing
 
@@ -4941,6 +5812,8 @@ Sometimes, it's important to determine the number of scenes needed to describe a
 If you want to extract scenes from the video without indexing them, you can use the video.extract\_scenes()function.
 
 Using this pipeline you can experiment with scene extraction and find your suitable configuration.
+
+⁠
 
 ### extract\_scenes()
 
@@ -4978,6 +5851,8 @@ print("This is scene collection id", scene\_collection.id)
 
 print("This is scene collection config", scene\_collection.config)
 
+⁠
+
 ## Playground: Play with Prompt
 
 Before finalizing your prompt, consider experimenting with different ones. This will help you see how the search performs for your use cases. Start by iterating over only a few scenes. Then, experiment with your prompt and test it after indexing
@@ -4985,6 +5860,10 @@ Before finalizing your prompt, consider experimenting with different ones. This 
 We believe that the right prompt is very helpful in finding information that aligns with your domain knowledge and experience. For this we provide following describe(prompt= ) functions at Frame and Scene level.
 
 [Read more about Scene and Frame object](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+
+⁠
+
+⁠
 
 #describe frame image using vision LLM
 
@@ -5043,6 +5922,8 @@ scene.describe(
 prompt=str,
 
 )
+
+⁠
 
 ### Index and search scenes
 
@@ -5315,12 +6196,12 @@ You will be provided with an image. Your task is to identify and describe the an
 
 Output:
 
-\[
+[
 {
 "name":"dog",
 "context":"a grey dog is being led down the green carpet by a person wearing a blue jacket."
 }
-\]
+]
 
 This output lacked specificity in breed identification and environmental context. Our next prompt aims to address these issues.
 
@@ -5338,7 +6219,7 @@ You will be provided with an image. Your task is to identify the animals and the
 
 Output:
 
-\[
+[
 {
 "name":"Dog - Poodle",
 "context":"A Poodle being led down a carpeted path by a handler in the green dress, participating in what appears to be a dog show."
@@ -5347,7 +6228,7 @@ Output:
 "name":"Dog - Russell Terrier",
 "context":"A Russell Terrier being guided by a handler in black attire on the same path, also taking part in the dog show."
 }
-\]
+]
 
 This output significantly improved breed identification and provided more environmental context. With this satisfactory frame-level output, we're now ready to incorporate these learnings into scene-level prompts.
 
@@ -5370,14 +6251,11 @@ Expected Output:
 Example Output:
 
 {
-
 "scene\_story": "A person is cooking in the kitchen and then someone rings the doorbell.",
-
-"images": \[
+"images": [
 {"description": "Someone is cooking in the kitchen."},
 {"description": "Someone rings the doorbell."}
-\]
-
+]
 }
 
 """
@@ -5385,15 +6263,12 @@ Example Output:
 Output:
 
 {
-
 "scene\_story":"A dog show competition where handlers are presenting their dogs on a green runway surrounded by an audience and judges.",
-
-"images":\[
+"images":[
 {"description":"Handlers walking dogs down a green carpeted runway."},
 {"description":"Spectators and photographers observing the dog show."},
 {"description":"Judges evaluating the dogs as they pass by."}
-\]
-
+]
 }
 
 Note: This generic scene-level prompt provided a basic structure but lacked the detailed breed identification and specific actions we achieved with our frame-level prompts. Our next iteration aims to incorporate these learnings.
@@ -5415,10 +6290,8 @@ For each image, your task is to identify the animals and their breeds in the ima
 Output:
 
 {
-
 "scene\_story":"A dog show is ongoing where handlers are showcasing their dogs on a designated runway, surrounded by spectators and event staff.",
-
-"images":\[
+"images":[
 {
 "description":"Three handlers are walking their dogs on a green carpeted runway. The runway is fenced and lined with purple banners. There are numerous spectators and photographers capturing the event. One dog is a white and brown breed, possibly a Jack Russell Terrier, and the other is a medium-sized, grey wavy-haired breed, potentially a Poodle."
 },
@@ -5428,8 +6301,7 @@ Output:
 {
 "description":"The handlers and dogs are closer to the end of the runway. The dogs remain the primary focus, with one being a Jack Russell Terrier and the other a grey Poodle. The spectators and photographers are actively engaged in observing the dogs."
 }
-\]
-
+]
 }
 
 Note: This output successfully incorporated breed identification and more detailed actions, but still lacked some specificity in describing multiple animals in a single frame. Our next iteration addresses this.
@@ -5451,10 +6323,8 @@ For each image, your task is to:
 Output:
 
 {
-
 "scene\_story":"A lively dog show takes center stage as two enthusiastic canines race down a carpeted aisle, cheered on by an eager crowd and accompanied by their handlers.",
-
-"images":\[
+"images":[
 {
 "description":"A white and brown Jack Russell Terrier runs energetically on a green carpet, escorted by a woman in a blue jacket. Behind them, a grey poodle closely follows while being guided by another handler in maroon clothing. The carpeted path is bordered by purple barriers adorned with yellow and blue flowers. Spectators and photographers on the left capture the moment."
 },
@@ -5464,8 +6334,7 @@ Output:
 {
 "description":"In the final image, the Jack Russell Terrier keeps its lead, with the grey poodle still following closely. The handlers are encouraging their dogs with focused enthusiasm. The spectators remain engaged, some with cameras ready to capture the exciting finish."
 }
-\]
-
+]
 }
 
 Note: This prompt successfully captured both the specific breeds and the overall scene dynamics, providing a detailed and accurate description. However, the format could be more structured for easier parsing and use in applications. Our final iteration addresses this.
@@ -5487,19 +6356,16 @@ For each image, your task is to:
 Output should be a structured JSON with the following format:
 
 {
-
 "scene\_story": "Brief overview of the scene",
-
-"images": \[
+"images": [
 {
 "frame\_time": "Time of the frame in seconds",
-"breeds": \[{"breed": "Golden Retriever", "color": "golden"}\],
+"breeds": [{"breed": "Golden Retriever", "color": "golden"}],
 "actions": "Description of the actions and interactions",
 "emotion": "Observed emotion or notable moment"
 },
 ...
-\]
-
+]
 }
 
 """
@@ -5507,30 +6373,27 @@ Output should be a structured JSON with the following format:
 Output:
 
 {
-
 "scene\_story":"A dog show competition where handlers are walking their dogs down the green carpeted runway while photographers and spectators watch and take photos.",
-
-"images":\[
+"images":[
 {
 "frame\_time":"0 seconds",
-"breeds":\[
+"breeds":[
 {"breed":"Wire Fox Terrier","color":"white and tan"},
 {"breed":"Standard Poodle","color":"gray"}
-\],
+],
 "actions":"Handlers are walking their dogs down a green carpeted runway. The Wire Fox Terrier on the right is being walked by a handler wearing a dark outfit. A Standard Poodle in the middle is being walked by a handler in a teal blue blazer. Photographers are taking pictures and spectators are observing.",
 "emotion":"The Wire Fox Terrier looks attentive and focused."
 },
 {
 "frame\_time":"2 seconds",
-"breeds":\[
+"breeds":[
 {"breed":"Wire Fox Terrier","color":"white and tan"},
 {"breed":"Standard Poodle","color":"gray"}
-\],
+],
 "actions":"The Wire Fox Terrier is still being walked by the handler in a dark outfit. The Standard Poodle is also being walked down the runway, slightly ahead of the Wire Fox Terrier. Both handlers and dogs are making their way to the front end of the runway while onlookers take pictures and watch.",
 "emotion":"The dogs are showing a calm and focused demeanor."
 }
-\]
-
+]
 }
 
 Note: This final iteration provides a comprehensive, structured output that's easy to work with programmatically and captures all the key information we set out to extract, including breed identification, actions, and even emotional states.
@@ -5586,7 +6449,6 @@ This is not the way.
 Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 CtrlP
 ) instead.
-
 
 ---
 
