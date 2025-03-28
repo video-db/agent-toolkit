@@ -17,7 +17,7 @@ def format_k(num):
 
 
 yml = load_config_yaml()
-master_config = yml.get("llms_txt_file")
+master_config = yml.get("llms_full_txt_file")
 tkn_config = yml.get("token_count")
 
 tkn_encoding_model = tkn_config.get("tiktoken_encoding_model")

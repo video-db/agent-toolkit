@@ -47,6 +47,7 @@ class DocsHandler:
         prompt_config,
         base_url,
         doc_tree_file,
+        docs_output_fragments,
         llm,
     ):
         self.include_patterns = include_patterns
@@ -54,6 +55,7 @@ class DocsHandler:
         self.prompt_config = prompt_config
         self.base_url = base_url
         self.doc_tree_file = doc_tree_file
+        self.docs_output_framents = docs_output_fragments
         self.llm = llm
 
     def traverse_doc_tree(self, doc_tree, parent_path=""):
@@ -155,11 +157,19 @@ class DocsHandler:
             )
             print(f"💰 Tokens Used {tokens_used}")
             total_tokens_used += tokens_used
-            output += (
+            doc_output = (
                 f"# {element} [Source Link]({self.base_url}{href})\n\n"
                 + simplified
                 + "\n\n---\n\n"
             )
+            if self.docs_output_fragments:
+                os.makedirs(os.path.dirname(self.docs_output_framents), exist_ok=True)
+                doc_output_file = os.path.join(
+                    self.docs_output_framents, f"{href.replace('-', '_').trim('/')}.txt"
+                )
+                with open(doc_output_file, "w") as f:
+                    f.write(doc_output)
+            output += doc_output
         print(f"💰 💰 Total Tokens Used : {total_tokens_used}")
         return output
 
@@ -176,13 +186,20 @@ if __name__ == "__main__":
     docs_include = config.get("include", [])
     docs_exclude = config.get("exclude", [])
     docs_prompts = config.get("prompts", {})
+    docs_output_fragments = config.get("output_fragments")
     docs_output_file = config.get("output_file", "")
     docs_base_url = config.get("base_url", "")
     docs_tree_file = config.get("tree_file", "")
 
     # Process Docs
     docs_handler = DocsHandler(
-        docs_include, docs_exclude, docs_prompts, docs_base_url, docs_tree_file, llm
+        docs_include,
+        docs_exclude,
+        docs_prompts,
+        docs_base_url,
+        docs_tree_file,
+        docs_output_fragments,
+        llm,
     )
     docs_content = docs_handler.process()
 

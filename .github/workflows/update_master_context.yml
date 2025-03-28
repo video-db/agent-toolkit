@@ -26,7 +26,7 @@ jobs:
       - name: Parse Configuration
         id: parse_config
         run: |
-          MERGE_SCRIPT_PATH=$(yq '.llms_txt_file.merge_script_path // "context_examples/process_examples.py"' config.yaml)
+          MERGE_SCRIPT_PATH=$(yq '.llms_full_txt_file.merge_script_path // "context_examples/process_examples.py"' config.yaml)
           COUNT_TOKENS_SCRIPT_PATH=$(yq '.token_count.script_path // "context_examples/process_examples.py"' config.yaml)
 
           echo "merge_script_path=$MERGE_SCRIPT_PATH" >> $GITHUB_OUTPUT

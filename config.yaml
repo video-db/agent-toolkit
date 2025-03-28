@@ -24,6 +24,7 @@ docs_context:
   base_url: "https://docs.videodb.io"
   tree_file: "context/docs/doc_tree.json"
   output_file: "context/docs/docs_context.md"
+  output_fragments: "context/docs/fragments"
   script_path: "context/docs/process_docs.py" # New field for script path
   branch_name: "docs-context-update"
   commit_message: "Add combined Markdown output for docs context"
@@ -44,12 +45,13 @@ examples_context:
       - pattern: "quickstart/Multimodal_Quickstart.ipynb"
         prompt: "custom_2.txt"
   output_file: "context/examples/examples_context.md"
+  output_fragments: "context/examples/fragments"
   script_path: "context/examples/process_examples.py" # New field for script path
   branch_name: "examples-context-update"
   commit_message: "Add combined Markdown output for examples context"
 
-llms_txt_file:
-  merge_script_path: "context/merge_llms_txt.py"
+llms_full_txt_file:
+  merge_script_path: "context/merge_llms_full_txt.py"
   input_files:
     - name: Instructions
       file_path: "context/instructions/prompt.md"
@@ -72,6 +74,31 @@ llms_txt_file:
     {{FILE3}}
 
     {{FILE4}}
+
+llms_txt_file:
+  merge_script_path: "context/merge_llms_txt.py"
+  input_files:
+    - name: Instructions
+      file_path: "context/instructions/prompt.md"
+    - name: SDK Context
+      file_path: "context/sdk/context/index.md"
+    - name: Docs Context
+      folder_path: "context/docs/fragments"
+    - name: Examples Context
+      folder_path: "context/examples/fragments"
+  output_files:
+    - name: llms_txt
+      file_path: "context/llms.txt"
+    - name: llms_md
+      file_path: "context/llms.md"
+  layout: |
+    {{INPUT1}}
+
+    {{INPUT2}}
+
+    {{INPUT3}}
+
+    {{INPUT4}}
 
 token_count:
   script_path: "context/count_tokens.py"

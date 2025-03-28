@@ -18,7 +18,7 @@ def read_file(path):
 
 def main():
     config = load_config()
-    master_config = config.get("llms_full_file", {})
+    master_config = config.get("llms_full_txt_file", {})
 
     input_files = master_config.get("input_files", [])
     layout = master_config.get("layout")
