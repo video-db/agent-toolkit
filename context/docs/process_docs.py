@@ -163,7 +163,7 @@ class DocsHandler:
                 + "\n\n---\n\n"
             )
             if self.docs_output_fragments:
-                os.makedirs(os.path.dirname(self.docs_output_framents), exist_ok=True)
+                os.makedirs(os.path.dirname(self.docs_output_fragments), exist_ok=True)
                 doc_output_file = os.path.join(
                     self.docs_output_fragments,
                     f"{href.replace('-', '_').trim('/')}.txt",
