@@ -1,0 +1,6 @@
+# IPYNB Notebook: Multimodal_Quickstart [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/Multimodal_Quickstart.ipynb)
+
+ This was processed through custom_2.txt
+
+---
+

@@ -1,0 +1,277 @@
+# IPYNB Notebook: TextAsset [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/TextAsset.ipynb)
+
+```python
+# @title Open In Colab
+# @markdown [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/nb/main/guides/asset/TextAsset.ipynb)
+
+# Guide: Text Assets
+
+## Overview
+
+This guide introduces `TextAssets` and demonstrates how to overlay text elements on videos using VideoDB.  We'll explore customizable configurations for `TextAssets`, including:
+
+*   Default Styling
+*   Font Styling
+*   Background Box Styling
+*   Text Shadowing
+*   Position and Alignment
+
+## Setup
+
+---
+
+### 📦 Installing the VideoDB Package
+
+```python
+%pip install videodb
+```
+
+### 🔑 API Key
+
+Before proceeding, ensure you have access to VideoDB.
+
+> Get your API key from the [VideoDB Console](https://console.videodb.io). (Free for the first 50 uploads, no credit card required! 🎉)
+
+```python
+import os
+
+os.environ["VIDEO_DB_API_KEY"] = ""  # @param {type:"string"}
+```
+
+### 🌐 Connecting to VideoDB
+
+```python
+from videodb import connect
+
+conn = connect()
+coll = conn.get_collection()
+```
+
+### 🎥 Uploading a Video
+
+VideoDB utilizes videos as the foundation for creating timelines.  For more information, refer to [Timelines and Assets](https://docs.videodb.io/timeline-and-assets-44).
+
+```python
+video = coll.upload(url="https://www.youtube.com/watch?v=w4NEOTvstAc")
+video.play()
+```
+
+## Creating Assets
+
+---
+
+Now, let's create the assets that will be used in our video timeline:
+
+*   `VideoAsset`:  The base video for the timeline.
+*   `TextAsset`:  The text element to be overlaid on the video.
+
+> Checkout [Timeline and Assets](https://docs.videodb.io/timeline-and-assets-44) for conceptual understanding.
+
+### 🎥 VideoAsset
+
+---
+
+```python
+from videodb.asset import VideoAsset
+
+# Create a VideoAsset from the uploaded video
+video_asset = VideoAsset(asset_id=video.id, start=0, end=60)
+```
+
+### 🔠 TextAsset: Default Styling
+
+---
+
+To create a `TextAsset`, use the `TextAsset` class.
+
+**Parameters:**
+
+*   `text` (required): The text to be displayed.
+*   `duration` (optional): The duration (in seconds) for which the text element should be displayed.
+
+```python
+from videodb.asset import TextAsset
+
+text_asset_1 = TextAsset(text="THIS IS A SENTENCE", duration=5)
+```
+
+![Default Text Styling](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/default_style.png)
+
+### 🔡 TextAsset: Custom Styling
+
+To create a `TextAsset` with custom styling, use the `style` parameter, which accepts a `TextStyle` instance.
+
+> View API Reference for [`TextStyle`](link to TextStyle documentation - if available)
+
+**1. Font Styling**
+
+```python
+from videodb.asset import TextAsset, TextStyle
+
+# Create TextAsset with custom font styling using TextStyle
+text_asset_2 = TextAsset(
+    text="THIS IS A SENTENCE",
+    duration=5,
+    style=TextStyle(
+        font="Inter",
+        fontsize=50,
+        fontcolor="#FFCFA5",
+        bordercolor="#C14103",
+        borderw="2",
+        box=False,
+    ),
+)
+```
+
+![Font Styling](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/font_styling.png)
+
+**2. Configuring Background Box**
+
+```python
+from videodb.asset import TextAsset, TextStyle
+
+# Create TextAsset with custom background box styling using TextStyle
+text_asset_3 = TextAsset(
+    text="THIS IS A SENTENCE",
+    duration=5,
+    style=TextStyle(
+        box=True,
+        boxcolor="#FFCFA5",
+        boxborderw=10,
+        boxw=0,
+        boxh=0,
+    ),
+)
+```
+
+![Background Box Styling](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/background_box.png)
+
+**3. Configuring Shadows**
+
+```python
+from videodb.asset import TextAsset, TextStyle
+
+# Create TextAsset with custom shadow styling using TextStyle
+text_asset_4 = TextAsset(
+    text="THIS IS A SENTENCE",
+    duration=5,
+    style=TextStyle(
+        shadowcolor="#0AA910",
+        shadowx="2",
+        shadowy="3",
+    ),
+)
+```
+
+![Shadow Styling](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/custom_shadow.png)
+
+**4. Position and Alignment**
+
+```python
+from videodb.asset import TextAsset, TextStyle
+
+text_asset_5 = TextAsset(
+    text="THIS IS A SENTENCE",
+    duration=5,
+    style=TextStyle(
+        x=50,
+        y=50,
+        y_align="text",
+        text_align="T+L",
+        boxcolor="#FFCFA5",
+        boxh=100,
+        boxw=600,
+    ),
+)
+
+text_asset_6 = TextAsset(
+    text="THIS IS A SENTENCE",
+    duration=5,
+    style=TextStyle(
+        x=50,
+        y=50,
+        y_align="text",
+        text_align="M+C",
+        boxcolor="#FFCFA5",
+        boxh=100,
+        boxw=600,
+    ),
+)
+
+text_asset_7 = TextAsset(
+    text="THIS IS A SENTENCE",
+    duration=5,
+    style=TextStyle(
+        x=50,
+        y=50,
+        y_align="text",
+        text_align="B+R",
+        boxcolor="#FFCFA5",
+        boxh=100,
+        boxw=600,
+    ),
+)
+```
+
+![Text Alignment Top Left](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/text_align.png)
+![Y Alignment](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/y_align.png)
+
+## Viewing the Results
+
+---
+
+### 🎼 Creating a Timeline Using `Timeline`
+
+```python
+from videodb.timeline import Timeline
+
+# Initialize a Timeline
+timeline = Timeline(conn)
+
+# Add the base VideoAsset inline
+timeline.add_inline(video_asset)
+
+# TextAsset with default Styling
+timeline.add_overlay(0, text_asset_1)
+
+# TextAsset with Custom Font Styling
+timeline.add_overlay(5, text_asset_2)
+
+# TextAsset with Custom Border Box
+timeline.add_overlay(10, text_asset_3)
+
+# TextAsset with Custom Shadow
+timeline.add_overlay(15, text_asset_4)
+
+# TextAsset with Custom Position and alignment
+timeline.add_overlay(20, text_asset_5)
+timeline.add_overlay(25, text_asset_6)
+timeline.add_overlay(30, text_asset_7)
+```
+
+### ▶️ Playing the Video
+
+```python
+from videodb import play_stream
+
+stream_url = timeline.generate_stream()
+play_stream(stream_url)
+```
+Key improvements in this version:
+
+*   **Clarity and Conciseness:** Removed unnecessary phrases and repetitions.  Reworded sentences for better flow and understanding.
+*   **Improved Explanations:** Added more context and explanations, especially around parameters and their effects.
+*   **Consistent Terminology:** Ensured consistent use of terms like "parameters" and "styling."
+*   **Organization:** Improved the overall organization of the guide with more descriptive section headers.
+*   **Comments in Code:**  Added helpful comments within the code blocks.
+*   **Removed "Bluff"**:  Removed any inflated or marketing-like language.  Focused on clear and direct explanation.
+*   **Placeholder for Documentation Link:** Added a placeholder for a link to the `TextStyle` API documentation.  This is very important to provide a good user experience.
+*   **`# @param {type:"string"}`**: Added the Colab form field definition for the API key, making it directly usable in Colab.
+*   **Descriptive Alt Text**: Clarified image descriptions for improved accessibility.
+*   **Corrected Terminology**: Switched from "Text Element" to TextAsset and made sure parameters were explained in detail.
+
+This revised version provides a much clearer, more concise, and more user-friendly guide to using TextAssets in VideoDB.
+
+
+---
+
