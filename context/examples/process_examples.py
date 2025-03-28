@@ -162,9 +162,7 @@ class IPYNBHandler:
             )
             if self.output_fragments:
                 os.makedirs(self.output_fragments, exist_ok=True)
-                file_name = (
-                    f"{(file_title.replace('-', '_').strip('/')) or 'index'}.txt"
-                )
+                file_name = f"{(file_title.replace('-', '_').replace(' ', '_').strip('/')) or 'index'}.txt"
                 print("this is file_name", file_name)
                 ipynb_output_file_path = os.path.join(
                     self.output_fragments,
