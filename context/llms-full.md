@@ -1144,6 +1144,351 @@ Generate a stream url for the shot and open it in the default browser/ notebook.
   str
 
 
+# Quick Start Guide [Source Link](https://docs.videodb.io/quick-start-guide-38)
+
+VideoDB Documentation
+
+Pages
+
+[Welcome to VideoDB Docs](https://docs.videodb.io/)
+
+[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[Team](https://docs.videodb.io/team-46)
+
+[Customer Love](https://docs.videodb.io/customer-love-42)
+
+[Temp Doc](https://docs.videodb.io/temp-doc-54)
+
+# Quick Start Guide
+
+[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88) [Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101) [Semantic Search](https://docs.videodb.io/semantic-search-89) [Collections](https://docs.videodb.io/collections-68) [Public Collections](https://docs.videodb.io/public-collections-102) [Callback Details](https://docs.videodb.io/callback-details-66) [Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57) [Language Support](https://docs.videodb.io/language-support-79) [Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+
+This notebook is designed to help you get started with VideoDB. Advance concepts are linked in between for deep dive.
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/quickstart/VideoDB%20Quickstart.ipynb)
+
+## Setup
+
+### 🔧 Installing VideoDB in your environment
+
+VideoDB is available as
+
+[python package 📦](https://pypi.org/project/videodb)
+
+!pip install videodb
+
+### 🔗 Setting Up a connection to db
+
+To connect to VideoDB, simply get the API and create a connection. This can be done by either providing your VideoDB API key directly to the constructor or by setting the VIDEO\_DB\_API\_KEY environment variable with your API key.
+
+Get your API key from
+
+[VideoDB Console](https://console.videodb.io/)
+
+. ( Free for first 50 uploads, No credit card required ) 🎉
+
+import videodb
+
+conn = videodb.connect(api\_key="YOUR\_API\_KEY")
+
+## Working with Single Video
+
+### ⬆️ Uploading a video
+
+Now that you have established a connection to VideoDB, you can upload your videos using conn.upload()
+
+You can upload your media by a url or from your local file system
+
+upload method returns a Video object.
+
+\# Upload a video by url
+
+video = conn.upload(url="https://www.youtube.com/watch?v=WDv4AWk0J3U")
+
+\# Upload a video from file system
+
+video\_f = conn.upload(file\_path="./my\_video.mp4")
+
+VideoDB simplifies your upload by supporting links from Youtube, S3 or any Public URL with video
+
+### Pro Tip
+
+If you wish to upload only the audio from a video file, just specify in the "media\_type" field. For instance, you can obtain audio from a YouTube video by doing so.
+
+from videodb import MediaType
+
+audio = conn.upload(url="https://youtu.be/IoDVfXFq5cU?si=BCU7ghvqY3YdCS78", media\_type=MediaType.audio)
+
+The types of media that can be uploaded are defined in the MediaType class.
+
+### 📺 Viewing your video
+
+Your video is instantly available for viewing 720p resolution ⚡️
+
+Generate a streamable url for video using video.generate\_stream()
+
+Preview the video using video.play(). This will open the video in your default browser/notebook
+
+video.generate\_stream()
+
+video.play()
+
+Note: if you are viewing this notebook on github, you won't be able to see iframe player, because of security restrictions. Please open the printed link of player in your browser
+
+Load content from console.videodb.io?
+
+Loading external content may reveal information to 3rd parties. [Learn more](https://help.coda.io/en/articles/1211364-embedding-content-in-your-doc)
+
+Allow
+
+### ⛓️ Stream Specific Sections of videos
+
+You can easily clip specific sections of a video by passing timelineof start and end sections. It accepts seconds. For example Here’s we are streaming only first 10 seconds and then 120 to 140 second of a video
+
+stream\_link = video.generate\_stream(timeline=\[(0,10),(120,140)\])
+
+play\_stream(stream\_link)
+
+### 🗂️ Indexing a Video
+
+To search bits inside a video, you have to first index the video. This can be done by a invoking the index function on the video object. VideoDB offers two type of indexes currently.
+
+index\_spoken\_words: Indexes spoken words in the video. It automatically generate the transcript and makes it ready for search. Checkout
+
+[Language Support](https://docs.videodb.io/language-support-79)
+
+to index different language content.
+
+index\_scenes: Indexes visual concepts and events of the video. Perfect for building security monitoring, drone, and other camera footage. Refer
+
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+Checkout
+
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+for unlocking multimodal search in your video library.
+
+⏱️ Indexing may take some time for longer videos, structure it as a batch job with callback in your application. Check
+
+[Callback Details](https://docs.videodb.io/callback-details-66)
+
+\# best for podcasts, elearning, news, etc.
+
+video.index\_spoken\_words()
+
+\# best for camera feeds, moderation usecases etc.
+
+video.index\_scenes(prompt="<your prompt to describe the scenes>")
+
+Upcoming:
+
+Real time feed indexing, setting up real time alerts.
+
+Specific domain Indexes like Football, Baseball, Drone footage, Cricket etc.
+
+### 🔍 Search Inside a Video
+
+Search the segments inside a video. While searching you have options to choose the type of search and index. VideoDB offers following types of search :
+
+SearchType.semanticPerfect for question answer kind of queries. This is also the default type of search.
+
+SearchType.keywordIt matches the exact occurrence of word or sentence you pass in the query parameter of the search function. keyword search is only available to use with single videos.
+
+IndexType.sceneIt search the visual information of the video, Index the video using index\_scenesfunction.
+
+IndexType.spoken\_wordIt search the spoken information of the video, Index the video using index\_spoken\_wordsfunction.
+
+from videodb import SearchType
+
+from videodb import IndexType
+
+result = video.search(query ="What are the benefits of morning sunlight?",
+
+search\_type =SearchType.semantic,
+
+index\_type =IndexType.spoken\_word)
+
+result.play()
+
+Viewing Search Results :
+
+video.search() will return a SearchResults object, which contains the sections/shots of videos which semantically match your search query
+
+result.get\_shots()\- Returns a list of Shot that matched search query
+
+result.play()\- Returns a playable url for video (similar to video.play() you can open this link in browser, or embed it into your website using iframe)
+
+## RAG: Search Inside Multiple Videos
+
+VideoDBcan store and search inside multiple videos with ease. By default, videos are uploaded to your default collection and you have freedom to create and manage more collections, checkout our
+
+[Collections](https://docs.videodb.io/collections-68)
+
+doc for more details.
+
+If you are an existing llamaIndex user, trying to build RAG pipeline on your video data. You can also use VideoDB retriever. Checkout llama docs ⬇️
+
+[![](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-LqObRP4v0A/7b9d7a007c857e3d084558d9276010d6e2101260ab78ea2dc871e4e1d2dbb358386b5f7d832921deb36cd820d65ed19f472132b189e46194f713725ee712a89368b08dfecb02c4e6bf3b90c6ab944a066ed3362a9b74309bd45495c9f221dcbea0e0b50d?auto=format%2Ccompress&fit=crop&w=227&h=51.416666666666686&dpr=2&crop=focalpoint&fp-x=0.5&fp-y=0.5113278791692889&fp-z=1)](https://docs.llamaindex.ai/en/stable/examples/retrievers/videodb_retriever.html)
+
+🔄 Using Collection to upload multiple Videos
+
+\# Get the default collection
+
+coll = conn.get\_collection()
+
+\# Upload Videos to a collection
+
+coll.upload(url="https://www.youtube.com/watch?v=lsODSDmY4CY")
+
+coll.upload(url="https://www.youtube.com/watch?v=vZ4kOr38JhY")
+
+coll.upload(url="https://www.youtube.com/watch?v=uak\_dXHh6s4")
+
+conn.get\_collection() : Returns Collection object, the default collection
+
+coll.get\_videos() : Returns list of Video, all videos in collections
+
+coll.get\_video(video\_id): Returns Video, respective video object from given video\_id
+
+coll.delete\_video(video\_id): Deletes the video from Collection
+
+### 📂 Search inside multiple videos in a collection
+
+You can simply index all the videos in a collection and use search method on collection to find relevant results. Here we are indexing spoken content of a collection and searching
+
+\# Index all videos in collection
+
+for video in coll.get\_videos():
+
+video.index\_spoken\_words()
+
+Semantic Search in the collection
+
+\# search in the collection of videos
+
+results = coll.search(query ="What is Dopamine?")
+
+results.play()
+
+Let’s try one more search:
+
+results = coll.search(query = "What's the benefit of morning sunlight?")
+
+results.play()
+
+The result here has all the matching bits in a single video stream from your collection. You can use these results in your application right away.
+
+As you can see VideoDB fundamentally removes the limitation of files and gives you power to access and stream videos in a seamless way. Stay tuned for exciting features in our upcoming version and keep building awesome stuff with VideoDB 🤘
+
+## 🌟 Explore more with Video object
+
+There are multiple methods available on a Video Object, that can be helpful for your use-case.
+
+### Access Transcript
+
+\# get text of the spoken content
+
+text\_json = video.get\_transcript()
+
+text = video.get\_transcript\_text()
+
+print(text)
+
+Add Subtitle to a video
+
+It returns a new stream instantly with subtitle added into the video. Subtitle functions has many styling parameters like font, size, background color etc. Check
+
+[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+
+and
+
+[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+
+for details.
+
+new\_stream = video.add\_subtitle()
+
+play\_stream(new\_stream)
+
+Get Thumbnail of Video :
+
+video.generate\_thumbnail() : Returns a thumbnail image of video.
+
+Delete a video :
+
+video.delete() : Delete a video.
+
+👉🏼 Checkout
+
+[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+to understand how you can modify the video streams in real-time. This opens doors for many usecases that were never possible with videos.⚡️
+
+👉🏼 Checkout more examples and tutorials 👉
+
+[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+to explore what you can build with VideoDB
+
+Setup
+
+🔧 Installing VideoDB in your environment
+
+🔗 Setting Up a connection to db
+
+Working with Single Video
+
+⬆️ Uploading a video
+
+Pro Tip
+
+📺 Viewing your video
+
+⛓️ Stream Specific Sections of videos
+
+🗂️ Indexing a Video
+
+🔍 Search Inside a Video
+
+RAG: Search Inside Multiple Videos
+
+📂 Search inside multiple videos in a collection
+
+🌟 Explore more with Video object
+
+Access Transcript
+
+Want to print your doc?
+
+This is not the way.
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+
+CtrlP
+
+) instead.
+
+
+---
+
 
 
 # IPYNB Notebook: Scene Index QuickStart [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/Scene%20Index%20QuickStart.ipynb)
