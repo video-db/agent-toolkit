@@ -17,7 +17,5 @@ results/
 runs/
 
 
-context/docs/fragments
-context/examples/fragments
 context/examples/source
 context/sdk/source
