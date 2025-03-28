@@ -1,0 +1,167 @@
+# Scene Extraction Algorithms [Source Link](https://docs.videodb.io/scene-extraction-algorithms-84)
+
+VideoDB Documentation
+
+Pages
+
+*   [Welcome to VideoDB Docs](https://docs.videodb.io/)
+*   [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+*   [How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+*   [Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+*   [Semantic Search](https://docs.videodb.io/semantic-search-89)
+*   [Collections](https://docs.videodb.io/collections-68)
+*   [Public Collections](https://docs.videodb.io/public-collections-102)
+*   [Callback Details](https://docs.videodb.io/callback-details-66)
+*   [Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+*   [Language Support](https://docs.videodb.io/language-support-79)
+*   [Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+*   [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+*   [Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+*   [Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+*   [Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+*   [Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+*   [Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+*   [Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+*   [Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+*   [Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
+*   [Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
+*   [Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+*   [Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
+*   [Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
+*   [Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+*   [Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
+*   [How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
+*   [Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
+*   [Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
+*   [Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+*   [LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
+*   [PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
+*   [StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
+*   [Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+*   [Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
+*   [Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
+*   [Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
+*   [Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
+*   [Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
+*   [Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
+*   [Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
+*   [Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
+*   [Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
+*   [Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
+*   [Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
+*   [Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
+*   [Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
+*   [Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
+*   [AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
+*   [Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
+*   [AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
+*   [AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
+*   [Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
+*   [Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+*   [Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+*   [Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+*   [Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
+*   [Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
+*   [Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
+*   [Society of Machines](https://docs.videodb.io/society-of-machines-20)
+*   [Society of Machines](https://docs.videodb.io/society-of-machines-23)
+*   [Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
+*   [Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
+*   [Drafts](https://docs.videodb.io/drafts-24)
+*   [From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
+*   [The Future Series](https://docs.videodb.io/the-future-series-78)
+*   [Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+*   [Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+*   [Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
+*   [Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+*   [Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+*   [What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+*   [Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
+*   [Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+*   [Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
+*   [Research Grants](https://docs.videodb.io/research-grants-96)
+*   [Team](https://docs.videodb.io/team-46)
+*   [Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
+*   [Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+*   [Playlists](https://docs.videodb.io/playlists-33)
+*   [Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
+*   [Ashish](https://docs.videodb.io/ashish-45)
+*   [Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+*   [Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+*   [Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+*   [Customer Love](https://docs.videodb.io/customer-love-42)
+*   [Temp Doc](https://docs.videodb.io/temp-doc-54)
+
+Visual Search and Indexing
+
+# Scene Extraction Algorithms
+
+## SceneExtractionType
+
+A video is a series of images that are called frames, these frames can be processed using multimodal modals or computer vision pipelines. There are many ways to identify the temporal change of concepts in the video.
+
+![Screenshot 2024-07-04 at 11.41.39 AM.jpg](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-HozdUmjeH4/7f7ec6d342e7b6ecb573aeeddb6e11b4d4529edb0b8188204fe1e2ca0545d2eda1b47369bbd32647998a8e1ec1cc326a800581717aa979ef19fb20850c76011cf4fb690f8a31cd48f44d7567597e85af1e57085261c25f70d5ef5cd5d74ae26f5c7909aa?auto=format%2Ccompress&fit=max)
+
+SceneExtractionTypeand extraction\_configcan be used with two functions as parameters for scene identification.
+
+It can be passed to index\_scenes() function as an argument.
+
+It can be pass as an argument to extract\_scenes() function.
+
+Checkout
+
+[Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+
+for Scene and Frame object details.
+
+![Screenshot 2024-07-04 at 12.03.45 PM.jpg](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-YvzJ_wnCaf/689685ceab587445941fd8ded3ad89320d6995c066afd3f33f4f323db6bd1fceed4fd86d74fd1b4fd29b9d7cd58bb7919aeea0377e1341dab6fbf8e1c36ad1a074cf87c9606417597c8e810e29baa6fdaf52645800b8350c05176de46d97810914dcf77b?auto=format%2Ccompress&fit=max)
+
+Time based extraction is a simple way to break video into scenes. You define a frequency at which you want to split the video in scenes, for example, you may consider every 10 second as a one scene. This method is useful when you have no information about the nature of video or the video is random & dynamic. You can even create scenes with 1 second time interval.
+
+This method has following extraction\_config:
+
+*   time : The interval (in seconds) at which scenes are segmented. Default value is 10 — which means every 10 seconds segment is a scene.
+*   frame\_count: The number of frames to extract per scene. This allows you to increase the number of frames collected for more context. Default value is 1.
+*   select\_frames: A list of frames to select from each segment. The list can contain strings from \["first", "middle", or "last"\] which selects the respective frames. Default value is \["first"\]
+
+Note: You can use either select\_frames or frame\_count strategy to extract frames for the scene.
+
+```python
+wait_index= traffic_video.index_scenes(
+extraction_type=SceneExtractionType.time_based,
+extraction_config={"time":4,"frame_count":5},
+prompt="Identify when multiple cars are slowing down or waiting. Mention that cars are waiting or stopping and also specify the lane as left, middle, or right. For example, you can say \`cars in the middle lanes are waiting\`.",
+name="wait_index"
+)
+
+extraction_type=SceneExtractionType.time_based,
+extraction_config={"time":10,"select_frames":['first']},
+```
+
+![Screenshot 2024-07-04 at 12.13.39 PM.jpg](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-mwUiTJAjy5/8a6f84690e08bd9f79e83f541b72bc040dc6655ef5801cf27918d1c5e0acc2f5455f8a60b441ca513ea59d5e169bcd9a5bb219617b7b51bca6263d46e8b2cee70bd5ce8433351ca4bcabbc578af1d6aa91b54ec65bcca6ae5f523fbdc5c72fae926fa0fe?auto=format%2Ccompress&fit=max)
+
+Videos share context between timestamps. A scene is a logical segment of a video that completes a concept. You can identify scene changes based on visual content within the video.
+
+Key factors for calculating changes are significant changes in the visual content, such as transitions, lights and movement.
+
+This method has following extraction\_config:
+
+*   threshold: Determines the sensitivity of the model towards scene changes within the video. Default value is 20, which known to be good for detecting camera shot changes from a video.
+*   frame\_count: Accepts a number that specifies how many frames to pick from each shot. Default value is 1. Increasing this number will result in more frames being selected from each shot, which could provide a more detailed analysis of the scene.
+
+```python
+extraction_type=SceneExtractionType.shot_based,
+extraction_config={"threshold":20, "frame_count":4},
+```
+
+Want to print your doc?
+
+This is not the way.
+
+![](https://cdn.coda.io/assets/2462459f3eb1/img/import_google_docs.png)
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (CtrlP) instead.
+
+
+---
+

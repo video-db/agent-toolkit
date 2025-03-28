@@ -1,4 +1,4 @@
-# Welcome to VideoDB Docs [Source Link](https://docs.videodb.io/)
+# Collections [Source Link](https://docs.videodb.io/collections-68)
 
 ![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
 
@@ -6,7 +6,7 @@ VideoDB Documentation
 
 Pages
 
-[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
 \\
 Welcome to VideoDB Docs](https://docs.videodb.io/)
 
@@ -26,7 +26,7 @@ Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
 \\
 Semantic Search](https://docs.videodb.io/semantic-search-89)
 
-[![](https://cdn.coda.io/icons/svg/color/binders-folder.svg)\\
+[![icon picker](https://cdn.coda.io/icons/svg/color/binders-folder.svg)\\
 \\
 Collections](https://docs.videodb.io/collections-68)
 
@@ -354,291 +354,147 @@ Customer Love](https://docs.videodb.io/customer-love-42)
 \\
 Temp Doc](https://docs.videodb.io/temp-doc-54)
 
-![](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-CrhoacPlde/c28540a214a0f5fd7560cc8e3375e2165623225c13993c82e8558403f355550d132c3e135370f7b0f23bf79c226b8fc6fa61e924f13a5f773827edfd5a9dba5d89ad08e4d45dafae37f0eb42406a906f8c3b501286425b6a8e7273eb36d3042b2fa94db6?auto=format%2Ccompress&fit=crop&w=720&ar=4%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.48199378761405554&fp-z=1)
+Quick Start Guide
 
-# ![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg) Welcome to VideoDB Docs
+# ![icon picker](https://cdn.coda.io/icons/svg/color/binders-folder.svg)         Collections
 
-Video Database for your AI Applications
+Collections are simple way to organize your uploads. Working with collections is straightforward. This helps in media organization and search efficiency.
 
-Hello 🙏
+Collection search would restrict the query to find information in only that collection, giving developers freedom to manage and organize videos for their RAG applications.
 
-Happy to see you here!
+Create a new collection by calling create\_collectionfunction in the connection object.
 
-![info](https://cdn.coda.io/icons/svg/color/info.svg)
+conn.create\_collection(name: str, description: str)
 
-### Latest Updates
+Each collection would have a unique id starting with “c-xxx-xxxx-xxx”. You can pass the name and description when you create one.
 
-⁠
+\# create a new collection
 
-[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+new\_collection = conn.create\_collection(name =" test collection", description = "test description")
 
-⁠
+print(new\_collection)
 
-— AI video agents framework for next-gen video interactions and workflows
+List all the collections you have created by calling the function get\_collections
 
-📖 Listen for a quick walkthrough of this doc 👇
+\# list all collections
 
-⁠
+collections = conn.get\_collections()
 
-The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk
+for c in collections:
 
-The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk - YouTube
+print(c)
 
-VideoDB
+Get the collection by it’s unique id “c-xxx-xxxx-xxx”.
 
-115 subscribers
+collection = conn.get\_collection("c-bc849eee-dc5f-48c2-bd37-bb541c88c8ca")
 
-[The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk](https://www.youtube.com/watch?v=3RtUuxQeZgc)
+print(collection)
 
-VideoDB
+You can update the name and description of the collection by update\_collection function
 
-Search
+\# update a collection
 
-Info
+collection = conn.update\_collection("collection\_id","new\_name","new\_desc")
 
-Shopping
+print(collection)
 
-Tap to unmute
+### Upload media to a Collection
 
-If playback doesn't begin shortly, try restarting your device.
+When the collection is created you can use that to upload new video, audio, and images.
 
-You're signed out
+from videodb import MediaType
 
-Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+\# create collection
 
-CancelConfirm
+new\_collection = conn.create\_collection("test collection","test description")
 
-Share
+print(new\_collection)
 
-Include playlist
+\# upload video
 
-An error occurred while retrieving sharing information. Please try again later.
+video = new\_collection.upload(url="https://youtu.be/a9\_\_D53WsUs?si=b1dmcLJbilNwC3H6")
 
-Watch later
+print(video)
 
-Share
+\# upload audio
 
-Copy link
+audio = new\_collection.upload(url="https://youtu.be/MU0Yp0qmYEs?si=slWZ0HisObM14xjF", media\_type=MediaType.audio)
 
-[Watch on](https://www.youtube.com/watch?v=3RtUuxQeZgc&embeds_referring_euri=https%3A%2F%2Fcdn.iframe.ly%2F)
+print(audio)
 
-0:00
+\# upload image
 
-/ •Live
+image = new\_collection.upload(url="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-instagram-new-logo-vector-download-13.png", media\_type=MediaType.image)
 
-•
+print(image)
 
-[Watch on YouTube](https://www.youtube.com/watch?v=3RtUuxQeZgc "Watch on YouTube")
+### List all the media in a Collection (video/audio/image)
 
-⁠
+Use get methods to list audios, videos and images in the collection. We have provided individual get methods to make it simple and intuitive for you.
 
-⁠
+\# list videos
 
-⁠
+videos = new\_collection.get\_videos()
 
-### Quick Start
+for v in videos:
 
-Get your API key at
+print(v)
 
-[VideoDB Console](https://console.videodb.io/auth)
+\# list audios
 
-⁠
+audios = new\_collection.get\_audios()
 
-⁠
+for a in audios:
 
-Use our
+print(a)
 
-[Python SDK](https://github.com/video-db/videodb-python)
+\# list images
 
-⁠
+images = new\_collection.get\_images()
 
-to build.
+for img in images:
 
-Here’s our
+print(img)
 
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+### Search inside a Collection
 
-⁠
+The most useful thing about collections is to restrict search to a specific set of videos. This can come really handy in building complex RAG applications.
+
+from videodb import SearchType
+
+\# index spoken words
+
+video.index\_spoken\_words()
+
+\# search inside a collection
+
+result = new\_collection.search("what is aws?", search\_type=SearchType.semantic)
+
+print(result)
+
+stream\_url = result.compile()
+
+play\_stream(stream\_url)
+
+## More on Collection
 
 Checkout
 
-[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
-Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+[![](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
+Public Collections](https://docs.videodb.io/public-collections-102)
 
 ⁠
 
-Check
+to understand easy sharing of your collection with others.
 
-[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+Checkout
 
-⁠
-
-to help you build
+[![](https://cdn.coda.io/icons/svg/color/callback.svg)\\
+Callback Details](https://docs.videodb.io/callback-details-66)
 
 ⁠
 
-[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
-Research Grants](https://docs.videodb.io/research-grants-96)
-
-⁠
-
-### Explore More
-
-Follow us on
-
-[Github](https://github.com/video-db)
-
-⁠
-
-⁠
-
-Engage with us on our
-
-[Discord](https://discord.gg/py9P639jGz)
-
-⁠
-
-Checkout our
-
-[Youtube](https://www.youtube.com/@video_db)
-
-⁠
-
-⁠
-
-Talk to our
-
-[Pricing Assistant](https://chat.openai.com/g/g-VucvsTaEn-videodb-pricing)
-
-⁠
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
-Customer Love](https://docs.videodb.io/customer-love-42)
-
-⁠
-
-### Edge of Knowledge
-
-Today we are witnessing once a lifetime revolution on internet. We are deep thinkers of AI and here’s our deep dive and fundamental AI series.
-
-A series on basics and fundamentals of ML
-
-[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
-Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-⁠
-
-A series on Agents - The future of internet 👉
-
-[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
-Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-⁠
-
-### Curiosity
-
-Curious to know about Video Database and its principles 👉
-
-[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
-What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
-Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-Video-Database-Now-41)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
-The Future Series](https://docs.videodb.io/the-future-series-78)
-
-⁠
-
-### Theory for deep divers
-
-Want to go deep into the audio video systems 👉
-
-⁠
-
-[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
-Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
-Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
-Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-⁠
-
-### Team
-
-We specialize in developing cutting-edge AI applications for multimedia, We are a diverse group of experts in multimedia, AI and innovative user experience design.
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
-Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
-Ashish](https://docs.videodb.io/ashish-45)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
-Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
-Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
-Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-⁠
-
-... and a few more hard working individuals who don’t care about their name being here. 🙌
-
-⁠
+for asynchronous upload and indexing opearations.
 
 Want to print your doc?
 
@@ -651,29 +507,6 @@ Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 CtrlP
 
 ) instead.
-
-![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
-
-VideoDB Documentation
-
-Pages
-
-[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
-\\
-Welcome to VideoDB Docs](https://docs.videodb.io/)
-
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
-\\
-Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
-
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
-\\
-Multimodal Search](https://docs.videodb.io/multimodal-search-90)
-
 
 
 ---

@@ -1,4 +1,4 @@
-# Welcome to VideoDB Docs [Source Link](https://docs.videodb.io/)
+# Public Collections [Source Link](https://docs.videodb.io/public-collections-102)
 
 ![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
 
@@ -6,7 +6,7 @@ VideoDB Documentation
 
 Pages
 
-[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
 \\
 Welcome to VideoDB Docs](https://docs.videodb.io/)
 
@@ -30,7 +30,7 @@ Semantic Search](https://docs.videodb.io/semantic-search-89)
 \\
 Collections](https://docs.videodb.io/collections-68)
 
-[![](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
+[![icon picker](https://cdn.coda.io/icons/svg/color/magazine.svg)\\
 \\
 Public Collections](https://docs.videodb.io/public-collections-102)
 
@@ -354,291 +354,145 @@ Customer Love](https://docs.videodb.io/customer-love-42)
 \\
 Temp Doc](https://docs.videodb.io/temp-doc-54)
 
-![](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-CrhoacPlde/c28540a214a0f5fd7560cc8e3375e2165623225c13993c82e8558403f355550d132c3e135370f7b0f23bf79c226b8fc6fa61e924f13a5f773827edfd5a9dba5d89ad08e4d45dafae37f0eb42406a906f8c3b501286425b6a8e7273eb36d3042b2fa94db6?auto=format%2Ccompress&fit=crop&w=720&ar=4%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.48199378761405554&fp-z=1)
+Quick Start Guide
 
-# ![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg) Welcome to VideoDB Docs
+# ![icon picker](https://cdn.coda.io/icons/svg/color/magazine.svg) Public Collections
 
-Video Database for your AI Applications
+Public Collections allow you to share a collection of media (videos, audios, images) and intelligence with anyone. When a collection is public:
 
-Hello 🙏
+Anyone with the collection ID can access (read-only) the media within that collection.
 
-Happy to see you here!
+Anyone can list and use the indexes of this collection and access the scene descriptions.
 
-![info](https://cdn.coda.io/icons/svg/color/info.svg)
+By default, all new collections are private unless explicitly made public.
 
-### Latest Updates
+## 1. Creating a New Public Collection
 
-⁠
+When you create a new collection using create\_collection function, you can mark it public by setting the is\_public parameter to True. This makes the collection immediately accessible to other users (read-only) by sharing the collection ID with them.
 
-[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+public\_collection = conn.create\_collection(
 
-⁠
+name="Sample Collection",
 
-— AI video agents framework for next-gen video interactions and workflows
+description="Sample Collection Description",
 
-📖 Listen for a quick walkthrough of this doc 👇
+is\_public=True
 
-⁠
+)
 
-The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk
+print(public\_collection.is\_public)# Should print True
 
-The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk - YouTube
+Parameters:
 
-VideoDB
+name: (Required) A string specifying the collection’s name.
 
-115 subscribers
+description: (Required) A string describing the collection.
 
-[The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk](https://www.youtube.com/watch?v=3RtUuxQeZgc)
+is\_public: (Optional, boolean) Defaults to False. Set to True to make the collection public.
 
-VideoDB
+## 2. Changing Collection Visibility
 
-Search
+You can always toggle visibility of any existing collection. Use make\_public() to make any collection public, or make\_public() to switch it back to your private collection.
 
-Info
+\# Make collection private
 
-Shopping
+public\_collection.make\_private()
 
-Tap to unmute
+print(public\_collection.is\_public)# Should print False
 
-If playback doesn't begin shortly, try restarting your device.
+\# Make collection public again
 
-You're signed out
+public\_collection.make\_public()
 
-Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+print(public\_collection.is\_public)# Should print True
 
-CancelConfirm
+## 3. Accessing a Public Collection
 
-Share
+Any user can access a public collection using its collection ID. Once you have the collection object, you can retrieve videos, audios, or images within it.
 
-Include playlist
+\# Replace with the actual public collection ID
 
-An error occurred while retrieving sharing information. Please try again later.
+collection = conn.get\_collection("PUBLIC\_COLLECTION\_ID")
 
-Watch later
+\# Retrieve all videos
 
-Share
+videos = collection.get\_videos()
 
-Copy link
+video = collection.get\_video("VIDEO\_ID\_OF\_PUBLIC\_COLLECTION")
 
-[Watch on](https://www.youtube.com/watch?v=3RtUuxQeZgc&embeds_referring_euri=https%3A%2F%2Fcdn.iframe.ly%2F)
+\# Retrieve all audios
 
-0:00
+audios = collection.get\_audios()
 
-/ •Live
+audio = collection.get\_audio("AUDIO\_ID\_OF\_PUBLIC\_COLLECTION")
 
-•
+\# Retrieve all images
 
-[Watch on YouTube](https://www.youtube.com/watch?v=3RtUuxQeZgc "Watch on YouTube")
+images = collection.get\_images()
 
-⁠
+image = collection.get\_image("IMAGE\_ID\_OF\_PUBLIC\_COLLECTION")
 
-⁠
+Sample Code:
 
-⁠
+\# VideoDB's OCR Benchmark Public Collection
 
-### Quick Start
+collection = conn.get\_collection("c-c0a2c223-e377-4625-94bf-910501c2a31c")
 
-Get your API key at
+videos = collection.list\_videos()
 
-[VideoDB Console](https://console.videodb.io/auth)
+#Stock Market Ticker 01
 
-⁠
+video = collection.get\_video("m-z-0194c27c-f30c-7803-b2ca-8f1026c940a2")
 
-⁠
+## 4. Working with Scene Collections and Scene Indexes (Videos)
 
-Use our
+You can list and retrieve scene collections and scene indexes for a public video.
 
-[Python SDK](https://github.com/video-db/videodb-python)
+public\_collection = conn.get\_collection("PUBLIC\_COLLECTION\_ID")
 
-⁠
+video = public\_collection.get\_video("VIDEO\_ID")
 
-to build.
+\# List and retrieve scene collections
 
-Here’s our
+scene\_collections = video.list\_scene\_collection()
 
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+scene\_collection = video.get\_scene\_collection(
 
-⁠
+scene\_collections\[0\].get("scene\_collection\_id")
 
-Checkout
+)
 
-[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
-Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+\# List and retrieve scene indexes
 
-⁠
+scene\_indexes = video.list\_scene\_index()
 
-Check
+scene\_index = video.get\_scene\_index(scene\_indexes\[0\].get("scene\_index\_id"))
 
-[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+Sample Code:
 
-⁠
+\# VideoDB's OCR Benchmark Public Collection
 
-to help you build
+collection = conn.get\_collection("c-c0a2c223-e377-4625-94bf-910501c2a31c")
 
-⁠
+\# Stock Market Ticker 01
 
-[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
-Research Grants](https://docs.videodb.io/research-grants-96)
+video = collection.get\_video("m-z-0194c27c-f30c-7803-b2ca-8f1026c940a2")
 
-⁠
+scene\_collections = video.list\_scene\_collection()
 
-### Explore More
+scene\_collection = video.get\_scene\_collection(
 
-Follow us on
+scene\_collections\[0\].get("scene\_collection\_id")
 
-[Github](https://github.com/video-db)
+)
 
-⁠
+## Upcoming Updates:
 
-⁠
+Copy function to copy the whole collection with it’s indexes.
 
-Engage with us on our
+Search using existing spoken and visual indexes on public collections.
 
-[Discord](https://discord.gg/py9P639jGz)
-
-⁠
-
-Checkout our
-
-[Youtube](https://www.youtube.com/@video_db)
-
-⁠
-
-⁠
-
-Talk to our
-
-[Pricing Assistant](https://chat.openai.com/g/g-VucvsTaEn-videodb-pricing)
-
-⁠
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
-Customer Love](https://docs.videodb.io/customer-love-42)
-
-⁠
-
-### Edge of Knowledge
-
-Today we are witnessing once a lifetime revolution on internet. We are deep thinkers of AI and here’s our deep dive and fundamental AI series.
-
-A series on basics and fundamentals of ML
-
-[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
-Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-⁠
-
-A series on Agents - The future of internet 👉
-
-[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
-Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-⁠
-
-### Curiosity
-
-Curious to know about Video Database and its principles 👉
-
-[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
-What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
-Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-Video-Database-Now-41)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
-The Future Series](https://docs.videodb.io/the-future-series-78)
-
-⁠
-
-### Theory for deep divers
-
-Want to go deep into the audio video systems 👉
-
-⁠
-
-[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
-Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
-Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
-Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-⁠
-
-### Team
-
-We specialize in developing cutting-edge AI applications for multimedia, We are a diverse group of experts in multimedia, AI and innovative user experience design.
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
-Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
-Ashish](https://docs.videodb.io/ashish-45)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
-Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
-Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
-Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-⁠
-
-... and a few more hard working individuals who don’t care about their name being here. 🙌
-
-⁠
+Get transcription of spoken indexed videos.
 
 Want to print your doc?
 
@@ -651,30 +505,6 @@ Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 CtrlP
 
 ) instead.
-
-![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
-
-VideoDB Documentation
-
-Pages
-
-[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
-\\
-Welcome to VideoDB Docs](https://docs.videodb.io/)
-
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
-\\
-Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
-
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
-\\
-Multimodal Search](https://docs.videodb.io/multimodal-search-90)
-
-
 
 ---
 

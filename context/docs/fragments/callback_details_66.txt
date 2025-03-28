@@ -1,0 +1,150 @@
+# Callback Details [Source Link](https://docs.videodb.io/callback-details-66)
+
+VideoDB Documentation
+
+Pages
+
+Welcome to VideoDB Docs
+
+Quick Start Guide
+
+How Accurate is Your Search?
+
+Video Indexing Guide
+
+Semantic Search
+
+Collections
+
+Public Collections
+
+Callback Details
+
+Ref: Subtitle Styles
+
+Language Support
+
+Guide: Subtitles
+
+Visual Search and Indexing
+
+Multimodal Search
+
+Dynamic Video Streams
+
+Director - Video Agent Framework
+
+Open Source Tools
+
+Examples and Tutorials
+
+Edge of Knowledge
+
+Building World's First Video Database
+
+Team
+
+Customer Love
+
+Temp Doc
+
+Quick Start Guide
+
+# Callback Details
+
+# Upload
+
+You can pass callback url in upload function. Here are the details of callback responses.
+
+coll.upload(url="S3\_LINK\_HERE", callback\_url="<your callback url>")
+
+### 👍🏼 Successful Video Upload
+
+{
+"success":true,
+"data":{
+"id":"m-\*\*",
+"collection\_id":"c-\*\*",
+"name":"What is AWS? | Amazon Web Services",
+"extension":"mp4",
+"size":"13294233",
+"length":"191.146667",
+"stream\_url":"https://stream.videodb.io/v3/published/xxx/xx/x.m3u8",
+"player\_url":"https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/xxx/xx/x.m3u8"
+}
+}
+
+### 👍🏼 Successful Audio Upload
+
+{
+"success":true,
+"data":{
+"id":"a-\*\*",
+"collection\_id":"c-\*\*",
+"name":"What is AWS? | Amazon Web Services",
+"extension":"mp3",
+"size":"13294233",
+"length":"191.146667"
+}
+}
+
+### 👍🏼 Successful Image upload
+
+{
+"success":true,
+"data":{
+"id":"img-\*\*",
+"collection\_id":"c-\*\*",
+"name":"What is AWS? | Amazon Web Services",
+"extension":"jpg",
+"size":"13294233"
+}
+}
+
+## Errors in Upload
+
+If the uploaded file is corrupted 👎🏻
+
+### Invalid file 👎🏻
+
+If the file is Invalid or wrong media\_type is passed in the upload function.
+
+Upload function supported media\_type is available in the class MediaType which are 👉🏼 ["video", "image", "audio"]
+
+### Issue with Download 🔴
+
+If the download link is incorrect/ private or our servers are not able to download file from the link.
+
+# Index spoken words
+
+Indexing a video is an asynchronous job. We do provide progress bar on our python sdk for developer experience. But it’s only good for communicating the progress on Jupyter or colab notebooks.
+
+When you move it to to production, you can use callbacks for your backend workflows. Pass callback url while calling the function
+
+### Successfully Indexed 👍🏼
+
+### Error in Indexing job 👎🏻
+
+# Index scenes
+
+Similar to other indexing operations scene index is also an async job. You can pass callback in the function.
+
+### 👍🏼 Successfully Indexed
+
+### 👎🏻 Error in Indexing
+
+# Extract Scenes
+
+### 👍🏼 Successfully extracted
+
+### 👎🏻 Error in Extracting
+
+Want to print your doc?
+
+This is not the way.
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (CtrlP) instead.
+
+
+---
+

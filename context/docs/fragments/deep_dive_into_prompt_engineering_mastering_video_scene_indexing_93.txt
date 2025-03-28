@@ -1,0 +1,484 @@
+# Deep Dive into Prompt Engineering : Mastering Video Scene Indexing [Source Link](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+
+VideoDB Documentation
+
+Pages
+
+[Welcome to VideoDB Docs](https://docs.videodb.io/)
+
+[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88)
+
+[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101)
+
+[Semantic Search](https://docs.videodb.io/semantic-search-89)
+
+[Collections](https://docs.videodb.io/collections-68)
+
+[Public Collections](https://docs.videodb.io/public-collections-102)
+
+[Callback Details](https://docs.videodb.io/callback-details-66)
+
+[Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57)
+
+[Language Support](https://docs.videodb.io/language-support-79)
+
+[Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+[Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+
+[Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+
+[Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+
+[Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+
+[Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+
+[Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+[Multimodal Search: Quickstart](https://docs.videodb.io/multimodal-search-quickstart-91)
+
+[Conference Slide Scraper with VideoDB](https://docs.videodb.io/conference-slide-scraper-with-videodb-92)
+
+[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[Ref: TextAsset](https://docs.videodb.io/ref-textasset-74)
+
+[Guide : TextAsset](https://docs.videodb.io/guide-textasset-75)
+
+[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[Agent Creation Playbook](https://docs.videodb.io/agent-creation-playbook-103)
+
+[How I Built a CRM-integrated Sales Assistant Agent in 1 Hour](https://docs.videodb.io/how-i-built-a-crm-integrated-sales-assistant-agent-in-1-hour-106)
+
+[Make Your Video Sound Studio Quality with Voice Cloning](https://docs.videodb.io/make-your-video-sound-studio-quality-with-voice-cloning-105)
+
+[Setup Director Locally](https://docs.videodb.io/setup-director-locally-104)
+
+[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[LlamaIndex VideoDB Retriever](https://docs.videodb.io/llamaindex-videodb-retriever-58)
+
+[PromptClip: Use Power of LLM to Create Clips](https://docs.videodb.io/promptclip-use-power-of-llm-to-create-clips-52)
+
+[StreamRAG: Connect ChatGPT to VideoDB](https://docs.videodb.io/streamrag-connect-chatgpt-to-videodb-43)
+
+[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[Dubbing - Replace Soundtrack with New Audio](https://docs.videodb.io/dubbing-replace-soundtrack-with-new-audio-49)
+
+[Beep curse words in real-time](https://docs.videodb.io/beep-curse-words-in-real-time-53)
+
+[Remove Unwanted Content from videos](https://docs.videodb.io/remove-unwanted-content-from-videos-5)
+
+[Instant Clips of Your Favorite Characters](https://docs.videodb.io/instant-clips-of-your-favorite-characters-3)
+
+[Insert Dynamic Ads in real-time](https://docs.videodb.io/insert-dynamic-ads-in-real-time-7)
+
+[Adding Brand Elements with VideoDB](https://docs.videodb.io/adding-brand-elements-with-videodb-76)
+
+[Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration](https://docs.videodb.io/revolutionize-video-editing-with-videodb-effortless-ad-placement-8)
+
+[Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage](https://docs.videodb.io/eleven-labs-x-videodb-adding-ai-generated-voiceovers-to-silent-f-59)
+
+[Elevating Trailers with Automated Narration](https://docs.videodb.io/elevating-trailers-with-automated-narration-60)
+
+[Add Intro/Outro to Videos](https://docs.videodb.io/add-intro-outro-to-videos-61)
+
+[Enhancing Video Captions with VideoDB Subtitle Styling](https://docs.videodb.io/enhancing-video-captions-with-videodb-subtitle-styling-62)
+
+[Audio overlay + Video + Timeline](https://docs.videodb.io/audio-overlay-video-timeline-63)
+
+[Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs](https://docs.videodb.io/building-dynamic-video-streams-with-videodb-integrating-custom-d-85)
+
+[Adding AI Generated Voiceovers with VideoDB and LOVO](https://docs.videodb.io/adding-ai-generated-voiceovers-with-videodb-and-lovo-70)
+
+[AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB](https://docs.videodb.io/ai-generated-ad-films-for-product-videography-wellsaid-open-ai-v-71)
+
+[Fun with Keyword Search](https://docs.videodb.io/fun-with-keyword-search-77)
+
+[AWS Rekognition and VideoDB - Intelligent Video Clips](https://docs.videodb.io/aws-rekognition-and-videodb-intelligent-video-clips-4)
+
+[AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video](https://docs.videodb.io/aws-rekognition-and-videodb-effortlessly-remove-inappropriate-co-6)
+
+[Overlay a Word-Counter on Video Stream](https://docs.videodb.io/overlay-a-word-counter-on-video-stream-86)
+
+[Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB](https://docs.videodb.io/generate-automated-video-outputs-with-text-prompts-dall-e-eleven-87)
+
+[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
+
+[Part 1 - Define Intelligence](https://docs.videodb.io/part-1-define-intelligence-17)
+
+[Part 2 - Observe and Respond](https://docs.videodb.io/part-2-observe-and-respond-18)
+
+[Part 3 - Training a Model](https://docs.videodb.io/part-3-training-a-model-19)
+
+[Society of Machines](https://docs.videodb.io/society-of-machines-20)
+
+[Society of Machines](https://docs.videodb.io/society-of-machines-23)
+
+[Autonomy - Do we have the choice?](https://docs.videodb.io/autonomy-do-we-have-the-choice-21)
+
+[Emergence - An Intelligence of the collective](https://docs.videodb.io/emergence-an-intelligence-of-the-collective-22)
+
+[Drafts](https://docs.videodb.io/drafts-24)
+
+[From Language Models to World Models: The Next Frontier in AI](https://docs.videodb.io/from-language-models-to-world-models-the-next-frontier-in-ai-65)
+
+[The Future Series](https://docs.videodb.io/the-future-series-78)
+
+[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
+
+[Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web](https://docs.videodb.io/introducing-videodb-the-pinnacle-of-synchronized-video-streaming-27)
+
+[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
+
+[Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-video-database-now-41)
+
+[What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
+
+[Enhancing AI-Driven Multimedia Applications](https://docs.videodb.io/enhancing-ai-driven-multimedia-applications-37)
+
+[Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
+
+[Beyond Traditional Video Infrastructure](https://docs.videodb.io/beyond-traditional-video-infrastructure-28)
+
+[Research Grants](https://docs.videodb.io/research-grants-96)
+
+[Team](https://docs.videodb.io/team-46)
+
+[Internship: Build the Future of AI-Powered Video Infrastructure](https://docs.videodb.io/internship-build-the-future-of-ai-powered-video-infrastructure-97)
+
+[Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
+
+[Playlists](https://docs.videodb.io/playlists-33)
+
+[Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015](https://docs.videodb.io/talks-solving-logical-puzzles-with-natural-language-processing-p-34)
+
+[Ashish](https://docs.videodb.io/ashish-45)
+
+[Shivani Desai](https://docs.videodb.io/shivani-desai-48)
+
+[Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
+
+[Rohit Garg](https://docs.videodb.io/rohit-garg-64)
+
+[Customer Love](https://docs.videodb.io/customer-love-42)
+
+[Temp Doc](https://docs.videodb.io/temp-doc-54)
+
+Visual Search and Indexing
+
+# Deep Dive into Prompt Engineering : Mastering Video Scene Indexing
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/guides/multimodal/Prompt_Experiments_and_Benchmarking.ipynb)
+
+## Introduction:
+
+As developers working on video processing, we often face challenges in accurately indexing and describing complex scenes. This blog post explores how strategic prompt engineering can significantly enhance our ability to extract detailed information from video frames, opening up new possibilities for advanced video search and analysis.
+
+## Goal of the Experiment:
+
+Our primary objective was to demonstrate how refined prompts can significantly improve search results and information extraction from video content. We aimed to create a system capable of accurately identifying objects, actions, and even emotions in various video scenes. For this particular experiment, we used video footage from a
+[dog show](https://youtu.be/_T3n-2zOrZQ?si=lY9JnkKPQq1WhwMk)
+, featuring various breeds walking down a runway with their handlers, surrounded by spectators and photographers. Our goal was to create prompts that could answer detailed queries like "Show me the happiest moments featuring a Golden Retriever" with high precision.
+
+## Frame-Level vs Scene-Level Prompting:
+
+In our experiment, we explored both frame-level and scene-level prompting:
+
+Frame-level prompts focus on extracting information from individual frames.
+
+Scene-level prompts analyze a series of frames to describe the overall action.
+
+Important Considerations:
+
+Computational Cost: Frame-level descriptions, while providing granular detail, are computationally heavy and potentially costly. It's not always necessary or efficient to use them for every use case.
+
+Strategic Approach: A recommended strategy is to use frame prompts as a tuning mechanism. By testing and refining frame-level prompts, we can identify the most effective way to extract information from the vision model. Once optimized, we can incorporate these insights into scene-level prompts, potentially achieving high accuracy without the computational overhead of frame-by-frame analysis.
+
+Let's walk through our prompt iterations and their outputs:
+
+## Frame-level Prompts:
+
+### ✍️ Frame Prompt 1: Basic animal identification
+
+frame\_prompt ="""
+
+You will be provided with an image. Your task is to identify and describe the animals in the image.
+
+1\. Identify Animals: List distinct animals in the image.
+
+2\. Describe animals: Provide a brief description of each animal, including breed, color, and any other notable features.
+
+"""
+
+Output:
+
+[
+{
+"name":"dog",
+"context":"a grey dog is being led down the green carpet by a person wearing a blue jacket."
+}
+]
+
+This output lacked specificity in breed identification and environmental context. Our next prompt aims to address these issues.
+
+### ✍️ Frame Prompt 2: Enhanced breed identification and spatial information
+
+frame\_prompt ="""
+
+You will be provided with an image. Your task is to identify the animals and their breeds in the image.
+
+1\. Identify Animals: List distinct animals and their breed in the image.
+
+2\. Describe the environment: Provide a brief description of the interaction between the animals and the objects or the environment around them.
+
+"""
+
+Output:
+
+[
+{
+"name":"Dog - Poodle",
+"context":"A Poodle being led down a carpeted path by a handler in the green dress, participating in what appears to be a dog show."
+},
+{
+"name":"Dog - Russell Terrier",
+"context":"A Russell Terrier being guided by a handler in black attire on the same path, also taking part in the dog show."
+}
+]
+
+This output significantly improved breed identification and provided more environmental context. With this satisfactory frame-level output, we're now ready to incorporate these learnings into scene-level prompts.
+
+However, let's first examine what a generic scene-level prompt can achieve without the added context from our frame-level experiments.
+
+## Scene-level
+
+### ✏️ Scene Prompt 1: Basic scene-level prompt
+
+scene\_prompt ="""
+
+You will be provided with a series of images. Your task is to view all images together and describe the overall story or scene in the best possible way.
+
+Expected Output:
+
+\- A detailed story or scene description.
+
+\- A list of objects and actions in each image.
+
+Example Output:
+
+{
+"scene\_story": "A person is cooking in the kitchen and then someone rings the doorbell.",
+"images": [
+{"description": "Someone is cooking in the kitchen."},
+{"description": "Someone rings the doorbell."}
+]
+}
+
+"""
+
+Output:
+
+{
+"scene\_story":"A dog show competition where handlers are presenting their dogs on a green runway surrounded by an audience and judges.",
+"images":[
+{"description":"Handlers walking dogs down a green carpeted runway."},
+{"description":"Spectators and photographers observing the dog show."},
+{"description":"Judges evaluating the dogs as they pass by."}
+]
+}
+
+Note: This generic scene-level prompt provided a basic structure but lacked the detailed breed identification and specific actions we achieved with our frame-level prompts. Our next iteration aims to incorporate these learnings.
+
+### ✏️ Scene Prompt 2: Combining frame-level specifications in scene-level prompt
+
+scene\_prompt ="""
+
+You will be provided with a series of images. Your task is to view all images together and describe the overall story or scene in the best possible way.
+
+For each image, your task is to identify the animals and their breeds in the image.
+
+1\. Identify the animals present in the frame with specifications about their colour and breed, and any other notable features.
+
+2\. Describe the environment: Provide a brief description of the interaction between the animals and the objects or the environment around them.
+
+"""
+
+Output:
+
+{
+"scene\_story":"A dog show is ongoing where handlers are showcasing their dogs on a designated runway, surrounded by spectators and event staff.",
+"images":[
+{
+"description":"Three handlers are walking their dogs on a green carpeted runway. The runway is fenced and lined with purple banners. There are numerous spectators and photographers capturing the event. One dog is a white and brown breed, possibly a Jack Russell Terrier, and the other is a medium-sized, grey wavy-haired breed, potentially a Poodle."
+},
+{
+"description":"The scene is similar with the dogs and handlers moving further along the runway. The same dogs, a Jack Russell Terrier and a grey Poodle, are being showcased. The audience continues to watch and photograph the event."
+},
+{
+"description":"The handlers and dogs are closer to the end of the runway. The dogs remain the primary focus, with one being a Jack Russell Terrier and the other a grey Poodle. The spectators and photographers are actively engaged in observing the dogs."
+}
+]
+}
+
+Note: This output successfully incorporated breed identification and more detailed actions, but still lacked some specificity in describing multiple animals in a single frame. Our next iteration addresses this.
+
+### ✏️ Scene Prompt 3: Ensuring correct breed identification in context of environment
+
+scene\_prompt ="""
+
+You will be provided with a series of images. Your task is to describe the scene based on these sequential images. Stay focused on the animals in the frame.
+
+For each image, your task is to:
+
+1\. Identify the animals present in the frame define their colour, breed, and any other notable features. If there are multiple animals present, define the same characteristics for all those in focus.
+
+2\. Describe the environment in context of the animals: Provide a brief description of the interaction between the animals and the objects or the environment around them. Be specific about the actions of every animal if there are multiple animals detected in a single frame.
+
+"""
+
+Output:
+
+{
+"scene\_story":"A lively dog show takes center stage as two enthusiastic canines race down a carpeted aisle, cheered on by an eager crowd and accompanied by their handlers.",
+"images":[
+{
+"description":"A white and brown Jack Russell Terrier runs energetically on a green carpet, escorted by a woman in a blue jacket. Behind them, a grey poodle closely follows while being guided by another handler in maroon clothing. The carpeted path is bordered by purple barriers adorned with yellow and blue flowers. Spectators and photographers on the left capture the moment."
+},
+{
+"description":"The Jack Russell Terrier continues to lead, bounding forward with its handler. The grey poodle and its handler have gained some ground but maintain their position behind the terrier. The handlers maintain a brisk pace alongside the dogs as the crowd continues to observe and document the event."
+},
+{
+"description":"In the final image, the Jack Russell Terrier keeps its lead, with the grey poodle still following closely. The handlers are encouraging their dogs with focused enthusiasm. The spectators remain engaged, some with cameras ready to capture the exciting finish."
+}
+]
+}
+
+Note: This prompt successfully captured both the specific breeds and the overall scene dynamics, providing a detailed and accurate description. However, the format could be more structured for easier parsing and use in applications. Our final iteration addresses this.
+
+### ✏️ Scene Prompt 4: Structured JSON output with emotional states
+
+scene\_prompt ="""
+
+You will be provided with a series of images from a dog show. Your task is to describe the scene based on these sequential images. Focus on identifying the breeds and describing the key actions.
+
+For each image, your task is to:
+
+1\. Identify the animals present in the frame, including their breed, color, and any notable features.
+
+2\. Describe the actions of the animals and any interactions with the environment or other animals.
+
+3\. Highlight any emotional expressions or notable moments.
+
+Output should be a structured JSON with the following format:
+
+{
+"scene\_story": "Brief overview of the scene",
+"images": [
+{
+"frame\_time": "Time of the frame in seconds",
+"breeds": [{"breed": "Golden Retriever", "color": "golden"}],
+"actions": "Description of the actions and interactions",
+"emotion": "Observed emotion or notable moment"
+},
+...
+]
+}
+
+"""
+
+Output:
+
+{
+"scene\_story":"A dog show competition where handlers are walking their dogs down the green carpeted runway while photographers and spectators watch and take photos.",
+"images":[
+{
+"frame\_time":"0 seconds",
+"breeds":[
+{"breed":"Wire Fox Terrier","color":"white and tan"},
+{"breed":"Standard Poodle","color":"gray"}
+],
+"actions":"Handlers are walking their dogs down a green carpeted runway. The Wire Fox Terrier on the right is being walked by a handler wearing a dark outfit. A Standard Poodle in the middle is being walked by a handler in a teal blue blazer. Photographers are taking pictures and spectators are observing.",
+"emotion":"The Wire Fox Terrier looks attentive and focused."
+},
+{
+"frame\_time":"2 seconds",
+"breeds":[
+{"breed":"Wire Fox Terrier","color":"white and tan"},
+{"breed":"Standard Poodle","color":"gray"}
+],
+"actions":"The Wire Fox Terrier is still being walked by the handler in a dark outfit. The Standard Poodle is also being walked down the runway, slightly ahead of the Wire Fox Terrier. Both handlers and dogs are making their way to the front end of the runway while onlookers take pictures and watch.",
+"emotion":"The dogs are showing a calm and focused demeanor."
+}
+]
+}
+
+Note: This final iteration provides a comprehensive, structured output that's easy to work with programmatically and captures all the key information we set out to extract, including breed identification, actions, and even emotional states.
+
+With a refined prompt in action, we can get some pretty interesting results! Here’s the result for our initial query: Show me the happiest moments featuring a Golden Retriever
+
+Video Player is loading.
+
+## Conclusion:
+
+Through this experiment, we've demonstrated how iterative prompt engineering can significantly improve the accuracy and detail of video scene indexing. We progressed from basic animal identification to detailed breed recognition, action description, and even emotional state detection. This approach can be adapted to various video processing tasks beyond dog shows, opening up new possibilities in video indexing and search applications.
+
+## Key Takeaways:
+
+Frame-level prompts are excellent for detailed, specific information about individual moments.
+
+Scene-level prompts provide a cohesive narrative and capture actions spanning multiple frames.
+
+Structured outputs (like JSON) make the extracted information more readily usable in downstream applications.
+
+Iterative refinement of prompts is crucial to achieving the desired level of detail and accuracy.
+
+Consider the trade-off between accuracy and computational cost when deciding between frame-level and scene-level analysis.
+
+Use frame-level prompts as a tuning mechanism to inform and improve scene-level prompts.
+
+Look for ways to better integrate frame-level insights into scene-level descriptions for more comprehensive and efficient video indexing.
+
+## Future Directions:
+
+Moving forward, we should explore ways to more effectively bridge the gap between frame-level and scene-level analyses. This could involve developing algorithms that can aggregate frame-level insights to inform scene-level descriptions, or creating more sophisticated prompts that can extract frame-level details while operating at a scene level.
+
+By keeping these considerations in mind, we can continue to refine our approach to video indexing, balancing the need for detailed information with computational efficiency. This balance will be crucial as we scale our solutions to handle larger volumes of video data across diverse use cases.
+
+Remember, the key to effective prompt engineering lies in clearly defining your information needs and iteratively refining your approach based on the outputs.
+
+Happy coding!
+
+## ⭐️ Bonus: Challenges in Prompt Refinement
+
+During our experiment, we encountered challenges in refining our prompts. Two intermediate prompts (originally Scene Prompts 3 and 4) didn't yield the improvements we expected. These challenges highlight the iterative nature of prompt engineering:
+
+1\. Over-specification: We found that adding too many specific instructions sometimes led to inconsistent results, with the model focusing on certain aspects while neglecting others.
+
+2\. Balancing detail and generalization: Striking the right balance between detailed instructions and allowing the model enough flexibility to generalize was a key challenge.
+
+3\. Prompt length: Very long, detailed prompts sometimes resulted in the model losing focus on the primary task.
+
+Want to print your doc?
+
+This is not the way.
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+CtrlP
+) instead.
+
+---
+

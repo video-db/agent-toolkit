@@ -1,4 +1,4 @@
-# Welcome to VideoDB Docs [Source Link](https://docs.videodb.io/)
+# Advanced Visual Search Pipelines [Source Link](https://docs.videodb.io/advanced-visual-search-pipelines-82)
 
 ![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
 
@@ -6,7 +6,7 @@ VideoDB Documentation
 
 Pages
 
-[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
+[![](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
 \\
 Welcome to VideoDB Docs](https://docs.videodb.io/)
 
@@ -66,7 +66,7 @@ Custom Annotations](https://docs.videodb.io/custom-annotations-81)
 \\
 Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
 
-[![](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
+[![icon picker](https://cdn.coda.io/icons/svg/color/search-more.svg)\\
 \\
 Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
 
@@ -354,326 +354,190 @@ Customer Love](https://docs.videodb.io/customer-love-42)
 \\
 Temp Doc](https://docs.videodb.io/temp-doc-54)
 
-![](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-CrhoacPlde/c28540a214a0f5fd7560cc8e3375e2165623225c13993c82e8558403f355550d132c3e135370f7b0f23bf79c226b8fc6fa61e924f13a5f773827edfd5a9dba5d89ad08e4d45dafae37f0eb42406a906f8c3b501286425b6a8e7273eb36d3042b2fa94db6?auto=format%2Ccompress&fit=crop&w=720&ar=4%3A1&crop=focalpoint&fp-x=0.5&fp-y=0.48199378761405554&fp-z=1)
+Visual Search and Indexing
 
-# ![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg) Welcome to VideoDB Docs
+# ![icon picker](https://cdn.coda.io/icons/svg/color/search-more.svg)         Advanced Visual Search Pipelines
 
-Video Database for your AI Applications
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/guides/scene-index/advanced_visual_search.ipynb)
 
-Hello 🙏
+Let's deep dive into Scene and Frame objects
 
-Happy to see you here!
+### Scene
+
+A Scene object describes a unique event in the video. From a timeline perspective it’s a timestamp range.
 
 ![info](https://cdn.coda.io/icons/svg/color/info.svg)
 
-### Latest Updates
+video\_id : id of the video object
 
-⁠
+start : seconds
 
-[![director-light](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/6bc288c2-982b-4a97-a402-8da53aeaa236?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+end : seconds
 
-⁠
+description : string description
 
-— AI video agents framework for next-gen video interactions and workflows
+Each scene object has an attribute frames, that has list of Frame objects.
 
-📖 Listen for a quick walkthrough of this doc 👇
+### Frame
 
-⁠
+Each Scene can be described by a list of frames. Each Frame object primarily has the URL of the image and its description field.
 
-The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk
+![info](https://cdn.coda.io/icons/svg/color/info.svg)
 
-The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk - YouTube
+id : ID of the frame object
 
-VideoDB
+url : URL of the image
 
-115 subscribers
+frame\_time : Timestamp of the frame in the video
 
-[The Future of Video: VideoDB's Revolutionary 'Video as Data' Approach \| Tech Talk](https://www.youtube.com/watch?v=3RtUuxQeZgc)
+description : string description
 
-VideoDB
+video\_id : id of the video object
 
-Search
+scene\_id : id of the scene object
 
-Info
+![Screenshot 2024-07-04 at 11.41.39 AM.jpg](https://codaio.imgix.net/docs/_s5lUnUCIU/blobs/bl-HozdUmjeH4/7f7ec6d342e7b6ecb573aeeddb6e11b4d4529edb0b8188204fe1e2ca0545d2eda1b47369bbd32647998a8e1ec1cc326a800581717aa979ef19fb20850c76011cf4fb690f8a31cd48f44d7567597e85af1e57085261c25f70d5ef5cd5d74ae26f5c7909aa?auto=format%2Ccompress&fit=max)
 
-Shopping
+We provide you with easy-to-use Objects and Functions to bring flexibility in designing your visual understanding pipeline. With these tools, you have the freedom to:
 
-Tap to unmute
+Extract scene according to your use case.
 
-If playback doesn't begin shortly, try restarting your device.
+Go to frame level abstraction.
 
-You're signed out
+Assign label, custom model description for each frame.
 
-Videos you watch may be added to the TV's watch history and influence TV recommendations. To avoid this, cancel and sign in to YouTube on your computer.
+Use of multiple models, prompts for each scene or frame to convert information to text.
 
-CancelConfirm
+Send multiple frames to vision model for better temporal activity understanding.
 
-Share
+### extract\_scenes()
 
-Include playlist
+This function accepts the extraction\_type and extraction\_config and returns a
 
-An error occurred while retrieving sharing information. Please try again later.
+[SceneCollection](https://docs.videodb.io/playground-for-scene-extractions-83)
 
-Watch later
-
-Share
-
-Copy link
-
-[Watch on](https://www.youtube.com/watch?v=3RtUuxQeZgc&embeds_referring_euri=https%3A%2F%2Fcdn.iframe.ly%2F)
-
-0:00
-
-/ •Live
-
-•
-
-[Watch on YouTube](https://www.youtube.com/watch?v=3RtUuxQeZgc "Watch on YouTube")
-
-⁠
-
-⁠
-
-⁠
-
-### Quick Start
-
-Get your API key at
-
-[VideoDB Console](https://console.videodb.io/auth)
-
-⁠
-
-⁠
-
-Use our
-
-[Python SDK](https://github.com/video-db/videodb-python)
-
-⁠
-
-to build.
-
-Here’s our
-
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-⁠
+object, which keep information about all the extracted scene lists.
 
 Checkout
 
-[![](https://cdn.coda.io/icons/svg/color/book-and-pencil.svg)\\
-Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+[![](https://cdn.coda.io/icons/svg/color/landscape.svg)\\
+Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
 
-⁠
+for more details.
 
-Check
+scene\_collection = video.extract\_scenes(
 
-[![github](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/ac14f3ef-daa1-4b6e-aba5-af11f11b8372?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+extraction\_type=SceneExtractionType.time\_based,
 
-⁠
+extraction\_config={"time": 30, "select\_frames": \["middle"\]},
 
-to help you build
+)
 
-⁠
+### Capture Temporal Change
 
-[![](https://cdn.coda.io/icons/svg/color/biotech.svg)\\
-Research Grants](https://docs.videodb.io/research-grants-96)
+Vision models excel at describing images, but videos present an added complexity due to the temporal changes in the information. With our pipeline, you can maintain image-level understanding in frames and combine them using LLMs at the scene level to capture temporal or activity-related understanding.
 
-⁠
+You have freedom to iterate through each scene and frame level to describe the information for indexing purposes.
 
-### Explore More
+Get scene collection
 
-Follow us on
+scene\_collection = video.get\_scene\_collection("scene\_collection\_id")
 
-[Github](https://github.com/video-db)
+### Iterate through each scene and frame
 
-⁠
+Iterate over scenes and frames and attach description coming from external pipeline be it custom CV pipeline or custom model descriptions.
 
-⁠
+print("This is scene collection id", scene\_collection.id)
 
-Engage with us on our
+print("This is scene collection config", scene\_collection.config)
+
+\# get scene from collection
+
+scenes = scene\_collection.scenes
+
+\# Iterate through each scene
+
+for scene in scenes:
+
+print(f"Scene Duration {scene.start}-{scene.end}")
+
+# Iterate through each frame in the scene
+
+for frame in scene.frames:
+
+print(f"Frame at {frame.frame\_time} {frame.url}")
+
+frame.description = "bring text from external sources/ pipeline"
+
+)
+
+### Create Scene by custom annotation
+
+These annotations can come from your application or from external vision model, if you extract the description using any vision LLM
+
+for scene in scenes:
+
+scene.description = "summary of frame level description"
+
+Using this pipeline, you have the freedom to design your own flow. In the example above, we’ve described each frame in the scene independently, but some vision models allow multiple images in one go as well. Feel free to customise your flow as per your needs.
+
+Experiment with sending multiple frames to a vision model.
+
+Utilize prompts to describe multiple frames, then assign these descriptions to the scene.
+
+Integrate your own vision model into the pipeline.
+
+![light](https://cdn.coda.io/icons/svg/color/light.svg)
+
+We’ll soon be adding more details and strategies for effective and advanced multimodal search. We welcome your input on what strategies have worked best in your specific use cases
+
+Here’s our 🎙️
 
 [Discord](https://discord.gg/py9P639jGz)
 
-⁠
+channel where we brainstorm about such ideas.
 
-Checkout our
+Once you have a description of each scene in place, you can index and search for the information using the following functions.
 
-[Youtube](https://www.youtube.com/@video_db)
+from videodb import IndexType
 
-⁠
+#create new index and assign a name to it
 
-⁠
+index\_id = video.index\_scenes(scenes=scenes, name="My Custom Model")
 
-Talk to our
+\# search using the index\_id
 
-[Pricing Assistant](https://chat.openai.com/g/g-VucvsTaEn-videodb-pricing)
+res = video.search(query="first 29 sec",
 
-⁠
+index\_type=IndexType.scene,
 
-⁠
+index\_id=index\_id)
 
-⁠
+res.play()
 
-[![](https://cdn.coda.io/icons/svg/color/like.svg)\\
-Customer Love](https://docs.videodb.io/customer-love-42)
+Scene
 
-⁠
+Frame
 
-### Edge of Knowledge
+extract\_scenes()
 
-Today we are witnessing once a lifetime revolution on internet. We are deep thinkers of AI and here’s our deep dive and fundamental AI series.
+Capture Temporal Change
 
-A series on basics and fundamentals of ML
+Iterate through each scene and frame
 
-[![](https://cdn.coda.io/icons/svg/color/for-experienced.svg)\\
-Building Intelligent Machines](https://docs.videodb.io/building-intelligent-machines-16)
-
-⁠
-
-A series on Agents - The future of internet 👉
-
-[![](https://cdn.coda.io/icons/svg/color/cnc-machine.svg)\\
-Society of Machines](https://docs.videodb.io/society-of-machines-20)
-
-⁠
-
-### Curiosity
-
-Curious to know about Video Database and its principles 👉
-
-[![](https://cdn.coda.io/icons/svg/color/questions.svg)\\
-What's a Video Database ?](https://docs.videodb.io/whats-a-video-database-36)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/need-for-speed.svg)\\
-Why do we need a Video Database Now?](https://docs.videodb.io/why-do-we-need-a-Video-Database-Now-41)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/recurring-appointment-exception.svg)\\
-The Future Series](https://docs.videodb.io/the-future-series-78)
-
-⁠
-
-### Theory for deep divers
-
-Want to go deep into the audio video systems 👉
-
-⁠
-
-[![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)\\
-Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/video.svg)\\
-Multimedia: From MP3/MP4 to the Future with VideoDB](https://docs.videodb.io/multimedia-from-mp3-mp4-to-the-future-with-videodb-26)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
-Misalignment of Today's Web](https://docs.videodb.io/misalignment-of-todays-web-67)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/bridge.svg)\\
-Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-50)
-
-⁠
-
-### Team
-
-We specialize in developing cutting-edge AI applications for multimedia, We are a diverse group of experts in multimedia, AI and innovative user experience design.
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/light.svg)\\
-Ashutosh Trivedi](https://docs.videodb.io/ashutosh-trivedi-32)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/rocket.svg)\\
-Ashish](https://docs.videodb.io/ashish-45)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/edvard-munch.svg)\\
-Shivani Desai](https://docs.videodb.io/shivani-desai-48)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/artificial-intelligence.svg)\\
-Gaurav Tyagi](https://docs.videodb.io/gaurav-tyagi-51)
-
-⁠
-
-⁠
-
-[![](https://cdn.coda.io/icons/svg/color/under-computer.svg)\\
-Rohit Garg](https://docs.videodb.io/rohit-garg-64)
-
-⁠
-
-... and a few more hard working individuals who don’t care about their name being here. 🙌
-
-⁠
+Create Scene by custom annotation
 
 Want to print your doc?
 
 This is not the way.
 
-![](https://cdn.coda.io/assets/6ee7d0564a67/img/import_google_docs.png)
+![](https://cdn.coda.io/assets/2462459f3eb1/img/import_google_docs.png)
 
 Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 
 CtrlP
 
 ) instead.
-
-![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
-
-VideoDB Documentation
-
-Pages
-
-[![icon picker](https://cdn.coda.io/icons/svg/color/align-center.svg)\\
-\\
-Welcome to VideoDB Docs](https://docs.videodb.io/)
-
-[![](https://cdn.coda.io/icons/svg/color/quick-mode-on.svg)\\
-\\
-Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
-
-[![](https://cdn.coda.io/icons/svg/color/asteroid.svg)\\
-\\
-Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
-
-[![](https://cdn.coda.io/icons/svg/color/clear-search.svg)\\
-\\
-Multimodal Search](https://docs.videodb.io/multimodal-search-90)
-
 
 
 ---

@@ -1,0 +1,360 @@
+# Scene-Level Metadata: Smarter Video Search & Retrieval [Source Link](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+
+![videodb](https://codaio.imgix.net/workspaces/ws-jizMKG73gK/blobs/customIcons/1a6d553a-3676-494e-8f3b-fd666614f459?fit=fill&fill=solid&w=128&h=128&fm=gif&bg=0FFF&fill-color=0FFF)
+
+VideoDB Documentation
+
+Pages
+
+[Welcome to VideoDB Docs](https://docs.videodb.io/)
+
+[Quick Start Guide](https://docs.videodb.io/quick-start-guide-38)
+
+[Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80)
+
+[Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84)
+
+[Custom Annotations](https://docs.videodb.io/custom-annotations-81)
+
+[Scene-Level Metadata: Smarter Video Search & Retrieval](https://docs.videodb.io/scene-level-metadata-smarter-video-search-retrieval-107)
+
+[Advanced Visual Search Pipelines](https://docs.videodb.io/advanced-visual-search-pipelines-82)
+
+[Playground for Scene Extractions](https://docs.videodb.io/playground-for-scene-extractions-83)
+
+[Deep Dive into Prompt Engineering : Mastering Video Scene Indexing](https://docs.videodb.io/deep-dive-into-prompt-engineering-mastering-video-scene-indexing-93)
+
+[Multimodal Search](https://docs.videodb.io/multimodal-search-90)
+
+[Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
+
+[Open Source Tools](https://docs.videodb.io/open-source-tools-94)
+
+[Examples and Tutorials](https://docs.videodb.io/examples-and-tutorials-35)
+
+[Edge of Knowledge](https://docs.videodb.io/edge-of-knowledge-10)
+
+[Building World's First Video Database](https://docs.videodb.io/building-worlds-first-video-database-25)
+
+[Team](https://docs.videodb.io/team-46)
+
+[Customer Love](https://docs.videodb.io/customer-love-42)
+
+[Temp Doc](https://docs.videodb.io/temp-doc-54)
+
+Visual Search and Indexing
+
+# ![icon picker](https://cdn.coda.io/icons/svg/color/search-property.svg)         Scene-Level Metadata: Smarter Video Search & Retrieval
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1OuqMdG44liBMQ0eG1xDDcZW-UK-Hr0ji?usp=sharing)
+
+## Introduction
+
+James and Mark are video engineers at leading sports entertainment companies, responsible for managing, storing, and editing vast amounts of sports footage. Their work requires them to extract and highlight the most exciting moments from hours of raw video.
+
+Both rely on VideoDB to streamline their workflow, but their approaches differ.
+
+Mark follows the traditional method: he indexes the entire video and runs a search for relevant scenes. VideoDB processes every indexed scene, analyzing descriptions either semantically or via keywords. The results are useful but not always efficient—especially when the relevant content spans just a few minutes in a multi-hour video. The search still scans everything, sometimes returning unrelated clips.
+
+James, on the other hand, has a smarter strategy. Instead of searching the entire video, he first filters out irrelevant scenes, ensuring that only important moments are considered. This results in faster and more precise searches. How does he achieve this? By using Scene-Level Metadata.
+
+## What is Scene-Level Metadata?
+
+Scene-Level Metadata acts as smart tags for individual video scenes, allowing them to be filtered during search. Instead of relying solely on text descriptions, VideoDB enables metadata-based filtering to refine search results and make retrieval more efficient.
+
+### Why is this necessary?
+
+Every video consists of multiple scenes, each composed of frames. By default, VideoDB scans every scene to find relevant content.
+
+This works well for short videos, but when handling longer videos, only a few scenes may actually be relevant. Searching across the entire video can lead to:
+
+Slower retrieval times
+
+Less accurate results
+
+By tagging scenes with metadata, we can focus the search only on relevant parts of the video, significantly improving accuracy and efficiency.
+
+### How is Metadata Stored?
+
+Metadata is stored as a dictionary in the Scene object, with a maximum of five key-value pairs per scene.
+
+Here’s an example:
+
+scene = Scene(
+
+video\_id=video.id,
+
+start=60,
+
+end=62,
+
+description="A Red Bull car speeds down the straight at Monza.",
+
+metadata={"camera\_view":"road\_ahead","action\_type":"chasing"}
+
+)
+
+With Scene-Level Metadata, we can apply targeted filters, ensuring that searches return only highly relevant scenes.
+
+## Example: Using Scene-Level Metadata in an F1 Race
+
+James, our video engineer, works with Formula 1 race footage, which consists of continuous laps of high-speed action. To create engaging highlights, he needs to focus on the most thrilling moments:
+
+Chasing battles
+
+Sharp turns
+
+Overtaking maneuvers
+
+Dramatic crashes
+
+Instead of searching the entire race, James applies Scene-Level Metadata to tag these key moments, ensuring faster and more accurate retrieval.
+
+### Defining Metadata Filters
+
+James decides to apply metadata filters using the "action\_type" key, assigning one of the following values:
+
+📌 \["chase", "turn", "overtake", "crash"\]
+
+For simplicity, he uses only one key-value pair per scene, but he could add multiple filters (e.g., "camera\_view", "lap\_number") for even more precise results.
+
+## James' Workflow with VideoDB
+
+### Step 1: Extract Scenes from the Footage
+
+To improve indexing, James splits the video into 2-second scenes and extracts a single key frame per scene.
+
+scene\_collection = video.extract\_scenes(
+
+extraction\_type=SceneExtractionType.time\_based,
+
+extraction\_config={"time":2,"select\_frames":\["middle"\]}
+
+)
+
+scenes = scene\_collection.scenes \# Fetch extracted scenes
+
+### Step 2: Assign Metadata to Each Scene
+
+James uses AI-powered descriptions to automatically tag scenes with the correct action type before indexing.
+
+described\_scenes =\[\]
+
+for scene in scenes:
+
+# use describe to create smart metadata, category, filter etc.
+
+action\_type = scene.describe('Select one: \["chase", "turn", "overtake", "crash"\]')
+
+\# use prompt to index contextual information that you need to search in vectors.
+
+# use metadata to add structured information to each scene.
+
+described\_scene = Scene(
+
+video\_id=video.id,
+
+start=scene.start,
+
+end=scene.end,
+
+description=scene.describe("Describe this scene briefly."),
+
+metadata={"action\_type": action\_type}
+
+)
+
+described\_scenes.append(described\_scene)
+
+### Step 3: Index the Video with Scene Metadata
+
+Once metadata is assigned, James indexes the scenes for efficient searching.
+
+scene\_index\_id = video.index\_scenes(
+
+scenes=described\_scenes,
+
+name="F1 Highlight Scenes"
+
+)
+
+### Step 4: Searching with Metadata Filters
+
+Now, instead of searching the entire video, James can filter his search to focus on only specific race moments.
+
+## Applying Metadata Filters in Search
+
+### Example 1: Finding Intense Overtakes
+
+To find all overtaking moments, James applies a metadata filter:
+
+search\_results = video.search(
+
+query="A thrilling overtaking maneuver",
+
+filter=\[{"action\_type":"overtake"}\],\# Apply metadata filter
+
+search\_type=SearchType.semantic,
+
+index\_type=IndexType.scene,
+
+scene\_index\_id=scene\_index\_id
+
+)
+
+search\_results.play()\# View the retrieved scenes
+
+### Example 2: Finding Chase Scenes in the Race
+
+To retrieve close pursuit moments, James filters for chase scenes:
+
+search\_results = video.search(
+
+query="An aggressive chase on the track",
+
+filter=\[{"action\_type":"chase"}\],\# Apply metadata filter
+
+search\_type=SearchType.semantic,
+
+index\_type=IndexType.scene,
+
+scene\_index\_id=scene\_index\_id
+
+)
+
+search\_results.play()
+
+By applying Scene-Level Metadata, James dramatically improves his video search workflow.
+
+## Index level Metadata
+
+metadata can be passed as parameter to the index\_scenes function as well.
+
+scene\_index\_id= video.index\_scenes(
+
+extraction\_type=SceneExtractionType.time\_based,
+
+extraction\_config={"time":540},
+
+metadata={"category":"news","topic":"airplane"},
+
+)
+
+The metadata you passed during the indexing process, would apply to all the scenes that you are indexing.
+
+Depending on your application, you may have additional scene-related metadata, which can be included within the metadata parameter. Please refer to the metadata guidelines.
+
+Metadata Guidelines:
+
+metadata must be a dictionary containing key-value pairs.
+
+Both keys and values can be of type int or string.
+
+A maximum of 5 key-value pairs is allowed.
+
+The length of keys and values must not exceed 20 characters.
+
+Filter results based on your criteria and you can pass more than one filter. This can be useful in timestamp based filtering of results, while exploring archival content and many such more categorical approaches to find the right content.
+
+results= video.search(
+
+query="airport",
+
+filter=\[{"category":"news"}\],
+
+index\_type=IndexType.scene
+
+)
+
+results= coll.search(
+
+query="airport",
+
+filter=\[{"category":"news"}\],
+
+index\_type=IndexType.scene
+
+)
+
+Filter Guidelines:
+
+Filter must be a list of dictionaries.
+
+Each dictionary specifies a key-value pair to filter the results based on metadata.
+
+## Expanding the Use Cases
+
+Metadata isn't just for sports highlights—it has applications across multiple industries:
+
+🔹 Wildlife Documentation
+A raw wildlife documentary may contain hours of footage capturing slow-moving landscapes and sudden bursts of animal activity. But let’s say we’re only interested in tracking a pride of lions. With metadata tagging, we can filter out only the scenes featuring lions, making it easier to find the right content.
+
+🔹 Tech Conferences & Keynote Events
+A multi-hour tech conference covers various topics—Blockchain, GenAI, Quantum Computing, etc. Instead of searching through entire sessions, we can tag segments based on their subjects and filter out irrelevant sections, making topic-based retrieval seamless.
+
+🔹 Security & Surveillance
+In CCTV surveillance, hours of footage may contain only a few moments of interest, such as unauthorized access or suspicious activity. By tagging scenes based on motion detection, time of day, or facial recognition, security teams can instantly retrieve critical footage.
+
+## The Future of Smart Video Retrieval
+
+Scene-Level Metadata is a game-changer in video indexing and retrieval. It enhances:
+
+✅ Precision – Finds exactly what you’re looking for.
+✅ Efficiency – Speeds up the search process.
+✅ Scalability – Works with large video datasets effortlessly.
+
+From Formula 1 highlights to security footage analysis, metadata-driven search makes video retrieval faster, smarter, and more intuitive than ever before.
+
+With VideoDB, every second of footage becomes instantly accessible.
+
+Introduction
+
+What is Scene-Level Metadata?
+
+Why is this necessary?
+
+How is Metadata Stored?
+
+Example: Using Scene-Level Metadata in an F1 Race
+
+Defining Metadata Filters
+
+James' Workflow with VideoDB
+
+Step 1: Extract Scenes from the Footage
+
+Step 2: Assign Metadata to Each Scene
+
+Step 3: Index the Video with Scene Metadata
+
+Step 4: Searching with Metadata Filters
+
+Applying Metadata Filters in Search
+
+Example 1: Finding Intense Overtakes
+
+Example 2: Finding Chase Scenes in the Race
+
+Index level Metadata
+
+Expanding the Use Cases
+
+The Future of Smart Video Retrieval
+
+Want to print your doc?
+
+This is not the way.
+
+![](https://cdn.coda.io/assets/2462459f3eb1/img/import_google_docs.png)
+
+Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
+
+CtrlP
+
+) instead.
+
+
+---
+
