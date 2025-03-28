@@ -1,0 +1,297 @@
+# IPYNB Notebook: Subtitle [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/Subtitle.ipynb)
+
+```markdown
+## Guide: Subtitles
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/nb/main/guides/video/Subtitle.ipynb)
+
+## Adding Subtitles to Your Videos
+---
+
+This guide demonstrates how to customize subtitle styles using the `SubtitleStyle` class in VideoDB.  We'll explore various configuration options and their visual outputs, covering:
+
+*   Typography and Style
+*   Color and Effects
+*   Positioning and Margins
+*   Text Transformation
+*   Borders and Shadow
+
+## 🛠️ Setup
+---
+
+### 📦 Installing the VideoDB Package
+
+```python
+%pip install videodb
+```
+
+### 🔑 API Key Configuration
+
+Before you begin, you'll need a VideoDB API key.
+
+> Get your free API key (for the first 50 uploads, no credit card required!) from the [VideoDB Console](https://console.videodb.io). 🎉
+
+Set the API key as an environment variable:
+
+```python
+import os
+os.environ["VIDEO_DB_API_KEY"] = ""  # Replace with your actual API key
+```
+
+### 🌐 Connecting to VideoDB
+
+Establish a connection to VideoDB and access a collection:
+
+```python
+from videodb import connect
+
+conn = connect()
+coll = conn.get_collection()
+```
+
+### 🎥 Uploading a Video
+
+Upload a base video to add subtitles. We'll use a sample video for this guide:
+
+```python
+video = coll.upload(url="https://www.youtube.com/watch?v=il39Ks4mV9g")
+video.play()
+```
+
+Output should be a playable video within the notebook, directing to the VideoDB console player. Example:
+
+```
+'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/ef6ef08c-b276-4e1d-b1d0-f0525e697d46.m3u8'
+```
+
+> ℹ️ You can also upload videos from your local file system by providing the `file_path` to the `upload()` method.
+
+## 🔊 Indexing Spoken Words
+
+---
+
+To generate subtitles, first index the video's spoken words using `video.index_spoken_words()`:
+
+```python
+video.index_spoken_words()
+```
+
+A progress bar indicates the indexing process.
+
+```
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:32<00:00,  3.04it/s]
+```
+
+## 📝 Adding Default Subtitles
+
+---
+
+Add default subtitles to your video using `Video.add_subtitle()`. This method returns a streaming link:
+
+```python
+from videodb import play_stream
+
+# Add subtitles to the video
+stream_url = video.add_subtitle()
+
+# Play the video with subtitles
+play_stream(stream_url)
+```
+
+Output should be a playable video within the notebook, directing to the VideoDB console player with subtitles. Example:
+
+```
+'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/76e0206d-b3af-4a74-9628-54636bf22ddf.m3u8'
+```
+
+## 📝 Customizing Subtitle Styles
+
+---
+
+To customize the subtitle style, pass a `SubtitleStyle()` object, configured with your desired styles, to the `Video.add_subtitle()` method.
+
+> ℹ️ Refer to the [SubtitleStyle API Reference](link_to_api_reference - *replace with actual link*) for a complete list of available options.
+
+### 1. Typography and Style
+
+Configure the typography of the subtitles using the following parameters in the `SubtitleStyle()` class:
+
+*   `font_name`: The font to use (e.g., "Roboto").
+*   `font_size`: The font size in pixels.
+*   `spacing`: Character spacing in pixels.
+*   `bold`: `True` for bold text, `False` otherwise.
+*   `italic`: `True` for italic text, `False` otherwise.
+*   `underline`: `True` for underlined text, `False` otherwise.
+*   `strike_out`: `True` for strikethrough text, `False` otherwise.
+
+```python
+from videodb import SubtitleStyle
+
+stream_url = video.add_subtitle(
+    SubtitleStyle(
+        font_name="Roboto",
+        font_size=12,
+        spacing=0,
+        bold=False,
+        italic=False,
+        underline=False,
+        strike_out=False,
+    )
+)
+play_stream(stream_url)
+```
+
+Output should be a playable video within the notebook, directing to the VideoDB console player with the specified typography. Example:
+
+```
+'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/86d9e2a6-b0d9-4333-9013-bf355fea051d.m3u8'
+```
+
+![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/subtitle-style/typography.png)
+
+### 2. Color and Effects
+
+Customize the colors of the subtitles using the following parameters:
+
+*   `primary_colour`: The main text color.
+*   `secondary_colour`: Color for karaoke effects or secondary highlighting.
+*   `outline_colour`: The text outline color.
+*   `back_colour`: The subtitle background color.
+
+> **ℹ️ Color Format**
+>
+> `SubtitleStyle` accepts colors in the `&HBBGGRR` hexadecimal format, where BB, GG, and RR represent the blue, green, and red components, respectively.  The `&H` prefix is required. For transparency, include an alpha value at the beginning: `&HAABBGGRR`. (AA is the alpha value).
+
+```python
+from videodb import SubtitleStyle
+
+stream_url = video.add_subtitle(
+    SubtitleStyle(
+        primary_colour="&H00A5CFFF",
+        secondary_colour="&H00FFFF00",
+        outline_colour="&H000341C1",
+        back_colour="&H803B3B3B",
+    )
+)
+play_stream(stream_url)
+```
+
+Output should be a playable video within the notebook, directing to the VideoDB console player with the specified colors. Example:
+
+```
+'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/f59f13f4-d2ac-4589-83b7-58cdbb8e9154.m3u8'
+```
+
+![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/subtitle-style/colors.png)
+
+### 3. Position and Margins
+
+Configure the alignment and position of the subtitles using the following parameters:
+
+*   `alignment`:  The alignment of the subtitle (use `SubtitleAlignment` enum).
+*   `margin_l`: Left margin in pixels.
+*   `margin_r`: Right margin in pixels.
+*   `margin_v`: Top and bottom margin in pixels.
+
+> ℹ️ See the [API Reference](link_to_api_reference - *replace with actual link*) for details on `SubtitleAlignment`.
+
+```python
+from videodb import SubtitleStyle, SubtitleAlignment
+
+stream_url = video.add_subtitle(
+    SubtitleStyle(
+        alignment=SubtitleAlignment.middle_center,
+        margin_l=10,
+        margin_r=10,
+        margin_v=20,
+    )
+)
+play_stream(stream_url)
+```
+
+Output should be a playable video within the notebook, directing to the VideoDB console player with the specified position and margins. Example:
+
+```
+'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/d32a4ae4-e19f-4ca9-9438-4d7b94e327b2.m3u8'
+```
+
+![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/subtitle-style/position.png)
+
+### 4. Text Transformation
+
+Transform the text size and spacing using the following parameters:
+
+*   `scale_x`: Horizontal scaling factor.
+*   `scale_y`: Vertical scaling factor.
+*   `angle`: Rotation angle in degrees.
+
+```python
+from videodb import SubtitleStyle
+
+stream_url = video.add_subtitle(
+    SubtitleStyle(
+        scale_x=1.5,
+        scale_y=3,
+        angle=0,
+    )
+)
+play_stream(stream_url)
+```
+
+Output should be a playable video within the notebook, directing to the VideoDB console player with the specified transformations. Example:
+
+```
+'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/f7ebe6d2-a181-46ad-aae3-e824446dc2a4.m3u8'
+```
+
+![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/subtitle-style/transformation.png)
+
+### 5. Borders and Shadow
+
+Add border styles, outlines, and shadows using the following parameters:
+
+*   `border_style`: The border style (use `SubtitleBorderStyle` enum).
+*   `outline`: The width of the text outline in pixels.
+*   `shadow`: The depth of the shadow behind the text in pixels.
+
+> ℹ️ See the [API Reference](link_to_api_reference - *replace with actual link*) for details on `SubtitleBorderStyle`.
+
+```python
+from videodb import SubtitleStyle, SubtitleBorderStyle
+
+stream_url = video.add_subtitle(
+    SubtitleStyle(
+        shadow=2,
+        back_colour="&H00000000",
+        border_style=SubtitleBorderStyle.no_border,
+    )
+)
+play_stream(stream_url)
+```
+
+Output should be a playable video within the notebook, directing to the VideoDB console player with the specified border and shadow. Example:
+
+```
+'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/cbbc8812-0fcf-467f-aac6-1976582146bd.m3u8'
+```
+
+![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/subtitle-style/shadow.png)
+
+## 👨‍💻 Next Steps
+
+---
+
+Explore other VideoDB subtitle features and resources:
+
+*   [Enhancing Video Captions with VideoDB Subtitle Styling](https://coda.io/d/_dnIYgjBK4eB/_sulRy)
+
+If you have any questions or feedback, feel free to reach out:
+
+*   [Discord](https://discord.gg/py9P639jGz)
+*   [GitHub](https://github.com/video-db)
+*   [VideoDB](https://videodb.io)
+*   Email: ashu@videodb.io
+
+
+---
+

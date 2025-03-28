@@ -1,0 +1,216 @@
+# IPYNB Notebook: Scene Index QuickStart [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/Scene%20Index%20QuickStart.ipynb)
+
+```markdown
+# ⚡️ Quick Start: Scene Indexing with VideoDB
+
+<a href="https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/quickstart/Scene%20Index%20QuickStart.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+This guide provides a quick introduction to scene indexing with VideoDB, enabling powerful visual search and content understanding in your videos.  Leverage vision models to extract meaningful information from videos and easily index it using VideoDB.
+
+Use scene indexing to build RAG applications and answer complex queries:
+
+![](https://raw.githubusercontent.com/video-db/videodb-cookbook/main/images/scene_index/intro.png)
+
+## Setup
+
+---
+
+### 📦 Install VideoDB
+
+Install the VideoDB package using pip:
+
+```python
+!pip install -U videodb
+```
+
+### 🔑 Configure API Key
+
+Import the `os` module and set your VideoDB API key as an environment variable.  Replace `"sk-xxxx-yyyyy-zzzz"` with your actual API key.
+
+```python
+import os
+
+os.environ["VIDEO_DB_API_KEY"] = "sk-xxxx-yyyyy-zzzz"
+```
+
+### 🌐 Connect to VideoDB
+
+Establish a connection to VideoDB and get a collection instance:
+
+```python
+from videodb import connect
+
+conn = connect()
+coll = conn.get_collection()
+```
+
+### 🎥 Upload Video
+
+Upload a video to VideoDB.  This example uses a YouTube video URL.
+
+```python
+video = coll.upload(url="https://www.youtube.com/watch?v=LejnTJL173Y")
+```
+
+## 📇 Index Scenes
+
+---
+
+The `index_scenes` function automatically indexes visual information in your video, extracting meaningful scenes.
+
+```python
+index_id = video.index_scenes()
+```
+
+### Optional Parameters
+
+Customize scene indexing using optional parameters:
+
+*   **`extraction_type`**: Choose a scene extraction algorithm (e.g., time-based).
+*   **`extraction_config`**: Configure the selected extraction algorithm (e.g., time interval for time-based extraction).
+*   **`prompt`**:  Provide a prompt for a vision model to describe the scenes and frames (e.g., "describe the image in 100 words").
+*   **`callback_url`**: Specify a URL to receive a notification when the indexing job is complete.
+
+Refer to the [Scene and Frame Object Guide](https://github.com/video-db/videodb-cookbook/blob/main/guides/video/scene-index/advanced_visual_search.ipynb) for more details.
+
+```python
+from videodb import SceneExtractionType, IndexType
+
+index_id = video.index_scenes(
+    extraction_type=SceneExtractionType.time_based,
+    extraction_config={"time":10, "select_frames": ['first']},
+    prompt="describe the image in 100 words",
+    # callback_url=callback_url,
+)
+
+# Wait for indexing to finish
+scene_index = video.get_scene_index(index_id)
+scene_index
+```
+
+Example output:
+
+```
+[{'description': 'The image depicts a man sitting in an office or conference room...',
+  'end': 10.01,
+  'start': 0.0},
+ {'description': 'The image shows a man with a receding hairline, wearing a dark suit...',
+  'end': 20.02,
+  'start': 10.01},
+  ...
+]
+```
+
+> Note:  It may take a few seconds for the index to become available for searching.
+
+```python
+# Search your video using the index_id.
+# Default Case: search all indexes
+# query: "drinking"
+
+res = video.search(query="religious gathering",
+                  index_type=IndexType.scene,
+                  index_id=index_id)
+
+res.play()
+```
+
+This will output a URL that opens a VideoDB player, showcasing the relevant scenes.
+
+## ⚙️ Understanding `index_scenes` Parameters
+
+---
+
+Let's explore the parameters of the `index_scenes` function in more detail:
+
+*   `extraction_type`:  Chooses the algorithm for scene extraction.
+*   `extraction_config`: Provides configuration details for the chosen algorithm.
+*   `prompt`: Instructs the vision model on how to describe each scene.
+*   `callback_url`:  Specifies a URL to be notified when the indexing job finishes.
+
+### ⚙️ `extraction_type` & `extraction_config`
+
+Videos are essentially sequences of images (frames). The `extraction_type` parameter allows you to select different scene extraction algorithms, which, in turn, influence the selection of relevant frames for description. For more information, see [Scene Extraction Algorithms](https://docs.videodb.io/scene-extraction-algorithms-84).
+
+![](https://raw.githubusercontent.com/video-db/videodb-cookbook/main/images/scene_index/VSF.png)
+
+### ⚙️ `prompt`
+
+The `prompt` is crucial for guiding the vision models. It defines the context and desired output format.
+
+For example, to identify running activity, you might use the following prompt:
+
+> "Describe clearly what is happening in the video. Add 'running_detected' if you see a person running."
+
+For experimenting with custom models and prompts, see [Advanced Visual Search Pipelines](https://github.com/video-db/videodb-cookbook/blob/main/guides/scene-index/advanced_visual_search.ipynb).
+
+### ⚙️ `callback_url`
+
+The `callback_url` receives a notification upon completion of the scene indexing process. Refer to [Callback Details](https://docs.videodb.io/callback-details-66#_lubHL) for more information.
+
+<div style="height:40px;"></div>
+
+## 🗂️ Managing Indexes
+
+---
+
+> 💡 You can create multiple scene indexes for a single video and rank search results based on these indexes.
+
+**List Scene Indexes:**
+
+`video.list_scene_index()` returns a list of available scene indexes, including their `id`, `name`, and `status`.
+
+```python
+scene_indexes = video.list_scene_index()
+print(scene_indexes)
+```
+
+Example output:
+
+```
+[{'name': 'Scene Index 2024-07-22 10:06', 'scene_index_id': 'f4db35c5ce45a709', 'status': 'done'}]
+```
+
+**Get a Specific Index:**
+
+`video.get_scene_index(index_id)` returns a list of indexed scenes, including `scene_index_id`, `start`, `end`, and `description`.
+
+```python
+scene_index = video.get_scene_index(index_id)
+print(scene_index)
+```
+
+Example output:
+
+```
+[{'description': 'The image depicts a man sitting in an office...', 'end': 10.01, 'start': 0.0},
+ {'description': 'The image shows a man with a receding hairline...', 'end': 20.02, 'start': 10.01},
+ ...]
+```
+
+**Delete an Index:**
+
+```python
+video.delete_scene_index(index_id)
+```
+
+## 🧑‍💻 Deep Dive
+
+---
+
+Explore the following resources and tutorials for more advanced scene indexing techniques:
+
+*   **Custom Annotations Pipeline:** [Custom Annotations](https://github.com/video-db/videodb-cookbook/blob/main/guides/scene-index/custom_annotations.ipynb) - Bring your own scene descriptions and annotations.
+*   **Playground for Scene Extractions:** [Playground](https://github.com/video-db/videodb-cookbook/blob/main/guides/scene-index/playground_scene_extraction.ipynb) - Experiment with different extraction algorithms and prompts.
+*   **Advanced Visual Search Pipelines:** [Advanced Visual Search](https://github.com/video-db/videodb-cookbook/blob/main/guides/scene-index/advanced_visual_search.ipynb) - Build flexible and powerful visual search workflows.
+
+If you have any questions or feedback, please reach out to us!
+
+*   [Discord](https://discord.gg/py9P639jGz)
+*   [GitHub](https://github.com/video-db)
+*   [Website](https://videodb.io)
+*   [Email](ashu@videodb.io)
+```
+
+---
+
