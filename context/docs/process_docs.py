@@ -45,9 +45,9 @@ class DocsHandler:
         include_patterns,
         exclude_patterns,
         prompt_config,
+        docs_output_fragments,
         base_url,
         doc_tree_file,
-        docs_output_fragments,
         llm,
     ):
         self.include_patterns = include_patterns
@@ -199,9 +199,9 @@ if __name__ == "__main__":
         docs_include,
         docs_exclude,
         docs_prompts,
+        docs_output_fragments,
         docs_base_url,
         docs_tree_file,
-        docs_output_fragments,
         llm,
     )
     docs_content = docs_handler.process()

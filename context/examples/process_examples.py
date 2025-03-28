@@ -51,6 +51,7 @@ class IPYNBHandler:
         include_patterns,
         exclude_patterns,
         prompt_config,
+        output_fragments,
         clone_dir,
         clone_url,
         llm,
@@ -58,6 +59,7 @@ class IPYNBHandler:
         self.include_patterns = include_patterns
         self.exclude_patterns = exclude_patterns
         self.prompt_config = prompt_config
+        self.output_fragments = output_fragments
         self.clone_dir = clone_dir
         self.clone_url = clone_url
         self.llm = llm
@@ -131,7 +133,7 @@ class IPYNBHandler:
             str: The combined Markdown content.
         """
         ipynb_files = self.get_ipynb_files_from_globs()
-        combined_content = ""
+        output = ""
         total_tokens_used = 0
 
         for ipynb_file in ipynb_files:
@@ -153,13 +155,27 @@ class IPYNBHandler:
             source_link = ipynb_file.replace(
                 self.clone_dir, f"{self.clone_url}/blob/main"
             )
-            combined_content += (
+            ipynb_output = (
                 f"# IPYNB Notebook: {file_title} [Source Link]({format_url(source_link)})\n\n"
                 + simplified_content
                 + "\n\n---\n\n"
             )
+            if self.output_fragments:
+                os.makedirs(self.output_fragments, exist_ok=True)
+                file_name = (
+                    f"{(file_title.replace('-', '_').strip('/')) or 'index'}.txt"
+                )
+                print("this is file_name", file_name)
+                ipynb_output_file_path = os.path.join(
+                    self.output_fragments,
+                    file_name,
+                )
+                with open(ipynb_output_file_path, "w") as f:
+                    f.write(ipynb_output)
+            output += ipynb_output
+
         print(f" 💰 💰 Tokens Used : {total_tokens_used}")
-        return combined_content
+        return output
 
 
 if __name__ == "__main__":
@@ -176,12 +192,17 @@ if __name__ == "__main__":
     ipynb_exclude = config.get("exclude", [])
     ipynb_prompts = config.get("prompts", {})
     ipynb_output_file = config.get("output_file", "")
-
-    final_output_file = config.get("output_file", "")
+    ipynb_output_fragments = config.get("output_fragments", "")
 
     # Process IPYNB files
     ipynb_handler = IPYNBHandler(
-        ipynb_include, ipynb_exclude, ipynb_prompts, clone_dir, clone_url, llm
+        ipynb_include,
+        ipynb_exclude,
+        ipynb_prompts,
+        ipynb_output_fragments,
+        clone_dir,
+        clone_url,
+        llm,
     )
     ipynb_content = ipynb_handler.process()
 

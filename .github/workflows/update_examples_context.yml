@@ -38,6 +38,7 @@ jobs:
           BRANCH_NAME=$(yq '.examples_context.branch_name // "examples-md-update"' config.yaml)
           COMMIT_MESSAGE=$(yq '.examples_context.commit_message // "Add combined Markdown output for examples context"' config.yaml)
           OUTPUT_FILE=$(yq '.examples_context.output_file // "videodb_helper/context_examples/context/index_ipynb.md"' config.yaml)
+          OUTPUT_FRAGMENTS=$(yq '.docs_context.output_fragments' config.yaml)
 
 
           echo "clone_url=$CLONE_URL" >> $GITHUB_OUTPUT
@@ -46,6 +47,7 @@ jobs:
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
           echo "commit_message=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
           echo "output_file=$OUTPUT_FILE" >> $GITHUB_OUTPUT
+          echo "output_fragments=$OUTPUT_FRAGMENTS" >> $GITHUB_OUTPUT
 
       - name: Clone Examples Repo
         run: git clone ${{ steps.parse_config.outputs.clone_url }} ${{ steps.parse_config.outputs.clone_dir }}
@@ -82,6 +84,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b ${{ steps.parse_config.outputs.branch_name }}
           git add ${{ steps.parse_config.outputs.output_file }}
+          git add ${{ steps.parse_config.outputs.output_fragments }}
           git commit -m ${{ steps.parse_config.outputs.commit_message }}
           git push --force --set-upstream origin ${{ steps.parse_config.outputs.branch_name }}
 
