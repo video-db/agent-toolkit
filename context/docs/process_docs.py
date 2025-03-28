@@ -55,7 +55,7 @@ class DocsHandler:
         self.prompt_config = prompt_config
         self.base_url = base_url
         self.doc_tree_file = doc_tree_file
-        self.docs_output_framents = docs_output_fragments
+        self.docs_output_fragments = docs_output_fragments
         self.llm = llm
 
     def traverse_doc_tree(self, doc_tree, parent_path=""):
@@ -165,7 +165,8 @@ class DocsHandler:
             if self.docs_output_fragments:
                 os.makedirs(os.path.dirname(self.docs_output_framents), exist_ok=True)
                 doc_output_file = os.path.join(
-                    self.docs_output_framents, f"{href.replace('-', '_').trim('/')}.txt"
+                    self.docs_output_fragments,
+                    f"{href.replace('-', '_').trim('/')}.txt",
                 )
                 with open(doc_output_file, "w") as f:
                     f.write(doc_output)
