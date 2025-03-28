@@ -163,12 +163,14 @@ class DocsHandler:
                 + "\n\n---\n\n"
             )
             if self.docs_output_fragments:
-                os.makedirs(os.path.dirname(self.docs_output_fragments), exist_ok=True)
-                doc_output_file = os.path.join(
+                os.makedirs(self.docs_output_fragments, exist_ok=True)
+                file_name = f"{(href.replace('-', '_').strip('/')) or 'index'}.txt"
+                print("this is file_name", file_name)
+                doc_output_file_path = os.path.join(
                     self.docs_output_fragments,
-                    f"{href.replace('-', '_').trim('/')}.txt",
+                    file_name,
                 )
-                with open(doc_output_file, "w") as f:
+                with open(doc_output_file_path, "w") as f:
                     f.write(doc_output)
             output += doc_output
         print(f"💰 💰 Total Tokens Used : {total_tokens_used}")
