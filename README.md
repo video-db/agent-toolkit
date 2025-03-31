@@ -146,6 +146,7 @@ This workflow automates the update of the documentation context by scraping and 
   - `include` & `exclude`: A list of glob-like patterns that determine which  pages from the scraped documentation tree should be included & excluded in the final output.   
 
     > *Example: This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68)*
+
     ```yaml
     include:
       - "Welcome to Videodb Docs"
