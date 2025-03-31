@@ -96,16 +96,16 @@ This automation ensures that LLMs and AI tools always receive the most accurate 
 
 This workflow automates the process of building and updating the SDK documentation. It pulls the latest changes from the SDK repository, generates documentation using Sphinx, and then commits and pushes the updated content to a branch for review.
 
-**Trigger:**  
+#### Trigger:  
 - **Manual:** Triggered via `workflow_dispatch`.
 - **Event-based:** Triggered by a `repository_dispatch` event of type `sdk-context-update`.
 
-**Workflow:**  
+#### Workflow:  
 - **Clone & Build:** The workflow clones the SDK repository, sets up a Python environment, and builds the documentation using Sphinx.
 - **Commit:** It pulls the latest changes from the main branch, commits the generated documentation to a new branch, and pushes the branch.
 - **Pull Request:** Finally, a pull request is created to merge the updated documentation into the main branch.
 
-**Configuration:**      
+#### Configuration:     
 
 **Config path**: `config.yaml/sdk_context`
   - **clone_url:** The URL of the SDK repository to clone (e.g., `https://github.com/video-db/videodb-python`).
@@ -123,10 +123,10 @@ This workflow automates the process of building and updating the SDK documentati
 
 This workflow automates the update of the documentation context by scraping and processing the documentation site. It generates a hierarchical JSON (doc tree) of the documentation pages, filters and processes the content through an LLM using custom prompts, and consolidates the refined content into a single Markdown output file.
 
-**Trigger:**  
+#### Trigger:  
 - **Manual:** Triggered via `workflow_dispatch`.
 
-**Workflow:**  
+### Workflow:  
 - **Scrape:** The workflow scrapes the [documentation site](https://docs.videodb.io) to generate a doc tree JSON.
 - **Filtering:** The workflow uses the `include` and `exclude` patterns from the configuration to determine which documents should be processed  only the relevant documentation is selected.(it uses doc tree JSON to see hierarchical strucutue)
 - **Crawling:** Each selected document is then crawled using [FireCrawl](https://www.firecrawl.dev/) to retrieve its content. The crawler converts the fetched content into a Markdown format.
@@ -135,7 +135,7 @@ This workflow automates the update of the documentation context by scraping and 
 - **Consolidation:**  All LLM-processed Markdown outputs are consolidated into a single file and saved as the final documentation context output.
 - **Commit:** Finally, it commits and pushes the changes (or opens a pull request) to update the docs context in the repository.
 
-**Configuration:**    
+#### Configuration:    
   
 **Config path**: `config.yaml/docs_context.doc_tree_scrape_config`
   - **script:** The crawler script (e.g., `context/docs/crawl_coda_tree.py`).
@@ -160,16 +160,15 @@ This workflow automates the update of the documentation context by scraping and 
     - **default_folder**: The file name of the default prompt should be used in llm processing part for the documents 
     - **custom_prompt**: A list with keys `pattern` and `prompt`, which specifies overriding prompt for a file or pattern  
   
-
     > *Example: This configuration ensures that, while most of the documentation will be processed using the default prompt, any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt that may better suit their content and structure*
   
     ```yaml
-    prompts:
-      prompt_folder: "context/prompts" 
-      default_prompt: "default_docs.txt" 
-      custom_prompts:
-        - pattern: "Quick Start Guide/*" .
-          prompt: "custom_quickstart.txt"
+  prompts:
+    prompt_folder: "context/prompts" 
+    default_prompt: "default_docs.txt" 
+    custom_prompts:
+      - pattern: "Quick Start Guide/*" .
+        prompt: "custom_quickstart.txt"
     ```
 
   -  **base_url**: The base URL for the documentation site. This is used to resolve any relative links that are found during scraping.
@@ -187,13 +186,13 @@ This workflow automates the update of the documentation context by scraping and 
 This section describes the Update Examples Context workflow. It is responsible for processing example notebooks (IPYNB files) from a specified repository, applying customizable LLM-based summarization to each notebook, and merging the processed outputs into a consolidated Markdown file.
 
 
-**Trigger**:
+#### Trigger:
 
 - **Manual Trigger:** : The workflow can be initiated manually via `workflow_dispatch` in the GitHub Actions UI.
 
 - **Event-Based Trigger:** It can also be triggered by a `repository_dispatch` event with the type `examples-context-update`.
 
-**Workflow**:
+#### Workflow:
 
 - **Clone & Setup:**  
   - The workflow clones the repository specified by the `clone_url` in the configuration.
@@ -213,7 +212,7 @@ This section describes the Update Examples Context workflow. It is responsible f
   - A pull request is created (or updated) to merge these changes into the main branch.
 
 
-**Configuration**
+#### Configuration
 
 **Config path:** `config.yaml/examples_context`
 
@@ -281,13 +280,13 @@ This workflow automates the consolidation of documentation outputs from multiple
 Additionally, the workflow updates token statistics and creates a new minor version tag based on the consolidated output.
 
 
-**Trigger**:
+#### Trigger:
 
 - **Automatic Trigger:** Automatically triggered on push events that affect Markdown files.
 
 - **Manual Trigger:** Manually via `workflow_dispatch` in the GitHub Actions UI.
 
-**Workflow**
+#### Workflow
 
 - **Merge Full Documentation:**   
 The workflow runs the merge script defined in `llms_full_txt_file.merge_script_path` to combine complete outputs from the Instructions, SDK Context, Docs Context, and Examples Context. The resulting files (**llms-full.txt** and **llms-full.md**) represent the full, consolidated documentation.
@@ -304,7 +303,7 @@ A new minor version tag is created by incrementing the current tag’s minor ver
 - **Pull Request Creation:**   
 Finally, a pull request is automatically created (or updated) to merge the changes into the main branch.
 
-**Configuration**:
+#### Configuration:
 
 The workflow uses settings from multiple sections in `config.yaml`:
 
