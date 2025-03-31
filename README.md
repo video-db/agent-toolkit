@@ -105,8 +105,9 @@ This workflow automates the process of building and updating the SDK documentati
 - **Commit:** It pulls the latest changes from the main branch, commits the generated documentation to a new branch, and pushes the branch.
 - **Pull Request:** Finally, a pull request is created to merge the updated documentation into the main branch.
 
-**Configuration:**  :  
-> Config path: `config.yaml/sdk_context`
+**Configuration:**      
+
+**Config path**: `config.yaml/sdk_context`
   - **clone_url:** The URL of the SDK repository to clone (e.g., `https://github.com/video-db/videodb-python`).
   - **clone_dir:** The local directory where the SDK repository will be cloned (e.g., `context/sdk/source`).
   - **sphinx_config_dir:** The directory containing the Sphinx configuration (e.g., `context/sdk/sphinx_config`).
@@ -134,13 +135,14 @@ This workflow automates the update of the documentation context by scraping and 
 - **Consolidation:**  All LLM-processed Markdown outputs are consolidated into a single file and saved as the final documentation context output.
 - **Commit:** Finally, it commits and pushes the changes (or opens a pull request) to update the docs context in the repository.
 
-**Configuration:**  
-> Config path: `config.yaml/docs_context.doc_tree_scrape_config`
+**Configuration:**    
+  
+**Config path**: `config.yaml/docs_context.doc_tree_scrape_config`
   - **script:** The crawler script (e.g., `context/docs/crawl_coda_tree.py`).
   - **output:** The JSON file path where the scraped doc tree is stored (e.g., `context/docs/doc_tree.json`).
   - **url, selector, selector_value:** Parameters used to scrape the documentation site (e.g., `https://docs.videodb.io` and corresponding HTML attributes).
 
-> Config Path: `config.yaml/docs_context`
+**Config Path**: `config.yaml/docs_context`
   - **include** & **exclude**: A list of glob-like patterns that determine which  pages from the scraped documentation tree should be included & excluded in the final output.   
 
     > *Example: This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68)*
@@ -180,7 +182,7 @@ This workflow automates the update of the documentation context by scraping and 
 ### 🧩 Update Examples Context
 ---
 
-[view workflow file »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_examples_context.yml)
+[View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_examples_context.yml)
 
 This section describes the Update Examples Context workflow. It is responsible for processing example notebooks (IPYNB files) from a specified repository, applying customizable LLM-based summarization to each notebook, and merging the processed outputs into a consolidated Markdown file.
 
@@ -213,7 +215,7 @@ This section describes the Update Examples Context workflow. It is responsible f
 
 **Configuration**
 
-> Config path: `config.yaml/examples_context`
+**Config path:** `config.yaml/examples_context`
 
 - **include** & **exclude**:
   A list of glob-like patterns that determine which IPYNB notebooks should be included & excluded for processing.  
@@ -279,14 +281,12 @@ This workflow automates the consolidation of documentation outputs from multiple
 Additionally, the workflow updates token statistics and creates a new minor version tag based on the consolidated output.
 
 
----
 **Trigger**:
 
 - **Automatic Trigger:** Automatically triggered on push events that affect Markdown files.
 
 - **Manual Trigger:** Manually via `workflow_dispatch` in the GitHub Actions UI.
 
-----
 **Workflow**
 
 - **Merge Full Documentation:**   
@@ -304,13 +304,12 @@ A new minor version tag is created by incrementing the current tag’s minor ver
 - **Pull Request Creation:**   
 Finally, a pull request is automatically created (or updated) to merge the changes into the main branch.
 
----
 **Configuration**:
 
 The workflow uses settings from multiple sections in `config.yaml`:
 
 **For the Full Documentation Merge (llms-full.txt / llms-full.md)**
-> Config path: `config.yaml/llms_full_txt_file`
+**Config path:** `config.yaml/llms_full_txt_file`
 
 - **merge_script_path:**  
   The path to the script that merges complete documentation outputs.  
@@ -346,7 +345,7 @@ The workflow uses settings from multiple sections in `config.yaml`:
 
 **Token Count Settings**
 
-> Config path: `config.yaml/token_count`
+**Config path:** `config.yaml/token_count`
 
 - **script_path:** The path to the token count script (e.g., "context/count_tokens.py")
 - **tiktoken_encoding_model:** Specifies the model encoding (e.g., "gpt-4")
