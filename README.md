@@ -90,7 +90,12 @@ For example:
 
 This automation ensures that LLMs and AI tools always receive the most accurate and complete information — without requiring manual intervention.
 
-### 1. Update SDK Context
+## 🤖 Github Actions 
+
+### 🧩 Update SDK Context
+---
+
+This workflow automates the process of building and updating the SDK documentation. It pulls the latest changes from the SDK repository, generates documentation using Sphinx, and then commits and pushes the updated content to a branch for review.
 
 **Trigger:**  
 - **Manual:** Triggered via `workflow_dispatch`.
@@ -111,22 +116,21 @@ This automation ensures that LLMs and AI tools always receive the most accurate 
   - **branch_name:** The branch name to which the changes are pushed (e.g., `sdk-context-branch`).
 
 
-### 2. Update Docs Context
+### 🧩 Update Docs Context
+---
+
+This workflow automates the update of the documentation context by scraping and processing the documentation site. It generates a hierarchical JSON (doc tree) of the documentation pages, filters and processes the content through an LLM using custom prompts, and consolidates the refined content into a single Markdown output file.
 
 **Trigger:**  
 - **Manual:** Triggered via `workflow_dispatch`.
 
 **Workflow:**  
 - **Scrape:** The workflow scrapes the [documentation site](https://docs.videodb.io) to generate a doc tree JSON.
-- **Filtering:**  
-  The workflow uses the `include` and `exclude` patterns from the configuration to determine which documents should be processed  only the relevant documentation is selected.(it uses doc tree JSON to see hierarchical strucutue)
-- **Crawling:**  
-  Each selected document is then crawled using [FireCrawl](https://www.firecrawl.dev/) to retrieve its content. The crawler converts the fetched content into a Markdown format.
-- **LLM Processing:**  
-  The Markdown output of each document is processed through an LLM for summarization and refinement. The prompt used by the LLM is configurable through the prompts settings in the configuration file using `prompts` key, allowing for customized processing of each document.
+- **Filtering:** The workflow uses the `include` and `exclude` patterns from the configuration to determine which documents should be processed  only the relevant documentation is selected.(it uses doc tree JSON to see hierarchical strucutue)
+- **Crawling:** Each selected document is then crawled using [FireCrawl](https://www.firecrawl.dev/) to retrieve its content. The crawler converts the fetched content into a Markdown format.
+- **LLM Processing:**  The Markdown output of each document is processed through an LLM for summarization and refinement. The prompt used by the LLM is configurable through the prompts settings in the configuration file using `prompts` key, allowing for customized processing of each document.
 
-- **Consolidation:**  
-  Finally, all LLM-processed Markdown outputs are consolidated into a single file and saved as the final documentation context output.
+- **Consolidation:**  All LLM-processed Markdown outputs are consolidated into a single file and saved as the final documentation context output.
 - **Commit:** Finally, it commits and pushes the changes (or opens a pull request) to update the docs context in the repository.
 
 **Configuration:**  
@@ -138,7 +142,7 @@ This automation ensures that LLMs and AI tools always receive the most accurate 
 > Config Path: `config.yaml/docs_context`
   - **include** & **exclude**: A list of glob-like patterns that determine which  pages from the scraped documentation tree should be included & excluded in the final output.   
 
-    > Example: This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68)
+    > *Example: This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68)*
     ```yaml
     include:
       - "Welcome to Videodb Docs"
@@ -151,16 +155,18 @@ This automation ensures that LLMs and AI tools always receive the most accurate 
   - **prompts**: This section has config for how the content should be refined using an LLM during the processing phase.
     - **prompt_folder**: The path to folder which has prompt
     - **default_folder**: The file name of the default prompt should be used in llm processing part for the documents 
-    - **custom_prompt**: A list with keys `pattern` and `prompt`, which specifies overriding prompt for a file or pattern
+    - **custom_prompt**: A list with keys `pattern` and `prompt`, which specifies overriding prompt for a file or pattern  
+  
 
-    > Example: This configuration ensures that, while most of the documentation will be processed using the default prompt, any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt that may better suit their content and structure
+    > *Example: This configuration ensures that, while most of the documentation will be processed using the default prompt, any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt that may better suit their content and structure*
+  
     ```yaml
     prompts:
-      prompt_folder: "context/prompts"         # Directory where all prompt files are stored.
-      default_prompt: "default_docs.txt"         # Default prompt file used for most pages.
+      prompt_folder: "context/prompts" 
+      default_prompt: "default_docs.txt" 
       custom_prompts:
-        - pattern: "Quick Start Guide/*"         # Matches all pages under "Quick Start Guide".
-          prompt: "custom_quickstart.txt"         # Uses this custom prompt instead of the default.
+        - pattern: "Quick Start Guide/*" .
+          prompt: "custom_quickstart.txt"
     ```
 
   -  **base_url**: The base URL for the documentation site. This is used to resolve any relative links that are found during scraping.
@@ -169,9 +175,90 @@ This automation ensures that LLMs and AI tools always receive the most accurate 
   - **script_path**: The path to the processing script that converts the scraped doc tree (and other docs data) into a consolidated Markdown file
   - **branch_name** : The name of the branch that will be used when committing and pushing the updated docs context. This allows the update to be reviewed via a pull request before merging.
   - **commit_message**: The commit message used when updating the docs context. This message describes the changes made by the workflow.
-  - **llm**: Specifies which Language Model (LLM) is used to process and refine the scraped documentation content. This setting ensures that the appropriate model (e.g., “gemini”) is used during the summarization or cleanup stages.
 
+### 🧩 Update Examples Context
 ---
+This section describes the Update Examples Context workflow. It is responsible for processing example notebooks (IPYNB files) from a specified repository, applying customizable LLM-based summarization to each notebook, and merging the processed outputs into a consolidated Markdown file.
+
+
+**Trigger**:
+
+- **Manual Trigger:** : The workflow can be initiated manually via `workflow_dispatch` in the GitHub Actions UI.
+
+- **Event-Based Trigger:** It can also be triggered by a `repository_dispatch` event with the type `examples-context-update`.
+
+**Workflow**:
+
+- **Clone & Setup:**  
+  - The workflow clones the repository specified by the `clone_url` in the configuration.
+  - It sets up the Python environment by creating a virtual environment and installing dependencies.
+
+- **Process IPYNB Notebooks:**  
+  - Using the glob patterns defined in the configuration (`include` and `exclude`), the workflow selects the relevant IPYNB files from the cloned repository.
+   - Each selected notebook is converted to Markdown.
+   - The Markdown output for each notebook is then processed through an LLM for summarization and refinement.  
+     The LLM processing uses a default prompt unless a custom prompt is specified for a notebook via custom prompt mappings.
+
+- **Consolidation:**  
+  - All LLM-processed Markdown outputs from the notebooks are merged into a single consolidated Markdown file.
+
+- **Commit & PR:**  
+  - The consolidated Markdown file is then committed to a new branch (as defined in the configuration).
+  - A pull request is created (or updated) to merge these changes into the main branch.
+
+
+**Configuration**
+
+All configuration for the workflow is defined in the `examples_context` section of `config.yaml`. Below are the key configuration options:
+
+- **include** & **exclude**:
+  A list of glob-like patterns that determine which IPYNB notebooks should be included & excluded for processing.  
+  *Example: This config will include all notebooks under [quickstart](https://github.com/video-db/videodb-cookbook/tree/main/quickstart) and [guides](https://github.com/video-db/videodb-cookbook/tree/main/guides) except [guides/VideoDB_Search_and_Evaluation](https://github.com/video-db/videodb-cookbook/blob/main/guides/VideoDB_Search_and_Evaluation.ipynb)
+  ```yaml
+  include:
+    - "quickstart/*"
+    - "guides/*.ipynb" 
+  exclude:
+    - "guides/VideoDB_Search_and_Evaluation.ipynb"
+  ```
+
+- **prompts**: This section has config for how the content should be refined using an LLM during the processing phase.
+  - **prompt_folder**: The path to folder which has prompt
+  - **default_folder**: The file name of the default prompt should be used in llm processing part for the documents 
+  - **custom_prompt**: A list with keys `pattern` and `prompt`, which specifies overriding prompt for a file or pattern  
+  
+
+  > *Example: This configuration ensures that, while most of the ipynbs will be processed using the default prompt, but Multimodal Quickstart will be refined using a specialized prompt that may better suit its content and structure*
+
+  ```yaml
+  prompt_folder: "context/prompts"
+  default_prompt: "default_ipynb.txt"
+  custom_prompts:
+    - pattern: "quickstart/Multimodal_Quickstart.ipynb"
+      prompt: "custom_2.txt"
+  ```
+
+- **clone_url**  
+  The URL of the repository containing the example notebooks.  
+  > *Example:* https://github.com/video-db/videodb-cookbook`
+
+- **clone_dir**  
+  The local directory where the repository will be cloned.  
+  > *Example: context/examples/source*
+
+- **script_path**  
+  The path to the processing script that converts and consolidates the notebooks into Markdown.  
+  > *Example: context/examples/process_examples.py*
+
+- **output_file**  
+  The file path where the consolidated Markdown output will be written.  
+  > *Example: context/examples/examples_context.md*
+
+- **branch_name**  
+  The branch name to which the processed output is committed.  
+
+- **commit_message**  
+  The commit message used when updating the examples context.  
 
 
 
