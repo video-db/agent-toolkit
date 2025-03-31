@@ -108,12 +108,12 @@ This workflow automates the process of building and updating the SDK documentati
 #### Configuration:     
 
 **Config path**: `config.yaml/sdk_context`
-  - **clone_url:** The URL of the SDK repository to clone (e.g., `https://github.com/video-db/videodb-python`).
-  - **clone_dir:** The local directory where the SDK repository will be cloned (e.g., `context/sdk/source`).
-  - **sphinx_config_dir:** The directory containing the Sphinx configuration (e.g., `context/sdk/sphinx_config`).
-  - **output_dir:** The directory where Sphinx generates the documentation output (e.g., `context/sdk/context`).
-  - **commit_message:** The commit message used when committing the generated Sphinx Markdown output.
-  - **branch_name:** The branch name to which the changes are pushed (e.g., `sdk-context-branch`).
+  - `clone_url`: The URL of the SDK repository to clone (e.g., `https://github.com/video-db/videodb-python`).
+  - `clone_dir`: The local directory where the SDK repository will be cloned (e.g., `context/sdk/source`).
+  - `sphinx_config_dir`: The directory containing the Sphinx configuration (e.g., `context/sdk/sphinx_config`).
+  - `output_dir`: The directory where Sphinx generates the documentation output (e.g., `context/sdk/context`).
+  - `commit_message`: The commit message used when committing the generated Sphinx Markdown output.
+  - `branch_name`:  The branch name to which the changes are pushed (e.g., `sdk-context-branch`).
 
 
 ### 🧩 Update Docs Context
@@ -163,12 +163,12 @@ This workflow automates the update of the documentation context by scraping and 
     > *Example: This configuration ensures that, while most of the documentation will be processed using the default prompt, any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt that may better suit their content and structure*
   
     ```yaml
-  prompts:
-    prompt_folder: "context/prompts" 
-    default_prompt: "default_docs.txt" 
-    custom_prompts:
-      - pattern: "Quick Start Guide/*" .
-        prompt: "custom_quickstart.txt"
+    prompts:
+      prompt_folder: "context/prompts" 
+      default_prompt: "default_docs.txt" 
+      custom_prompts:
+        - pattern: "Quick Start Guide/*" .
+          prompt: "custom_quickstart.txt"
     ```
 
   -  **base_url**: The base URL for the documentation site. This is used to resolve any relative links that are found during scraping.
