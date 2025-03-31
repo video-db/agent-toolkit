@@ -28,6 +28,7 @@ This repository provides tools and context files to help integrate VideoDB into 
 ## 📦 Components
 
 ### 1. llms-full.txt
+---
 
 A consolidated reference file that provides:
 - Background information on VideoDB
@@ -41,6 +42,7 @@ This file is designed to be injected as context into LLMs, AI agents, and smart 
 
 
 ### 2. llms.txt
+---
 
 A leaner, standards-compliant file designed for use with LLMs at inference time.
 It follows the [llms.txt proposal by Answer.AI](https://github.com/answerdotai/llms-txt), which outlines how to provide LLM-readable metadata and API context about a website or tool.
@@ -50,9 +52,14 @@ It follows the [llms.txt proposal by Answer.AI](https://github.com/answerdotai/l
 [llms.txt](https://videodb.io/llms.txt) can be found at https://videodb.io/llms.txt
 
 ### 3. MCP (Model Context Protocol)
+---
 
 More on MCP usage coming soon.
 
+
+
+
+   
 
 
 
