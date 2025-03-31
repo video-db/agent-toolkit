@@ -28,7 +28,6 @@ This repository provides tools and context files to help integrate VideoDB into 
 ## 📦 Components
 
 ### 1. llms-full.txt
----
 
 A consolidated reference file that provides:
 - Background information on VideoDB
@@ -42,7 +41,6 @@ This file is designed to be injected as context into LLMs, AI agents, and smart 
 
 
 ### 2. llms.txt
----
 
 A leaner, standards-compliant file designed for use with LLMs at inference time.
 It follows the [llms.txt proposal by Answer.AI](https://github.com/answerdotai/llms-txt), which outlines how to provide LLM-readable metadata and API context about a website or tool.
@@ -52,7 +50,6 @@ It follows the [llms.txt proposal by Answer.AI](https://github.com/answerdotai/l
 [llms.txt](https://videodb.io/llms.txt) can be found at https://videodb.io/llms.txt
 
 ### 3. MCP (Model Context Protocol)
----
 
 More on MCP usage coming soon.
 
@@ -90,10 +87,12 @@ For example:
 
 This automation ensures that LLMs and AI tools always receive the most accurate and complete information — without requiring manual intervention.
 
-## 🤖 Github Actions 
+## 🤖 Github Actions to Update Context 
 
 ### 🧩 Update SDK Context
 ---
+
+[View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_sdk_context.yml)
 
 This workflow automates the process of building and updating the SDK documentation. It pulls the latest changes from the SDK repository, generates documentation using Sphinx, and then commits and pushes the updated content to a branch for review.
 
@@ -106,7 +105,7 @@ This workflow automates the process of building and updating the SDK documentati
 - **Commit:** It pulls the latest changes from the main branch, commits the generated documentation to a new branch, and pushes the branch.
 - **Pull Request:** Finally, a pull request is created to merge the updated documentation into the main branch.
 
-**Configuration:**  : 
+**Configuration:**  :  
 > Config path: `config.yaml/sdk_context`
   - **clone_url:** The URL of the SDK repository to clone (e.g., `https://github.com/video-db/videodb-python`).
   - **clone_dir:** The local directory where the SDK repository will be cloned (e.g., `context/sdk/source`).
@@ -118,6 +117,8 @@ This workflow automates the process of building and updating the SDK documentati
 
 ### 🧩 Update Docs Context
 ---
+
+[View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_docs_context.yml)
 
 This workflow automates the update of the documentation context by scraping and processing the documentation site. It generates a hierarchical JSON (doc tree) of the documentation pages, filters and processes the content through an LLM using custom prompts, and consolidates the refined content into a single Markdown output file.
 
@@ -178,6 +179,9 @@ This workflow automates the update of the documentation context by scraping and 
 
 ### 🧩 Update Examples Context
 ---
+
+[view workflow file »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_examples_context.yml)
+
 This section describes the Update Examples Context workflow. It is responsible for processing example notebooks (IPYNB files) from a specified repository, applying customizable LLM-based summarization to each notebook, and merging the processed outputs into a consolidated Markdown file.
 
 
@@ -209,7 +213,7 @@ This section describes the Update Examples Context workflow. It is responsible f
 
 **Configuration**
 
-All configuration for the workflow is defined in the `examples_context` section of `config.yaml`. Below are the key configuration options:
+> Config path: `config.yaml/examples_context`
 
 - **include** & **exclude**:
   A list of glob-like patterns that determine which IPYNB notebooks should be included & excluded for processing.  
@@ -240,7 +244,7 @@ All configuration for the workflow is defined in the `examples_context` section 
 
 - **clone_url**  
   The URL of the repository containing the example notebooks.  
-  > *Example:* https://github.com/video-db/videodb-cookbook`
+  > *Example:* https://github.com/video-db/videodb-cookbook
 
 - **clone_dir**  
   The local directory where the repository will be cloned.  
@@ -259,6 +263,94 @@ All configuration for the workflow is defined in the `examples_context` section 
 
 - **commit_message**  
   The commit message used when updating the examples context.  
+
+
+## 🤖 Misc Github Actions
+
+### 🧩 Update Master Context
+
+[View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
+
+
+This workflow automates the consolidation of documentation outputs from multiple sources (SDK context, Docs context, and Examples context) into two distinct master files. 
+- **llms-full.txt** (and its Markdown variant, **llms-full.md**) 
+- **llms.txt** (and its Markdown variant, **llms.md**)
+
+Additionally, the workflow updates token statistics and creates a new minor version tag based on the consolidated output.
+
+
+---
+**Trigger**:
+
+- **Automatic Trigger:** Automatically triggered on push events that affect Markdown files.
+
+- **Manual Trigger:** Manually via `workflow_dispatch` in the GitHub Actions UI.
+
+----
+**Workflow**
+
+- **Merge Full Documentation:**   
+The workflow runs the merge script defined in `llms_full_txt_file.merge_script_path` to combine complete outputs from the Instructions, SDK Context, Docs Context, and Examples Context. The resulting files (**llms-full.txt** and **llms-full.md**) represent the full, consolidated documentation.
+
+- **Token Counting:**   
+The workflow executes the token counting script (using tiktoken) to calculate the number of tokens in the master files and updates the README accordingly.
+
+- **Commit Changes:**   
+The workflow commits the updated master files (both full and fragment-based) to a new branch using the specified commit message.
+
+- **Create New Tag:**   
+A new minor version tag is created by incrementing the current tag’s minor version, aiding version tracking and release management.
+
+- **Pull Request Creation:**   
+Finally, a pull request is automatically created (or updated) to merge the changes into the main branch.
+
+---
+**Configuration**:
+
+The workflow uses settings from multiple sections in `config.yaml`:
+
+**For the Full Documentation Merge (llms-full.txt / llms-full.md)**
+> Config path: `config.yaml/llms_full_txt_file`
+
+- **merge_script_path:**  
+  The path to the script that merges complete documentation outputs.  
+  >*Example:* "context/merge_llms_full_txt.py"
+
+- **input_files:**  
+  A list of source files with their names and paths:
+  - Instructions 
+  - SDK Context 
+  - Docs Context 
+  - Examples Context 
+
+  > Example: it takes all sub components and merge them
+  ```yaml
+  input_files:
+    - name: Instructions
+      file_path: "context/instructions/prompt.md"
+    - name: SDK Context
+      file_path: "context/sdk/context/index.md"
+    - name: Docs Context
+      file_path: "context/docs/docs_context.md"
+    - name: Examples Context
+      file_path: "context/examples/examples_context.md"
+  ```
+
+- **output_files:**  
+  The final output file paths:
+  - **llms_full_txt:** e.g., "context/llms-full.txt"
+  - **llms_full_md:** e.g., "context/llms-full.md"
+
+- **layout:**  
+  A template defining how the input files are merged, using placeholders like `{{FILE1}}`, `{{FILE2}}`, etc.
+
+**Token Count Settings**
+
+> Config path: `config.yaml/token_count`
+
+- **script_path:** The path to the token count script (e.g., "context/count_tokens.py")
+- **tiktoken_encoding_model:** Specifies the model encoding (e.g., "gpt-4")
+- **token_breakdown_file, readme_shields_file:** Additional files for reporting (if applicable)
 
 
 
