@@ -12,4 +12,4 @@ dependencies = [
 ]
 
 [project.scripts]
-videodb-director-mcp = "videodb_director_mcp.main:main"
+videodb-director-mcp = "videodb_mcp_server.main:main"
