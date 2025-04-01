@@ -470,7 +470,7 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/7f/83/b1c03bbf0cf47d942cffff6b7c4f10efdb30fce9bfc2e6a49f0df573e0dd/videodb-0.2.11.tar.gz", hash = "sha256:ce4986bd1445a42fe0568a236101fccb0b15fd6d0fbedc668d66ed2fa2e392f2", size = 25418 }
 
 [[package]]
-name = "videodb-mcp-server"
+name = "videodb-director-mcp"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

@@ -1,0 +1,65 @@
+name: MCP Release
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  python-build:
+    name: Build for PyPi
+    runs-on: ubuntu-latest
+    environment: pypi
+
+    defaults:
+      run:
+        working-directory: ./modelcontextprotocol
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip build twine
+
+      - name: Build package
+        run: |
+          source venv/bin/activate
+          rm -rf build dist *.egg-info
+          python -m build
+          python -m twine check dist/*
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-dists
+          path: ./modelcontextprotocol/dist/
+
+  python-release:
+    name: Publish to PyPi
+    runs-on: ubuntu-latest
+    environment: pypi
+    needs:
+      - python-build
+
+    defaults:
+      run:
+        working-directory: ./modelcontextprotocol
+
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Retrieve distribution
+        uses: actions/download-artifact@v4
+        with:
+          name: release-dists
+          path: dist/
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

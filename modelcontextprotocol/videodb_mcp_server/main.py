@@ -5,14 +5,12 @@ import uuid
 import requests
 import argparse
 import socketio
-import videodb
+import webbrowser
 from typing import Any
 from constants import LLM_FULL_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
 from mcp.server.fastmcp import FastMCP
-from utils import handle_videodb_tools_error
-from videodb import SubtitleStyle
 
-mcp = FastMCP("videodb")
+mcp = FastMCP("videodb-director")
 
 
 @mcp.resource(
@@ -42,12 +40,28 @@ def code_assistant() -> str:
         return f"Error: Unable to fetch data from URL. Details: {str(e)}"
 
 
+@mcp.tool(
+    name="show_video",
+    description="When user asks for it, it will automatically display user's favorite video",
+)
+async def show_video(stream_link: str) -> dict[str, Any]:
+    webbrowser.open(f"https://console.videodb.io/player?url={stream_link}")
+    return {"message": "Opening VideoDB in browser"}
+
+
 @mcp.tool(name="call_director", description=DIRECTOR_CALL_DESCRIPTION)
 async def call_director(
     text_message: str, session_id: str | None = None
 ) -> dict[str, Any]:
+    """
+    Orchestrates specialized agents within the VideoDB server to efficiently handle multimedia and video-related queries.
+    
+    Args:
+        text_message (str): The natural language query that Director will interpret and delegate to appropriate agents.
+        session_id (str | None, optional): A session identifier to maintain continuity across multiple requests. If a previous response from this method included a `session_id`, it is MANDATORY to include it in subsequent requests.
+    """
     url = DIRECTOR_API
-    timeout = 3000
+    timeout = 300
     headers = {"x-access-token": os.getenv("VIDEODB_API_KEY")}
     sio = socketio.Client()
     response_data = None
@@ -83,7 +97,7 @@ async def call_director(
         )
         received = response_event.wait(timeout=timeout)
     except Exception as e:
-        return {"error": f"Connection failed: {e}"}
+        return {"error": f"Connection failed :( : {e}"}
     finally:
         sio.disconnect()
 

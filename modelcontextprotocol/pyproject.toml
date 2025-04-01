@@ -1,5 +1,5 @@
 [project]
-name = "videodb-mcp-server"
+name = "videodb-director-mcp"
 version = "0.1.0"
 description = "VideoDB MCP Server"
 readme = "README.md"
@@ -11,3 +11,6 @@ dependencies = [
     "videodb>=0.2.11",
     "websocket-client>=1.8.0",
 ]
+
+[project.scripts]
+videodb-director-mcp = "videodb_director_mcp.main:main"
