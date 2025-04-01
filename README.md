@@ -144,6 +144,7 @@ This workflow automates the update of the example notebooks Context (IPYNB files
 - **Commit & PR:** Finally, it commits and pushes the changes (or opens a pull request) to update the examples context in the repository.
 
 ### 📌 Update Master Context (llms-full.txt & llms.txt)
+---
 
 [View Github Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
 
@@ -173,14 +174,52 @@ Additionally, the workflow updates token statistics and creates a new minor vers
 
 ## ⬆️ Updating LLM Context File
 
-To update llms-txt file, First identify which subcomponent you want to update.
-Then, rerun the relevant Github Action through [Github Actions UI](https://github.com/video-db/agent-toolkit/actions)
+**Step 1: Identify the Subcomponent**
+
+Determine which subcomponent you need to update:
+
+- **SDK Context**
+- **Documentation Context**
+- **Examples Context**
+
+Each subcomponent has its own GitHub workflow for updates:
+
+| Subcomponent          | Workflow Link                                                                                             | Trigger Method |
+|-----------------------|-----------------------------------------------------------------------------------------------------------|----------------|
+| **SDK Context**       | [update_sdk_context.yml](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_sdk_context.yml)       | Manual/Event   |
+| **Documentation**     | [update_docs_context.yml](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_docs_context.yml)     | Manual         |
+| **Examples**          | [update_examples_context.yml](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_examples_context.yml) | Manual/Event   |
+
+**Step 2: Run GitHub Action**
+
+- Navigate to the [GitHub Actions UI](https://github.com/video-db/agent-toolkit/actions).
+- Choose the corresponding workflow (SDK, Docs, or Examples).
+- Initiate the action:
+  - **Manual Trigger**: Click `Run workflow`.
+  - **Event-based Trigger**: Trigger via repository dispatch events.
+
+
+**Step 3: Review & Merge**
+
+The Github Action when finished will raise a Pull Request:
+- Verify accuracy
+- Merge the PR to officially update context files
+
+> 🪄 Master File(llms-full.txt) will be updated automatically once any sub-component gets updated
+
+## ⚙️ Configuration Options  
+
+To customize or adjust the updating process, modify settings in the central `config.yaml` file located at the repository root.
+
+- Adjust inclusion/exclusion patterns
+- Customize LLM processing prompts
+- Define source URLs, directories, and output paths
+
 
 
 ## ⚙️ Configuration Options for Github Actions
 
 All Github Actions takes configuration from `config.yaml` 
-
 
 You can configure the output of Context using a central config.yaml file available at repository root 
 
