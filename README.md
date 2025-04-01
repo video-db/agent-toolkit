@@ -25,10 +25,13 @@
 
 This repository provides tools and context files to help integrate VideoDB into AI applications, LLM-powered agents, and coding tools such as AI Coding IDEs.
 
-## 📦 Components
+## 📦 Components of Agent Toolkit
 
 ### 1. llms-full.txt
 ---
+
+[View llms-full.txt »](https://videodb.io/llms-full.txt)
+
 
 A consolidated reference file that provides:
 - Background information on VideoDB
@@ -38,34 +41,26 @@ A consolidated reference file that provides:
 
 This file is designed to be injected as context into LLMs, AI agents, and smart developer tools to enable better understanding and usage of VideoDB in real time.
 
-[llms-full.txt](https://videodb.io/llms-full.txt) can be found at https://videodb.io/llms-full.txt
-
 
 ### 2. llms.txt
 ---
 
+[View llms.txt »](https://videodb.io/llms.txt)
+
 A leaner, standards-compliant file designed for use with LLMs at inference time.
 It follows the [llms.txt proposal by Answer.AI](https://github.com/answerdotai/llms-txt), which outlines how to provide LLM-readable metadata and API context about a website or tool.
 
-> Use llms.txt for LLM discoverability and llms-full.txt for deep contextual understanding in IDEs and agents.
+> ℹ️ Use `llms.txt` for LLM discoverability and `llms-full.txt` for deep contextual understanding in IDEs and agents.
 
-[llms.txt](https://videodb.io/llms.txt) can be found at https://videodb.io/llms.txt
-
-### 3. MCP (Model Context Protocol)
+### 3. 🚧 MCP (Model Context Protocol)
 ---
-
+👷 WIP  
 More on MCP usage coming soon.
 
 
 
 
-   
-
-
-
-## 🧠 What is a “LLM Context File”?
-
-LLM Context Files are documents designed to optimize how large language models interact with external tools and SDKs. They can be injected at runtime into agents, copilots, or IDE assistants to give them deep knowledge of a product or API.
+##  🧠 What's inside a “LLM Context File”?
 
 VideoDB’s Context Files Include:
 - Usage instructions and tips
@@ -73,13 +68,14 @@ VideoDB’s Context Files Include:
 - Compiled documentation and examples
 - Cookbook patterns for solving common use cases
 
-`llms-full.txt` is composed of several core content blocks — here’s how they stack up.
+Here’s how `llms-full.txt` stack up.
 ![](./token_breakdown.png)
+
+
 
 ## ⚙️ How is the LLM Context File Generated?
 
 The `llms-full.txt` file is automatically generated from a set of core building blocks, including:
-
 - VideoDB SDK source files  
 - Official VideoDB documentation  
 - Curated examples from the [VideoDB Cookbook](https://github.com/video-db/videodb-cookbook)  
@@ -94,7 +90,13 @@ For example:
 
 This automation ensures that LLMs and AI tools always receive the most accurate and complete information — without requiring manual intervention.
 
-## 🤖 Github Actions to Update Context 
+## ⚙️ Configure & Update LLM Context File 
+
+The LLM Context File (`llms-full.txt`) is automatically updated through **GitHub Actions** triggered by changes in subcomponents.
+
+Each subcomponent uses its dedicated workflow, pulling configuration from the central [config.yaml](https://github.com/video-db/agent-toolkit/blob/main/config.yaml) located in the repository's root.
+
+Below are detailed instructions and configuration options for managing each subcomponent's context updates
 
 ### 🧩 Update SDK Context
 ---
@@ -112,15 +114,15 @@ This workflow automates the process of building and updating the SDK documentati
 - **Commit:** It pulls the latest changes from the main branch, commits the generated documentation to a new branch, and pushes the branch.
 - **Pull Request:** Finally, a pull request is created to merge the updated documentation into the main branch.
 
-#### Configuration:     
+#### ⚙️ Configuration:     
 
-`Config path: config.yaml/sdk_context`
-  - `clone_url`: The URL of the SDK repository to clone (e.g., `https://github.com/video-db/videodb-python`).
+`Config key: config.yaml/sdk_context`
+  - `clone_url`: The URL of the SDK repository to clone (e.g : https://github.com/video-db/videodb-python).
   - `clone_dir`: The local directory where the SDK repository will be cloned (e.g., `context/sdk/source`).
   - `sphinx_config_dir`: The directory containing the Sphinx configuration (e.g., `context/sdk/sphinx_config`).
   - `output_dir`: The directory where Sphinx generates the documentation output (e.g., `context/sdk/context`).
   - `commit_message`: The commit message used when committing the generated Sphinx Markdown output.
-  - `branch_name`:  The branch name to which the changes are pushed (e.g., `sdk-context-branch`).
+  - `branch_name`:  The branch name to which the changes are pushed.
 
 
 ### 🧩 Update Docs Context
@@ -133,7 +135,7 @@ This workflow automates the update of the documentation context by scraping and 
 #### Trigger:  
 - **Manual:** Triggered via `workflow_dispatch`.
 
-### Workflow:  
+#### Workflow:  
 - **Scrape:** The workflow scrapes the [documentation site](https://docs.videodb.io) to generate a doc tree JSON.
 - **Filtering:** The workflow uses the `include` and `exclude` patterns from the configuration to determine which documents should be processed  only the relevant documentation is selected.(it uses doc tree JSON to see hierarchical strucutue)
 - **Crawling:** Each selected document is then crawled using [FireCrawl](https://www.firecrawl.dev/) to retrieve its content. The crawler converts the fetched content into a Markdown format.
@@ -142,14 +144,14 @@ This workflow automates the update of the documentation context by scraping and 
 - **Consolidation:**  All LLM-processed Markdown outputs are consolidated into a single file and saved as the final documentation context output.
 - **Commit:** Finally, it commits and pushes the changes (or opens a pull request) to update the docs context in the repository.
 
-#### Configuration:    
+#### ⚙️ Configuration:    
   
 `Config path: config.yaml/docs_context.doc_tree_scrape_config`
   - `script`: The crawler script (e.g., `context/docs/crawl_coda_tree.py`).
   - `output`: The JSON file path where the scraped doc tree is stored (e.g., `context/docs/doc_tree.json`).
   - `url`, `selector`, `selector_value`: Parameters used to scrape the documentation site (e.g., `https://docs.videodb.io` and corresponding HTML attributes).
 
-`Config Path: config.yaml/docs_context`
+`Config key: config.yaml/docs_context`
   - `include` & `exclude`: A list of glob-like patterns that determine which  pages from the scraped documentation tree should be included & excluded in the final output.   
 
     > *Example: This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68)*
@@ -220,9 +222,9 @@ This section describes the Update Examples Context workflow. It is responsible f
   - A pull request is created (or updated) to merge these changes into the main branch.
 
 
-#### Configuration
+#### ⚙️ Configuration
 
-`Config path: config.yaml/examples_context`
+`Config key: config.yaml/examples_context`
 
 - `include` & `exclude`:
   A list of glob-like patterns that determine which IPYNB notebooks should be included & excluded for processing.  
@@ -281,7 +283,7 @@ This section describes the Update Examples Context workflow. It is responsible f
 [View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
 
 
-This workflow automates the consolidation of documentation outputs from multiple sources (SDK context, Docs context, and Examples context) into two distinct master files. 
+This workflow automates the consolidation of documentation outputs from multiple source contexts (SDK context, Docs context, and Examples context) into two distinct master files. 
 - **llms-full.txt** (and its Markdown variant, **llms-full.md**) 
 - **llms.txt** (and its Markdown variant, **llms.md**)
 
@@ -316,7 +318,7 @@ Finally, a pull request is automatically created (or updated) to merge the chang
 The workflow uses settings from multiple sections in `config.yaml`:
 
 **For the Full Documentation Merge (llms-full.txt / llms-full.md)**
-**Config path:** `config.yaml/llms_full_txt_file`
+**Config key:** `config.yaml/llms_full_txt_file`
 
 - `merge_script_path`:  
   The path to the script that merges complete documentation outputs.  
