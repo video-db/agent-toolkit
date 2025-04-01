@@ -7,7 +7,7 @@ import argparse
 import socketio
 import webbrowser
 from typing import Any
-from constants import LLM_FULL_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
+from videodb_mcp_server.constants import LLM_FULL_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("videodb-director")
