@@ -21,48 +21,40 @@
   </p>
 </p>
 
-# Agent Toolkit for VideoDB
+# VideoDB Agent Toolkit
 
-This repository provides tools and context files to help integrate VideoDB into AI applications, LLM-powered agents, and coding tools such as AI Coding IDEs.
+This repository provides comprehensive tools and context files for integrating VideoDB into AI applications, LLM-powered agents, and AI coding IDEs.
 
-## 📦 Components of Agent Toolkit
+## 📦 Toolkit Components
 
-### 1. llms-full.txt
+### 1. llms-full.txt ([View »](https://videodb.io/llms-full.txt))
 ---
+A complete reference providing:
 
-[View llms-full.txt »](https://videodb.io/llms-full.txt)
+- Detailed VideoDB background
+- SDK usage and documentation
+- Integration guidance and practical examples
 
-
-A consolidated reference file that provides:
-- Background information on VideoDB
-- SDK usage and interface documentation
-- Sample usage from VideoDB Docs and Cookbook
-- Integration guidance for LLM-based environments
-
-This file is designed to be injected as context into LLMs, AI agents, and smart developer tools to enable better understanding and usage of VideoDB in real time.
+Designed for deep contextual understanding and real-time injection into IDEs and agents.
 
 
-### 2. llms.txt
----
 
-[View llms.txt »](https://videodb.io/llms.txt)
 
-A leaner, standards-compliant file designed for use with LLMs at inference time.
-It follows the [llms.txt proposal by Answer.AI](https://github.com/answerdotai/llms-txt), which outlines how to provide LLM-readable metadata and API context about a website or tool.
+### 2. llms.txt ([View »](https://videodb.io/llms.txt))
 
-> ℹ️ Use `llms.txt` for LLM discoverability and `llms-full.txt` for deep contextual understanding in IDEs and agents.
+A streamlined, standards-compliant file following the [Answer.AI llms.txt proposal](https://github.com/answerdotai/llms-txt) for discoverability and metadata exposure to LLMs during inference.
+
+> **ℹ️ Recommendation**: Use llms.txt for basic discovery and llms-full.txt for comprehensive integration.
+
 
 ### 3. 🚧 MCP (Model Context Protocol)
----
-👷 WIP  
-More on MCP usage coming soon.
+
+👷 Under active development. Documentation coming soon.
 
 
+## 🧠 What's in an LLM Context File?
 
-
-##  🧠 What's inside a “LLM Context File”?
-
-VideoDB’s Context Files Include:
+VideoDB’s context files include:
 - Usage instructions and tips
 - SDK structure and interface definitions
 - Compiled documentation and examples
@@ -71,50 +63,128 @@ VideoDB’s Context Files Include:
 Here’s how `llms-full.txt` stack up.
 ![](./token_breakdown.png)
 
+Files are automatically maintained to stay current with SDK, documentation, and examples updates.
 
+## 🤖 Automated Context Generation and Updates
 
-## ⚙️ How is the LLM Context File Generated?
+Automated context generation ensures context files remain accurate and up-to-date by immediately reflecting changes from their source repositories.   
 
-The `llms-full.txt` file is automatically generated from a set of core building blocks, including:
-- VideoDB SDK source files  
-- Official VideoDB documentation  
-- Curated examples from the [VideoDB Cookbook](https://github.com/video-db/videodb-cookbook)  
-- Agent-specific usage instructions and patterns
+For example, adding or updating a function in the SDK automatically triggers updates to the corresponding SDK context, ensuring LLMs and agents always work with the latest information.
 
-To ensure the context file remains up-to-date and in sync with the evolving SDK and docs, we use a set of GitHub Actions that automatically regenerate and publish `llms-full.txt` whenever any of the source components are updated.
+Automation is achieved through GitHub Actions, configured centrally via [config.yaml](https://github.com/video-db/agent-toolkit/blob/main/config.yaml)
 
-For example:
-- Adding a new function to the SDK triggers an update to the SDK section  
-- Updating a cookbook example refreshes the relevant usage context  
-- Changes to docs are recompiled into the Docs Context block
-
-This automation ensures that LLMs and AI tools always receive the most accurate and complete information — without requiring manual intervention.
-
-## ⚙️ Configure & Update LLM Context File 
-
-The LLM Context File (`llms-full.txt`) is automatically updated through **GitHub Actions** triggered by changes in subcomponents.
-
-Each subcomponent uses its dedicated workflow, pulling configuration from the central [config.yaml](https://github.com/video-db/agent-toolkit/blob/main/config.yaml) located in the repository's root.
-
-Below are detailed instructions and configuration options for managing each subcomponent's context updates
-
-### 🧩 Update SDK Context
+### 📌 SDK Context Updates
 ---
 
-[View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_sdk_context.yml)
+[View Github Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_sdk_context.yml)
 
-This workflow automates the process of building and updating the SDK documentation. It pulls the latest changes from the SDK repository, generates documentation using Sphinx, and then commits and pushes the updated content to a branch for review.
+This Github Workflow automates the process of building and updating the SDK Context Part in LLM Context. 
 
 #### Trigger:  
 - **Manual:** Triggered via `workflow_dispatch`.
 - **Event-based:** Triggered by a `repository_dispatch` event of type `sdk-context-update`.
 
 #### Workflow:  
-- **Clone & Build:** The workflow clones the SDK repository, sets up a Python environment, and builds the documentation using Sphinx.
-- **Commit:** It pulls the latest changes from the main branch, commits the generated documentation to a new branch, and pushes the branch.
-- **Pull Request:** Finally, a pull request is created to merge the updated documentation into the main branch.
 
-#### ⚙️ Configuration:     
+- **Clone:** Clones the latest version of the [SDK repository](https://github.com/video-db/videodb-python)
+
+- **Build Documentation:** Uses [Sphinx](https://www.sphinx-doc.org/en/master), a documentation generator, to parse Python docstrings from SDK source code
+
+- **Commit & PR** : Commits the generated documentation into a dedicated branch and creates a pull request to review and merge updates
+
+### 📌 Documentation Context Updates
+---
+
+[View Github Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_docs_context.yml)
+
+This workflow automates the update of the documentation context in llm context by scraping and processing the documentation site. 
+
+#### Trigger:  
+- **Manual:** Triggered via `workflow_dispatch`.
+
+#### Workflow:  
+- **Scrape:** The workflow scrapes the [documentation site](https://docs.videodb.io) to generate a doc tree JSON.  
+
+- **Filtering:** The workflow uses the `include` and `exclude` patterns from the configuration to determine which documents should be processed  only the relevant documentation is selected.(it uses doc tree JSON to see hierarchical strucutue)  
+
+- **Crawling:** Each selected document is then crawled using [FireCrawl](https://www.firecrawl.dev/) to retrieve its content. The crawler converts the fetched content into a Markdown format.  
+
+- **LLM Processing:**  The Markdown output of each document is processed through an LLM for summarization and refinement. The prompt used by the LLM is configurable through the prompts settings in the configuration file using `prompts` key, allowing for customized processing of each document. 
+
+
+- **Consolidation:**  All LLM-processed Markdown outputs are consolidated into a single file and saved as the final documentation context output. 
+
+- **Commit & PR:** Finally, it commits and pushes the changes (or opens a pull request) to update the docs context in the repository.
+
+### 📌 Examples Context Updates
+---
+
+[View Github Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_examples_context.yml)
+
+This workflow automates the update of the example notebooks Context (IPYNB files) from [VideoDB's Cookbook Repository](https://github.com/video-db/videodb-cookbook)
+
+#### Trigger:
+
+- **Manual Trigger:** : The workflow can be initiated manually via `workflow_dispatch` in the GitHub Actions UI.
+
+- **Event-Based Trigger:** It can also be triggered by a `repository_dispatch` event with the type `examples-context-update`.
+
+#### Workflow:
+
+- **Clone & Setup:** Clones the latest version of the [VideoDB Cookbook repository](https://github.com/video-db/videodb-cookbook)
+
+- **Filtering:** The workflow uses the `include` and `exclude` patterns from the configuration to determine which notebooks should be processed only the relevant documentation is selected.
+
+- **Convert to Markdown**:  Each selected notebook is converted to Markdown using [nbconvert](https://github.com/jupyter/nbconvert)
+
+- **LLM Processing:**  The Markdown output of each notebook is processed through an LLM for summarization and refinement. The prompt used by the LLM is configurable through the prompts settings in the configuration file using `prompts` key, allowing for customized processing of each document.
+
+- **Consolidation:** All LLM-processed Markdown outputs from the notebooks are merged into a single consolidated Markdown file.
+
+- **Commit & PR:** Finally, it commits and pushes the changes (or opens a pull request) to update the examples context in the repository.
+
+### 📌 Update Master Context (llms-full.txt & llms.txt)
+
+[View Github Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
+
+This workflow automates the consolidation of documentation outputs from multiple source contexts (SDK context, Docs context, and Examples context) into two distinct master files. 
+- **llms-full.txt** (and its Markdown variant, **llms-full.md**) 
+- **llms.txt** (and its Markdown variant, **llms.md**)
+
+Additionally, the workflow updates token statistics and creates a new minor version tag based on the consolidated output.
+
+
+#### Trigger:
+
+- **Automatic Trigger:** Automatically triggered on push events that affect Markdown files.
+
+- **Manual Trigger:** Manually via `workflow_dispatch` in the GitHub Actions UI.
+
+#### Workflow
+
+- **Merge Full Documentation:** The workflow runs the merge script defined in `llms_full_txt_file.merge_script_path` to combine complete outputs from the Instructions, SDK Context, Docs Context, and Examples Context. The resulting files (**llms-full.txt** and **llms-full.md**) represent the full, consolidated documentation.
+
+- **Token Counting:** Executes the token counting script (using tiktoken) to calculate the number of tokens in the master files and updates the README accordingly.
+
+- **Commit Changes:** The workflow commits the updated master files (both full and fragment-based) and directly pushes changes to `main `branch 
+
+- **Create New Tag:** A new minor version tag is created by incrementing the current tag’s minor version, aiding version tracking and release management.
+
+
+## ⬆️ Updating LLM Context File
+
+To update llms-txt file, First identify which subcomponent you want to update.
+Then, rerun the relevant Github Action through [Github Actions UI](https://github.com/video-db/agent-toolkit/actions)
+
+
+## ⚙️ Configuration Options for Github Actions
+
+All Github Actions takes configuration from `config.yaml` 
+
+
+You can configure the output of Context using a central config.yaml file available at repository root 
+
+This sections provides details about configuration of each section
 
 `Config key: config.yaml/sdk_context`
   - `clone_url`: The URL of the SDK repository to clone (e.g : https://github.com/video-db/videodb-python).
@@ -123,26 +193,6 @@ This workflow automates the process of building and updating the SDK documentati
   - `output_dir`: The directory where Sphinx generates the documentation output (e.g., `context/sdk/context`).
   - `commit_message`: The commit message used when committing the generated Sphinx Markdown output.
   - `branch_name`:  The branch name to which the changes are pushed.
-
-
-### 🧩 Update Docs Context
----
-
-[View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_docs_context.yml)
-
-This workflow automates the update of the documentation context by scraping and processing the documentation site. It generates a hierarchical JSON (doc tree) of the documentation pages, filters and processes the content through an LLM using custom prompts, and consolidates the refined content into a single Markdown output file.
-
-#### Trigger:  
-- **Manual:** Triggered via `workflow_dispatch`.
-
-#### Workflow:  
-- **Scrape:** The workflow scrapes the [documentation site](https://docs.videodb.io) to generate a doc tree JSON.
-- **Filtering:** The workflow uses the `include` and `exclude` patterns from the configuration to determine which documents should be processed  only the relevant documentation is selected.(it uses doc tree JSON to see hierarchical strucutue)
-- **Crawling:** Each selected document is then crawled using [FireCrawl](https://www.firecrawl.dev/) to retrieve its content. The crawler converts the fetched content into a Markdown format.
-- **LLM Processing:**  The Markdown output of each document is processed through an LLM for summarization and refinement. The prompt used by the LLM is configurable through the prompts settings in the configuration file using `prompts` key, allowing for customized processing of each document.
-
-- **Consolidation:**  All LLM-processed Markdown outputs are consolidated into a single file and saved as the final documentation context output.
-- **Commit:** Finally, it commits and pushes the changes (or opens a pull request) to update the docs context in the repository.
 
 #### ⚙️ Configuration:    
   
@@ -188,38 +238,6 @@ This workflow automates the update of the documentation context by scraping and 
   - `branch_name` : The name of the branch that will be used when committing and pushing the updated docs context. This allows the update to be reviewed via a pull request before merging.
   - `commit_message`: The commit message used when updating the docs context. This message describes the changes made by the workflow.
 
-### 🧩 Update Examples Context
----
-
-[View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_examples_context.yml)
-
-This section describes the Update Examples Context workflow. It is responsible for processing example notebooks (IPYNB files) from a specified repository, applying customizable LLM-based summarization to each notebook, and merging the processed outputs into a consolidated Markdown file.
-
-
-#### Trigger:
-
-- **Manual Trigger:** : The workflow can be initiated manually via `workflow_dispatch` in the GitHub Actions UI.
-
-- **Event-Based Trigger:** It can also be triggered by a `repository_dispatch` event with the type `examples-context-update`.
-
-#### Workflow:
-
-- **Clone & Setup:**  
-  - The workflow clones the repository specified by the `clone_url` in the configuration.
-  - It sets up the Python environment by creating a virtual environment and installing dependencies.
-
-- **Process IPYNB Notebooks:**  
-  - Using the glob patterns defined in the configuration (`include` and `exclude`), the workflow selects the relevant IPYNB files from the cloned repository.
-   - Each selected notebook is converted to Markdown.
-   - The Markdown output for each notebook is then processed through an LLM for summarization and refinement.  
-     The LLM processing uses a default prompt unless a custom prompt is specified for a notebook via custom prompt mappings.
-
-- **Consolidation:**  
-  - All LLM-processed Markdown outputs from the notebooks are merged into a single consolidated Markdown file.
-
-- **Commit & PR:**  
-  - The consolidated Markdown file is then committed to a new branch (as defined in the configuration).
-  - A pull request is created (or updated) to merge these changes into the main branch.
 
 
 #### ⚙️ Configuration
@@ -275,43 +293,6 @@ This section describes the Update Examples Context workflow. It is responsible f
 - `commit_message` 
   The commit message used when updating the examples context.  
 
-
-## 🤖 Misc Github Actions
-
-### 🧩 Update Master Context
-
-[View Workflow File »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
-
-
-This workflow automates the consolidation of documentation outputs from multiple source contexts (SDK context, Docs context, and Examples context) into two distinct master files. 
-- **llms-full.txt** (and its Markdown variant, **llms-full.md**) 
-- **llms.txt** (and its Markdown variant, **llms.md**)
-
-Additionally, the workflow updates token statistics and creates a new minor version tag based on the consolidated output.
-
-
-#### Trigger:
-
-- **Automatic Trigger:** Automatically triggered on push events that affect Markdown files.
-
-- **Manual Trigger:** Manually via `workflow_dispatch` in the GitHub Actions UI.
-
-#### Workflow
-
-- **Merge Full Documentation:**   
-The workflow runs the merge script defined in `llms_full_txt_file.merge_script_path` to combine complete outputs from the Instructions, SDK Context, Docs Context, and Examples Context. The resulting files (**llms-full.txt** and **llms-full.md**) represent the full, consolidated documentation.
-
-- **Token Counting:**   
-The workflow executes the token counting script (using tiktoken) to calculate the number of tokens in the master files and updates the README accordingly.
-
-- **Commit Changes:**   
-The workflow commits the updated master files (both full and fragment-based) to a new branch using the specified commit message.
-
-- **Create New Tag:**   
-A new minor version tag is created by incrementing the current tag’s minor version, aiding version tracking and release management.
-
-- **Pull Request Creation:**   
-Finally, a pull request is automatically created (or updated) to merge the changes into the main branch.
 
 #### Configuration:
 
