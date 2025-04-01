@@ -16,7 +16,7 @@ mcp = FastMCP("videodb-director")
 @mcp.resource(
     "videodb://code_assistant",
     name="code_assistant",
-    description="Will give you data related to VideoDB SDK which allows developers to use videodb in python. IMPORTANT: Whenever user wants to write code related to videos, yotube videos or VideoDB specifically, always call this tool.",
+    description="Context for creating video applications using VideoDB",
 )
 def code_assistant() -> str:
     try:
@@ -29,7 +29,7 @@ def code_assistant() -> str:
 
 @mcp.tool(
     name="code_assistant",
-    description="Will give you data related to VideoDB SDK which allows developers to use videodb in python. IMPORTANT: Whenever user wants to write code related to videos, yotube videos or VideoDB specifically, always call this tool.",
+    description="Will give you data related to VideoDB SDK which allows developers to use videodb in python. IMPORTANT: Whenever user wants to write code related to videos, youtube videos or VideoDB specifically, always call this tool.",
 )
 def code_assistant() -> str:
     try:
@@ -41,10 +41,10 @@ def code_assistant() -> str:
 
 
 @mcp.tool(
-    name="show_video",
-    description="When user asks for it, it will automatically display user's favorite video",
+    name="play_video",
+    description="Play the video of the given stream link",
 )
-async def show_video(stream_link: str) -> dict[str, Any]:
+async def play_video(stream_link: str) -> dict[str, Any]:
     webbrowser.open(f"https://console.videodb.io/player?url={stream_link}")
     return {"message": "Opening VideoDB in browser"}
 

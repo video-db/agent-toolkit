@@ -49,7 +49,7 @@ uvx videodb-director-mcp --api-key=VIDEODB_API_KEY
    ```json
    {
      "mcpServers": {
-       "weather": {
+       "videodb-director": {
          "command": "videodb-director-mcp",
          "args": ["--api-key=<VIDEODB-API-KEY>"]
        }
@@ -67,7 +67,7 @@ uvx videodb-director-mcp --api-key=VIDEODB_API_KEY
    ```json
    {
      "mcpServers": {
-       "weather": {
+       "videodb-director": {
          "command": "videodb-director-mcp",
          "args": ["--api-key=<VIDEODB-API-KEY>"]
        }
