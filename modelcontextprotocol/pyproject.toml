@@ -1,0 +1,15 @@
+[project]
+name = "videodb-director-mcp"
+version = "0.1.0"
+description = "VideoDB MCP Server"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=1.3.0",
+    "python-socketio>=5.12.1",
+    "requests>=2.32.3",
+    "websocket-client>=1.8.0",
+]
+
+[project.scripts]
+videodb-director-mcp = "videodb_director_mcp.main:main"
