@@ -25,6 +25,8 @@
 
 This repository provides comprehensive tools and context files for integrating VideoDB into AI applications, LLM-powered agents, and AI coding IDEs.
 
+<br/>
+
 ## 📦 Toolkit Components
 
 ### 1. llms-full.txt ([View »](https://videodb.io/llms-full.txt))
@@ -39,9 +41,9 @@ A complete reference providing:
 
 **Example Use Cases of llms-full.txt**:
 
-- `llms-full.txt` is available at https://videodb.io/llms-full.txt which can be downloaded and integrated in LLM-powered Agents and AI Coding IDEs
-- [VideoDB's Director](https://chat.videodb.io) uses `llms-full.txt` to power the `code-assistant` agent [See Implementation ](https://github.com/video-db/Director/blob/main/backend/director/agents/code_assitant.py)
-- [VideoDB's Helper Discord Bot](https://discord.com/invite/py9P639jGz) uses `llms-full.txt` to power the helper bot [See Implementation ]()
+- llms-full.txt is available at `https://videodb.io/llms-full.txt` which can be downloaded and integrated in LLM-powered Agents and AI Coding IDEs
+- [VideoDB's Director](https://chat.videodb.io) uses llms-full.txt to power the `code-assistant` agent ([View Implementation ](https://github.com/video-db/Director/blob/main/backend/director/agents/code_assitant.py))
+- [VideoDB's Helper Discord Bot](https://discord.com/invite/py9P639jGz) uses llms-full.txt to power the helper bot ([View Implementation ]())
 
 ### 2. llms.txt ([View »](https://videodb.io/llms.txt))
 
@@ -51,12 +53,15 @@ A streamlined, standards-compliant file following the [Answer.AI llms.txt propos
 
 > **ℹ️ Recommendation**: Use llms.txt for basic discovery and llms-full.txt for comprehensive integration.
 
-### 3. 🚧 MCP (Model Context Protocol)
+### 3. MCP (Model Context Protocol)
 
 ---
 
 👷 Under active development. Documentation coming soon.
 
+   
+<br/>
+       
 ## 🧠 LLM Context Files
 
 The following section details on how llm context files are created
@@ -73,15 +78,20 @@ VideoDB’s Context files include following Sub-Components Context :
 Here’s how `llms-full.txt` stack up.
 ![](./token_breakdown.png)
 
-Each Sub-Component is derived from a dedicated underlying source, ensuring accuracy and consistency. To maintain up-to-date context, automated GitHub Actions are triggered whenever changes occur in the source files of these Sub-Components.
+Each Sub-Component is derived from a dedicated underlying source. 
 
-When any Sub-Component Context is updated, the Master Context automatically integrates these changes.
+To maintain up-to-date context, automated **GitHub Actions** are triggered whenever changes occur in the source files of these Sub-Components.
 
-All GitHub Actions configurations are centrally managed through a single `config.yaml` file, simplifying updates, configuration, and automation.
+When any Sub-Component Context is updated, another **Github Action** is run to update the Master Context that automatically integrates these changes.
 
-The following section provides detailed descriptions of each GitHub Action workflow.
+All GitHub Actions configurations are centrally managed through a single [config.yaml](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) file.
+
+
+<br/>
 
 ## Workflows that Updates Sub Components Context
+
+The following section provides detailed descriptions, configuration options of each GitHub Action workflow.
 
 ### ⚙️ SDK Context
 
@@ -148,7 +158,7 @@ The following section provides detailed descriptions of each GitHub Action workf
     - "Quick Start Guide/Collections"
   ```
 
-  This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68) page
+  _This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68) page_
 
 - `prompt` : Config for prompts that is used when summarizing the parsed documents with LLM.
 
@@ -163,7 +173,7 @@ The following section provides detailed descriptions of each GitHub Action workf
         prompt: "custom_quickstart.txt"
   ```
 
-  This configuration ensures that, while most of the documentation will be processed using the default prompt( [context/prompts/default_docs.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_docs.txt) ), any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt) ) that may better suit their content and structure\*
+  >This configuration ensures that, while most of the documentation will be processed using the default prompt( [context/prompts/default_docs.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_docs.txt) ), any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt) ) that may better suit their content and structure\*
 
 ### ⚙️ Examples Context
 
@@ -220,7 +230,8 @@ The following section provides detailed descriptions of each GitHub Action workf
   This configuration ensures that, while most of the ipynbs will be processed using the default ipynb( [context/prompts/default_ipynb.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_ipynb.txt) ), but Multimodal Quickstart will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt) )t that may better suit its content and structure\*
 
 
----
+
+<br/>
 
 ### Workflows that Updates Master Context
 
