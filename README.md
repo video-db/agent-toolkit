@@ -250,7 +250,7 @@ This section describes each GitHub Action workflow responsible for generating an
     - pattern: "quickstart/Multimodal_Quickstart.ipynb"
       prompt: "custom_2.txt"
   ```
-> _🧠 Most notebooks are summarized with the [default prompt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_ipynb.txt), but key ones like [Multimodal_Quickstart.ipynb](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt ) use tailored prompt instructions._
+  > _🧠 Most notebooks are summarized with the [default prompt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_ipynb.txt), but key ones like [Multimodal_Quickstart.ipynb](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt ) use tailored prompt instructions._
 
 
 
@@ -261,53 +261,46 @@ This section describes each GitHub Action workflow responsible for generating an
 
 The following section provides detailed description, configuration options of GitHub Action workflow that updates master files like `llms-full.txt` & `llms.txt` whenever any sub-component context is updated  
 
-[View Github Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
+[View GitHub Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
 
- 🔁 **What it does:**
+**🔁 What it does:**
 
-- Creates `llms-full.txt` 
-- Creates `llms.txt`
-- Update stastics in Readme.md related to llms context files
+- Combines all Sub-Component Contexts into a single unified file: `llms-full.txt`
+- Generates a standards-compliant `llms.txt` for LLM discoverability
+- Updates related token statistics in `README.md`
 
-▶️ **How it runs:**
+**▶️ How it runs:**
 
-- Triggered whenever any sub-component context is updated 
+- Automatically triggered whenever any Sub-Component Context (Instructions, SDK, Docs, Examples) is updated
 
-**️️⚙️ Configuration for llms-full.txt file**:
+---
+
+**⚙️ Configuration:**
+
+Defined under multiple keys in [`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml):
+
+#### 🔹 llms_full_txt_file
 
 `config.yaml` > `llms_full_txt_file`
 
-- `input_files`: A list of Sub Component Context files with their names and paths  
+Defines how `llms-full.txt` is assembled:
 
-  **Example config for `input_files`** 
-
-    ```yaml
-    input_files:
-      - name: Instructions
-        file_path: "context/instructions/prompt.md"
-      - name: SDK Context
-        file_path: "context/sdk/context/index.md"
-      - name: Docs Context
-        file_path: "context/docs/docs_context.md"
-      - name: Examples Context
-        file_path: "context/examples/examples_context.md"
-      ```
-- `output_files`: The final output file paths 
-
-  **Example config for `output_files`** 
-
-  ```yaml
+```yaml
+llms_full_txt_file:
+  input_files:
+    - name: Instructions
+      file_path: "context/instructions/prompt.md"
+    - name: SDK Context
+      file_path: "context/sdk/context/index.md"
+    - name: Docs Context
+      file_path: "context/docs/docs_context.md"
+    - name: Examples Context
+      file_path: "context/examples/examples_context.md"
   output_files:
     - name: llms_full_txt
       file_path: "context/llms-full.txt"
     - name: llms_full_md
       file_path: "context/llms-full.md"
-  ```
-- `layout` : A template defining how the input files are merged, using placeholders like `{{FILE1}}`, `{{FILE2}}`, etc.
-
-  **Example config for layout**
-
-  ```yaml
   layout: |
     {{FILE1}}
 
@@ -316,14 +309,17 @@ The following section provides detailed description, configuration options of Gi
     {{FILE3}}
 
     {{FILE4}}
+
   ```
+  
+  > 🧩 The layout field defines the merge strategy—here, a simple concatenation of all sub-components
 
-  > _This layout template simply contatenates the input sub-component context files_
 
 
+#### 🔹 llms_txt_file
 
-**️️⚙️ Configuration for llms.txt file**:
-
+Defines how the lightweight llms.txt file is structured.
+(See config.yaml for current format and layout.)
 `config.yaml` > `llms_txt_file`
 
 **️️⚙️ Configuration for Readme Stastics**:
