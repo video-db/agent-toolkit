@@ -64,32 +64,45 @@ A streamlined, standards-compliant file following the [Answer.AI llms.txt propos
        
 ## 🧠 LLM Context Files
 
-The following section provides more details overview of llm context files 
+This section provides a detailed overview of how LLM context files are structured and maintained within the toolkit.
 
-### Components of a LLM Context File
+### 🧩 Components of an LLM Context File
 
-VideoDB’s Context files include following Sub-Components Context :
+Each LLM context file in VideoDB is composed of multiple sub-components, each sourced and maintained independently. These sub-components come together to form the complete `llms-full.txt` file:
 
-- **Instructions**: Usage instructions and tips ([View](https://github.com/video-db/agent-toolkit/blob/main/context/instructions/prompt.md))
-- **SDK Context**: SDK structure and interface definitions. ([View](https://github.com/video-db/agent-toolkit/blob/main/context/sdk/context/index.md))
-- **Docs Context** : Compiled documentation and examples ([View](https://github.com/video-db/agent-toolkit/blob/main/context/docs/docs_context.md))
-- **Examples Context** : Cookbook patterns for solving common use cases ([View](https://github.com/video-db/agent-toolkit/blob/main/context/examples/examples_context.md))
+- **Instructions** — Usage guidelines and prompt tips  
+  [View »](https://github.com/video-db/agent-toolkit/blob/main/context/instructions/prompt.md)
 
-Here’s how `llms-full.txt` stack up.
-![](./token_breakdown.png)
+- **SDK Context** — SDK structure, classes, and interface definitions  
+  [View »](https://github.com/video-db/agent-toolkit/blob/main/context/sdk/context/index.md)
 
-Each Sub-Component is derived from a dedicated underlying source. 
+- **Docs Context** — Compiled product documentation and usage examples  
+  [View »](https://github.com/video-db/agent-toolkit/blob/main/context/docs/docs_context.md)
 
-To maintain up-to-date context, automated **GitHub Actions** are triggered whenever changes occur in the source files of these Sub-Components.
+- **Examples Context** — Practical notebook-based recipes and patterns  
+  [View »](https://github.com/video-db/agent-toolkit/blob/main/context/examples/examples_context.md)
 
-When any Sub-Component Context is updated, another **Github Action** is run to update the Master Context that automatically integrates these changes.
+---
 
-All GitHub Actions configurations are centrally managed through a single [config.yaml](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) file.
+Here’s how these components stack up within `llms-full.txt`:
+
+![Token Breakdown](./token_breakdown.png)
+
+Each sub-component is automatically generated from its respective source (e.g., SDK repo, documentation site, example notebooks).
+
+To keep everything up-to-date:
+
+- **GitHub Actions** are triggered whenever source content changes
+- These workflows regenerate the relevant sub-component context
+- A final workflow updates the **Master Context** (i.e., `llms-full.txt` and `llms.txt`)
+
+All configuration is centrally managed via a single  
+[`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) file.
 
 
 <br/>
 
-## 🔧 GitHub Workflows for Sub-Component Context Updates
+## 🔧 GitHub Actions for Sub-Component Context Updates
 
 This section describes each GitHub Action workflow responsible for generating and updating **Sub-Component Contexts** from their respective sources.
 
@@ -155,9 +168,7 @@ This section describes each GitHub Action workflow responsible for generating an
 
 `config.yaml` > `docs_context`
 
-- `include`: glob-like patterns that determine which pages should be included in the final output.
-
-- `exclude`: glob-like patterns that determine which pages should be excluded in the final output.
+- `include` & `exclude` : Specify which documentation pages to process using glob-style patterns:
 
   **Example Config for `include` & `exclude` key :**  
 
@@ -170,9 +181,10 @@ This section describes each GitHub Action workflow responsible for generating an
     - "Quick Start Guide/Collections"
   ```
 
-  > _This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68) page_
+  > 💡 _This setup will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68) page_
+  
 
-- `prompt` : Config for prompts that is used when summarizing the parsed documents with LLM.
+- `prompt` : Customize how the LLM summarizes each document:.
 
   **Example Config for `prompts` key :**
 
@@ -185,7 +197,7 @@ This section describes each GitHub Action workflow responsible for generating an
         prompt: "custom_quickstart.txt"
   ```
 
-  > _This configuration ensures that, while most of the documentation will be processed using the default prompt( [context/prompts/default_docs.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_docs.txt) ), any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt) )_
+  > _🧠 Pages under “Quick Start Guide” use a [custom summarization prompt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt ), while the rest default to [default_docs.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_docs.txt)._
 
 <br>
 
@@ -197,25 +209,23 @@ This section describes each GitHub Action workflow responsible for generating an
 
  🔁 **What it does:**
 
-- Clones example notebooks from [Cookbook repo](https://github.com/video-db/videodb-cookbook)
+- Clones notebooks from [Cookbook repo](https://github.com/video-db/videodb-cookbook)
 - Filters selected notebooks
-- Converts to Markdown
-- Uses LLM to summarize them
-- Combines into one file
-- Opens a pull request
+- Converts selected notebooks to Markdown
+- Summarizes each notebook using LLM prompts
+- Merges all summaries into a single context file
+- Commits the generated files to a seperate branch and Opens a pull request
 
 ▶️ **How it runs:**
 
-- Triggered by an event (new changes pushed to [videodb-cookbook](https://github.com/video-db/videodb-cookbook) repo)
-- Manually
+- Triggered when updates are pushed to the [videodb-cookbook](https://github.com/video-db/videodb-cookbook) repository
+- Can also be run manually from GitHub
 
 **️️⚙️ Configuration**:
 
 `config.yaml` > `examples_context`
 
-- `include`: glob-like patterns that determine which notebooks should be included in the final output.
-
-- `exclude`: glob-like patterns that determine which notebooks should be excluded in the final output.
+- `include` & `exclude` : Specify which notebooks to process using glob-style patterns:
 
   **Example config for `include` & `exclude` key**:
 
@@ -227,9 +237,9 @@ This section describes each GitHub Action workflow responsible for generating an
     - "guides/VideoDB_Search_and_Evaluation.ipynb"
   ```
 
-  > _This config will include all notebooks under [quickstart](https://github.com/video-db/videodb-cookbook/tree/main/quickstart) and [guides](https://github.com/video-db/videodb-cookbook/tree/main/guides) except [guides/VideoDB_Search_and_Evaluation](https://github.com/video-db/videodb-cookbook/blob/main/guides/VideoDB_Search_and_Evaluation.ipynb)_
+  > _📌 This example includes all notebooks in [quickstart](https://github.com/video-db/videodb-cookbook/tree/main/quickstart) and [guides](https://github.com/video-db/videodb-cookbook/tree/main/guides), but excludes one specific [evaluation notebook](https://github.com/video-db/videodb-cookbook/blob/main/guides/VideoDB_Search_and_Evaluation.ipynb)_
 
-- `prompt` : Config for prompts that is used when summarizing the parsed notebooks with LLM.
+- `prompt` : Customize how the LLM summarizes each document:.
 
   **Example config for `prompt` key**:
 
@@ -240,8 +250,7 @@ This section describes each GitHub Action workflow responsible for generating an
     - pattern: "quickstart/Multimodal_Quickstart.ipynb"
       prompt: "custom_2.txt"
   ```
-
-  > _This configuration ensures that, while most of the ipynbs will be processed using the default ipynb( [context/prompts/default_ipynb.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_ipynb.txt) ), but Multimodal Quickstart will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt ))_
+> _🧠 Most notebooks are summarized with the [default prompt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_ipynb.txt), but key ones like [Multimodal_Quickstart.ipynb](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt ) use tailored prompt instructions._
 
 
 
