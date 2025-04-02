@@ -158,7 +158,7 @@ The following section provides detailed descriptions, configuration options of e
     - "Quick Start Guide/Collections"
   ```
 
-  _This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68) page_
+  > This config will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68) page
 
 - `prompt` : Config for prompts that is used when summarizing the parsed documents with LLM.
 
@@ -173,7 +173,7 @@ The following section provides detailed descriptions, configuration options of e
         prompt: "custom_quickstart.txt"
   ```
 
-  >This configuration ensures that, while most of the documentation will be processed using the default prompt( [context/prompts/default_docs.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_docs.txt) ), any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt) ) that may better suit their content and structure\*
+  > _This configuration ensures that, while most of the documentation will be processed using the default prompt( [context/prompts/default_docs.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_docs.txt) ), any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt) )_
 
 ### ⚙️ Examples Context
 
@@ -213,7 +213,7 @@ The following section provides detailed descriptions, configuration options of e
     - "guides/VideoDB_Search_and_Evaluation.ipynb"
   ```
 
-  This config will include all notebooks under [quickstart](https://github.com/video-db/videodb-cookbook/tree/main/quickstart) and [guides](https://github.com/video-db/videodb-cookbook/tree/main/guides) except [guides/VideoDB_Search_and_Evaluation](https://github.com/video-db/videodb-cookbook/blob/main/guides/VideoDB_Search_and_Evaluation.ipynb)
+  > _This config will include all notebooks under [quickstart](https://github.com/video-db/videodb-cookbook/tree/main/quickstart) and [guides](https://github.com/video-db/videodb-cookbook/tree/main/guides) except [guides/VideoDB_Search_and_Evaluation](https://github.com/video-db/videodb-cookbook/blob/main/guides/VideoDB_Search_and_Evaluation.ipynb)_
 
 - `prompt` : Config for prompts that is used when summarizing the parsed notebooks with LLM.
 
@@ -227,7 +227,7 @@ The following section provides detailed descriptions, configuration options of e
       prompt: "custom_2.txt"
   ```
 
-  This configuration ensures that, while most of the ipynbs will be processed using the default ipynb( [context/prompts/default_ipynb.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_ipynb.txt) ), but Multimodal Quickstart will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt) )t that may better suit its content and structure\*
+  > _This configuration ensures that, while most of the ipynbs will be processed using the default ipynb( [context/prompts/default_ipynb.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_ipynb.txt) ), but Multimodal Quickstart will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt ))_
 
 
 
