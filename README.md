@@ -23,7 +23,7 @@
 
 # VideoDB Agent Toolkit
 
-This repository provides comprehensive tools and context files for integrating VideoDB into AI applications, LLM-powered agents, and AI coding IDEs.
+This repository provides tools and context files for integrating VideoDB into AI applications, LLM-powered agents, and AI coding IDEs.
 
 <br/>
 
@@ -33,17 +33,17 @@ This repository provides comprehensive tools and context files for integrating V
 
 ---
 
-A complete reference providing:
+`llms-full.txt` is a complete reference providing:
 
 - Detailed VideoDB background
 - VideoDB SDK usage and documentation
-- Integration guidance and practical examples
+- Integration guidance and practical examples realted to VideoDB
 
 **Example Use Cases of llms-full.txt**:
 
-- llms-full.txt is available at `https://videodb.io/llms-full.txt` which can be downloaded and integrated in LLM-powered Agents and AI Coding IDEs
 - [VideoDB's Director](https://chat.videodb.io) uses llms-full.txt to power the `code-assistant` agent ([View Implementation ](https://github.com/video-db/Director/blob/main/backend/director/agents/code_assitant.py))
 - [VideoDB's Helper Discord Bot](https://discord.com/invite/py9P639jGz) uses llms-full.txt to power the helper bot ([View Implementation ]())
+- llms-full.txt can be downloaded and integrated in LLM-powered Agents and AI Coding IDEs
 
 ### 2. llms.txt ([View »](https://videodb.io/llms.txt))
 
@@ -64,7 +64,7 @@ A streamlined, standards-compliant file following the [Answer.AI llms.txt propos
        
 ## 🧠 LLM Context Files
 
-The following section details on how llm context files are created
+The following section provides more details overview of llm context files 
 
 ### Components of a LLM Context File
 
@@ -89,9 +89,12 @@ All GitHub Actions configurations are centrally managed through a single [confi
 
 <br/>
 
-## Workflows that Updates Sub Components Context
+## 🔧 GitHub Workflows for Sub-Component Context Updates
 
-The following section provides detailed descriptions, configuration options of each GitHub Action workflow that creates Sub Components Context from Sources.
+This section describes each GitHub Action workflow responsible for generating and updating **Sub-Component Contexts** from their respective sources.
+
+> **Note**: This guide highlights the **most commonly used configuration options**.  
+> To keep things concise, it omits explanations for obvious settings—these can be found in the [`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) file.
 
 <br> 
 
@@ -99,28 +102,33 @@ The following section provides detailed descriptions, configuration options of e
 
 ---
 
-[View Github Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_sdk_context.yml)
+[View GitHub Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_sdk_context.yml)
 
-**🔁 What it does**:
+**🔁 What it does:**
 
-- Grabs latest SDK code
-- Builds docs from the code using Sphinx
-- Saves the docs and opens a pull request
+- Clones the latest version of the [VideoDB SDK](https://github.com/video-db/videodb-python)
+- Generates documentation from docstrings using [Sphinx](https://www.sphinx-doc.org/en/master/)
+- Saves the generated docs and opens a pull request with the updates
 
 **▶️ How it runs:**
 
-- Manually or when triggered by an event ( new changes pushed to [videodb-python](https://github.com/video-db/videodb-python) repo)
+- Automatically triggered when changes are pushed to the `videodb-python` repository
+
+> ℹ️ This is done using [`workflow_dispatch`](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch), which allows external repositories to trigger workflows.  
+> See how [`videodb-python` triggers this action](https://github.com/video-db/videodb-python/blob/main/.github/workflows/trigger-agent-toolkit-update.yaml)
 
 **️️⚙️ Configuration** 
 
 `config.yaml` > `sdk_context` 
 
 - `clone_url`:  
-  The GitHub URL of the SDK repository used as the source for building the SDK context.
+  GitHub URL of the SDK repository used as the source
 
 - `sphinx_config_dir`:  
   Path to the directory containing the [Sphinx configuration files](https://www.sphinx-doc.org/en/master/usage/configuration.html).  
-  This folder defines how the documentation is built from the SDK source code.
+
+
+> 💡 **Note**: This workflow is currently designed for Python SDKs only. 
 
 <br> 
 
@@ -132,12 +140,12 @@ The following section provides detailed descriptions, configuration options of e
 
 🔁 **What it does:**
 
-- Scrapes [VideoDB Docs](https://docs.videodb.io)'s Documentation Tree
+- Scrapes [VideoDB Docs](https://docs.videodb.io)'s [Documentation Tree](https://github.com/video-db/agent-toolkit/blob/readme-refactor/context/docs/doc_tree.json)
 - Filters relevant pages
-- Uses FireCrawl to get markdown output of filtered documents
+- Uses [FireCrawl](https://www.firecrawl.dev/) to get markdown output of filtered documents
 - Uses LLM to summarize content of each page
 - Combines all into one file
-- Opens a pull request
+- Commits the generated files to a seperate branch and Opens a pull request
 
 ▶️ **How it runs:**
 
