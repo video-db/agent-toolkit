@@ -91,7 +91,9 @@ All GitHub Actions configurations are centrally managed through a single [confi
 
 ## Workflows that Updates Sub Components Context
 
-The following section provides detailed descriptions, configuration options of each GitHub Action workflow.
+The following section provides detailed descriptions, configuration options of each GitHub Action workflow that creates Sub Components Context from Sources.
+
+<br> 
 
 ### ⚙️ SDK Context
 
@@ -119,6 +121,8 @@ The following section provides detailed descriptions, configuration options of e
 - `sphinx_config_dir`:  
   Path to the directory containing the [Sphinx configuration files](https://www.sphinx-doc.org/en/master/usage/configuration.html).  
   This folder defines how the documentation is built from the SDK source code.
+
+<br> 
 
 ### ⚙️ Docs Context
 
@@ -174,6 +178,8 @@ The following section provides detailed descriptions, configuration options of e
   ```
 
   > _This configuration ensures that, while most of the documentation will be processed using the default prompt( [context/prompts/default_docs.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_docs.txt) ), any pages under [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38) will be refined using a specialized prompt ( [context/prompts/custom_quickstart.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt) )_
+
+<br>
 
 ### ⚙️ Examples Context
 
@@ -231,23 +237,81 @@ The following section provides detailed descriptions, configuration options of e
 
 
 
-<br/>
+<br> <br/>
 
 ### Workflows that Updates Master Context
-
-### 💡 Why Use This Toolkit?
-
 ---
 
-- 🔍 Improve VideoDB Code suggestions in AI coding environments
-- 🧠 Give agents real-time awareness of VideoDB’s capabilities
-- 📚 Provide LLMs with instant access to relevant SDK context
-- 🚀 Enable smooth integration of VideoDB into any AI-powered application
+The following section provides detailed description, configuration options of GitHub Action workflow that updates master files like `llms-full.txt` & `llms.txt` whenever any sub-component context is updated  
 
-### 📌 Coming Soon
+[View Github Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
 
----
+ 🔁 **What it does:**
 
-- Expanded MCP examples and plugin support
-- Integration templates for VSCode, Cursor, Continue.dev
-- Recipes for deploying VideoDB with LangChain, LlamaIndex, and more
+- Creates `llms-full.txt` 
+- Creates `llms.txt`
+- Update stastics in Readme.md related to llms context files
+
+▶️ **How it runs:**
+
+- Triggered whenever any sub-component context is updated 
+
+**️️⚙️ Configuration for llms-full.txt file**:
+
+`config.yaml` > `llms_full_txt_file`
+
+- `input_files`: A list of Sub Component Context files with their names and paths  
+
+  **Example config for `input_files`** 
+
+    ```yaml
+    input_files:
+      - name: Instructions
+        file_path: "context/instructions/prompt.md"
+      - name: SDK Context
+        file_path: "context/sdk/context/index.md"
+      - name: Docs Context
+        file_path: "context/docs/docs_context.md"
+      - name: Examples Context
+        file_path: "context/examples/examples_context.md"
+      ```
+- `output_files`: The final output file paths 
+
+  **Example config for `output_files`** 
+
+  ```yaml
+  output_files:
+    - name: llms_full_txt
+      file_path: "context/llms-full.txt"
+    - name: llms_full_md
+      file_path: "context/llms-full.md"
+  ```
+- `layout` : A template defining how the input files are merged, using placeholders like `{{FILE1}}`, `{{FILE2}}`, etc.
+
+  **Example config for layout**
+
+  ```yaml
+  layout: |
+    {{FILE1}}
+
+    {{FILE2}}
+
+    {{FILE3}}
+
+    {{FILE4}}
+  ```
+
+  > _This layout template simply contatenates the input sub-component context files_
+
+
+
+**️️⚙️ Configuration for llms.txt file**:
+
+`config.yaml` > `llms_txt_file`
+
+**️️⚙️ Configuration for Readme Stastics**:
+
+`config.yaml` > `token_count`
+- `tiktoken_encoding_model` : The tiktoken encoding model to use to count LLM Context file tokens
+
+
