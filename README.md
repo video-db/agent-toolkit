@@ -1,7 +1,7 @@
-![Latest Number](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/video-db/agent-toolkit/refs/heads/main/readme_shields.json&style=for-the-badge)
-![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/video-db/agent-toolkit?style=for-the-badge)
-![stars-shield](https://img.shields.io/github/stars/video-db/agent-toolkit.svg?style=for-the-badge)
-![issues-shield](https://img.shields.io/github/issues/video-db/agent-toolkit.svg?style=for-the-badge)
+[![Latest Number][token-length-shield]][token-length-url]
+[![GitHub tag (latest SemVer)][tag-shield]][ tag-url]
+[![Stars][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -328,3 +328,15 @@ Defines how the lightweight llms.txt file is structured.
 - `tiktoken_encoding_model` : The tiktoken encoding model to use to count LLM Context file tokens
 
 
+---
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[token-length-shield]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/video-db/agent-toolkit/refs/heads/main/readme_shields.json&style=for-the-badge
+[token-length-url]: https://github.com/video-db/agent-toolkit/blob/main/token_breakdown.png
+[tag-shield]: https://img.shields.io/github/v/tag/video-db/agent-toolkit?style=for-the-badge
+[tag-url]: https://github.com/video-db/agent-toolkit/tags
+[stars-shield]: https://img.shields.io/github/stars/video-db/agent-toolkit.svg?style=for-the-badge
+[stars-url]: https://github.com/video-db/agent-toolkit/stargazers
+[issues-shield]: https://img.shields.io/github/issues/video-db/agent-toolkit.svg?style=for-the-badge
+[issues-url]: https://github.com/video-db/agent-toolkit/issues
