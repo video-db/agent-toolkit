@@ -234,6 +234,19 @@ Upload a file.
 * **Return type:**
   Union[ [`videodb.video.Video`](#videodb.video.Video), [`videodb.audio.Audio`](#videodb.audio.Audio), [`videodb.image.Image`](#videodb.image.Image)]
 
+#### youtube_search(query: str, result_threshold: int | None = 10, duration: str = 'medium') → List[dict]
+
+Search for a query on YouTube.
+
+* **Parameters:**
+  * **query** (*str*) – Query to search for
+  * **result_threshold** (*int*) – Number of results to return (optional)
+  * **duration** (*str*) – Duration of the video (optional)
+* **Returns:**
+  List of YouTube search results
+* **Return type:**
+  List[dict]
+
 ## Module : videodb.collection (from videodb.collection import class, func)
 
 ### *class* videodb.collection.Collection(\_connection, id: str, name: str | None = None, description: str | None = None, is_public: bool = False)
@@ -296,6 +309,73 @@ Delete the video.
   None if the delete is successful
 * **Return type:**
   None
+
+#### dub_video(video_id: str, language_code: str, callback_url: str | None = None) → [Video](#videodb.video.Video)
+
+Dub a video.
+
+* **Parameters:**
+  * **video_id** (*str*) – ID of the video to dub
+  * **language_code** (*str*) – Language code to dub the video to
+  * **callback_url** (*str*) – URL to receive the callback (optional)
+* **Returns:**
+  `Video` object
+* **Return type:**
+  [`videodb.video.Video`](#videodb.video.Video)
+
+#### generate_image(prompt: str, aspect_ratio: Literal['1:1', '9:16', '16:9', '4:3', '3:4'] | None = '1:1', callback_url: str | None = None) → [Image](#videodb.image.Image)
+
+Generate an image from a prompt.
+
+* **Parameters:**
+  * **prompt** (*str*) – Prompt for the image generation
+  * **aspect_ratio** (*str*) – Aspect ratio of the image (optional)
+  * **callback_url** (*str*) – URL to receive the callback (optional)
+* **Returns:**
+  `Image` object
+* **Return type:**
+  [`videodb.image.Image`](#videodb.image.Image)
+
+#### generate_music(prompt: str, duration: int = 5, callback_url: str | None = None) → [Audio](#videodb.audio.Audio)
+
+Generate music from a prompt.
+
+* **Parameters:**
+  * **prompt** (*str*) – Prompt for the music generation
+  * **duration** (*int*) – Duration of the music in seconds
+  * **callback_url** (*str*) – URL to receive the callback (optional)
+* **Returns:**
+  `Audio` object
+* **Return type:**
+  [`videodb.audio.Audio`](#videodb.audio.Audio)
+
+#### generate_sound_effect(prompt: str, duration: int = 2, config: dict = {}, callback_url: str | None = None) → [Audio](#videodb.audio.Audio)
+
+Generate sound effect from a prompt.
+
+* **Parameters:**
+  * **prompt** (*str*) – Prompt for the sound effect generation
+  * **duration** (*int*) – Duration of the sound effect in seconds
+  * **config** (*dict*) – Configuration for the sound effect generation
+  * **callback_url** (*str*) – URL to receive the callback (optional)
+* **Returns:**
+  `Audio` object
+* **Return type:**
+  [`videodb.audio.Audio`](#videodb.audio.Audio)
+
+#### generate_voice(text: str, voice_name: str = 'Default', config: dict = {}, callback_url: str | None = None) → [Audio](#videodb.audio.Audio)
+
+Generate voice from text.
+
+* **Parameters:**
+  * **text** (*str*) – Text to convert to voice
+  * **voice_name** (*str*) – Name of the voice to use
+  * **config** (*dict*) – Configuration for the voice generation
+  * **callback_url** (*str*) – URL to receive the callback (optional)
+* **Returns:**
+  `Audio` object
+* **Return type:**
+  [`videodb.audio.Audio`](#videodb.audio.Audio)
 
 #### get_audio(audio_id: str) → [Audio](#videodb.audio.Audio)
 
@@ -732,6 +812,19 @@ Search for a query in the video.
   `SearchResult` object
 * **Return type:**
   [`videodb.search.SearchResult`](#videodb.search.SearchResult)
+
+#### translate_transcript(language: str, additional_notes: str = '', callback_url: str | None = None) → List[dict]
+
+Translate transcript of a video to a given language.
+
+* **Parameters:**
+  * **language** (*str*) – Language to translate the transcript
+  * **additional_notes** (*str*) – Additional notes for the style of language
+  * **callback_url** (*str*) – URL to receive the callback (optional)
+* **Returns:**
+  List of translated transcript
+* **Return type:**
+  List[dict]
 
 ## Module : videodb.audio (from videodb.audio import class, func)
 
