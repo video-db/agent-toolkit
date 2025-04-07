@@ -60,9 +60,12 @@ async def call_director(
         text_message (str): The natural language query that Director will interpret and delegate to appropriate agents.
         session_id (str | None, optional): A session identifier to maintain continuity across multiple requests. If a previous response from this method included a `session_id`, it is MANDATORY to include it in subsequent requests.
     """
+    api_key = os.getenv("VIDEODB_API_KEY")
+    if not api_key:
+        raise RuntimeError("Missing VIDEODB_API_KEY environment variable. Please set it before calling this function.")
     url = DIRECTOR_API
     timeout = 300
-    headers = {"x-access-token": os.getenv("VIDEODB_API_KEY")}
+    headers = {"x-access-token": api_key}
     sio = socketio.Client()
     response_data = None
     response_event = threading.Event()
@@ -109,7 +112,6 @@ def parse_arguments():
     parser.add_argument(
         "--api-key",
         type=str,
-        required=True,
         help="The VideoDB API key required to connect to the VideoDB service.",
     )
     return parser.parse_args()
@@ -120,10 +122,7 @@ def main():
 
     if args.api_key:
         os.environ["VIDEODB_API_KEY"] = args.api_key
-    else:
-        raise ValueError(
-            "Error: The VideoDB API Key is a must to use the MCP Server. Pass it with the --api-key argument"
-        )
+
     mcp.run(transport="stdio")
 
 
