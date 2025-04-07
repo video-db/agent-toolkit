@@ -15,17 +15,29 @@
   <p align="center">
     AI Agent toolkit for VideoDB
     <br />
-    <a href="https://videodb.io/llms.txt"><strong>llms.txt »</strong></a> <br/>
-    <a href="https://videodb.io/llms-full.txt"><strong>llms-full.txt »</strong></a>
+    <a href="https://videodb.io/llms.txt"><strong>llms.txt >></strong></a> 
+    <a href="https://videodb.io/llms-full.txt"><strong>llms-full.txt</strong></a>  <br />
+    <a href="https://videodb.io/mcp"><strong>MCP</strong></a>
     <br />
   </p>
 </p>
 
 # VideoDB Agent Toolkit
 
-This repository provides tools and context files for integrating VideoDB into AI applications, LLM-powered agents, and AI coding IDEs.
+The VideoDB Agent Toolkit exposes VideoDB context to LLMs and agents. It enables integration to AI-driven IDEs like Cursor, chat agents like Claude Code etc. This toolkit automates context generation, maintenance, and discoverability. It auto-syncs SDK versions, docs, and examples and distributed through MCP and `llms.txt` 
 
-<br/>
+
+## 🚀 Quick Overview
+
+The toolkit offers context files designed for use with LLMs, structured around key components:
+
+`llms-full.txt` — Comprehensive context for deep integration.
+
+`llms.txt` — Lightweight metadata for quick discovery.
+
+`MCP (Model Context Protocol)` — A standardized protocol.
+
+These components leverage automated workflows to ensure your AI applications always operate with accurate, up-to-date context.
 
 ## 📦 Toolkit Components
 
@@ -33,257 +45,101 @@ This repository provides tools and context files for integrating VideoDB into AI
 
 ---
 
-`llms-full.txt` is a complete reference providing:
+`llms-full.txt` consolidates everything your LLM agent needs, including:
 
-- Detailed VideoDB background
-- VideoDB SDK usage and documentation
-- Integration guidance and practical examples realted to VideoDB
+- Comprehensive VideoDB overview.
 
-**Example Use Cases of llms-full.txt**:
+- Complete SDK usage instructions and documentation.
 
-- [VideoDB's Director](https://chat.videodb.io) uses llms-full.txt to power the `code-assistant` agent ([View Implementation ](https://github.com/video-db/Director/blob/main/backend/director/agents/code_assitant.py))
-- [VideoDB's Helper Discord Bot](https://discord.com/invite/py9P639jGz) uses llms-full.txt to power the helper bot ([View Implementation ]())
-- llms-full.txt can be downloaded and integrated in LLM-powered Agents and AI Coding IDEs
+- Detailed integration examples and best practices.
+
+**Real-world Examples:**
+
+- [VideoDB's Director](https://chat.videodb.io) `code-assistant` agent ([View Implementation ](https://github.com/video-db/Director/blob/main/backend/director/agents/code_assitant.py))
+- [VideoDB' Discord Bot](https://discord.com/invite/py9P639jGz) to power customer support and community help ([View Implementation ]())
+- Integrate `llms-full.txt` directly into your LLM-powered workflows, agent systems, or AI coding environments.
 
 ### 2. llms.txt ([View »](https://videodb.io/llms.txt))
 
 ---
 
-A streamlined, standards-compliant file following the [Answer.AI llms.txt proposal](https://github.com/answerdotai/llms-txt) for discoverability and metadata exposure to LLMs during inference.
+A streamlined file following the [Answer.AI llms.txt proposal](https://github.com/answerdotai/llms-txt) Ideal for quick metadata exposure and LLM discovery.
 
-> **ℹ️ Recommendation**: Use llms.txt for basic discovery and llms-full.txt for comprehensive integration.
+> **ℹ️ Recommendation**: Use `llms.txt` for lightweight discovery and metadata integration.  Use `llms-full.txt` for complete functionality.
 
 ### 3. MCP (Model Context Protocol)
 
----
+The VideoDB MCP Server connects with the Director backend framework providing a single tool for many workflows. For developerment, It can be installed and used in multiple ways, including globally via pip or with pipx for isolated environments. For more details on MCPs please visit [here](https://docs.videodb.io/add-videodb-mcp-server-in-clients-108)
 
-👷 Under active development. Documentation coming soon.
+**Using uvx**
 
-   
+```uvx run videodb-director-mcp --api-key=VIDEODB_API_KEY```
+
+**Using pip:**
+
+`pip install videodb-director-mcp`
+
+The MCP server can now be started with the following command:
+
+```videodb-director-mcp --api-key=VIDEODB_API_KEY```
+
 <br/>
        
-## 🧠 LLM Context Files
+## 🧠 Anatomy of LLM Context Files
 
-This section provides a detailed overview of how LLM context files are structured and maintained within the toolkit.
+LLM context files in VideoDB are modular, automatically generated, and continuously updated from multiple sources:
 
-### 🧩 Components of an LLM Context File
+### 🧩 Modular Structure:
 
-Each LLM context file in VideoDB is composed of multiple sub-components, each sourced and maintained independently. These sub-components come together to form the complete `llms-full.txt` file:
+- **Instructions** — Best practices and prompt guidelines [View »](https://github.com/video-db/agent-toolkit/blob/main/context/instructions/prompt.md)
 
-- **Instructions** — Usage guidelines and prompt tips  
-  [View »](https://github.com/video-db/agent-toolkit/blob/main/context/instructions/prompt.md)
+- **SDK Context** — SDK structure, classes, and interface definitions [View »](https://github.com/video-db/agent-toolkit/blob/main/context/sdk/context/index.md)
 
-- **SDK Context** — SDK structure, classes, and interface definitions  
-  [View »](https://github.com/video-db/agent-toolkit/blob/main/context/sdk/context/index.md)
+- **Docs Context** — Summarized product documentation [View »](https://github.com/video-db/agent-toolkit/blob/main/context/docs/docs_context.md)
 
-- **Docs Context** — Compiled product documentation and usage examples  
-  [View »](https://github.com/video-db/agent-toolkit/blob/main/context/docs/docs_context.md)
-
-- **Examples Context** — Practical notebook-based recipes and patterns  
-  [View »](https://github.com/video-db/agent-toolkit/blob/main/context/examples/examples_context.md)
-
----
-
-Here’s how these components stack up within `llms-full.txt`:
-
-![Token Breakdown](./token_breakdown.png)
-
-Each sub-component is automatically generated from its respective source (e.g., SDK repo, documentation site, example notebooks).
-
-To keep everything up-to-date:
-
-- **GitHub Actions** are triggered whenever source content changes
-- These workflows regenerate the relevant sub-component context
-- A final workflow updates the **Master Context** (i.e., `llms-full.txt` and `llms.txt`)
-
-All configuration is centrally managed via a single  
-[`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) file.
+- **Examples Context** — Real-world notebook examples [View »](https://github.com/video-db/agent-toolkit/blob/main/context/examples/examples_context.md)
+<img src="./token_breakdown.png" alt="Token Breakdown" width="400"/>
 
 
-<br/>
 
-## 🔧 GitHub Actions for Sub-Component Context Updates
-
-This section describes each GitHub Action workflow responsible for generating and updating **Sub-Component Contexts** from their respective sources.
-
-> **Note**: This guide highlights the **most commonly used configuration options**.  
-> To keep things concise, it omits explanations for obvious settings—these can be found in the [`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) file.
-
-<br> 
-
-### ⚙️ SDK Context
+### Automated Maintenance:
+- Managed through GitHub Actions for automated updates.
+- Triggered by changes to SDK repositories, documentation, or examples.
+- Maintained centrally via a [`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) file.
 
 ---
 
-[View GitHub Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_sdk_context.yml)
+## 🛠️ Automation with GitHub Actions
 
-**🔁 What it does:**
+Automatic context generation ensures your applications always have the latest information:
 
-- Clones the latest version of the [VideoDB SDK](https://github.com/video-db/videodb-python)
-- Generates documentation from docstrings using [Sphinx](https://www.sphinx-doc.org/en/master/)
-- Saves the generated docs and opens a pull request with the updates
+### 🔹 SDK Context Workflow ([View](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_sdk_context.yml))
+- **Automatically generates documentation** from SDK repo updates.
+- Uses [Sphinx](https://www.sphinx-doc.org/en/master/) for Python SDKs.
 
-**▶️ How it runs:**
+### 🔹 Docs Context Workflow ([View](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_docs_context.yml))
+- **Scrapes and summarizes documentation** using [FireCrawl](https://www.firecrawl.dev/) and LLM-powered summarization.
 
-- Automatically triggered when changes are pushed to the `videodb-python` repository
+### 🔹 Examples Context Workflow ([View](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_examples_context.yml))
+- Converts and summarizes notebooks into practical context examples.
 
-> ℹ️ This is done using [`workflow_dispatch`](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch), which allows external repositories to trigger workflows.  
-> See how [`videodb-python` triggers this action](https://github.com/video-db/videodb-python/blob/main/.github/workflows/trigger-agent-toolkit-update.yaml)
-
-**️️⚙️ Configuration** 
-
-`config.yaml` > `sdk_context` 
-
-- `clone_url`:  
-  GitHub URL of the SDK repository used as the source
-
-- `sphinx_config_dir`:  
-  Path to the directory containing the [Sphinx configuration files](https://www.sphinx-doc.org/en/master/usage/configuration.html).  
-
-
-> 💡 **Note**: This workflow is currently designed for Python SDKs only. 
-
-<br> 
-
-### ⚙️ Docs Context
+### 🔹 Master Context Workflow ([View](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml))
+- Combines all sub-components into unified `llms-full.txt`.
+- Generates standards-compliant `llms.txt`.
+- Updates documentation with token statistics for transparency.
 
 ---
 
-[View Github Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_docs_context.yml)
 
-🔁 **What it does:**
+## 🛠️ Customization via `config.yaml`
 
-- Scrapes [VideoDB Docs](https://docs.videodb.io)'s [Documentation Tree](https://github.com/video-db/agent-toolkit/blob/readme-refactor/context/docs/doc_tree.json)
-- Filters relevant pages
-- Uses [FireCrawl](https://www.firecrawl.dev/) to get markdown output of filtered documents
-- Uses LLM to summarize content of each page
-- Combines all into one file
-- Commits the generated files to a seperate branch and Opens a pull request
+The [`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) file centralizes all configurations, allowing easy customization:
 
-▶️ **How it runs:**
+- **Inclusion & Exclusion Patterns** for documentation and notebook processing
+- **Custom LLM Prompts** for precise summarization tailored to each document type
+- **Layout Configuration** for combining context components seamlessly
 
-- Manually from GitHub
-
-**️️⚙️ Configuration**:
-
-`config.yaml` > `docs_context`
-
-- `include` & `exclude` : Specify which documentation pages to process using glob-style patterns:
-
-  **Example Config for `include` & `exclude` key :**  
-
-  ```yaml
-  include:
-    - "Welcome to Videodb Docs"
-    - "Quick Start Guide/*"
-    - "Visual Search and Indexing/*"
-  exclude:
-    - "Quick Start Guide/Collections"
-  ```
-
-  > 💡 _This setup will include all pages & subpages under [Welcome to Videodb Docs](https://docs.videodb.io/), [Quick Start Guide](https://docs.videodb.io/quick-start-guide-38), [Visual Search and Indexing](https://docs.videodb.io/visual-search-and-indexing-80) except [Quickstart Guide/Collections](https://docs.videodb.io/collections-68) page_
-  
-
-- `prompt` : Customize how the LLM summarizes each document:.
-
-  **Example Config for `prompts` key :**
-
-  ```yaml
-  prompts:
-    prompt_folder: "context/prompts"
-    default_prompt: "default_docs.txt"
-    custom_prompts:
-      - pattern: "Quick Start Guide/*" .
-        prompt: "custom_quickstart.txt"
-  ```
-
-  > _🧠 Pages under “Quick Start Guide” use a [custom summarization prompt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt ), while the rest default to [default_docs.txt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_docs.txt)._
-
-<br>
-
-### ⚙️ Examples Context
-
----
-
-[View Github Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_examples_context.yml)
-
- 🔁 **What it does:**
-
-- Clones notebooks from [Cookbook repo](https://github.com/video-db/videodb-cookbook)
-- Filters selected notebooks
-- Converts selected notebooks to Markdown
-- Summarizes each notebook using LLM prompts
-- Merges all summaries into a single context file
-- Commits the generated files to a seperate branch and Opens a pull request
-
-▶️ **How it runs:**
-
-- Triggered when updates are pushed to the [videodb-cookbook](https://github.com/video-db/videodb-cookbook) repository
-- Can also be run manually from GitHub
-
-**️️⚙️ Configuration**:
-
-`config.yaml` > `examples_context`
-
-- `include` & `exclude` : Specify which notebooks to process using glob-style patterns:
-
-  **Example config for `include` & `exclude` key**:
-
-  ```yaml
-  include:
-    - "quickstart/*"
-    - "guides/*.ipynb"
-  exclude:
-    - "guides/VideoDB_Search_and_Evaluation.ipynb"
-  ```
-
-  > _📌 This example includes all notebooks in [quickstart](https://github.com/video-db/videodb-cookbook/tree/main/quickstart) and [guides](https://github.com/video-db/videodb-cookbook/tree/main/guides), but excludes one specific [evaluation notebook](https://github.com/video-db/videodb-cookbook/blob/main/guides/VideoDB_Search_and_Evaluation.ipynb)_
-
-- `prompt` : Customize how the LLM summarizes each document:.
-
-  **Example config for `prompt` key**:
-
-  ```yaml
-  prompt_folder: "context/prompts"
-  default_prompt: "default_ipynb.txt"
-  custom_prompts:
-    - pattern: "quickstart/Multimodal_Quickstart.ipynb"
-      prompt: "custom_2.txt"
-  ```
-  > _🧠 Most notebooks are summarized with the [default prompt](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/default_ipynb.txt), but key ones like [Multimodal_Quickstart.ipynb](https://github.com/video-db/agent-toolkit/blob/main/context/prompts/custom_quickstart.txt ) use tailored prompt instructions._
-
-
-
-<br> <br/>
-
-### Workflows that Updates Master Context
----
-
-The following section provides detailed description, configuration options of GitHub Action workflow that updates master files like `llms-full.txt` & `llms.txt` whenever any sub-component context is updated  
-
-[View GitHub Workflow »](https://github.com/video-db/agent-toolkit/blob/main/.github/workflows/update_master_context.yml)
-
-**🔁 What it does:**
-
-- Combines all Sub-Component Contexts into a single unified file: `llms-full.txt`
-- Generates a standards-compliant `llms.txt` for LLM discoverability
-- Updates related token statistics in `README.md`
-
-**▶️ How it runs:**
-
-- Automatically triggered whenever any Sub-Component Context (Instructions, SDK, Docs, Examples) is updated
-
----
-
-**⚙️ Configuration:**
-
-Defined under multiple keys in [`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml):
-
-#### 🔹 llms_full_txt_file
-
-`config.yaml` > `llms_full_txt_file`
-
-Defines how `llms-full.txt` is assembled:
+`config.yaml` > `llms_full_txt_file` defines how `llms-full.txt` is assembled:
 
 ```yaml
 llms_full_txt_file:
@@ -311,22 +167,25 @@ llms_full_txt_file:
     {{FILE4}}
 
   ```
-  
-  > 🧩 The layout field defines the merge strategy—here, a simple concatenation of all sub-components
 
+## 💡 Best Practices for Context-Driven Development
 
+- **Automate Context Updates:** Leverage GitHub Actions to maintain accuracy.
+- **Tailored Summaries:** Use custom LLM prompts to ensure context relevance.
+- **Seamless Integration:** Continuously integrate with existing LLM agents or IDEs.
 
-#### 🔹 llms_txt_file
+By following these practices, you ensure your AI applications have reliable, relevant, and up-to-date context—critical for effective agent performance and developer productivity.
 
-Defines how the lightweight llms.txt file is structured.
-(See config.yaml for current format and layout.)
-`config.yaml` > `llms_txt_file`
+---
 
-**️️⚙️ Configuration for Readme Stastics**:
+## 🚀 Get Started
 
-`config.yaml` > `token_count`
-- `tiktoken_encoding_model` : The tiktoken encoding model to use to count LLM Context file tokens
+Clone the toolkit repository and follow the setup instructions in [`config.yaml`](https://github.com/video-db/agent-toolkit/blob/readme-refactor/config.yaml) to start integrating VideoDB contexts into your LLM-powered applications today.
 
+**Explore further:**
+- [VideoDB SDK](https://github.com/video-db/videodb-python)
+- [Documentation](https://docs.videodb.io)
+- [Cookbook Examples](https://github.com/video-db/videodb-cookbook)
 
 ---
 <!-- MARKDOWN LINKS & IMAGES -->
