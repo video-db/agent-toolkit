@@ -1,4 +1,6 @@
-LLM_FULL_TXT_URL = "https://videodb.io/llms-full.txt"
+CODE_ASSISTANT_TXT_URL = "https://videodb.io/llms-full.txt"
+
+DOCS_ASSISTANT_TXT_URL = "https://video-db.github.io/agent-toolkit/context/docs/docs_context.md"
 
 DIRECTOR_API = "https://api2.director.videodb.io/chat"
 
