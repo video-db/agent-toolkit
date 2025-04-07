@@ -24,7 +24,7 @@
 
 # VideoDB Agent Toolkit
 
-The VideoDB Agent Toolkit exposes VideoDB context to LLMs and agents. It enables integration to AI-driven IDEs like Cursor, chat agents like Claude Code etc. This toolkit automates context generation, maintenance, and discoverability. It auto-syncs SDK versions, docs, and examples and distributed through MCP and `llms.txt` 
+The VideoDB Agent Toolkit exposes VideoDB context to LLMs and agents. It enables integration to AI-driven IDEs like Cursor, chat agents like Claude Code etc. This toolkit automates context generation, maintenance, and discoverability. It auto-syncs SDK versions, docs, and examples and is distributed through MCP and `llms.txt` 
 
 
 ## 🚀 Quick Overview
@@ -56,20 +56,20 @@ These components leverage automated workflows to ensure your AI applications alw
 **Real-world Examples:**
 
 - [VideoDB's Director](https://chat.videodb.io) `code-assistant` agent ([View Implementation ](https://github.com/video-db/Director/blob/main/backend/director/agents/code_assitant.py))
-- [VideoDB' Discord Bot](https://discord.com/invite/py9P639jGz) to power customer support and community help ([View Implementation ]())
+- [VideoDB's Discord Bot](https://discord.com/invite/py9P639jGz) to power customer support and community help ([View Implementation ]())
 - Integrate `llms-full.txt` directly into your LLM-powered workflows, agent systems, or AI coding environments.
 
 ### 2. llms.txt ([View »](https://videodb.io/llms.txt))
 
 ---
 
-A streamlined file following the [Answer.AI llms.txt proposal](https://github.com/answerdotai/llms-txt) Ideal for quick metadata exposure and LLM discovery.
+A streamlined file following the [Answer.AI llms.txt proposal](https://github.com/answerdotai/llms-txt). Ideal for quick metadata exposure and LLM discovery.
 
 > **ℹ️ Recommendation**: Use `llms.txt` for lightweight discovery and metadata integration.  Use `llms-full.txt` for complete functionality.
 
 ### 3. MCP (Model Context Protocol)
 
-The VideoDB MCP Server connects with the Director backend framework providing a single tool for many workflows. For developerment, It can be installed and used in multiple ways, including globally via pip or with pipx for isolated environments. For more details on MCPs please visit [here](https://docs.videodb.io/add-videodb-mcp-server-in-clients-108)
+The VideoDB MCP Server connects with the Director backend framework, providing a single tool for many workflows. For development, it can be installed and used in multiple ways, including globally via pip or with pipx for isolated environments. For more details on MCPs, please visit [here](https://docs.videodb.io/add-videodb-mcp-server-in-clients-108)
 
 **Using uvx**
 
