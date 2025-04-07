@@ -7,10 +7,36 @@ import argparse
 import socketio
 import webbrowser
 from typing import Any
-from videodb_director_mcp.constants import LLM_FULL_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
+from videodb_director_mcp.constants import CODE_ASSISTANT_TXT_URL, DOCS_ASSISTANT_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("videodb-director")
+
+@mcp.resource(
+    "videodb://doc_assistant",
+    name="doc_assistant",
+    description="Context for creating video applications using VideoDB",
+)
+def doc_assistant() -> str:
+    try:
+        response = requests.get(DOCS_ASSISTANT_TXT_URL)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        return f"Error: Unable to fetch data from URL. Details: {str(e)}"
+
+
+@mcp.tool(
+    name="doc_assistant",
+    description="Context for creating video applications using VideoDB",
+)
+def doc_assistant() -> str:
+    try:
+        response = requests.get(DOCS_ASSISTANT_TXT_URL)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        return f"Error: Unable to fetch data from URL. Details: {str(e)}"
 
 
 @mcp.resource(
@@ -20,7 +46,7 @@ mcp = FastMCP("videodb-director")
 )
 def code_assistant() -> str:
     try:
-        response = requests.get(LLM_FULL_TXT_URL)
+        response = requests.get(CODE_ASSISTANT_TXT_URL)
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as e:
@@ -33,7 +59,7 @@ def code_assistant() -> str:
 )
 def code_assistant() -> str:
     try:
-        response = requests.get(LLM_FULL_TXT_URL)
+        response = requests.get(CODE_ASSISTANT_TXT_URL)
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as e:
@@ -60,9 +86,12 @@ async def call_director(
         text_message (str): The natural language query that Director will interpret and delegate to appropriate agents.
         session_id (str | None, optional): A session identifier to maintain continuity across multiple requests. If a previous response from this method included a `session_id`, it is MANDATORY to include it in subsequent requests.
     """
+    api_key = os.getenv("VIDEODB_API_KEY")
+    if not api_key:
+        raise RuntimeError("Missing VIDEODB_API_KEY environment variable. Please set it before calling this function.")
     url = DIRECTOR_API
     timeout = 300
-    headers = {"x-access-token": os.getenv("VIDEODB_API_KEY")}
+    headers = {"x-access-token": api_key}
     sio = socketio.Client()
     response_data = None
     response_event = threading.Event()
@@ -109,7 +138,6 @@ def parse_arguments():
     parser.add_argument(
         "--api-key",
         type=str,
-        required=True,
         help="The VideoDB API key required to connect to the VideoDB service.",
     )
     return parser.parse_args()
@@ -120,10 +148,7 @@ def main():
 
     if args.api_key:
         os.environ["VIDEODB_API_KEY"] = args.api_key
-    else:
-        raise ValueError(
-            "Error: The VideoDB API Key is a must to use the MCP Server. Pass it with the --api-key argument"
-        )
+
     mcp.run(transport="stdio")
 
 
