@@ -82,8 +82,8 @@ def install_for_cursor() -> None:
     print("🚀 Enjoy supercharged video capabilities!\n")
 
 
-def install_for_both() -> None:
-    """Install videodb-director-mcp for both Claude and Cursor IDE."""
+def install_for_all() -> None:
+    """Install videodb-director-mcp for all clients. Currently they are: Claude and Cursor IDE."""
     api_key = get_api_key()
     save_mcp_config("claude", api_key)
     save_mcp_config("cursor", api_key)

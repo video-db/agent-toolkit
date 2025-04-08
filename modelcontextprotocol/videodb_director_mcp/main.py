@@ -11,7 +11,7 @@ from mcp.server.fastmcp import FastMCP
 from videodb_director_mcp.cli_commands import (
     install_for_claude,
     install_for_cursor,
-    install_for_both
+    install_for_all
 )
 from videodb_director_mcp.constants import CODE_ASSISTANT_TXT_URL, DOCS_ASSISTANT_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
 
@@ -148,7 +148,7 @@ def parse_arguments():
     )
     parser.add_argument(
         "--install",
-        choices=["claude", "cursor", "both"],
+        choices=["claude", "cursor", "all"],
         help="🔧 Configure the MCP server in 'claude' and/or 'cursor'."
     )
     return parser.parse_args()
@@ -165,8 +165,8 @@ def main():
         install_for_cursor()
         return
     
-    if args.install == "both":
-        install_for_both()
+    if args.install == "all":
+        install_for_all()
         return
     
     if args.api_key:
