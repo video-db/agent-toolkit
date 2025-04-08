@@ -7,8 +7,14 @@ import argparse
 import socketio
 import webbrowser
 from typing import Any
-from videodb_director_mcp.constants import CODE_ASSISTANT_TXT_URL, DOCS_ASSISTANT_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
 from mcp.server.fastmcp import FastMCP
+from videodb_director_mcp.cli_commands import (
+    install_for_claude,
+    install_for_cursor,
+    install_for_both
+)
+from videodb_director_mcp.constants import CODE_ASSISTANT_TXT_URL, DOCS_ASSISTANT_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
+
 
 mcp = FastMCP("videodb-director")
 
@@ -138,7 +144,12 @@ def parse_arguments():
     parser.add_argument(
         "--api-key",
         type=str,
-        help="The VideoDB API key required to connect to the VideoDB service.",
+        help="🔑 The VideoDB API key required to connect to the VideoDB service.",
+    )
+    parser.add_argument(
+        "--install",
+        choices=["claude", "cursor", "both"],
+        help="🔧 Configure the MCP server in 'claude' and/or 'cursor'."
     )
     return parser.parse_args()
 
@@ -146,6 +157,18 @@ def parse_arguments():
 def main():
     args = parse_arguments()
 
+    if args.install == "claude":
+        install_for_claude()
+        return
+    
+    if args.install == "cursor":
+        install_for_cursor()
+        return
+    
+    if args.install == "both":
+        install_for_both()
+        return
+    
     if args.api_key:
         os.environ["VIDEODB_API_KEY"] = args.api_key
 
