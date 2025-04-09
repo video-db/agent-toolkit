@@ -1,5 +1,20 @@
 To add the MCP server in any config driven MCP Client, following is how the commands and arguments will look like
 
+## Install `uv`
+We need to install uv first.
+
+For macOS/Linux:
+```
+brew install uv
+```
+For Windows:
+
+```
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+You can visit the installation steps for `uv` [here](https://docs.astral.sh/uv/getting-started/installation)
+
 ## Run the MCP Server
 You can run the MCP server using `uvx` using the following command
 
