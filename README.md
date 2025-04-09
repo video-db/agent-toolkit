@@ -71,9 +71,27 @@ A streamlined file following the [Answer.AI llms.txt proposal](https://github.co
 
 The VideoDB MCP Server connects with the Director backend framework, providing a single tool for many workflows. For development, it can be installed and used via uvx for isolated environments. For more details on MCPs, please visit [here](https://docs.videodb.io/add-videodb-mcp-server-in-clients-108)
 
-**Using uvx**
+## Install `uv`
+We need to install uv first.
 
-```uvx videodb-director-mcp --api-key=VIDEODB_API_KEY```
+For macOS/Linux:
+```
+brew install uv
+```
+For Windows:
+
+```
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+You can visit the installation steps for `uv` [here](https://docs.astral.sh/uv/getting-started/installation)
+
+## Run the MCP Server
+You can run the MCP server using `uvx` using the following command
+
+```
+uvx videodb-director-mcp --api-key=VIDEODB_API_KEY
+```
 
 <br/>
        
