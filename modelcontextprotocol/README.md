@@ -5,7 +5,7 @@ We need to install uv first.
 
 For macOS/Linux:
 ```
-brew install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 For Windows:
 
@@ -13,7 +13,7 @@ For Windows:
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-You can visit the installation steps for `uv` [here](https://docs.astral.sh/uv/getting-started/installation)
+You can also visit the installation steps of `uv` for more details [here](https://docs.astral.sh/uv/getting-started/installation)
 
 ## Run the MCP Server
 You can run the MCP server using `uvx` using the following command
