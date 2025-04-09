@@ -69,19 +69,11 @@ A streamlined file following the [Answer.AI llms.txt proposal](https://github.co
 
 ### 3. MCP (Model Context Protocol)
 
-The VideoDB MCP Server connects with the Director backend framework, providing a single tool for many workflows. For development, it can be installed and used in multiple ways, including globally via pip or with pipx for isolated environments. For more details on MCPs, please visit [here](https://docs.videodb.io/add-videodb-mcp-server-in-clients-108)
+The VideoDB MCP Server connects with the Director backend framework, providing a single tool for many workflows. For development, it can be installed and used via uvx for isolated environments. For more details on MCPs, please visit [here](https://docs.videodb.io/add-videodb-mcp-server-in-clients-108)
 
 **Using uvx**
 
-```uvx run videodb-director-mcp --api-key=VIDEODB_API_KEY```
-
-**Using pip:**
-
-`pip install videodb-director-mcp`
-
-The MCP server can now be started with the following command:
-
-```videodb-director-mcp --api-key=VIDEODB_API_KEY```
+```uvx videodb-director-mcp --api-key=VIDEODB_API_KEY```
 
 <br/>
        
