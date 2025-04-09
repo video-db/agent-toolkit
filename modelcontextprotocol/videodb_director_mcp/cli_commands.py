@@ -47,8 +47,8 @@ def get_config_path(app: str) -> Path:
 def create_mcp_entry(api_key: str, stdio: bool = False) -> dict:
     """Create the MCP server entry config."""
     entry = {
-        "command": "videodb-director-mcp",
-        "args": []
+        "command": "uvx",
+        "args": ["videodb-director-mcp"]
     }
     if api_key:
         entry["env"] = {"VIDEODB_API_KEY" : api_key}

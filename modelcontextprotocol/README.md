@@ -1,34 +1,36 @@
 To add the MCP server in any config driven MCP Client, following is how the commands and arguments will look like
 
-## 1. Install the package
+## Install `uv`
+We need to install uv first.
+
+For macOS/Linux:
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+For Windows:
 
 ```
-pip install videodb-director-mcp
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-## 2. Use the MCP Server!
+You can also visit the installation steps of `uv` for more details [here](https://docs.astral.sh/uv/getting-started/installation)
 
-Normally as a CLI Command
-
-```
-videodb-director-mcp --api-key=VIDEODB_API_KEY
-```
-
-Using `pipx`
-
-```
-pipx run videodb-director-mcp --api-key=VIDEODB_API_KEY
-```
-
-Using `uvx`
+## Run the MCP Server
+You can run the MCP server using `uvx` using the following command
 
 ```
 uvx videodb-director-mcp --api-key=VIDEODB_API_KEY
 ```
 
-## 3. Add the VideoDB Director MCP Server in your favorite Client
+## Add the VideoDB Director MCP Server in your favorite Client
 
 ### Claude Desktop
+
+To configure VideoDB Director MCP server in Claude, you can run the following command
+
+```uvx videodb-director-mcp --install=claude```
+
+You can manually configure the MCP Server by following these steps:
 
 1. Open the `claude_desktop_config.json` file
 
@@ -50,14 +52,20 @@ uvx videodb-director-mcp --api-key=VIDEODB_API_KEY
    {
      "mcpServers": {
        "videodb-director": {
-         "command": "videodb-director-mcp",
-         "args": ["--api-key=<VIDEODB-API-KEY>"]
+         "command": "uvx",
+         "args": ["videodb-director-mcp", "--api-key=<VIDEODB-API-KEY>"]
        }
      }
    }
    ```
 
 ### Cursor
+
+To configure VideoDB Director MCP server in Cursor, you can run the following command
+
+```uvx videodb-director-mcp --install=cursor```
+
+You can manually configure the MCP Server by following these steps:
 
 1. Inside Cursor, go to **Settings > Cursor Settings**
 2. Click on **MCP**
@@ -68,9 +76,14 @@ uvx videodb-director-mcp --api-key=VIDEODB_API_KEY
    {
      "mcpServers": {
        "videodb-director": {
-         "command": "videodb-director-mcp",
-         "args": ["--api-key=<VIDEODB-API-KEY>"]
+         "command": "uvx",
+         "args": ["videodb-director-mcp", "--api-key=<VIDEODB-API-KEY>"]
        }
      }
    }
    ```
+
+### Install in Claude and Cursor at the same time.
+You can configure VideoDB Director MCP server in Claude and Cursor together, by running the following command
+
+```uvx videodb-director-mcp --install=all```
