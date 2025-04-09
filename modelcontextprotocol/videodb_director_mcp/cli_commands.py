@@ -20,7 +20,9 @@ def load_config(config_path: Path) -> dict:
             with config_path.open("r", encoding="utf-8") as f:
                 return json.load(f)
         except json.JSONDecodeError:
-            return {}    
+            print(f"⚠️ Failed to parse JSON config at: {config_path} — falling back to empty config.")
+            return {}   
+    print(f"📁 No config file found at: {config_path} — creating a new one.") 
     return {}
 
 
@@ -59,8 +61,10 @@ def save_mcp_config(app: str, api_key: str) -> None:
     """Save MCP config for Claude or Cursor."""
     config_path = get_config_path(app)
     config_data = load_config(config_path)
-    config_data.setdefault("mcpServers", {})
-    config_data["mcpServers"]["videodb-director"] = create_mcp_entry(api_key, stdio=(app == "cursor"))
+    mcp_servers = config_data.get("mcpServers", {})
+    mcp_servers["videodb-director"] = create_mcp_entry(api_key, stdio=(app == "cursor"))
+    config_data["mcpServers"] = mcp_servers
+
     save_config(config_path, config_data)
 
 
