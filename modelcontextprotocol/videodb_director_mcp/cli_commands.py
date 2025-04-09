@@ -82,7 +82,7 @@ def install_for_cursor() -> None:
     api_key = get_api_key()
     save_mcp_config("cursor", api_key)
     print("\n🎉 Cursor IDE configuration complete!")
-    print("🔁 Please restart Cursor IDE to apply changes.")
+    print("✅ videodb-director is now available in Cursor.")
     print("🚀 Enjoy supercharged video capabilities!\n")
 
 
@@ -92,5 +92,5 @@ def install_for_all() -> None:
     save_mcp_config("claude", api_key)
     save_mcp_config("cursor", api_key)
     print("\n🎉 Configuration for Claude and Cursor completed successfully!")
-    print("🔁 Restart both apps to activate videodb-director-mcp.")
+    print("🔁 Please restart Claude Desktop to apply changes.")
     print("🚀 Enjoy supercharged video capabilities!\n")
