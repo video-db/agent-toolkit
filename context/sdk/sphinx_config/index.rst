@@ -7,6 +7,8 @@ Generate API keys at https://console.videodb.io
 The Following are submodules of the VideoDB Python SDK:
 -------------------------------------------------------
 
+The latest version of videodb's python sdk is videodb.__about__.__version__ 
+
 Default Module videodb (`from videodb import class, func`)
 ----------------------------------------------------------
 
