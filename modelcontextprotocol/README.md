@@ -86,4 +86,28 @@ You can manually configure the MCP Server by following these steps:
 ### Install in Claude and Cursor at the same time.
 You can configure VideoDB Director MCP server in Claude and Cursor together, by running the following command
 
-```uvx videodb-director-mcp --install=all```
+```
+uvx videodb-director-mcp --install=all
+```
+
+
+### Install for Claude Code
+
+```
+claude mcp add videodb-director uvx -- videodb-director-mcp --api-key=<VIDEODB_API_KEY>
+```
+
+## Update VideoDB Director MCP package
+
+To ensure you're using the latest version of the MCP server with `uvx`, start by clearing the cache:
+
+```
+uv cache clean
+```
+
+This command removes any outdated cached packages of `videodb-director-mcp`, allowing `uvx` to fetch the most recent version.
+
+If you always want to use the latest version of the MCP server, update your command as follows:
+```
+uvx videodb-director-mcp@latest --api-key=<VIDEODB_API_KEY>
+```

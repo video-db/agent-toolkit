@@ -11,12 +11,18 @@ from mcp.server.fastmcp import FastMCP
 from videodb_director_mcp.cli_commands import (
     install_for_claude,
     install_for_cursor,
-    install_for_all
+    install_for_all,
 )
-from videodb_director_mcp.constants import CODE_ASSISTANT_TXT_URL, DOCS_ASSISTANT_TXT_URL, DIRECTOR_CALL_DESCRIPTION, DIRECTOR_API
+from videodb_director_mcp.constants import (
+    CODE_ASSISTANT_TXT_URL,
+    DOCS_ASSISTANT_TXT_URL,
+    DIRECTOR_CALL_DESCRIPTION,
+    DIRECTOR_API,
+)
 
 
 mcp = FastMCP("videodb-director")
+
 
 @mcp.resource(
     "videodb://doc_assistant",
@@ -83,18 +89,20 @@ async def play_video(stream_link: str) -> dict[str, Any]:
 
 @mcp.tool(name="call_director", description=DIRECTOR_CALL_DESCRIPTION)
 async def call_director(
-    text_message: str, session_id: str | None = None
+    text_message: str, session_id: str | None = None, agents: list[str] = []
 ) -> dict[str, Any]:
     """
     Orchestrates specialized agents within the VideoDB server to efficiently handle multimedia and video-related queries.
-    
+
     Args:
         text_message (str): The natural language query that Director will interpret and delegate to appropriate agents.
         session_id (str | None, optional): A session identifier to maintain continuity across multiple requests. If a previous response from this method included a `session_id`, it is MANDATORY to include it in subsequent requests.
     """
     api_key = os.getenv("VIDEODB_API_KEY")
     if not api_key:
-        raise RuntimeError("Missing VIDEODB_API_KEY environment variable. Please set it before calling this function.")
+        raise RuntimeError(
+            "Missing VIDEODB_API_KEY environment variable. Please set it before calling this function."
+        )
     url = DIRECTOR_API
     timeout = 300
     headers = {"x-access-token": api_key}
@@ -110,7 +118,7 @@ async def call_director(
             "msg_id": str(int(time.time() * 1000) + 1),
             "session_id": session_id if session_id else str(uuid.uuid4()),
             "content": [{"type": "text", "text": text_message}],
-            "agents": [],
+            "agents": agents,
             "collection_id": "default",
         }
         sio.emit("chat", message, namespace="/chat")
@@ -152,7 +160,7 @@ def parse_arguments():
     parser.add_argument(
         "--install",
         choices=["claude", "cursor", "all"],
-        help="🔧 Configure the MCP server in 'claude' and/or 'cursor'."
+        help="🔧 Configure the MCP server in 'claude' and/or 'cursor'.",
     )
     return parser.parse_args()
 
@@ -163,15 +171,15 @@ def main():
     if args.install == "claude":
         install_for_claude()
         return
-    
+
     if args.install == "cursor":
         install_for_cursor()
         return
-    
+
     if args.install == "all":
         install_for_all()
         return
-    
+
     if args.api_key:
         os.environ["VIDEODB_API_KEY"] = args.api_key
 
