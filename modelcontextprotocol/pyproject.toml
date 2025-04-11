@@ -1,6 +1,6 @@
 [project]
 name = "videodb-director-mcp"
-version = "0.1.4"
+version = "0.1.5"
 description = "VideoDB MCP Server"
 readme = "README.md"
 requires-python = ">=3.12"

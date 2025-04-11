@@ -137,6 +137,9 @@ async def call_director(
             url,
             namespaces=["/chat"],
             headers=headers,
+            wait=True,
+            wait_timeout=10,
+            retry=True
         )
         received = response_event.wait(timeout=timeout)
     except Exception as e:
