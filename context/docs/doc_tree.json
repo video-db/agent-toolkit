@@ -124,6 +124,11 @@
         ]
     },
     {
+        "element": "VideoDB MCP Server",
+        "href": "/videodb-mcp-server-109",
+        "children": []
+    },
+    {
         "element": "Director - Video Agent Framework",
         "href": "/director-video-agent-framework-98",
         "children": [
