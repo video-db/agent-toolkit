@@ -135,7 +135,7 @@ async def call_director(
     try:
         sio.connect(
             url,
-            namespaces=["/chat"],
+            namespaces=["/", "/chat"],
             headers=headers,
             wait=True,
             wait_timeout=10,
