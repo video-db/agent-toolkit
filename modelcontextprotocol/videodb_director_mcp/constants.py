@@ -2,7 +2,7 @@ CODE_ASSISTANT_TXT_URL = "https://videodb.io/llms-full.txt"
 
 DOCS_ASSISTANT_TXT_URL = "https://video-db.github.io/agent-toolkit/context/docs/docs_context.md"
 
-DIRECTOR_API = "https://api2.director.videodb.io/chat"
+DIRECTOR_API = "https://api2.director.videodb.io"
 
 DIRECTOR_CALL_DESCRIPTION = """
 The Director tool orchestrates specialized agents within the VideoDB server, efficiently handling multimedia and video-related queries. Clients should send queries that Director can interpret clearly, specifying tasks in natural language. Director will then delegate these queries to appropriate agents for optimized results, utilizing defaults and contextual information if explicit parameters are not provided.
