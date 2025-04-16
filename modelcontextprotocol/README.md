@@ -1,3 +1,5 @@
+[![smithery badge](https://smithery.ai/badge/@video-db/agent-toolkit)](https://smithery.ai/server/@video-db/agent-toolkit)
+
 To add the MCP server in any config driven MCP Client, following is how the commands and arguments will look like
 
 ## Install `uv`
