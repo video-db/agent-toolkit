@@ -277,6 +277,18 @@ Create a new collection.
 * **Return type:**
   [`videodb.collection.Collection`](#videodb.collection.Collection)
 
+#### create_event(event_prompt: str, label: str)
+
+Create an rtstream event.
+
+* **Parameters:**
+  * **event_prompt** (*str*) – Prompt for the event
+  * **label** (*str*) – Label for the event
+* **Returns:**
+  Event ID
+* **Return type:**
+  str
+
 #### download(stream_link: str, name: str) → dict
 
 Download a file from a stream link.
@@ -317,6 +329,41 @@ Get a list of all invoices.
   List of invoices
 * **Return type:**
   list[dict]
+
+#### get_transcode_details(job_id: str) → dict
+
+Get the details of a transcode job.
+
+* **Parameters:**
+  **job_id** (*str*) – ID of the transcode job
+* **Returns:**
+  Details of the transcode job
+* **Return type:**
+  dict
+
+#### list_events()
+
+List all rtstream events.
+
+* **Returns:**
+  List of events
+* **Return type:**
+  list[dict]
+
+#### transcode(source: str, callback_url: str, mode: TranscodeMode = 'economy', video_config: VideoConfig = VideoConfig(resolution=None, quality=23, framerate=None, aspect_ratio=None, resize_mode='crop'), audio_config: AudioConfig = AudioConfig(mute=False)) → None
+
+Transcode the video
+
+* **Parameters:**
+  * **source** (*str*) – URL of the video to transcode, preferably a downloadable URL
+  * **callback_url** (*str*) – URL to receive the callback
+  * **mode** (*TranscodeMode*) – Mode of the transcoding
+  * **video_config** (*VideoConfig*) – Video configuration (optional)
+  * **audio_config** (*AudioConfig*) – Audio configuration (optional)
+* **Returns:**
+  Transcode job ID
+* **Return type:**
+  str
 
 #### update_collection(id: str, name: str, description: str) → [Collection](#videodb.collection.Collection)
 
@@ -372,6 +419,17 @@ Note: Users should not initialize this class directly.
 Instead use [`Connection.get_collection()`](#videodb.client.Connection.get_collection)
 
 #### \_\_init_\_(\_connection, id: str, name: str | None = None, description: str | None = None, is_public: bool = False)
+
+#### connect_rtstream(url: str, name: str, sample_rate: int | None = None) → RTStream
+
+Connect to an rtstream.
+
+* **Parameters:**
+  * **url** (*str*) – URL of the rtstream
+  * **name** (*str*) – Name of the rtstream
+  * **sample_rate** (*int*) – Sample rate of the rtstream (optional)
+* **Returns:**
+  `RTStream` object
 
 #### delete() → None
 
@@ -548,6 +606,17 @@ Get all the images in the collection.
 * **Return type:**
   List[[`videodb.image.Image`](#videodb.image.Image)]
 
+#### get_rtstream(id: str) → RTStream
+
+Get an rtstream by its ID.
+
+* **Parameters:**
+  **id** (*str*) – ID of the rtstream
+* **Returns:**
+  `RTStream` object
+* **Return type:**
+  `videodb.rtstream.RTStream`
+
 #### get_video(video_id: str) → [Video](#videodb.video.Video)
 
 Get a video by its ID.
@@ -567,6 +636,15 @@ Get all the videos in the collection.
   List of `Video` objects
 * **Return type:**
   List[[`videodb.video.Video`](#videodb.video.Video)]
+
+#### list_rtstreams() → List[RTStream]
+
+List all rtstreams in the collection.
+
+* **Returns:**
+  List of `RTStream` objects
+* **Return type:**
+  List[`videodb.rtstream.RTStream`]
 
 #### make_private()
 
