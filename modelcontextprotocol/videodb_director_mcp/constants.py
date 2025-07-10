@@ -51,6 +51,12 @@ Director handles queries such as:
 - Pricing & Usage Information:
   - Provide detailed cost information and usage estimates
 
+- Meeting Recording & Analysis:
+  - Record meetings
+  - Deploy recording bots to Zoom, Google Meet, or Microsoft Teams
+  - Analyze recorded meetings for AI-driven insights
+  - Intelligently index and summarize meetings
+
 Clients should provide queries clearly aligned with Director's capabilities, allowing Director to use contextual defaults when explicit parameters like IDs or collection details are not specified.
 
 IMPORTANT: if you have a previous response of this method with an appropriate session_id, please provide that session_id in the next request to continue the conversation.
