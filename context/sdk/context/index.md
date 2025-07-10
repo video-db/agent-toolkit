@@ -11,7 +11,7 @@ About information for videodb sdk
 
 ## Default Module videodb (from videodb import class, func)
 
-### videodb.connect(api_key: str | None = None, base_url: str | None = 'https://api.videodb.io', log_level: int | None = 20) → [Connection](#videodb.client.Connection)
+### videodb.connect(api_key: str | None = None, base_url: str | None = 'https://api.videodb.io', log_level: int | None = 20, \*\*kwargs) → [Connection](#videodb.client.Connection)
 
 A client for interacting with a videodb via REST API
 
@@ -123,13 +123,13 @@ Raised when a search is invalid.
 
 ## Module : videodb.client (from videodb.client import class, func)
 
-### *class* videodb.client.Connection(api_key: str, base_url: str)
+### *class* videodb.client.Connection(api_key: str, base_url: str, \*\*kwargs)
 
 Bases: `HttpClient`
 
 Connection class to interact with the VideoDB
 
-#### \_\_init_\_(api_key: str, base_url: str) → [Connection](#videodb.client.Connection)
+#### \_\_init_\_(api_key: str, base_url: str, \*\*kwargs) → [Connection](#videodb.client.Connection)
 
 Initializes a new instance of the Connection class with specified API credentials.
 
@@ -221,6 +221,17 @@ Get a list of all invoices.
 * **Return type:**
   list[dict]
 
+#### get_meeting(meeting_id: str) → Meeting
+
+Get a meeting by its ID.
+
+* **Parameters:**
+  **meeting_id** (*str*) – ID of the meeting
+* **Returns:**
+  `Meeting` object
+* **Return type:**
+  `videodb.meeting.Meeting`
+
 #### get_transcode_details(job_id: str) → dict
 
 Get the details of a transcode job.
@@ -240,6 +251,23 @@ List all rtstream events.
   List of events
 * **Return type:**
   list[dict]
+
+#### record_meeting(meeting_url: str, bot_name: str | None = None, bot_image_url: str | None = None, meeting_title: str | None = None, callback_url: str | None = None, callback_data: dict | None = None, time_zone: str = 'UTC') → Meeting
+
+Record a meeting and upload it to the default collection.
+
+* **Parameters:**
+  * **meeting_url** (*str*) – Meeting url
+  * **bot_name** (*str*) – Name of the recorder bot
+  * **bot_image_url** (*str*) – URL of the recorder bot image
+  * **meeting_title** (*str*) – Name of the meeting
+  * **callback_url** (*str*) – URL to receive callback once recording is done
+  * **callback_data** (*dict*) – Data to be sent in the callback (optional)
+  * **time_zone** (*str*) – Time zone for the meeting (default `UTC`)
+* **Returns:**
+  `Meeting` object representing the recording bot
+* **Return type:**
+  `videodb.meeting.Meeting`
 
 #### transcode(source: str, callback_url: str, mode: TranscodeMode = 'economy', video_config: VideoConfig = VideoConfig(resolution=None, quality=23, framerate=None, aspect_ratio=None, resize_mode='crop'), audio_config: AudioConfig = AudioConfig(mute=False)) → None
 
@@ -269,17 +297,18 @@ Update an existing collection.
 * **Return type:**
   [`videodb.collection.Collection`](#videodb.collection.Collection)
 
-#### upload(file_path: str | None = None, url: str | None = None, media_type: str | None = None, name: str | None = None, description: str | None = None, callback_url: str | None = None) → [Video](#videodb.video.Video) | [Audio](#videodb.audio.Audio) | [Image](#videodb.image.Image) | None
+#### upload(source: str | None = None, media_type: str | None = None, name: str | None = None, description: str | None = None, callback_url: str | None = None, file_path: str | None = None, url: str | None = None) → [Video](#videodb.video.Video) | [Audio](#videodb.audio.Audio) | [Image](#videodb.image.Image) | None
 
 Upload a file.
 
 * **Parameters:**
-  * **file_path** (*str*) – Path to the file to upload (optional)
-  * **url** (*str*) – URL of the file to upload (optional)
+  * **source** (*str*) – Local path or URL of the file to upload (optional)
   * **media_type** ([*MediaType*](#videodb.MediaType)) – MediaType object (optional)
   * **name** (*str*) – Name of the file (optional)
   * **description** (*str*) – Description of the file (optional)
   * **callback_url** (*str*) – URL to receive the callback (optional)
+  * **file_path** (*str*) – Path to the file to upload (optional)
+  * **url** (*str*) – URL of the file to upload (optional)
 * **Returns:**
   `Video`, or `Audio`, or `Image` object
 * **Return type:**
@@ -425,6 +454,19 @@ Generate sound effect from a prompt.
 * **Return type:**
   [`videodb.audio.Audio`](#videodb.audio.Audio)
 
+#### generate_text(prompt: str, model_name: Literal['basic', 'pro', 'ultra'] = 'basic', response_type: Literal['text', 'json'] = 'text') → str | dict
+
+Generate text from a prompt using genai offering.
+
+* **Parameters:**
+  * **prompt** (*str*) – Prompt for the text generation
+  * **model_name** (*str*) – Model name to use (“basic”, “pro” or “ultra”)
+  * **response_type** (*str*) – Desired response type (“text” or “json”)
+* **Returns:**
+  Generated text response
+* **Return type:**
+  Union[str, dict]
+
 #### generate_video(prompt: str, duration: float = 5, callback_url: str | None = None) → [Video](#videodb.video.Video)
 
 Generate a video from the given text prompt.
@@ -497,6 +539,17 @@ Get all the images in the collection.
 * **Return type:**
   List[[`videodb.image.Image`](#videodb.image.Image)]
 
+#### get_meeting(meeting_id: str) → Meeting
+
+Get a meeting by its ID.
+
+* **Parameters:**
+  **meeting_id** (*str*) – ID of the meeting
+* **Returns:**
+  `Meeting` object
+* **Return type:**
+  `videodb.meeting.Meeting`
+
 #### get_rtstream(id: str) → RTStream
 
 Get an rtstream by its ID.
@@ -555,6 +608,23 @@ Make the collection public.
 * **Return type:**
   None
 
+#### record_meeting(meeting_url: str, bot_name: str | None = None, bot_image_url: str | None = None, meeting_title: str | None = None, callback_url: str | None = None, callback_data: dict | None = None, time_zone: str = 'UTC') → Meeting
+
+Record a meeting and upload it to this collection.
+
+* **Parameters:**
+  * **meeting_url** (*str*) – Meeting url
+  * **bot_name** (*str*) – Name of the recorder bot
+  * **bot_image_url** (*str*) – URL of the recorder bot image
+  * **meeting_title** (*str*) – Name of the meeting
+  * **callback_url** (*str*) – URL to receive callback once recording is done
+  * **callback_data** (*dict*) – Data to be sent in the callback (optional)
+  * **time_zone** (*str*) – Time zone for the meeting (default `UTC`)
+* **Returns:**
+  `Meeting` object representing the recording bot
+* **Return type:**
+  `videodb.meeting.Meeting`
+
 #### search(query: str, search_type: str | None = 'semantic', index_type: str | None = 'spoken_word', result_threshold: int | None = None, score_threshold: float | None = None, dynamic_score_percentage: float | None = None, filter: List[Dict[str, Any]] = []) → [SearchResult](#videodb.search.SearchResult)
 
 Search for a query in the collection.
@@ -575,17 +645,18 @@ Search for a query in the collection.
 
 #### search_title(query) → List[[Video](#videodb.video.Video)]
 
-#### upload(file_path: str | None = None, url: str | None = None, media_type: str | None = None, name: str | None = None, description: str | None = None, callback_url: str | None = None) → [Video](#videodb.video.Video) | [Audio](#videodb.audio.Audio) | [Image](#videodb.image.Image) | None
+#### upload(source: str | None = None, media_type: str | None = None, name: str | None = None, description: str | None = None, callback_url: str | None = None, file_path: str | None = None, url: str | None = None) → [Video](#videodb.video.Video) | [Audio](#videodb.audio.Audio) | [Image](#videodb.image.Image) | None
 
 Upload a file to the collection.
 
 * **Parameters:**
-  * **file_path** (*str*) – Path to the file to be uploaded
-  * **url** (*str*) – URL of the file to be uploaded
+  * **source** (*str*) – Local path or URL of the file to be uploaded
   * **media_type** ([*MediaType*](#videodb.MediaType)) – MediaType object (optional)
   * **name** (*str*) – Name of the file (optional)
   * **description** (*str*) – Description of the file (optional)
   * **callback_url** (*str*) – URL to receive the callback (optional)
+  * **file_path** (*str*) – Path to the file to be uploaded
+  * **url** (*str*) – URL of the file to be uploaded
 * **Returns:**
   `Video`, or `Audio`, or `Image` object
 * **Return type:**
@@ -716,6 +787,28 @@ Generate the thumbnail of the video.
   `Image` object if time is provided else the thumbnail url
 * **Return type:**
   Union[str, [`videodb.image.Image`](#videodb.image.Image)]
+
+#### generate_transcript(force: bool | None = None) → str
+
+Generate transcript for the video.
+
+* **Parameters:**
+  **force** (*bool*) – Force generate new transcript
+* **Returns:**
+  Full transcript text as string
+* **Return type:**
+  str
+
+#### get_meeting()
+
+Get meeting information associated with the video.
+
+* **Returns:**
+  `Meeting` object if meeting is associated, None otherwise
+* **Return type:**
+  Optional[`videodb.meeting.Meeting`]
+* **Raises:**
+  [**InvalidRequestError**](#videodb.InvalidRequestError) – If the API request fails
 
 #### get_scene_collection(collection_id: str) → [SceneCollection](#videodb.scene.SceneCollection) | None
 
