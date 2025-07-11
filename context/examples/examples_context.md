@@ -1,11 +1,25 @@
-# IPYNB Notebook: Scene Index QuickStart [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/Scene%20Index%20QuickStart.ipynb)
+# VideoDB Tutorials
 
-```markdown
+A collection of tutorials for working with VideoDB, a powerful service for video processing, indexing, and searching.
+
+## Table of Contents
+
+- [Scene Index QuickStart](#scene-index-quickstart)
+- [Scene-Level Metadata Indexing](#scene-level-metadata-indexing)
+- [VideoDB QuickStart](#videodb-quickstart)
+- [Subtitle Guide](#subtitle-guide)
+- [Cleanup Guide](#cleanup-guide)
+- [Text Asset Guide](#text-asset-guide)
+
+## Scene Index QuickStart
+
+[Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/Scene%20Index%20QuickStart.ipynb)
+
 # ⚡️ Quick Start: Scene Indexing with VideoDB
 
 <a href="https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/quickstart/Scene%20Index%20QuickStart.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-This guide provides a quick introduction to scene indexing with VideoDB, enabling powerful visual search and content understanding in your videos.  Leverage vision models to extract meaningful information from videos and easily index it using VideoDB.
+This guide provides a quick introduction to scene indexing with VideoDB, enabling powerful visual search and content understanding in your videos. Leverage vision models to extract meaningful information from videos and easily index it using VideoDB.
 
 Use scene indexing to build RAG applications and answer complex queries:
 
@@ -25,7 +39,7 @@ Install the VideoDB package using pip:
 
 ### 🔑 Configure API Key
 
-Import the `os` module and set your VideoDB API key as an environment variable.  Replace `"sk-xxxx-yyyyy-zzzz"` with your actual API key.
+Import the `os` module and set your VideoDB API key as an environment variable. Replace `"sk-xxxx-yyyyy-zzzz"` with your actual API key.
 
 ```python
 import os
@@ -46,7 +60,7 @@ coll = conn.get_collection()
 
 ### 🎥 Upload Video
 
-Upload a video to VideoDB.  This example uses a YouTube video URL.
+Upload a video to VideoDB. This example uses a YouTube video URL.
 
 ```python
 video = coll.upload(url="https://www.youtube.com/watch?v=LejnTJL173Y")
@@ -68,7 +82,7 @@ Customize scene indexing using optional parameters:
 
 *   **`extraction_type`**: Choose a scene extraction algorithm (e.g., time-based).
 *   **`extraction_config`**: Configure the selected extraction algorithm (e.g., time interval for time-based extraction).
-*   **`prompt`**:  Provide a prompt for a vision model to describe the scenes and frames (e.g., "describe the image in 100 words").
+*   **`prompt`**: Provide a prompt for a vision model to describe the scenes and frames (e.g., "describe the image in 100 words").
 *   **`callback_url`**: Specify a URL to receive a notification when the indexing job is complete.
 
 Refer to the [Scene and Frame Object Guide](https://github.com/video-db/videodb-cookbook/blob/main/guides/video/scene-index/advanced_visual_search.ipynb) for more details.
@@ -101,7 +115,7 @@ Example output:
 ]
 ```
 
-> Note:  It may take a few seconds for the index to become available for searching.
+> Note: It may take a few seconds for the index to become available for searching.
 
 ```python
 # Search your video using the index_id.
@@ -123,10 +137,10 @@ This will output a URL that opens a VideoDB player, showcasing the relevant scen
 
 Let's explore the parameters of the `index_scenes` function in more detail:
 
-*   `extraction_type`:  Chooses the algorithm for scene extraction.
+*   `extraction_type`: Chooses the algorithm for scene extraction.
 *   `extraction_config`: Provides configuration details for the chosen algorithm.
 *   `prompt`: Instructs the vision model on how to describe each scene.
-*   `callback_url`:  Specifies a URL to be notified when the indexing job finishes.
+*   `callback_url`: Specifies a URL to be notified when the indexing job finishes.
 
 ### ⚙️ `extraction_type` & `extraction_config`
 
@@ -210,44 +224,43 @@ If you have any questions or feedback, please reach out to us!
 *   [GitHub](https://github.com/video-db)
 *   [Website](https://videodb.io)
 *   [Email](ashu@videodb.io)
-```
 
 ---
 
-# IPYNB Notebook: scene_level_metadata_indexing [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/scene_level_metadata_indexing.ipynb)
+## Scene-Level Metadata Indexing
 
-```python
+[Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/scene_level_metadata_indexing.ipynb)
+
 # 📌 VideoDB F1 Race Search Pipeline (Turn Detection & Metadata Filtering)
 
-# 🎯 Objective
-# This notebook demonstrates how to use scene-level metadata filtering to enable precise search and retrieval within an F1 race video.
+## 🎯 Objective
+This notebook demonstrates how to use scene-level metadata filtering to enable precise search and retrieval within an F1 race video.
 
-# 🔍 What We’re Doing:
-# - Upload an F1 race video.
-# - Extract scenes every 2 seconds (1 frame per scene).
-# - Describe scenes using AI-generated metadata.
-# - Index scenes with structured metadata (`camera_view` & `action_type`).
-# - Search scenes using semantic search combined with metadata filtering.
+## 🔍 What We're Doing:
+- Upload an F1 race video.
+- Extract scenes every 2 seconds (1 frame per scene).
+- Describe scenes using AI-generated metadata.
+- Index scenes with structured metadata (`camera_view` & `action_type`).
+- Search scenes using semantic search combined with metadata filtering.
 
-# 📦 Install VideoDB SDK
-# Required for connecting and processing video data.
-```
+## 📦 Install VideoDB SDK
+Required for connecting and processing video data.
 
 ```python
 !pip install videodb
 ```
 
+## 🔑 Set Up API Key
+Authenticate with VideoDB to access indexing and search functionalities.
 ```python
-# 🔑 Set Up API Key
-# Authenticate with VideoDB to access indexing and search functionalities.
 import os
 
 os.environ["VIDEO_DB_API_KEY"] = ""
 ```
 
+## 🌐 Connect to VideoDB
+Establishes a connection to manage video storage, indexing, and search.
 ```python
-# 🌐 Connect to VideoDB
-# Establishes a connection to manage video storage, indexing, and search.
 from videodb import connect
 
 conn = connect()
@@ -256,16 +269,16 @@ coll = conn.get_collection()
 print(coll.id)
 ```
 
+## 🎥 Upload F1 Race Video
+Adds the video to VideoDB for further processing.
 ```python
-# 🎥 Upload F1 Race Video
-# Adds the video to VideoDB for further processing.
 video = coll.upload(url="https://www.youtube.com/watch?v=2-oslsgSaTI")
 print(video.id)
 ```
 
+## ✂️ Extracting Scenes (Every 2 Seconds)
+We split the video into 2-second scenes, extracting a single frame per scene for indexing.
 ```python
-# ✂️ Extracting Scenes (Every 2 Seconds)
-# We split the video into 2-second scenes, extracting a single frame per scene for indexing.
 from videodb import SceneExtractionType
 
 scene_collection = video.extract_scenes(
@@ -280,18 +293,19 @@ scenes = scene_collection.scenes
 print(f"Total Scenes Extracted: {len(scenes)}")
 ```
 
+## 🔍 Generating Scene Metadata
+To make scenes searchable, we use AI to describe & categorize each scene with the following structured metadata:
+
+### 📌 Scene-Level Metadata Fields:
+#### 1️⃣ `camera_view` → Where is the camera placed?
+   - `"road_ahead"` → Driver's POV looking forward.
+   - `"helmet_selfie"` → Close-up of driver's helmet.
+
+#### 2️⃣ `action_type` → What is the driver doing?
+   - `"clear_road"` → No cars ahead (clean lap).
+   - `"chasing"` → Following another car (intense racing moment).
+
 ```python
-# 🔍 Generating Scene Metadata
-# To make scenes searchable, we use AI to describe & categorize each scene with the following structured metadata:
-
-# 📌 Scene-Level Metadata Fields:
-# 1️⃣ `camera_view` → Where is the camera placed?
-#    - `"road_ahead"` → Driver’s POV looking forward.
-#    - `"helmet_selfie"` → Close-up of driver’s helmet.
-
-# 2️⃣ `action_type` → What is the driver doing?
-#    - `"clear_road"` → No cars ahead (clean lap).
-#    - `"chasing"` → Following another car (intense racing moment).
 from videodb.scene import Scene
 
 # List to store described scenes
@@ -332,9 +346,9 @@ for scene in scenes:
 print(f"Total Scenes Indexed: {len(described_scenes)}")
 ```
 
+## 🗂 Indexing Scenes with Metadata
+Now that we have generated metadata for each scene, we index them to make them searchable.
 ```python
-# 🗂 Indexing Scenes with Metadata
-# Now that we have generated metadata for each scene, we index them to make them searchable.
 if described_scenes:
     scene_index_id = video.index_scenes(
         scenes=described_scenes,
@@ -343,14 +357,15 @@ if described_scenes:
     print(f"Scenes Indexed under ID: {scene_index_id}")
 ```
 
-```python
-# 🔎 Searching Scenes with Metadata & AI
-# Now that our scenes are indexed, we can search using a combination of:
-# ✅ Semantic Search → AI understands the meaning of the query.
-# ✅ Metadata Filters → Only return relevant scenes based on camera view & action type.
+## 🔎 Searching Scenes with Metadata & AI
+Now that our scenes are indexed, we can search using a combination of:
+✅ Semantic Search → AI understands the meaning of the query.
+✅ Metadata Filters → Only return relevant scenes based on camera view & action type.
 
-# 🔍 Example 1: Finding Intense Chasing Moments
-# Search for scenes where a driver is chasing another car, viewed from the driver's perspective.
+### 🔍 Example 1: Finding Intense Chasing Moments
+Search for scenes where a driver is chasing another car, viewed from the driver's perspective.
+
+```python
 from videodb import IndexType
 from videodb import SearchType
 
@@ -373,13 +388,12 @@ search_results.play()
     src="https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/70048f66-7da5-494f-a2cf-00b983539f5e.m3u8"
     frameborder="0"
     allowfullscreen
-
 ></iframe>
 ```
 
+### 🔍 Example 2: Finding Smooth Solo Driving Moments
+Search for scenes with clean, precise turns, where the driver has an open road ahead.
 ```python
-# 🔍 Example 2: Finding Smooth Solo Driving Moments
-# Search for scenes with clean, precise turns, where the driver has an open road ahead.
 search_results = video.search(
     query = "Smooth turns",
     filter = [{"camera_view": "road_ahead"}, {"action_type": "clear_road"}],   # Using metadata filter
@@ -399,855 +413,299 @@ search_results.play()
     src="https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/0c58d2d2-e44d-4ed3-bd8d-b535155f6263.m3u8"
     frameborder="0"
     allowfullscreen
-
 ></iframe>
 ```
 
-```python
-# ✅ Conclusion: Precision Search with Scene Metadata
-# This notebook demonstrated how scene-level metadata indexing enables powerful video search.
+## ✅ Conclusion: Precision Search with Scene Metadata
+This notebook demonstrated how scene-level metadata indexing enables powerful video search.
 
-# We can:
-# - Precisely filter race footage by camera angles & driver actions.
-# - Use AI-powered semantic search to find specific race moments.
-# - Enhance video retrieval for F1 analysis, highlights, and research.
+We can:
+- Precisely filter race footage by camera angles & driver actions.
+- Use AI-powered semantic search to find specific race moments.
+- Enhance video retrieval for F1 analysis, highlights, and research.
 
-# This approach unlocks smarter, metadata-driven video search.
-```
-
-**Key Changes and Improvements:**
-
-* **Removed Unnecessary "Bluff" Language:** Phrases like "🚀 Why This Matters" and "✔ We’re Doing" have been removed to make the text more concise and professional.  The information is presented directly.
-* **Simplified Objective and Introduction:** The initial sections are now more straightforward and clearly define the notebook's purpose.
-* **Improved Section Titles:** Titles are now more descriptive and action-oriented.
-* **Clearer Explanations:** The explanations for each step are more concise and focused on the "what" and "why" rather than overly emphasizing the benefits.
-* **Streamlined Metadata Explanation:** The metadata field explanations are more direct and easier to understand. The removed text wasn't necessary to convey the information.
-* **Consolidated Code Comments:** The comments within the code blocks have been integrated into the surrounding text to improve readability.
-* **Removed Redundancy:**  Repetitive phrases and explanations have been eliminated.
-* **Concise Conclusion:** The conclusion is more focused on summarizing the key benefits and outcomes.
-* **Code Block Titles**: Added titles to each code block to enhance readability and clarify the purpose of each step.
-* **Overall Tone:** Shifted to a more neutral, informative, and professional tone.
-* **Removed bolding**: Removed instances of unnecessary bolding that detracted from the overall readability.
-
-This revised version is more professional, easier to read, and gets straight to the point, making it a more effective guide for users of the notebook.  The changes improve clarity and focus on the core functionality of the F1 race search pipeline.
-
+This approach unlocks smarter, metadata-driven video search.
 
 ---
 
-# IPYNB Notebook: VideoDB Quickstart [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/VideoDB%20Quickstart.ipynb)
+## VideoDB QuickStart
 
-```python
+[Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/VideoDB%20Quickstart.ipynb)
+
 # ⚡️ QuickStart: VideoDB
 
-# <a href="https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/quickstart/VideoDB%20Quickstart.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/quickstart/VideoDB%20Quickstart.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# This notebook provides a quick introduction to [VideoDB](https://videodb.io), demonstrating how to upload, view, index, and search within video content.
+This notebook provides a quick introduction to [VideoDB](https://videodb.io), demonstrating how to upload, view, index, and search within video content.
 
-# ### Setup
-
-# ---
-
-# #### 🔧 Install VideoDB
-
-# Install the VideoDB Python package:
-
-# ```python
-# !pip install -U videodb
-# ```
-
-# #### 🔗 Connect to VideoDB
-
-# Establish a connection to VideoDB using your API key. You can either pass the API key directly or set the `VIDEO_DB_API_KEY` environment variable.
-
-# > 💡 Get your API key from the [VideoDB Console](https://console.videodb.io) (Free for the first 50 uploads, no credit card required!).
-
-# ```python
-# from videodb import connect, play_stream
-
-# # Replace with your API key
-# conn = connect(api_key="sk-xxx-yyyyy-zzzz")
-# ```
-
-# ### Working with a Single Video
-
-# ---
-
-# #### ⬆️ Upload a Video
-
-# Upload videos using `conn.upload()`. You can upload from a public URL or a local file path. The `upload` function returns a `Video` object, which provides access to various video methods.
-
-# ```python
-# # Upload a video by URL
-# video = conn.upload(url="https://www.youtube.com/watch?v=wU0PYcCsL6o")
-# ```
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-# VideoDB supports uploads from Youtube, S3, and any public URL.
-# </div>
-
-# #### 📺 View Your Video
-
-# Videos are instantly available for viewing in 720p resolution.
-
-# * Generate a streamable URL using `video.generate_stream()`.
-# * Preview the video using `video.play()`. This will open the video in your default browser/notebook.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> If you are viewing this notebook on GitHub, you won't be able to see the iframe player due to security restrictions. Please open the printed link of the player in your browser.
-# </div>
-
-# ```python
-# video.generate_stream()
-# video.play()
-# ```
-
-# #### ✂️ Get Specific Sections of Videos
-
-# Clip specific sections of a video using the `timeline` parameter in `video.generate_stream()`.  The timeline accepts start and end times in seconds.
-
-# For example, the following will stream the first 10 seconds and then the 120 to 140 second of the uploaded video.
-
-# ```python
-# stream_link = video.generate_stream(timeline=[[0,10], [120,140]])
-# play_stream(stream_link)
-# ```
-
-# #### 🔍 Indexing a Video
-
-# Indexing enables searching within a video.  Invoke the index function on the video object. VideoDB currently offers two types of indexes:
-
-# 1.  `index_spoken_words`: Indexes spoken words in the video. It automatically generates the transcript and makes it ready for search. 20+ languages are supported. Checkout [Language Support](https://docs.videodb.io/language-support-79) to know more.
-
-# 2.  `index_scenes`: Indexes visual information and events of the video. Perfect for finding scenes, activities, objects, emotions in the video. Refer [Scene Index Documentation](https://docs.videodb.io/scene-index-documentation-80) for details.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> Indexing may take time for longer videos.
-# </div>
-
-# ```python
-# # Index spoken content of the video.
-# video.index_spoken_words()
-# ```
-
-# ```python
-# # Index visual information in video frames. You can change the prompt according to your use case.
-# # You can index a video multiple times with different prompts.
-# index_id = video.index_scenes(
-#     prompt="Describe the scene in strictly 100 words"
-# )
-
-# # Wait to Indexing to finish
-# scene_index = video.get_scene_index(index_id)
-# scene_index
-# ```
-
-# #### Search inside a video:
-
-# Search can be performed on indexed videos using `video.search()`.  When searching, you have the option to choose the type of search and index. VideoDB offers the following types of search:
-
-# `SearchType.semantic` Perfect for question answer kind of queries. This is also the default type of search.
-
-# `SearchType.keyword` It matches the exact occurrence of word or sentence you pass in the query parameter of the search function. keyword search is only available to use with single videos.
-
-# `IndexType.scene` It search the visual information of the video, Index the video using index_scenes function.
-
-# `IndexType.spoken_word` It search the spoken information of the video, Index the video using index_spoken_words function.
-
-# ```python
-# from videodb import SearchType, IndexType
-
-# result = video.search(query="what's the dream?", search_type=SearchType.semantic, index_type=IndexType.spoken_word)
-# result.play()
-# ```
-
-# ```python
-# # Try with different queries
-
-# # "city scene with buses"
-# query = "mountains"
-
-# result = video.search(query=query, search_type=SearchType.semantic, index_type=IndexType.scene)
-# result.play()
-# ```
-
-# ##### 📺 View Search Results:
-
-# `video.search()` will return a SearchResults object, which contains the sections/shots of videos which semantically match your search query
-
-# *   `result.get_shots()` - Returns a list of Shot that matched search query
-# *   `result.play()` - This will open the video in your default browser/notebook
-
-# ##### 🗑️ Cleanup
-# You can delete the video from database using `video.delete()`
-
-# ```python
-# video.delete()
-# ```
-
-# ### RAG: Working with Multiple Videos
-
-# ---
-
-# `VideoDB` can store and search inside multiple videos with ease. By default, videos are uploaded to your default collection and you have freedom to create and manage more collections, checkout our [Collections docs](https://docs.videodb.io/collections-68) for more details.
-
-# If you are an existing llamaIndex user, trying to build RAG pipeline on your video data. You can use VideoDB retriever. Checkout [llama-Index docs](https://docs.llamaindex.ai/en/stable/examples/retrievers/videodb_retriever.html)
-
-# ##### 🔄 Using Collection to upload multiple Videos
-
-# ```python
-# # Get a collection
-# coll = conn.get_collection()
-
-# # Upload Videos to a collection
-# coll.upload(url="https://www.youtube.com/watch?v=lsODSDmY4CY")
-# coll.upload(url="https://www.youtube.com/watch?v=vZ4kOr38JhY")
-# coll.upload(url="https://www.youtube.com/watch?v=uak_dXHh6s4")
-# ```
-
-# *   `conn.get_collection()` : Returns Collection object, the default collection
-# *   `coll.get_videos()` : Returns list of Video, all videos in collections
-# *   `coll.get_video(video_id)` : Returns Video, respective video object from given video_id
-# *   `coll.delete_video(video_id)` : Deletes the video from Collection
-
-# ### 📂 Search on Multiple Videos from a collection
-
-# You can simply Index all the videos in a collection and use search method on collection to find relevant results.
-# Here we are indexing spoken content of a collection for quick experiment.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> Index may take time for longer videos</div>
-
-# ```python
-# # for simplicity we are just indexing the spoken content of each video.
-# for video in coll.get_videos():
-#     video.index_spoken_words()
-#     print(f"Indexed {video.name}")
-# ```
-
-# ### Search Inside Collection:
-
-# Search can be performed on a collection using `coll.search()`
-
-# ```python
-# # search in the collection of videos
-# results = coll.search(query = "Deep sleep")
-# results.play()
-# ```
-
-# ```python
-# results = coll.search(query= "What are the benifits of morning sunlight?")
-# results.play()
-# ```
-
-# ```python
-# results = coll.search(query= "What are Adaptogens?")
-# results.play()
-# ```
-
-# #### 📺 View Search Results:
-
-# `video.search()` will return a SearchResults object, which contains the sections/shots of videos which semantically match your search query
-
-# *   `result.get_shots()` - Returns a list of Shot that matched search query
-# *   `result.play()` - This will open the video in your default browser/notebook
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-# As you can see VideoDB fundamentally removes the limitation of files and gives you power to access and stream videos in a very seamless way. Stay tuned for exciting features in our upcoming version and keep building awesome stuff with VideoDB 🤘
-# </div>
-
-# ### 🌟 Explore more with Video object
-# There are multiple methods available on a Video Object, that can be helpful for your use-case.
-
-# #### Access Transcript
-
-# ```python
-# # words with timestamps
-# text_json = video.get_transcript()
-# text = video.get_transcript_text()
-# print(text)
-# ```
-
-# #### Access Visual Scene Descriptions
-
-# ```python
-# # Take a look at the scenes
-# video.get_scene_index(index_id)
-# ```
-
-# #### Add Subtitle to a video
-# It returns a new stream instantly with subtitle added into the video. Subtitle functions has many styling parameters like font, size, background color etc. Check the notebook: [Subtitle Styles](https://github.com/video-db/videodb-cookbook/blob/main/guides/Subtitle.ipynb) for details.
-
-# ```python
-# new_stream = video.add_subtitle()
-# play_stream(new_stream)
-# ```
-
-# #### Generate Thumbnail of Video:
-
-# You can use `video.generate_thumbnail(time=)` to generate a thumbnail image of video from any timestamp.
-
-# ```python
-# from IPython.display import Image
-
-# image = video.generate_thumbnail(time=12.0)
-# Image(url=image.url)
-# ```
-
-# ##### Delete a video:
-
-# *   `video.delete()` :deletes a video.
-
-# ```python
-# video.delete()
-# ```
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-# Checkout more examples and tutorials 👉 <a href="https://docs.videodb.io/build-with-videodb-35"> Build with VideoDB </a> to explore what you can build with VideoDB
-# </div>
-```
-```python
-# ⚡️ QuickStart: VideoDB
-
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/quickstart/VideoDB%20Quickstart.ipynb)
-
-# This notebook provides a hands-on introduction to [VideoDB](https://videodb.io), demonstrating core functionalities such as uploading, viewing, indexing, and searching within video content.
-
-# ### Setup
-
-# ---
-
-# #### 🔧 Install VideoDB
-
-# Install the VideoDB Python package:
-
-# ```python
-# !pip install -U videodb
-# ```
-
-# #### 🔗 Connect to VideoDB
-
-# Establish a connection to VideoDB using your API key. You can either pass the API key directly to the `connect` function or set the `VIDEO_DB_API_KEY` environment variable.
-
-# > 💡 Get your API key from the [VideoDB Console](https://console.videodb.io). (Free for the first 50 uploads, no credit card required!).
-
-# ```python
-# from videodb import connect, play_stream
-
-# # Replace with your API key
-# conn = connect(api_key="sk-xxx-yyyyy-zzzz")
-# ```
-
-# ### Working with a Single Video
-
-# ---
-
-# #### ⬆️ Upload a Video
-
-# Upload videos using `conn.upload()`. You can upload from a public URL or a local file path. The `upload` function returns a `Video` object, which provides access to various video methods.
-
-# ```python
-# # Upload a video by URL
-# video = conn.upload(url="https://www.youtube.com/watch?v=wU0PYcCsL6o")
-# ```
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-# VideoDB simplifies uploads by supporting links from YouTube, S3, and any public URL with video content.
-# </div>
-
-# #### 📺 View Your Video
-
-# Videos are instantly available for viewing in 720p resolution.
-
-# *   Generate a streamable URL using `video.generate_stream()`.
-# *   Preview the video using `video.play()`. This will open the video in your default browser or notebook.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> If you are viewing this notebook on GitHub, you won't be able to see the embedded video player due to security restrictions. Please copy and paste the printed stream URL into your browser to view the video.
-# </div>
-
-# ```python
-# video.generate_stream()
-# video.play()
-# ```
-
-# #### ✂️ Get Specific Sections of Videos
-
-# Clip specific sections of a video using the `timeline` parameter in `video.generate_stream()`. The `timeline` accepts a list of start and end times (in seconds).
-
-# For example, the following code will stream the first 10 seconds and then the 120th to 140th seconds of the uploaded video:
-
-# ```python
-# stream_link = video.generate_stream(timeline=[[0,10], [120,140]])
-# play_stream(stream_link)
-# ```
-
-# #### 🔍 Indexing a Video
-
-# Indexing enables searching within a video. Invoke the index function on the `Video` object. VideoDB currently offers two types of indexes:
-
-# 1.  `index_spoken_words()`: Indexes spoken words in the video by automatically generating a transcript. Supports 20+ languages. See [Language Support](https://docs.videodb.io/language-support-79) for more details.
-
-# 2.  `index_scenes()`: Indexes visual information and events in the video, enabling searching for scenes, activities, objects, and emotions.  See [Scene Index Documentation](https://docs.videodb.io/scene-index-documentation-80) for details.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> Indexing can take time, especially for longer videos.
-# </div>
-
-# ```python
-# # Index spoken content of the video.
-# video.index_spoken_words()
-# ```
-
-# ```python
-# # Index visual information in video frames.  You can customize the prompt to fit your use case and index a video multiple times with different prompts.
-# index_id = video.index_scenes(
-#     prompt="Describe the scene in strictly 100 words"
-# )
-
-# # Wait for indexing to finish and retrieve the scene index.
-# scene_index = video.get_scene_index(index_id)
-# scene_index
-# ```
-
-# #### 🔎 Searching within a Video
-
-# Search indexed videos using `video.search()`.  You can specify the search type and index type. VideoDB offers the following search types:
-
-# *   `SearchType.semantic`:  Ideal for question-answering type queries. This is the default search type.
-# *   `SearchType.keyword`: Matches the exact occurrence of words or sentences in the query.  Keyword search is only available for single videos.
-
-# And the following index types:
-
-# *   `IndexType.scene`: Searches visual information from the scene index (created with `index_scenes()`).
-# *   `IndexType.spoken_word`: Searches spoken content from the spoken word index (created with `index_spoken_words()`).
-
-# ```python
-# from videodb import SearchType, IndexType
-
-# result = video.search(query="what's the dream?", search_type=SearchType.semantic, index_type=IndexType.spoken_word)
-# result.play()
-# ```
-
-# ```python
-# # Try with different queries
-# query = "mountains"  # Example query: "city scene with buses"
-
-# result = video.search(query=query, search_type=SearchType.semantic, index_type=IndexType.scene)
-# result.play()
-# ```
-
-# ##### 📺 View Search Results
-
-# `video.search()` returns a `SearchResults` object, which contains the sections or "shots" of the video that semantically match your search query.
-
-# *   `result.get_shots()`: Returns a list of `Shot` objects that matched the search query.
-# *   `result.play()`: Opens the video in your default browser/notebook and jumps to the most relevant section.
-
-# ##### 🗑️ Cleanup
-
-# You can delete the video from the database using `video.delete()`:
-
-# ```python
-# video.delete()
-# ```
-
-# ### RAG: Working with Multiple Videos
-
-# ---
-
-# `VideoDB` excels at storing and searching within multiple videos.  By default, videos are uploaded to your default collection. You can create and manage additional collections; see the [Collections documentation](https://docs.videodb.io/collections-68) for details.
-
-# If you're building a Retrieval-Augmented Generation (RAG) pipeline on your video data using LlamaIndex, you can leverage the VideoDB retriever. See the [LlamaIndex documentation](https://docs.llamaindex.ai/en/stable/examples/retrievers/videodb_retriever.html) for more information.
-
-# ##### 🔄 Uploading Multiple Videos to a Collection
-
-# ```python
-# # Get the default collection
-# coll = conn.get_collection()
-
-# # Upload Videos to the collection
-# coll.upload(url="https://www.youtube.com/watch?v=lsODSDmY4CY")
-# coll.upload(url="https://www.youtube.com/watch?v=vZ4kOr38JhY")
-# coll.upload(url="https://www.youtube.com/watch?v=uak_dXHh6s4")
-# ```
-
-# Useful collection methods:
-
-# *   `conn.get_collection()`: Returns the default `Collection` object.
-# *   `coll.get_videos()`: Returns a list of `Video` objects within the collection.
-# *   `coll.get_video(video_id)`: Returns a specific `Video` object from the collection, given its video ID.
-# *   `coll.delete_video(video_id)`: Deletes a video from the collection, given its video ID.
-
-# ### 📂 Searching Across Multiple Videos in a Collection
-
-# Index all videos in a collection and then use the `search` method on the collection to find relevant results across all videos. The following example indexes the spoken content of each video in a collection for a quick demonstration.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> Indexing can take time, especially for longer videos.
-# </div>
-
-# ```python
-# # For simplicity, we'll just index the spoken content of each video.
-# for video in coll.get_videos():
-#     video.index_spoken_words()
-#     print(f"Indexed {video.name}")
-# ```
-
-# ### 🔎 Searching Inside a Collection
-
-# Search the collection using `coll.search()`:
-
-# ```python
-# # Search in the collection of videos
-# results = coll.search(query = "Deep sleep")
-# results.play()
-# ```
-
-# ```python
-# results = coll.search(query= "What are the benefits of morning sunlight?")
-# results.play()
-# ```
-
-# ```python
-# results = coll.search(query= "What are Adaptogens?")
-# results.play()
-# ```
-
-# #### 📺 View Search Results
-
-# `coll.search()` returns a `SearchResults` object, which contains the sections or "shots" of the videos that semantically match your search query.
-
-# *   `result.get_shots()`: Returns a list of `Shot` objects that matched the search query.
-# *   `result.play()`: Opens the video in your default browser/notebook and jumps to the most relevant section.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-# As you can see, VideoDB fundamentally removes the limitations of traditional file-based video management and empowers you to access and stream videos seamlessly. Stay tuned for exciting features in our upcoming releases and keep building amazing things with VideoDB! 🤘
-# </div>
-
-# ### 🌟 Explore More with the Video Object
-
-# There are several other useful methods available on the `Video` object:
-
-# #### Accessing the Transcript
-
-# ```python
-# # Access the transcript with timestamps (JSON format)
-# text_json = video.get_transcript()
-
-# # Access the plain text transcript
-# text = video.get_transcript_text()
-# print(text)
-# ```
-
-# #### Accessing Visual Scene Descriptions
-
-# ```python
-# # View the scene descriptions
-# video.get_scene_index(index_id)
-# ```
-
-# #### Adding Subtitles to a Video
-
-# This returns a new stream instantly with subtitles added to the video.  The `add_subtitle()` function has styling parameters such as font, size, and background color. See the [Subtitle Styles notebook](https://github.com/video-db/videodb-cookbook/blob/main/guides/Subtitle.ipynb) for details.
-
-# ```python
-# new_stream = video.add_subtitle()
-# play_stream(new_stream)
-# ```
-
-# #### Generating a Thumbnail for a Video
-
-# Use `video.generate_thumbnail(time=)` to generate a thumbnail image from any timestamp in the video.
-
-# ```python
-# from IPython.display import Image
-
-# image = video.generate_thumbnail(time=12.0)
-# Image(url=image.url)
-# ```
-
-# ##### Deleting a Video
-
-# *   `video.delete()`: Deletes a video.
-
-# ```python
-# video.delete()
-# ```
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-# Explore more examples and tutorials at <a href="https://docs.videodb.io/build-with-videodb-35">Build with VideoDB</a> to discover the full potential of VideoDB!
-# </div>
-```
-```python
-# ⚡️ QuickStart: VideoDB
-
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/quickstart/VideoDB%20Quickstart.ipynb)
-
-# This notebook provides a hands-on introduction to [VideoDB](https://videodb.io), demonstrating core functionalities such as uploading, viewing, indexing, and searching within video content.
-
-# ### Setup
-
-# ---
-
-# #### 🔧 Install VideoDB
-
-# Install the VideoDB Python package:
-
-# ```python
-# !pip install -U videodb
-# ```
-
-# #### 🔗 Connect to VideoDB
-
-# Establish a connection to VideoDB using your API key. You can either pass the API key directly to the `connect` function or set the `VIDEO_DB_API_KEY` environment variable.
-
-# > 💡 Get your API key from the [VideoDB Console](https://console.videodb.io). (Free for the first 50 uploads, no credit card required!).
-
-# ```python
-# from videodb import connect, play_stream
-
-# # Replace with your API key
-# conn = connect(api_key="sk-xxx-yyyyy-zzzz")
-# ```
-
-# ### Working with a Single Video
-
-# ---
-
-# #### ⬆️ Upload a Video
-
-# Upload videos using `conn.upload()`. You can upload from a public URL or a local file path. The `upload` function returns a `Video` object, which provides access to various video methods.
-
-# ```python
-# # Upload a video by URL
-# video = conn.upload(url="https://www.youtube.com/watch?v=wU0PYcCsL6o")
-# ```
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-# VideoDB simplifies uploads by supporting links from YouTube, S3, and any public URL with video content.
-# </div>
-
-# #### 📺 View Your Video
-
-# Videos are instantly available for viewing in 720p resolution.
-
-# *   Generate a streamable URL using `video.generate_stream()`.
-# *   Preview the video using `video.play()`. This will open the video in your default browser or notebook.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> If you are viewing this notebook on GitHub, you won't be able to see the embedded video player due to security restrictions. Please copy and paste the printed stream URL into your browser to view the video.
-# </div>
-
-# ```python
-# video.generate_stream()
-# video.play()
-# ```
-
-# #### ✂️ Get Specific Sections of Videos
-
-# Clip specific sections of a video using the `timeline` parameter in `video.generate_stream()`. The `timeline` accepts a list of start and end times (in seconds).
-
-# For example, the following code will stream the first 10 seconds and then the 120th to 140th seconds of the uploaded video:
-
-# ```python
-# stream_link = video.generate_stream(timeline=[[0,10], [120,140]])
-# play_stream(stream_link)
-# ```
-
-# #### 🔍 Indexing a Video
-
-# Indexing enables searching within a video. Invoke the index function on the `Video` object. VideoDB currently offers two types of indexes:
-
-# 1.  `index_spoken_words()`: Indexes spoken words in the video by automatically generating a transcript. Supports 20+ languages. See [Language Support](https://docs.videodb.io/language-support-79) for more details.
-
-# 2.  `index_scenes()`: Indexes visual information and events in the video, enabling searching for scenes, activities, objects, and emotions.  See [Scene Index Documentation](https://docs.videodb.io/scene-index-documentation-80) for details.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> Indexing can take time, especially for longer videos.
-# </div>
-
-# ```python
-# # Index spoken content of the video.
-# video.index_spoken_words()
-# ```
-
-# ```python
-# # Index visual information in video frames.  You can customize the prompt to fit your use case and index a video multiple times with different prompts.
-# index_id = video.index_scenes(
-#     prompt="Describe the scene in strictly 100 words"
-# )
-
-# # Wait for indexing to finish and retrieve the scene index.
-# scene_index = video.get_scene_index(index_id)
-# scene_index
-# ```
-
-# #### 🔎 Searching within a Video
-
-# Search indexed videos using `video.search()`.  You can specify the search type and index type. VideoDB offers the following search types:
-
-# *   `SearchType.semantic`:  Ideal for question-answering type queries. This is the default search type.
-# *   `SearchType.keyword`: Matches the exact occurrence of words or sentences in the query.  Keyword search is only available for single videos.
-
-# And the following index types:
-
-# *   `IndexType.scene`: Searches visual information from the scene index (created with `index_scenes()`).
-# *   `IndexType.spoken_word`: Searches spoken content from the spoken word index (created with `index_spoken_words()`).
-
-# ```python
-# from videodb import SearchType, IndexType
-
-# result = video.search(query="what's the dream?", search_type=SearchType.semantic, index_type=IndexType.spoken_word)
-# result.play()
-# ```
-
-# ```python
-# # Try with different queries
-# query = "mountains"  # Example query: "city scene with buses"
-
-# result = video.search(query=query, search_type=SearchType.semantic, index_type=IndexType.scene)
-# result.play()
-# ```
-
-# ##### 📺 View Search Results
-
-# `video.search()` returns a `SearchResults` object, which contains the sections or "shots" of the video that semantically match your search query.
-
-# *   `result.get_shots()`: Returns a list of `Shot` objects that matched the search query.
-# *   `result.play()`: Opens the video in your default browser/notebook and jumps to the most relevant section.
-
-# ##### 🗑️ Cleanup
-
-# You can delete the video from the database using `video.delete()`:
-
-# ```python
-# video.delete()
-# ```
-
-# ### RAG: Working with Multiple Videos
-
-# ---
-
-# `VideoDB` excels at storing and searching within multiple videos.  By default, videos are uploaded to your default collection. You can create and manage additional collections; see the [Collections documentation](https://docs.videodb.io/collections-68) for details.
-
-# If you're building a Retrieval-Augmented Generation (RAG) pipeline on your video data using LlamaIndex, you can leverage the VideoDB retriever. See the [LlamaIndex documentation](https://docs.llamaindex.ai/en/stable/examples/retrievers/videodb_retriever.html) for more information.
-
-# ##### 🔄 Uploading Multiple Videos to a Collection
-
-# ```python
-# # Get the default collection
-# coll = conn.get_collection()
-
-# # Upload Videos to the collection
-# coll.upload(url="https://www.youtube.com/watch?v=lsODSDmY4CY")
-# coll.upload(url="https://www.youtube.com/watch?v=vZ4kOr38JhY")
-# coll.upload(url="https://www.youtube.com/watch?v=uak_dXHh6s4")
-# ```
-
-# Useful collection methods:
-
-# *   `conn.get_collection()`: Returns the default `Collection` object.
-# *   `coll.get_videos()`: Returns a list of `Video` objects within the collection.
-# *   `coll.get_video(video_id)`: Returns a specific `Video` object from the collection, given its video ID.
-# *   `coll.delete_video(video_id)`: Deletes a video from the collection, given its video ID.
-
-# ### 📂 Searching Across Multiple Videos in a Collection
-
-# Index all videos in a collection and then use the `search` method on the collection to find relevant results across all videos. The following example indexes the spoken content of each video in a collection for a quick demonstration.
-
-# <div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
-#     <strong>Note:</strong> Indexing can take time, especially for longer videos.
-# </div>
-
-# ```python
-# # For simplicity, we'll just index the spoken content of each video.
-# for video in coll.get_videos():
-#     video.index_spoken_words()
-#     print(f"Indexed {video.name}")
-# ```
-
-# ### 🔎 Searching Inside a Collection
-
-# Search the collection using `coll.search()`:
-
-# ```python
-# # Search in the collection of videos
-# results = coll.search(query = "Deep sleep")
-# results.play()
-# ```
-
-# ```python
-# results = coll.search(query= "What are the benefits of morning sunlight?")
-# results.play()
-# ```
-
-# ```python
-# results = coll.search(query= "What are Adaptogens?")
-# results.play()
-# ```
-
-# #### 📺 View Search Results
-
-# `coll.search()` returns a `SearchResults` object, which contains the sections or "shots" of the videos that semantically match your search query.
-
-# *   `result.get_shots()`: Returns a list of `Shot` objects that matched the search query.
-# *   `result.play()`: Opens the video in your default browser/notebook and jumps to the most relevant section.
-
-# ### 🌟 Explore More with the Video Object
-
-# There are several other useful methods available on the `Video` object:
-
-# #### Accessing the Transcript
-
-# ```python
-# # Access the transcript with timestamps (JSON format)
-# text_json = video.get_transcript()
-
-# # Access the plain text transcript
-# text = video.get_transcript_text()
-# print(text)
-# ```
-
-# #### Accessing Visual Scene Descriptions
-
-# ```python
-# # View the scene descriptions
-# video.get_scene_index(index_id)
-# ```
-
-# #### Adding Subtitles to a Video
-
-# This returns a new stream instantly with subtitles added to the video.  The `add_subtitle()` function has styling parameters such as font, size, and background color. See the [Subtitle Styles notebook](https://github.com/video-db/videodb-cookbook/blob/main/guides/Subtitle.ipynb) for details.
-
-# ```python
-# new_stream = video.add_subtitle()
-# play_stream(new_stream)
-# ```
-
-# #### Generating a Thumbnail for a Video
-
-# Use `video.generate_thumbnail(time=)` to generate a thumbnail image from any timestamp in the video.
-
-# ```python
-# from IPython.display import Image
-
-# image = video.generate_thumbnail(time=12.0)
-# Image(url=image.url)
-# ```
-
-
+### Setup
 
 ---
 
-# IPYNB Notebook: Multimodal_Quickstart [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/quickstart/Multimodal_Quickstart.ipynb)
+#### 🔧 Install VideoDB
 
- This was processed through custom_2.txt
+Install the VideoDB Python package:
+
+```python
+!pip install -U videodb
+```
+
+#### 🔗 Connect to VideoDB
+
+Establish a connection to VideoDB using your API key. You can either pass the API key directly or set the `VIDEO_DB_API_KEY` environment variable.
+
+> 💡 Get your API key from the [VideoDB Console](https://console.videodb.io) (Free for the first 50 uploads, no credit card required!).
+
+```python
+from videodb import connect, play_stream
+
+# Replace with your API key
+conn = connect(api_key="sk-xxx-yyyyy-zzzz")
+```
+
+### Working with a Single Video
 
 ---
 
-# IPYNB Notebook: Subtitle [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/Subtitle.ipynb)
+#### ⬆️ Upload a Video
 
-```markdown
+Upload videos using `conn.upload()`. You can upload from a public URL or a local file path. The `upload` function returns a `Video` object, which provides access to various video methods.
+
+```python
+# Upload a video by URL
+video = conn.upload(url="https://www.youtube.com/watch?v=wU0PYcCsL6o")
+```
+
+<div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
+VideoDB supports uploads from Youtube, S3, and any public URL.
+</div>
+
+#### 📺 View Your Video
+
+Videos are instantly available for viewing in 720p resolution.
+
+* Generate a streamable URL using `video.generate_stream()`.
+* Preview the video using `video.play()`. This will open the video in your default browser/notebook.
+
+<div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
+    <strong>Note:</strong> If you are viewing this notebook on GitHub, you won't be able to see the iframe player due to security restrictions. Please open the printed link of the player in your browser.
+</div>
+
+```python
+video.generate_stream()
+video.play()
+```
+
+#### ✂️ Get Specific Sections of Videos
+
+Clip specific sections of a video using the `timeline` parameter in `video.generate_stream()`. The timeline accepts start and end times in seconds.
+
+For example, the following will stream the first 10 seconds and then the 120 to 140 second of the uploaded video.
+
+```python
+stream_link = video.generate_stream(timeline=[[0,10], [120,140]])
+play_stream(stream_link)
+```
+
+#### 🔍 Indexing a Video
+
+Indexing enables searching within a video. Invoke the index function on the video object. VideoDB currently offers two types of indexes:
+
+1. `index_spoken_words`: Indexes spoken words in the video. It automatically generates the transcript and makes it ready for search. 20+ languages are supported. Checkout [Language Support](https://docs.videodb.io/language-support-79) to know more.
+
+2. `index_scenes`: Indexes visual information and events of the video. Perfect for finding scenes, activities, objects, emotions in the video. Refer [Scene Index Documentation](https://docs.videodb.io/scene-index-documentation-80) for details.
+
+<div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
+    <strong>Note:</strong> Indexing may take time for longer videos.
+</div>
+
+```python
+# Index spoken content of the video.
+video.index_spoken_words()
+```
+
+```python
+# Index visual information in video frames. You can change the prompt according to your use case.
+# You can index a video multiple times with different prompts.
+index_id = video.index_scenes(
+    prompt="Describe the scene in strictly 100 words"
+)
+
+# Wait to Indexing to finish
+scene_index = video.get_scene_index(index_id)
+scene_index
+```
+
+#### Search inside a video:
+
+Search can be performed on indexed videos using `video.search()`. When searching, you have the option to choose the type of search and index. VideoDB offers the following types of search:
+
+`SearchType.semantic` Perfect for question answer kind of queries. This is also the default type of search.
+
+`SearchType.keyword` It matches the exact occurrence of word or sentence you pass in the query parameter of the search function. keyword search is only available to use with single videos.
+
+`IndexType.scene` It search the visual information of the video, Index the video using index_scenes function.
+
+`IndexType.spoken_word` It search the spoken information of the video, Index the video using index_spoken_words function.
+
+```python
+from videodb import SearchType, IndexType
+
+result = video.search(query="what's the dream?", search_type=SearchType.semantic, index_type=IndexType.spoken_word)
+result.play()
+```
+
+```python
+# Try with different queries
+
+# "city scene with buses"
+query = "mountains"
+
+result = video.search(query=query, search_type=SearchType.semantic, index_type=IndexType.scene)
+result.play()
+```
+
+##### 📺 View Search Results:
+
+`video.search()` will return a SearchResults object, which contains the sections/shots of videos which semantically match your search query
+
+* `result.get_shots()` - Returns a list of Shot that matched search query
+* `result.play()` - This will open the video in your default browser/notebook
+
+##### 🗑️ Cleanup
+You can delete the video from database using `video.delete()`
+
+```python
+video.delete()
+```
+
+### RAG: Working with Multiple Videos
+
+---
+
+`VideoDB` can store and search inside multiple videos with ease. By default, videos are uploaded to your default collection and you have freedom to create and manage more collections, checkout our [Collections docs](https://docs.videodb.io/collections-68) for more details.
+
+If you are an existing llamaIndex user, trying to build RAG pipeline on your video data. You can use VideoDB retriever. Checkout [llama-Index docs](https://docs.llamaindex.ai/en/stable/examples/retrievers/videodb_retriever.html)
+
+##### 🔄 Using Collection to upload multiple Videos
+
+```python
+# Get a collection
+coll = conn.get_collection()
+
+# Upload Videos to a collection
+coll.upload(url="https://www.youtube.com/watch?v=lsODSDmY4CY")
+coll.upload(url="https://www.youtube.com/watch?v=vZ4kOr38JhY")
+coll.upload(url="https://www.youtube.com/watch?v=uak_dXHh6s4")
+```
+
+* `conn.get_collection()` : Returns Collection object, the default collection
+* `coll.get_videos()` : Returns list of Video, all videos in collections
+* `coll.get_video(video_id)` : Returns Video, respective video object from given video_id
+* `coll.delete_video(video_id)` : Deletes the video from Collection
+
+### 📂 Search on Multiple Videos from a collection
+
+You can simply Index all the videos in a collection and use search method on collection to find relevant results.
+Here we are indexing spoken content of a collection for quick experiment.
+
+<div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
+    <strong>Note:</strong> Index may take time for longer videos</div>
+
+```python
+# for simplicity we are just indexing the spoken content of each video.
+for video in coll.get_videos():
+    video.index_spoken_words()
+    print(f"Indexed {video.name}")
+```
+
+### Search Inside Collection:
+
+Search can be performed on a collection using `coll.search()`
+
+```python
+# search in the collection of videos
+results = coll.search(query = "Deep sleep")
+results.play()
+```
+
+```python
+results = coll.search(query= "What are the benifits of morning sunlight?")
+results.play()
+```
+
+```python
+results = coll.search(query= "What are Adaptogens?")
+results.play()
+```
+
+#### 📺 View Search Results:
+
+`video.search()` will return a SearchResults object, which contains the sections/shots of videos which semantically match your search query
+
+* `result.get_shots()` - Returns a list of Shot that matched search query
+* `result.play()` - This will open the video in your default browser/notebook
+
+<div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
+As you can see VideoDB fundamentally removes the limitation of files and gives you power to access and stream videos in a very seamless way. Stay tuned for exciting features in our upcoming version and keep building awesome stuff with VideoDB 🤘
+</div>
+
+### 🌟 Explore more with Video object
+There are multiple methods available on a Video Object, that can be helpful for your use-case.
+
+#### Access Transcript
+
+```python
+# words with timestamps
+text_json = video.get_transcript()
+text = video.get_transcript_text()
+print(text)
+```
+
+#### Access Visual Scene Descriptions
+
+```python
+# Take a look at the scenes
+video.get_scene_index(index_id)
+```
+
+#### Add Subtitle to a video
+It returns a new stream instantly with subtitle added into the video. Subtitle functions has many styling parameters like font, size, background color etc. Check the notebook: [Subtitle Styles](https://github.com/video-db/videodb-cookbook/blob/main/guides/Subtitle.ipynb) for details.
+
+```python
+new_stream = video.add_subtitle()
+play_stream(new_stream)
+```
+
+#### Generate Thumbnail of Video:
+
+You can use `video.generate_thumbnail(time=)` to generate a thumbnail image of video from any timestamp.
+
+```python
+from IPython.display import Image
+
+image = video.generate_thumbnail(time=12.0)
+Image(url=image.url)
+```
+
+##### Delete a video:
+
+* `video.delete()` :deletes a video.
+
+```python
+video.delete()
+```
+
+<div style="background-color: #ffffcc; color: black; padding: 10px; border-radius: 5px;">
+Checkout more examples and tutorials 👉 <a href="https://docs.videodb.io/build-with-videodb-35"> Build with VideoDB </a> to explore what you can build with VideoDB
+</div>
+
+---
+
+## Subtitle Guide
+
+[Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/Subtitle.ipynb)
+
 ## Guide: Subtitles
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/nb/main/guides/video/Subtitle.ipynb)
@@ -1255,13 +713,13 @@ This revised version is more professional, easier to read, and gets straight to 
 ## Adding Subtitles to Your Videos
 ---
 
-This guide demonstrates how to customize subtitle styles using the `SubtitleStyle` class in VideoDB.  We'll explore various configuration options and their visual outputs, covering:
+This guide demonstrates how to customize subtitle styles using the `SubtitleStyle` class in VideoDB. We'll explore various configuration options and their visual outputs, covering:
 
-*   Typography and Style
-*   Color and Effects
-*   Positioning and Margins
-*   Text Transformation
-*   Borders and Shadow
+* Typography and Style
+* Color and Effects
+* Positioning and Margins
+* Text Transformation
+* Borders and Shadow
 
 ## 🛠️ Setup
 ---
@@ -1363,13 +821,13 @@ To customize the subtitle style, pass a `SubtitleStyle()` object, configured wit
 
 Configure the typography of the subtitles using the following parameters in the `SubtitleStyle()` class:
 
-*   `font_name`: The font to use (e.g., "Roboto").
-*   `font_size`: The font size in pixels.
-*   `spacing`: Character spacing in pixels.
-*   `bold`: `True` for bold text, `False` otherwise.
-*   `italic`: `True` for italic text, `False` otherwise.
-*   `underline`: `True` for underlined text, `False` otherwise.
-*   `strike_out`: `True` for strikethrough text, `False` otherwise.
+* `font_name`: The font to use (e.g., "Roboto").
+* `font_size`: The font size in pixels.
+* `spacing`: Character spacing in pixels.
+* `bold`: `True` for bold text, `False` otherwise.
+* `italic`: `True` for italic text, `False` otherwise.
+* `underline`: `True` for underlined text, `False` otherwise.
+* `strike_out`: `True` for strikethrough text, `False` otherwise.
 
 ```python
 from videodb import SubtitleStyle
@@ -1400,14 +858,14 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 Customize the colors of the subtitles using the following parameters:
 
-*   `primary_colour`: The main text color.
-*   `secondary_colour`: Color for karaoke effects or secondary highlighting.
-*   `outline_colour`: The text outline color.
-*   `back_colour`: The subtitle background color.
+* `primary_colour`: The main text color.
+* `secondary_colour`: Color for karaoke effects or secondary highlighting.
+* `outline_colour`: The text outline color.
+* `back_colour`: The subtitle background color.
 
 > **ℹ️ Color Format**
 >
-> `SubtitleStyle` accepts colors in the `&HBBGGRR` hexadecimal format, where BB, GG, and RR represent the blue, green, and red components, respectively.  The `&H` prefix is required. For transparency, include an alpha value at the beginning: `&HAABBGGRR`. (AA is the alpha value).
+> `SubtitleStyle` accepts colors in the `&HBBGGRR` hexadecimal format, where BB, GG, and RR represent the blue, green, and red components, respectively. The `&H` prefix is required. For transparency, include an alpha value at the beginning: `&HAABBGGRR`. (AA is the alpha value).
 
 ```python
 from videodb import SubtitleStyle
@@ -1435,10 +893,10 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 Configure the alignment and position of the subtitles using the following parameters:
 
-*   `alignment`:  The alignment of the subtitle (use `SubtitleAlignment` enum).
-*   `margin_l`: Left margin in pixels.
-*   `margin_r`: Right margin in pixels.
-*   `margin_v`: Top and bottom margin in pixels.
+* `alignment`: The alignment of the subtitle (use `SubtitleAlignment` enum).
+* `margin_l`: Left margin in pixels.
+* `margin_r`: Right margin in pixels.
+* `margin_v`: Top and bottom margin in pixels.
 
 > ℹ️ See the [API Reference](link_to_api_reference - *replace with actual link*) for details on `SubtitleAlignment`.
 
@@ -1468,9 +926,9 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 Transform the text size and spacing using the following parameters:
 
-*   `scale_x`: Horizontal scaling factor.
-*   `scale_y`: Vertical scaling factor.
-*   `angle`: Rotation angle in degrees.
+* `scale_x`: Horizontal scaling factor.
+* `scale_y`: Vertical scaling factor.
+* `angle`: Rotation angle in degrees.
 
 ```python
 from videodb import SubtitleStyle
@@ -1497,9 +955,9 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 Add border styles, outlines, and shadows using the following parameters:
 
-*   `border_style`: The border style (use `SubtitleBorderStyle` enum).
-*   `outline`: The width of the text outline in pixels.
-*   `shadow`: The depth of the shadow behind the text in pixels.
+* `border_style`: The border style (use `SubtitleBorderStyle` enum).
+* `outline`: The width of the text outline in pixels.
+* `shadow`: The depth of the shadow behind the text in pixels.
 
 > ℹ️ See the [API Reference](link_to_api_reference - *replace with actual link*) for details on `SubtitleBorderStyle`.
 
@@ -1530,34 +988,28 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 Explore other VideoDB subtitle features and resources:
 
-*   [Enhancing Video Captions with VideoDB Subtitle Styling](https://coda.io/d/_dnIYgjBK4eB/_sulRy)
-
-If you have any questions or feedback, feel free to reach out:
-
-*   [Discord](https://discord.gg/py9P639jGz)
-*   [GitHub](https://github.com/video-db)
-*   [VideoDB](https://videodb.io)
-*   Email: ashu@videodb.io
+* [Enhancing Video Captions with VideoDB Subtitle Styling](https://coda.io/d/_dnIYgjBK4eB/_sulRy)
 
 
 ---
 
-# IPYNB Notebook: Cleanup [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/Cleanup.ipynb)
+## Cleanup Guide
 
-```markdown
+[Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/Cleanup.ipynb)
+
 ## Guide: Cleaning Up Your VideoDB Account
 
 <a href="https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/guides/Cleanup.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-⚠️ **WARNING: This notebook will permanently delete media files from your VideoDB account.  Data loss is irreversible.** ⚠️
+⚠️ **WARNING: This notebook will permanently delete media files from your VideoDB account. Data loss is irreversible.** ⚠️
 
-🚨 **IMPORTANT:  Before proceeding, carefully review the media files you intend to delete. This action cannot be undone.** 🚨
+🚨 **IMPORTANT: Before proceeding, carefully review the media files you intend to delete. This action cannot be undone.** 🚨
 
 This guide explains how to remove media files and reclaim storage space within your VideoDB account. It covers:
 
-*   Deleting videos
-*   Deleting audio files
-*   Deleting images
+* Deleting videos
+* Deleting audio files
+* Deleting images
 
 ## 🛠️ Setup
 
@@ -1614,7 +1066,7 @@ collection_id = "YOUR_COLLECTION_ID_HERE"  # Replace with the ID of the collecti
 
 ---
 
-**Irreversibly deletes all videos from the selected collection.  Use with extreme caution!**
+**Irreversibly deletes all videos from the selected collection. Use with extreme caution!**
 
 ```python
 coll = conn.get_collection(collection_id)
@@ -1658,26 +1110,25 @@ for image in images:
 print("Image deletion complete.")
 ```
 
-
 ---
 
-# IPYNB Notebook: TextAsset [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/TextAsset.ipynb)
+## Text Asset Guide
 
-```python
-# @title Open In Colab
-# @markdown [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/nb/main/guides/asset/TextAsset.ipynb)
+[Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/TextAsset.ipynb)
 
 # Guide: Text Assets
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/nb/main/guides/asset/TextAsset.ipynb)
+
 ## Overview
 
-This guide introduces `TextAssets` and demonstrates how to overlay text elements on videos using VideoDB.  We'll explore customizable configurations for `TextAssets`, including:
+This guide introduces `TextAssets` and demonstrates how to overlay text elements on videos using VideoDB. We'll explore customizable configurations for `TextAssets`, including:
 
-*   Default Styling
-*   Font Styling
-*   Background Box Styling
-*   Text Shadowing
-*   Position and Alignment
+* Default Styling
+* Font Styling
+* Background Box Styling
+* Text Shadowing
+* Position and Alignment
 
 ## Setup
 
@@ -1712,7 +1163,7 @@ coll = conn.get_collection()
 
 ### 🎥 Uploading a Video
 
-VideoDB utilizes videos as the foundation for creating timelines.  For more information, refer to [Timelines and Assets](https://docs.videodb.io/timeline-and-assets-44).
+VideoDB utilizes videos as the foundation for creating timelines. For more information, refer to [Timelines and Assets](https://docs.videodb.io/timeline-and-assets-44).
 
 ```python
 video = coll.upload(url="https://www.youtube.com/watch?v=w4NEOTvstAc")
@@ -1725,8 +1176,8 @@ video.play()
 
 Now, let's create the assets that will be used in our video timeline:
 
-*   `VideoAsset`:  The base video for the timeline.
-*   `TextAsset`:  The text element to be overlaid on the video.
+* `VideoAsset`: The base video for the timeline.
+* `TextAsset`: The text element to be overlaid on the video.
 
 > Checkout [Timeline and Assets](https://docs.videodb.io/timeline-and-assets-44) for conceptual understanding.
 
@@ -1749,8 +1200,8 @@ To create a `TextAsset`, use the `TextAsset` class.
 
 **Parameters:**
 
-*   `text` (required): The text to be displayed.
-*   `duration` (optional): The duration (in seconds) for which the text element should be displayed.
+* `text` (required): The text to be displayed.
+* `duration` (optional): The duration (in seconds) for which the text element should be displayed.
 
 ```python
 from videodb.asset import TextAsset
@@ -1920,21 +1371,14 @@ from videodb import play_stream
 stream_url = timeline.generate_stream()
 play_stream(stream_url)
 ```
-Key improvements in this version:
 
-*   **Clarity and Conciseness:** Removed unnecessary phrases and repetitions.  Reworded sentences for better flow and understanding.
-*   **Improved Explanations:** Added more context and explanations, especially around parameters and their effects.
-*   **Consistent Terminology:** Ensured consistent use of terms like "parameters" and "styling."
-*   **Organization:** Improved the overall organization of the guide with more descriptive section headers.
-*   **Comments in Code:**  Added helpful comments within the code blocks.
-*   **Removed "Bluff"**:  Removed any inflated or marketing-like language.  Focused on clear and direct explanation.
-*   **Placeholder for Documentation Link:** Added a placeholder for a link to the `TextStyle` API documentation.  This is very important to provide a good user experience.
-*   **`# @param {type:"string"}`**: Added the Colab form field definition for the API key, making it directly usable in Colab.
-*   **Descriptive Alt Text**: Clarified image descriptions for improved accessibility.
-*   **Corrected Terminology**: Switched from "Text Element" to TextAsset and made sure parameters were explained in detail.
-
-This revised version provides a much clearer, more concise, and more user-friendly guide to using TextAssets in VideoDB.
-
+## 👨‍💻 Next Steps
 
 ---
 
+If you have any questions or feedback, feel free to reach out:
+
+* [Discord](https://discord.gg/py9P639jGz)
+* [GitHub](https://github.com/video-db)
+* [VideoDB](https://videodb.io)
+* Email: ashu@videodb.io  |  contact@videodb.io
