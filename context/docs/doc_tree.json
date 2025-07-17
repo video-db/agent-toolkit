@@ -9,11 +9,6 @@
         "href": "/quick-start-guide-38",
         "children": [
             {
-                "element": "How Accurate is Your Search?",
-                "href": "/how-accurate-is-your-search-88",
-                "children": []
-            },
-            {
                 "element": "Video Indexing Guide",
                 "href": "/video-indexing-guide-101",
                 "children": []
@@ -21,6 +16,11 @@
             {
                 "element": "Semantic Search",
                 "href": "/semantic-search-89",
+                "children": []
+            },
+            {
+                "element": "How Accurate is Your Search?",
+                "href": "/how-accurate-is-your-search-88",
                 "children": []
             },
             {
@@ -108,6 +108,32 @@
         ]
     },
     {
+        "element": "Real\u2011Time Video Pipeline",
+        "href": "/real-time-video-pipeline-113",
+        "children": []
+    },
+    {
+        "element": "Meeting Recording Agent Quickstart",
+        "href": "/meeting-recording-agent-quickstart-115",
+        "children": []
+    },
+    {
+        "element": "How VideoDB Solves Complex Visual Analysis Tasks",
+        "href": "/how-videodb-solves-complex-visual-analysis-tasks-112",
+        "children": []
+    },
+    {
+        "element": "Generative Media Quickstart",
+        "href": "/generative-media-quickstart-110",
+        "children": [
+            {
+                "element": "Generative Media Pricing",
+                "href": "/generative-media-pricing-111",
+                "children": []
+            }
+        ]
+    },
+    {
         "element": "Dynamic Video Streams",
         "href": "/dynamic-video-streams-44",
         "children": [
@@ -126,6 +152,11 @@
     {
         "element": "VideoDB MCP Server",
         "href": "/videodb-mcp-server-109",
+        "children": []
+    },
+    {
+        "element": "Transcoding Quickstart",
+        "href": "/transcoding-quickstart-114",
         "children": []
     },
     {
