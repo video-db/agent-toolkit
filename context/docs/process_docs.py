@@ -82,9 +82,7 @@ class DocsHandler:
         if not api_key:
             raise Exception("FirewCrawl API Key missing")
         app = FirecrawlApp(api_key=api_key)
-        response = app.scrape_url(url=url, params={"formats": ["markdown"]}).get(
-            "markdown", ""
-        )
+        response = app.scrape_url(url=url, formats=["markdown"]).markdown
         return response
 
     def get_prompt_for_identifier(self, identifier):
