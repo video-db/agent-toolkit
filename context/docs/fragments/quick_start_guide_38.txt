@@ -12,7 +12,19 @@ Pages
 
 [Multimodal Search](https://docs.videodb.io/multimodal-search-90)
 
+[Real‑Time Video Pipeline](https://docs.videodb.io/real-time-video-pipeline-113)
+
+[Meeting Recording Agent Quickstart](https://docs.videodb.io/meeting-recording-agent-quickstart-115)
+
+[How VideoDB Solves Complex Visual Analysis Tasks](https://docs.videodb.io/how-videodb-solves-complex-visual-analysis-tasks-112)
+
+[Generative Media Quickstart](https://docs.videodb.io/generative-media-quickstart-110)
+
 [Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[VideoDB MCP Server](https://docs.videodb.io/videodb-mcp-server-109)
+
+[Transcoding Quickstart](https://docs.videodb.io/transcoding-quickstart-114)
 
 [Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
 
@@ -32,7 +44,7 @@ Pages
 
 # Quick Start Guide
 
-[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88) [Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101) [Semantic Search](https://docs.videodb.io/semantic-search-89) [Collections](https://docs.videodb.io/collections-68) [Public Collections](https://docs.videodb.io/public-collections-102) [Callback Details](https://docs.videodb.io/callback-details-66) [Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57) [Language Support](https://docs.videodb.io/language-support-79) [Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101) [Semantic Search](https://docs.videodb.io/semantic-search-89) [How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88) [Collections](https://docs.videodb.io/collections-68) [Public Collections](https://docs.videodb.io/public-collections-102) [Callback Details](https://docs.videodb.io/callback-details-66) [Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57) [Language Support](https://docs.videodb.io/language-support-79) [Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
 
 This notebook is designed to help you get started with VideoDB. Advance concepts are linked in between for deep dive.
 
