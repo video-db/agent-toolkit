@@ -1445,7 +1445,19 @@ Pages
 
 [Multimodal Search](https://docs.videodb.io/multimodal-search-90)
 
+[Real‑Time Video Pipeline](https://docs.videodb.io/real-time-video-pipeline-113)
+
+[Meeting Recording Agent Quickstart](https://docs.videodb.io/meeting-recording-agent-quickstart-115)
+
+[How VideoDB Solves Complex Visual Analysis Tasks](https://docs.videodb.io/how-videodb-solves-complex-visual-analysis-tasks-112)
+
+[Generative Media Quickstart](https://docs.videodb.io/generative-media-quickstart-110)
+
 [Dynamic Video Streams](https://docs.videodb.io/dynamic-video-streams-44)
+
+[VideoDB MCP Server](https://docs.videodb.io/videodb-mcp-server-109)
+
+[Transcoding Quickstart](https://docs.videodb.io/transcoding-quickstart-114)
 
 [Director - Video Agent Framework](https://docs.videodb.io/director-video-agent-framework-98)
 
@@ -1465,7 +1477,7 @@ Pages
 
 # Quick Start Guide
 
-[How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88) [Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101) [Semantic Search](https://docs.videodb.io/semantic-search-89) [Collections](https://docs.videodb.io/collections-68) [Public Collections](https://docs.videodb.io/public-collections-102) [Callback Details](https://docs.videodb.io/callback-details-66) [Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57) [Language Support](https://docs.videodb.io/language-support-79) [Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
+[Video Indexing Guide](https://docs.videodb.io/video-indexing-guide-101) [Semantic Search](https://docs.videodb.io/semantic-search-89) [How Accurate is Your Search?](https://docs.videodb.io/how-accurate-is-your-search-88) [Collections](https://docs.videodb.io/collections-68) [Public Collections](https://docs.videodb.io/public-collections-102) [Callback Details](https://docs.videodb.io/callback-details-66) [Ref: Subtitle Styles](https://docs.videodb.io/ref-subtitle-styles-57) [Language Support](https://docs.videodb.io/language-support-79) [Guide: Subtitles](https://docs.videodb.io/guide-subtitles-73)
 
 This notebook is designed to help you get started with VideoDB. Advance concepts are linked in between for deep dive.
 
@@ -1772,6 +1784,320 @@ Try clicking the ⋯ next to your doc name or using a keyboard shortcut (
 CtrlP
 
 ) instead.
+
+
+---
+
+# VideoDB MCP Server [Source Link](https://docs.videodb.io/videodb-mcp-server-109)
+
+VideoDB Documentation
+
+Pages
+
+*   Welcome to VideoDB Docs
+*   Quick Start Guide
+*   Video Indexing Guide
+*   Semantic Search
+*   How Accurate is Your Search?
+*   Collections
+*   Public Collections
+*   Callback Details
+*   Ref: Subtitle Styles
+*   Language Support
+*   Guide: Subtitles
+*   Visual Search and Indexing
+*   Scene Extraction Algorithms
+*   Custom Annotations
+*   Scene-Level Metadata: Smarter Video Search & Retrieval
+*   Advanced Visual Search Pipelines
+*   Playground for Scene Extractions
+*   Deep Dive into Prompt Engineering : Mastering Video Scene Indexing
+*   Multimodal Search
+*   Multimodal Search: Quickstart
+*   Conference Slide Scraper with VideoDB
+*   Real‑Time Video Pipeline
+*   Meeting Recording Agent Quickstart
+*   How VideoDB Solves Complex Visual Analysis Tasks
+*   Generative Media Quickstart
+*   Generative Media Pricing
+*   Dynamic Video Streams
+*   Ref: TextAsset
+*   Guide : TextAsset
+*   VideoDB MCP Server
+*   Transcoding Quickstart
+*   Director - Video Agent Framework
+*   Agent Creation Playbook
+*   How I Built a CRM-integrated Sales Assistant Agent in 1 Hour
+*   Make Your Video Sound Studio Quality with Voice Cloning
+*   Setup Director Locally
+*   Open Source Tools
+*   LlamaIndex VideoDB Retriever
+*   PromptClip: Use Power of LLM to Create Clips
+*   StreamRAG: Connect ChatGPT to VideoDB
+*   Examples and Tutorials
+*   Dubbing - Replace Soundtrack with New Audio
+*   Beep curse words in real-time
+*   Remove Unwanted Content from videos
+*   Instant Clips of Your Favorite Characters
+*   Insert Dynamic Ads in real-time
+*   Adding Brand Elements with VideoDB
+*   Revolutionize Video Editing with VideoDb: Effortless Ad Placement and Seamless Video Integration
+*   Eleven Labs x VideoDB: Adding AI Generated voiceovers to silent footage
+*   Elevating Trailers with Automated Narration
+*   Add Intro/Outro to Videos
+*   Enhancing Video Captions with VideoDB Subtitle Styling
+*   Audio overlay + Video + Timeline
+*   Building Dynamic Video Streams with VideoDB: Integrating Custom Data and APIs
+*   Adding AI Generated Voiceovers with VideoDB and LOVO
+*   AI Generated Ad Films for Product Videography: Wellsaid, Open AI & VideoDB
+*   Fun with Keyword Search
+*   AWS Rekognition and VideoDB - Intelligent Video Clips
+*   AWS Rekognition and VideoDB - Effortlessly Remove Inappropriate Content from Video
+*   Overlay a Word-Counter on Video Stream
+*   Generate Automated Video Outputs with Text Prompts \| DALL-E + ElevenLabs + OpenAI + VideoDB
+*   Edge of Knowledge
+*   Building Intelligent Machines
+*   Part 1 - Define Intelligence
+*   Part 2 - Observe and Respond
+*   Part 3 - Training a Model
+*   Society of Machines
+*   Society of Machines
+*   Autonomy - Do we have the choice?
+*   Emergence - An Intelligence of the collective
+*   Drafts
+*   From Language Models to World Models: The Next Frontier in AI
+*   The Future Series
+*   Building World's First Video Database
+*   Multimedia: From MP3/MP4 to the Future with VideoDB
+*   Introducing VideoDB: The Pinnacle of Synchronized Video Streaming for the Modern Web
+*   Dynamic Video Streams
+*   Why do we need a Video Database Now?
+*   What's a Video Database ?
+*   Enhancing AI-Driven Multimedia Applications
+*   Misalignment of Today's Web
+*   Beyond Traditional Video Infrastructure
+*   Research Grants
+*   Team
+*   Internship: Build the Future of AI-Powered Video Infrastructure
+*   Ashutosh Trivedi
+*   Playlists
+*   Talks - Solving Logical Puzzles with Natural Language Processing - PyCon India 2015
+*   Ashish
+*   Shivani Desai
+*   Gaurav Tyagi
+*   Rohit Garg
+*   Customer Love
+*   Temp Doc
+
+# VideoDB MCP Server
+
+The VideoDB MCP Server can be installed and used in multiple ways. Follow the steps below to set it up.
+
+## Prerequisite: Ensure Python 3.12 or Later is Installed
+
+Before installing the VideoDB MCP Server, verify that Python 3.12 or later is installed on your system.
+
+Check Python version:
+
+`python --version`
+
+If the version is below 3.12, update Python from the [official website](https://www.python.org/downloads/).
+
+# Install and Configure VideoDB MCP Server
+
+> simplest method using uvx
+
+## 1\. Install uv
+
+macOS:
+
+`brew install uv`
+
+For macOS/Linux:
+
+`curl-LsSf<https://astral.sh/uv/install.sh>\|sh`
+
+For Windows:
+
+`powershell -ExecutionPolicy ByPass -c"irm <https://astral.sh/uv/install.ps1> \| iex"`
+
+You can visit the complete installation steps for uv [here](https://astral.sh/uv).
+
+## 2\. Automatic Installation for Clients
+
+To automatically add the MCP Server to Claude, Cursor and Claude Code:
+
+Install for Claude only
+
+`uvx videodb-director-mcp --install=claude`
+
+Install for Cursor only
+
+`uvx videodb-director-mcp --install=cursor`
+
+Install for both Claude and Cursor
+
+`uvx videodb-director-mcp --install=all`
+
+Install for Claude Code
+
+`claude mcp add videodb-director uvx -- videodb-director-mcp --api-key=<VIDEODB_API_KEY>`
+
+## 3\. Update VideoDB MCP package
+
+To ensure you're using the latest version of the MCP server with uvx, start by clearing the cache:
+
+`uv cache clean`
+
+This command removes any outdated cached packages of videodb-director-mcp, allowing uvx to fetch the most recent version.
+
+If you always want to use the latest version of the MCP server, update your command as follows:
+
+`uvx videodb-director-mcp@latest --api-key=<VIDEODB_API_KEY>`
+
+This ensures that uvx pulls the latest release every time you run it.
+
+# Advanced Methods
+
+## 1\. Install the VideoDB MCP Server
+
+### a. Using pipx
+
+We need to install pipx first.
+
+For macOS:
+
+`brew install pipx`
+
+`pipx ensurepath`
+
+For Windows:
+
+`python -m pip install--user pipx`
+
+`python -m pipx ensurepath`
+
+You can now run the MCP Server using:
+
+`pipx run videodb-director-mcp --api-key=VIDEODB_API_KEY`
+
+### b. Install Using pip
+
+Install the package using pip:
+
+`pip install videodb-director-mcp`
+
+The MCP server can now be started with the following command:
+
+`videodb-director-mcp --api-key=VIDEODB_API_KEY`
+
+## 2\. Configuring the MCP Server in Clients
+
+### Claude Desktop
+
+a. Open Configuration File
+
+MacOS/Linux:
+
+`code ~/Library/Application\ Support/Claude/claude_desktop_config.json`
+
+Windows:
+
+`code $env:AppData\Claude\claude_desktop_config.json`
+
+b. Modify Configuration
+
+Using pipx:
+
+```json
+{
+    "mcpServers":{
+        "videodb-director":{
+            "command":"pipx",
+            "args":["run","videodb-director-mcp","--api-key=<VIDEODB-API-KEY>"]
+        }
+    }
+}
+```
+
+Using package installed via pip :
+
+```json
+{
+    "mcpServers":{
+        "videodb-director":{
+            "command":"videodb-director-mcp",
+            "args":["--api-key=<VIDEODB-API-KEY>"]
+        }
+    }
+}
+```
+
+### Cursor Editor
+
+a. Open MCP Settings
+
+Navigate to Settings > Cursor Settings
+
+Click on MCP
+
+Click on Add new Global MCP Server
+
+b. Add Configuration
+
+Using pipx:
+
+```json
+{
+    "mcpServers":{
+        "videodb-director":{
+            "command":"pipx",
+            "args":["run","videodb-director-mcp","--api-key=<VIDEODB-API-KEY>"]
+        }
+    }
+}
+```
+
+Using package installed via pip :
+
+```json
+{
+    "mcpServers":{
+        "videodb-director":{
+            "command":"videodb-director-mcp",
+            "args":["--api-key=<VIDEODB-API-KEY>"]
+        }
+    }
+}
+```
+
+### Claude Code
+
+a. Add configuration
+
+To configure VideoDB Director MCP for Claude code you can run the following command
+
+Using pipx:
+
+`claude mcp add videodb-director pipx -- run videodb-director-mcp --api-key=<VIDEODB_API_KEY>`
+
+Using package installed via pip :
+
+`claude mcp add videodb-director videodb-director-mcp -- --api-key=<VIDEODB_API_KEY>`
+
+b. Verify configuration
+
+You can verify if the MCP Server has been added correctly or not by simply running the following command:
+
+`claude mcp list`
+
+## 3\. Update the VideoDB Director MCP Package
+
+To ensure you're using the latest version of a package installed via pipx or pip, run:
+
+`pip install--upgrade videodb-director-mcp`
+
+This will upgrade the package to its latest available version.
 
 
 ---
