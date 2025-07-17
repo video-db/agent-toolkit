@@ -1,10 +1,3 @@
-# Quick Start Guide [Source Link](https://docs.videodb.io/quick-start-guide-38)
-
-Error fetching https://docs.videodb.io/quick-start-guide-38: Unexpected error during scrape URL: Status code 400. Bad Request - [{'code': 'unrecognized_keys', 'keys': ['params'], 'path': [], 'message': 'Unrecognized key in body -- please review the v1 API documentation for request body changes'}]
-
-
----
-
 # VideoDB MCP Server [Source Link](https://docs.videodb.io/videodb-mcp-server-109)
 
 Error fetching https://docs.videodb.io/videodb-mcp-server-109: Unexpected error during scrape URL: Status code 400. Bad Request - [{'code': 'unrecognized_keys', 'keys': ['params'], 'path': [], 'message': 'Unrecognized key in body -- please review the v1 API documentation for request body changes'}]
