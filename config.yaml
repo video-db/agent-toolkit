@@ -37,6 +37,7 @@ examples_context:
   include:
     - "quickstart/*"
     - "guides/*.ipynb"
+    - "editor/*.ipynb"
   exclude:
     - "guides/VideoDB_Search_and_Evaluation.ipynb"
   prompts:
