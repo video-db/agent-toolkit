@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/video-db-agent-toolkit-badge.png)](https://mseep.ai/app/video-db-agent-toolkit)
+
 [![Latest Number][token-length-shield]][token-length-url]
 [![GitHub tag (latest SemVer)][tag-shield]][ tag-url]
 [![Stars][stars-shield]][stars-url]
