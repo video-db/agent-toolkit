@@ -1,44 +1,52 @@
 # IPYNB Notebook: TextAsset [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/TextAsset.ipynb)
 
 ```python
-# @title Open In Colab
+# @title Open in Colab
 # @markdown [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/nb/main/guides/asset/TextAsset.ipynb)
 
-# Guide: Text Assets
+# @markdown # Guide: TextAsset
 
-## Overview
+# @markdown ## Overview
 
-This guide introduces `TextAssets` and demonstrates how to overlay text elements on videos using VideoDB.  We'll explore customizable configurations for `TextAssets`, including:
+# @markdown This guide introduces you to `TextAssets` and how to use them to overlay text elements on your videos within VideoDB.  We'll explore the various styling configurations available through the `TextStyle` class, including:
 
-*   Default Styling
-*   Font Styling
-*   Background Box Styling
-*   Text Shadowing
-*   Position and Alignment
+# @markdown *   Font Styling (font, size, color, border)
+# @markdown *   Background Box Styling (color, border, size)
+# @markdown *   Shadow Effects
+# @markdown *   Position and Alignment
 
-## Setup
+# @markdown ---
 
----
+# @markdown ## Setup
 
-### 📦 Installing the VideoDB Package
+# @markdown ### 📦 Installing Packages
+
+# @markdown Make sure you have the `videodb` package installed.
+
 
 ```python
-%pip install videodb
+# @markdown %pip install videodb
 ```
 
-### 🔑 API Key
-
-Before proceeding, ensure you have access to VideoDB.
-
-> Get your API key from the [VideoDB Console](https://console.videodb.io). (Free for the first 50 uploads, no credit card required! 🎉)
+```python
+# @markdown ### 🔑 API Keys
+# @markdown Before proceeding, ensure you have access to [VideoDB](https://videodb.io). You can get your API key from the [VideoDB Console](https://console.videodb.io) (free for the first 50 uploads, no credit card required!).
+```
 
 ```python
+import videodb
 import os
+from getpass import getpass
 
-os.environ["VIDEO_DB_API_KEY"] = ""  # @param {type:"string"}
+api_key = getpass("Please enter your VideoDB API Key: ")
+
+os.environ["VIDEO_DB_API_KEY"] = api_key
 ```
 
-### 🌐 Connecting to VideoDB
+```python
+# @markdown ### 🌐 Connect to VideoDB
+# @markdown Connect to VideoDB using your API key and get a collection to work with.
+```
 
 ```python
 from videodb import connect
@@ -47,47 +55,50 @@ conn = connect()
 coll = conn.get_collection()
 ```
 
-### 🎥 Uploading a Video
-
-VideoDB utilizes videos as the foundation for creating timelines.  For more information, refer to [Timelines and Assets](https://docs.videodb.io/timeline-and-assets-44).
+```python
+# @markdown ### 🎥 Upload Video
+# @markdown VideoDB uses video as a base to create a timeline. Click here to learn more about how [Timelines and Assets](https://docs.videodb.io/timeline-and-assets-44) function.
+```
 
 ```python
 video = coll.upload(url="https://www.youtube.com/watch?v=w4NEOTvstAc")
 video.play()
 ```
 
-## Creating Assets
+```python
+# @markdown ## Creating Assets
+# @markdown ---
+# @markdown Now, let's create the assets we'll use in our Video Timeline:
 
----
+# @markdown *   `VideoAsset`:  The base video for our timeline.
+# @markdown *   `TextAsset`:  The text elements that will be overlaid on the video.
 
-Now, let's create the assets that will be used in our video timeline:
+# @markdown > Check out [Timelines and Assets](https://docs.videodb.io/timeline-and-assets-44) in the VideoDB documentation for more information.
 
-*   `VideoAsset`:  The base video for the timeline.
-*   `TextAsset`:  The text element to be overlaid on the video.
-
-> Checkout [Timeline and Assets](https://docs.videodb.io/timeline-and-assets-44) for conceptual understanding.
-
-### 🎥 VideoAsset
-
----
+# @markdown ### 🎥 VideoAsset
+# @markdown ---
+# @markdown We'll create a `VideoAsset` from the uploaded video, specifying a start and end time.
+```
 
 ```python
 from videodb.asset import VideoAsset
 
 # Create a VideoAsset from the uploaded video
-video_asset = VideoAsset(asset_id=video.id, start=0, end=60)
+video_asset = VideoAsset(
+    asset_id=video.id,
+    start=0,
+    end=60,
+)
 ```
 
-### 🔠 TextAsset: Default Styling
+```python
+# @markdown ### 🔠 TextAsset: Styling Examples
+# @markdown ---
+# @markdown To create a `TextAsset`, you need to specify the `text` and optionally the `duration`.  You can also customize the text appearance using the `style` parameter, which accepts a `TextStyle` instance.
 
----
-
-To create a `TextAsset`, use the `TextAsset` class.
-
-**Parameters:**
-
-*   `text` (required): The text to be displayed.
-*   `duration` (optional): The duration (in seconds) for which the text element should be displayed.
+# @markdown #### Default Styling
+# @markdown By default, the `TextAsset` will use a default font and appearance.
+```
 
 ```python
 from videodb.asset import TextAsset
@@ -95,20 +106,21 @@ from videodb.asset import TextAsset
 text_asset_1 = TextAsset(text="THIS IS A SENTENCE", duration=5)
 ```
 
-![Default Text Styling](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/default_style.png)
+# @markdown
+# @markdown ![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/default_style.png)
 
-### 🔡 TextAsset: Custom Styling
+```python
+# @markdown #### Custom Styling with TextStyle
+# @markdown You can customize the appearance of `TextAssets` using the `TextStyle` class.  Here are some examples:
 
-To create a `TextAsset` with custom styling, use the `style` parameter, which accepts a `TextStyle` instance.
-
-> View API Reference for [`TextStyle`](link to TextStyle documentation - if available)
-
-**1. Font Styling**
+# @markdown **1. Font Styling**
+```
 
 ```python
 from videodb.asset import TextAsset, TextStyle
 
-# Create TextAsset with custom font styling using TextStyle
+
+# Create TextAsset with custom styling using TextStyle
 text_asset_2 = TextAsset(
     text="THIS IS A SENTENCE",
     duration=5,
@@ -123,14 +135,18 @@ text_asset_2 = TextAsset(
 )
 ```
 
-![Font Styling](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/font_styling.png)
+# @markdown
+# @markdown ![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/font_styling.png)
 
-**2. Configuring Background Box**
+```python
+# @markdown **2. Configuring Background Box**
+```
 
 ```python
 from videodb.asset import TextAsset, TextStyle
 
-# Create TextAsset with custom background box styling using TextStyle
+
+# Create TextAsset with custom styling using TextStyle
 text_asset_3 = TextAsset(
     text="THIS IS A SENTENCE",
     duration=5,
@@ -144,14 +160,18 @@ text_asset_3 = TextAsset(
 )
 ```
 
-![Background Box Styling](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/background_box.png)
+# @markdown
+# @markdown ![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/background_box.png)
 
-**3. Configuring Shadows**
+```python
+# @markdown **3. Configuring Shadows**
+```
 
 ```python
 from videodb.asset import TextAsset, TextStyle
 
-# Create TextAsset with custom shadow styling using TextStyle
+
+# Create TextAsset with custom styling using TextStyle
 text_asset_4 = TextAsset(
     text="THIS IS A SENTENCE",
     duration=5,
@@ -163,9 +183,13 @@ text_asset_4 = TextAsset(
 )
 ```
 
-![Shadow Styling](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/custom_shadow.png)
+# @markdown
+# @markdown ![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/custom_shadow.png)
 
-**4. Position and Alignment**
+```python
+# @markdown **4. Position and Alignment**
+# @markdown  You can control the `x` and `y` position of the text, as well as its alignment within a bounding box.  `text_align` uses a "T+L", "M+C", "B+R" notation for Top+Left, Middle+Center, and Bottom+Right alignment. `y_align` defines the alignment of the box itself.
+```
 
 ```python
 from videodb.asset import TextAsset, TextStyle
@@ -213,14 +237,16 @@ text_asset_7 = TextAsset(
 )
 ```
 
-![Text Alignment Top Left](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/text_align.png)
-![Y Alignment](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/y_align.png)
+# @markdown
+# @markdown ![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/text_align.png)
+# @markdown ![](https://github.com/video-db/videodb-cookbook-assets/raw/main/images/guides/text-asset/y_align.png)
 
-## Viewing the Results
-
----
-
-### 🎼 Creating a Timeline Using `Timeline`
+```python
+# @markdown ## View Results
+# @markdown ---
+# @markdown ### 🎼 Create a timeline using Timeline
+# @markdown Create a timeline, add the base video, and then add the text overlays at different times.
+```
 
 ```python
 from videodb.timeline import Timeline
@@ -228,7 +254,7 @@ from videodb.timeline import Timeline
 # Initialize a Timeline
 timeline = Timeline(conn)
 
-# Add the base VideoAsset inline
+# Add Our base VideoAsset inline
 timeline.add_inline(video_asset)
 
 # TextAsset with default Styling
@@ -249,7 +275,10 @@ timeline.add_overlay(25, text_asset_6)
 timeline.add_overlay(30, text_asset_7)
 ```
 
-### ▶️ Playing the Video
+```python
+# @markdown ### ▶️ Play the Video
+# @markdown Generate a stream URL and play the video with the text overlays.
+```
 
 ```python
 from videodb import play_stream
@@ -257,20 +286,6 @@ from videodb import play_stream
 stream_url = timeline.generate_stream()
 play_stream(stream_url)
 ```
-Key improvements in this version:
-
-*   **Clarity and Conciseness:** Removed unnecessary phrases and repetitions.  Reworded sentences for better flow and understanding.
-*   **Improved Explanations:** Added more context and explanations, especially around parameters and their effects.
-*   **Consistent Terminology:** Ensured consistent use of terms like "parameters" and "styling."
-*   **Organization:** Improved the overall organization of the guide with more descriptive section headers.
-*   **Comments in Code:**  Added helpful comments within the code blocks.
-*   **Removed "Bluff"**:  Removed any inflated or marketing-like language.  Focused on clear and direct explanation.
-*   **Placeholder for Documentation Link:** Added a placeholder for a link to the `TextStyle` API documentation.  This is very important to provide a good user experience.
-*   **`# @param {type:"string"}`**: Added the Colab form field definition for the API key, making it directly usable in Colab.
-*   **Descriptive Alt Text**: Clarified image descriptions for improved accessibility.
-*   **Corrected Terminology**: Switched from "Text Element" to TextAsset and made sure parameters were explained in detail.
-
-This revised version provides a much clearer, more concise, and more user-friendly guide to using TextAssets in VideoDB.
 
 
 ---
