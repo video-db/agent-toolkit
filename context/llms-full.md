@@ -840,6 +840,19 @@ Delete the scene index.
 * **Return type:**
   None
 
+#### download(name: str | None = None) → dict
+
+Download the video from its stream URL.
+
+* **Parameters:**
+  **name** (*str*) – Name for the downloaded file (optional, defaults to video name)
+* **Raises:**
+  [**InvalidRequestError**](#videodb.InvalidRequestError) – If the download request fails
+* **Returns:**
+  Download response data
+* **Return type:**
+  dict
+
 #### extract_scenes(extraction_type: [SceneExtractionType](#videodb.SceneExtractionType) = 'shot', extraction_config: dict = {}, force: bool = False, callback_url: str | None = None) → [SceneCollection](#videodb.scene.SceneCollection) | None
 
 Extract the scenes of the video.
@@ -980,7 +993,7 @@ Get timestamped transcript segments for the video.
 * **Return type:**
   List[Dict[str, Union[float, str]]]
 
-#### get_transcript_text(start: int | None = None, end: int | None = None, segmenter: str = 'word', length: int = 1, force: bool | None = None) → str
+#### get_transcript_text(start: int | None = None, end: int | None = None) → str
 
 Get plain text transcript for the video.
 
@@ -1086,6 +1099,23 @@ Open the player url in the browser/iframe and return the stream url.
 * **Return type:**
   str
 
+#### reframe(start: float | None = None, end: float | None = None, target: str | Dict[str, int] = 'vertical', mode: str = 'smart', callback_url: str | None = None) → [Video](#videodb.video.Video) | None
+
+Reframe video to a new aspect ratio with optional object tracking.
+
+* **Parameters:**
+  * **start** (*float*) – Start time in seconds (optional)
+  * **end** (*float*) – End time in seconds (optional)
+  * **target** (*Union* *[**str* *,* *dict* *]*) – Target format - preset string (e.g., “vertical”, “square”, “landscape”) or {“width”: int, “height”: int}
+  * **mode** (*str*) – Reframing mode - “simple” or “smart” (default: “smart”)
+  * **callback_url** (*str*) – URL to receive callback when processing completes (optional)
+* **Raises:**
+  [**InvalidRequestError**](#videodb.InvalidRequestError) – If the reframe request fails
+* **Returns:**
+  [`Video`](#videodb.video.Video) object if no callback_url, None otherwise
+* **Return type:**
+  Optional[[`videodb.video.Video`](#videodb.video.Video)]
+
 #### remove_storage() → None
 
 Remove the video storage.
@@ -1115,6 +1145,21 @@ Search for a query in the video.
 * **Return type:**
   [`videodb.search.SearchResult`](#videodb.search.SearchResult)
 
+#### smart_vertical_reframe(start: float | None = None, end: float | None = None, callback_url: str | None = None) → [Video](#videodb.video.Video) | None
+
+Convenience method for object-aware vertical reframing.
+
+Equivalent to calling reframe(target=”vertical”, mode=”smart”).
+
+* **Parameters:**
+  * **start** (*float*) – Start time in seconds (optional)
+  * **end** (*float*) – End time in seconds (optional)
+  * **callback_url** (*str*) – URL to receive callback when processing completes (optional)
+* **Returns:**
+  [`Video`](#videodb.video.Video) object if no callback_url, None otherwise
+* **Return type:**
+  Optional[[`videodb.video.Video`](#videodb.video.Video)]
+
 #### translate_transcript(language: str, additional_notes: str = '', callback_url: str | None = None) → List[dict]
 
 Translate transcript of a video to a given language.
@@ -1141,6 +1186,8 @@ Audio class to interact with the Audio
   * **collection_id** (*str*) – ID of the collection this audio belongs to
   * **name** (*str*) – Name of the audio file
   * **length** (*float*) – Duration of the audio in seconds
+  * **transcript** (*list*) – Timestamped transcript segments
+  * **transcript_text** (*str*) – Full transcript text
 
 #### delete() → None
 
@@ -1153,6 +1200,18 @@ Delete the audio.
 * **Return type:**
   None
 
+#### generate_transcript(force: bool | None = None, language_code: str | None = None) → dict
+
+Generate transcript for the audio.
+
+* **Parameters:**
+  * **force** (*bool*) – Force generate new transcript
+  * **language_code** (*str*) – Language code of the spoken audio. If not provided, language is automatically detected.
+* **Returns:**
+  Success dict if transcript generated or already exists
+* **Return type:**
+  dict
+
 #### generate_url() → str
 
 Generate the signed url of the audio.
@@ -1161,6 +1220,35 @@ Generate the signed url of the audio.
   [**InvalidRequestError**](#videodb.InvalidRequestError) – If the get_url fails
 * **Returns:**
   The signed url of the audio
+* **Return type:**
+  str
+
+#### get_transcript(start: int | None = None, end: int | None = None, segmenter: [Segmenter](#videodb.Segmenter) = 'word', length: int = 1, force: bool | None = None) → List[Dict[str, float | str]]
+
+Get timestamped transcript segments for the audio.
+
+* **Parameters:**
+  * **start** (*int*) – Start time in seconds
+  * **end** (*int*) – End time in seconds
+  * **segmenter** ([*Segmenter*](#videodb.Segmenter)) – Segmentation type (`Segmenter.word`,
+    `Segmenter.sentence`, `Segmenter.time`)
+  * **length** (*int*) – Length of segments when using time segmenter
+  * **force** (*bool*) – Force fetch new transcript
+* **Returns:**
+  List of dicts with keys: start (float), end (float), text (str)
+* **Return type:**
+  List[Dict[str, Union[float, str]]]
+
+#### get_transcript_text(start: int | None = None, end: int | None = None) → str
+
+Get plain text transcript for the audio.
+
+* **Parameters:**
+  * **start** (*int*) – Start time in seconds to get transcript from
+  * **end** (*int*) – End time in seconds to get transcript until
+  * **force** (*bool*) – Force fetch new transcript
+* **Returns:**
+  Full transcript text as string
 * **Return type:**
   str
 
