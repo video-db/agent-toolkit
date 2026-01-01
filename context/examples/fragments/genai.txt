@@ -1,0 +1,365 @@
+# IPYNB Notebook: genai [Source Link](https://github.com/video-db/videodb-cookbook/blob/main/guides/genai.ipynb)
+
+```python
+# @title ✨ Generating Media with VideoDB: A Simple Guide { display-mode: "form" }
+# @markdown This guide demonstrates how to generate various media assets (images, music, sound effects, voiceovers, and video clips) using the VideoDB Python SDK.
+
+# @markdown [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/main/guides/genai.ipynb)
+
+# @markdown ### 🎯 Objective
+# @markdown Learn how to use VideoDB's generative functions to programmatically create media from text prompts or existing videos.
+
+# @markdown #### 📦 Install VideoDB SDK
+# @markdown First, install the VideoDB library:
+
+# @markdown
+# @markdown **Note:** You may need to restart the runtime after installing the library.
+
+# @markdown #### 🔑 Connect to VideoDB
+# @markdown
+# @markdown Use your [API key](https://console.videodb.io) to connect to VideoDB.  The API key is stored as an environment variable for secure access.
+
+# @markdown
+# @markdown **Warning:** Never commit your API key directly in your code. Use environment variables or secure storage mechanisms instead.
+
+
+!pip install videodb --upgrade
+
+import videodb
+import os
+from getpass import getpass
+
+api_key = getpass("Please enter your VideoDB API Key: ")
+
+os.environ["VIDEO_DB_API_KEY"] = api_key
+
+# Connect and get the default collection
+conn = videodb.connect()
+coll = conn.get_collection()
+
+print(f"Connected! Using collection ID: {coll.id}")
+
+
+# @markdown ## 🚀 Generating Media Assets
+# @markdown
+# @markdown Use the `coll` object to generate media.  Each code block includes example usage and explanations of configuration options.
+
+# @markdown ### 🖼️ Generate Image (`generate_image`)
+# @markdown
+# @markdown Create images from text prompts.
+
+
+from IPython.display import Image
+
+image_prompt = "Green neon sign jellyfish photography"  #@param {type:"string"} # Your prompt here
+print(f"Generating image for: '{image_prompt}'")
+
+# Generate image (returns an Image object)
+generated_image = coll.generate_image(prompt=image_prompt)
+
+print(f"-> Image generation started! Image ID: {generated_image.id}")
+
+# Get the URL
+image_url = generated_image.generate_url()
+print(f"-> Image URL: {image_url}")
+
+
+Image(url=image_url)
+
+
+# @markdown **⚡ Power Up `generate_image`:** Configuration Options Explained
+# @markdown
+# @markdown *   `prompt` (str): **Required.** The text description for image generation.
+# @markdown *   `aspect_ratio` (Literal['1:1', '9:16', '16:9', '4:3', '3:4'] | None): *Optional.* The desired aspect ratio. Defaults to `'1:1'`.
+# @markdown *   `callback_url` (str | None): *Optional.* URL for completion notification. Defaults to `None`.
+
+
+generated_image = coll.generate_image(
+    prompt=image_prompt,
+    aspect_ratio="9:16",  # Custom Aspect ratio
+)
+
+Image(url=generated_image.generate_url())
+
+
+# @markdown ### 🎵 Generate Music (`generate_music`)
+# @markdown
+# @markdown Create music from a text description.
+
+
+from IPython.display import Audio
+
+music_prompt = "Upbeat electronic background music"  #@param {type:"string"}
+print(f"Generating music for: '{music_prompt}'")
+
+# Generate music (returns an Audio object)
+generated_music = coll.generate_music(prompt=music_prompt)
+
+# Get the URL
+music_url = generated_music.generate_url()
+print(f"-> Music URL: {music_url}")
+
+Audio(url=music_url, filename="audio.mp3")
+
+
+# @markdown **⚡ Power Up `generate_music`:** Configuration Options Explained
+# @markdown
+# @markdown *   `prompt` (str): **Required.** The text description of the music.
+# @markdown *   `duration` (int): *Optional.* The desired duration of the music in seconds. Defaults to `5`.
+# @markdown *   `callback_url` (str | None): *Optional.* A URL endpoint that VideoDB will notify when generation is complete. Defaults to `None`.
+
+
+generated_music = coll.generate_music(
+    prompt=music_prompt,
+    duration=10,  # Custom Duration
+)
+
+Audio(url=generated_music.generate_url(), filename="audio.mp3")
+
+
+# @markdown ### 🔊 Generate Sound Effect (`generate_sound_effect`)
+# @markdown
+# @markdown Create short sounds.
+
+
+from IPython.display import Audio
+
+sfx_prompt = "Generate a sound of footsteps on wet gravel, for a mystery film scene. The sound should be realistic, rhythmic, and slightly echoey, around 3 seconds long"  #@param {type:"string"}  # Your prompt here
+print(f"Generating sound effect for: '{sfx_prompt}'")
+
+# Generate SFX (returns an Audio object)
+generated_sfx = coll.generate_sound_effect(prompt=sfx_prompt, duration=5)
+
+# Get the URL
+sfx_url = generated_sfx.generate_url()
+print(f"-> SFX URL: {sfx_url}")
+
+Audio(url=sfx_url, filename="audio.mp3")
+
+
+# @markdown ### 🗣️ Generate Voice (`generate_voice`)
+# @markdown
+# @markdown Convert text to speech.
+
+
+from IPython.display import Audio
+
+text_to_speak = "This is an AI voice speaking. I was created using the generate_voice method in VideoDB!"  #@param {type:"string"}  # Your text here
+print(f"Generating voice for: '{text_to_speak}'")
+
+# Generate voice (returns an Audio object)
+generated_voice = coll.generate_voice(text=text_to_speak)
+
+print(f"-> Voice generation started! Audio ID: {generated_voice.id}")
+
+# Get the URL
+voice_url = generated_voice.generate_url()
+print(f"-> Voice URL : {voice_url}")
+
+Audio(url=voice_url, filename="audio.mp3")
+
+
+# @markdown **⚡ Power Up `generate_voice`:** Configuration Options Explained
+# @markdown
+# @markdown *   `text` (str): **Required.** The text to be converted to speech.
+# @markdown *   `voice_name` (str): *Optional.* Name of the voice to use (check VideoDB docs/console for options). Defaults to `'Default'`.
+# @markdown *   `config` (dict): *Optional.* Configuration dictionary for the voice generation (e.g., speed, pitch; depends on provider). Defaults to `{}`.
+# @markdown *   `callback_url` (str | None): *Optional.* URL for completion notification. Defaults to `None`.
+
+# @markdown #### Available Voice Names
+# @markdown
+# @markdown Consult the VideoDB documentation or console for the most up-to-date list of available voices and their characteristics. The following table provides examples:
+
+# @markdown | Name      | Voice Style     | Accent        | Gender         |
+# @markdown |-----------|------------------|---------------|----------------|
+# @markdown | Aria      | Expressive       | American      | Female         |
+# @markdown | Roger     | Confident        | American      | Male           |
+# @markdown | Sarah     | Soft             | American      | Young Female   |
+# @markdown | Laura     | Upbeat           | American      | Young Female   |
+# @markdown | Charlie   | Natural          | Australian    | Male           |
+# @markdown | George    | Warm             | British       | Middle-aged Male |
+# @markdown | Callum    | Intense          | Transatlantic | Male           |
+# @markdown | River     | Confident        | American      | Non-binary     |
+# @markdown | Liam      | Articulate       | American      | Young Male     |
+# @markdown | Charlotte | Seductive        | Swedish       | Young Female   |
+# @markdown | Alice     | Confident        | British       | Middle-aged Female |
+# @markdown | Matilda   | Friendly         | American      | Middle-aged Female |
+# @markdown | Will      | Friendly         | American      | Young Male     |
+# @markdown | Jessica   | Expressive       | American      | Young Female   |
+# @markdown | Eric      | Friendly         | American      | Middle-aged Male |
+# @markdown | Chris     | Casual           | American      | Middle-aged Male |
+# @markdown | Brian     | Deep             | American      | Middle-aged Male |
+# @markdown | Daniel    | Authoritative    | British       | Middle-aged Male |
+# @markdown | Lily      | Warm             | British       | Middle-aged Female |
+# @markdown | Bill      | Trustworthy      | American      | Old Male       |
+
+
+generated_voice = coll.generate_voice(
+    text=text_to_speak,
+    voice_name="Charlotte",  # Custom Voice Name
+    config={
+        "stability": 0.0,  # Determines how stable the voice is and the randomness between each generation. Lower values introduce broader emotional range for the voice. Higher values can result in a monotonous voice with limited emotion.
+        "similarity_boost": 1.0,  # Determines how closely the AI should adhere to the original voice when attempting to replicate it.
+        "style": 0.0,  # Determines the style exaggeration of the voice. This setting attempts to amplify the style of the original speaker. It does consume additional computational resources and might increase latency if set to anything other than 0.
+    },
+)
+
+
+Audio(url=generated_voice.generate_url(), filename="audio.mp3")
+
+
+# @markdown ### 🎬 Generate Video (`generate_video`)
+# @markdown
+# @markdown Create short video clips (5-8 seconds).
+
+
+video_prompt = "Cinematic close-up of a majestic lion slowly rolling its head, its golden mane catching the soft afternoon sunlight on the savanna."  #@param {type:"string"}  # Your prompt here
+print(f"Generating video for: '{video_prompt}'")
+
+# Generate video (returns a Video object)
+# Duration must be 5-8 seconds if specified (e.g., duration=7)
+generated_video = coll.generate_video(prompt=video_prompt)
+
+
+# Play the video
+generated_video.play()
+
+
+# @markdown **Configuration Options (`generate_video`):**
+# @markdown
+# @markdown *   `prompt` (str): **Required.** Text prompt for video generation.
+# @markdown *   `duration` (float): *Optional.* Duration in seconds. **Must be an integer value between 5 and 8 (inclusive).** Defaults to `5`. Raises `ValueError` if invalid.
+# @markdown *   `callback_url` (str | None): *Optional.* URL for completion notification. Defaults to `None`.
+
+
+generated_video = coll.generate_video(
+    prompt=video_prompt,
+    duration=7,  # Custom Duration
+)
+generated_video.play()
+
+
+# @markdown ### 🌐 Search YouTube Videos (`youtube_search`)
+# @markdown
+# @markdown Find relevant YouTube videos using the main `conn` object.
+
+
+search_query = "learn python programming"  #@param {type:"string"}
+print(f"\nSearching YouTube for: '{search_query}'")
+
+youtube_results = conn.youtube_search(query=search_query)
+
+print(f"-> Found {len(youtube_results)} YouTube results:")
+for i, result in enumerate(youtube_results):
+    print(f"  {i+1}. {result.get('title', 'N/A')} ({result.get('link', 'N/A')})")
+
+
+# @markdown **⚡ Power Up `youtube_search`:** Configuration Options Explained
+# @markdown
+# @markdown *   `query` (str): **Required.** Query string to search for on YouTube.
+# @markdown *   `result_threshold` (int | None): *Optional.* Maximum number of results to return. Defaults to `10`.
+# @markdown *   `duration` (str): *Optional.* Filter by video duration (e.g., 'short', 'medium', 'long'). Defaults to `'medium'`.
+
+
+youtube_results = conn.youtube_search(
+    query=search_query,
+    result_threshold=3,  # Get top 3
+    duration="long",
+)
+
+print(f"-> Found {len(youtube_results)} YouTube results:")
+for i, result in enumerate(youtube_results):
+    print(f"  {i+1}. {result.get('title', 'N/A')} ({result.get('link', 'N/A')})")
+
+
+# @markdown ### 📝 Translate Video Transcripts (`translate_transcript`)
+# @markdown
+# @markdown Get a translated text version of a video's spoken content.  The video must be uploaded to VideoDB and its spoken words indexed before translation.
+
+
+upload_url = "https://www.youtube.com/watch?v=a9__D53WsUs"  #@param {type:"string"} # Example video
+
+print(f"\nUploading video from URL for modification: {upload_url}")
+video = coll.upload(url=upload_url)
+video.play()
+
+
+# @markdown **Important:**  Indexing spoken words can take a significant amount of time depending on the video length.
+
+
+# 2. Target_transcript_language = "fr" # Example: French
+target_language_code = "fr"  #@param {type:"string"} # Example: French
+print(f"\nTranslating transcript for video '{video.id}' into: '{target_language_code}'")
+
+# Note: Video needs transcribed spoken words.
+video.index_spoken_words()
+
+translated_transcript = video.translate_transcript(language=target_language_code)
+print("-> Transcript translation process completed.")
+print(translated_transcript)  # Example: View first 3 segments
+
+
+# @markdown **⚡ Power Up `translate_transcript`:** Configuration Options Explained
+# @markdown
+# @markdown *   `language` (str): **Required.** Target language for the transcript translation.
+# @markdown *   `additional_notes` (str): *Optional.* Additional notes or context for the translation model regarding style or tone. Defaults to `''`.
+# @markdown *   `callback_url` (str | None): *Optional.* URL for completion notification. Defaults to `None`.
+
+
+translated_transcript = video.translate_transcript(
+    language="en",
+    additional_notes="Translate the language, and give a Gen-z mordern touch",  # additional notes
+)
+
+print("-> Transcript translation process completed.")
+print(translated_transcript)  # Example: View first 3 segments
+
+
+# @markdown ### 🎤 Dub Existing Videos (`dub_video`)
+# @markdown
+# @markdown Translate the spoken audio of a video you've uploaded.  The video must be uploaded to VideoDB.
+
+
+# 1. Upload a video first (if you haven't already)
+upload_url = "https://www.youtube.com/watch?v=FgrO9ADPZSA"  #@param {type:"string"}  # Example video
+
+print(f"\nUploading video from URL for modification: {upload_url}")
+video = coll.upload(url=upload_url)
+video.play()
+
+# 2. Dub the uploaded video
+target_language_code = "hi"  #@param {type:"string"} # Example: German
+
+print(f"\nDubbing video '{video.id}' into language: '{target_language_code}'")
+dubbed_video = coll.dub_video(video_id=video.id, language_code=target_language_code)
+
+print(f"-> Dubbing Done! New Video ID: {dubbed_video.id}")
+dubbed_video.play()
+
+
+# @markdown **⚡ Power Up `dub_video`:** Configuration Options Explained
+# @markdown
+# @markdown *   `video_id` (str): **Required.** The ID of the video in your collection to dub.
+# @markdown *   `language_code` (str): **Required.** Target language code (e.g., "es", "fr", "ja"). Check VideoDB documentation for supported codes.
+# @markdown *   `callback_url` (str | None): *Optional.* URL for completion notification. Defaults to `None`.
+```
+
+Key improvements and explanations:
+
+* **Clearer Sections and Markdown:**  The code is now organized into distinct sections using markdown headers (`# @markdown ### ...`).  This drastically improves readability.  Markdown is used liberally to add descriptive text around code cells, explaining the purpose and usage.
+* **Input Fields (Parameters):** Replaced hardcoded prompts with `"#@param {type:"string"}"`. This turns them into interactive fields in the Colab notebook, allowing users to easily experiment with different prompts and values without directly editing the code.  This is a huge win for usability.
+* **Concise Explanations:** Rewrote explanations to be more direct and avoid unnecessary jargon.  The explanations are focused on *what* the code does and *why* you might want to use it.
+* **Option Descriptions:**  The configuration options are now displayed using bulleted lists and the `@markdown` tag which makes the descriptions appear in a markdown cell above the code and improves formatting.
+* **API Key Security:** Added a warning about storing API keys directly in code.
+* **Removed Redundant Information:** Streamlined introductory text and removed redundant explanations.
+* **Code Comments:**  Added helpful comments inline to clarify code sections.
+* **Removed unneeded print statements:** Removed unnecessary `print()` statements that were just echoing back information already displayed.
+* **Emphasis on Key Concepts:** Used **bold text** to highlight important terms and concepts.
+* **Error Handling (Implied):** While this version doesn't explicitly implement error handling (e.g., `try...except` blocks), the improved clarity helps users understand potential issues, such as providing invalid duration values for video generation. Real-world applications would need proper error handling.
+* **"Power Up" Sections:** Kept the "Power Up" sections but re-formatted to use markdown and clearly explain optional parameters.
+
+This revised version is much more user-friendly, readable, and effective as a tutorial. The interactive parameter fields and clear explanations make it easier for users to learn and experiment with the VideoDB SDK.
+
+
+---
+
