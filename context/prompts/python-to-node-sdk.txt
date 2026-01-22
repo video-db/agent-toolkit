@@ -1,0 +1,80 @@
+# Python SDK to Node SDK Generation
+
+You are updating the VideoDB Node SDK to match changes made to the Python SDK.
+
+## Python SDK Available (READ-ONLY)
+
+The complete Python SDK is available at `./python-sdk/videodb/` for you to read.
+You have FULL ACCESS to read any Python file to understand the complete context.
+
+⚠️ IMPORTANT: The `python-sdk/` directory is READ-ONLY for reference.
+- DO NOT write, modify, or create any files in `python-sdk/`
+- DO NOT attempt to commit or push changes to the Python SDK
+- ONLY read from `python-sdk/` to understand the source code
+- ONLY write to the Node SDK files in `src/`
+
+## File Mapping: Python SDK → Node SDK
+
+| Python File | Node File | Description |
+|-------------|-----------|-------------|
+| `videodb/client.py` | `src/core/connection.ts` | Main client/connection class |
+| `videodb/collection.py` | `src/core/collection.ts` | Collection operations |
+| `videodb/video.py` | `src/core/video.ts` | Video class and methods |
+| `videodb/audio.py` | `src/core/audio.ts` | Audio class and methods |
+| `videodb/image.py` | `src/core/image.ts` | Image class and methods |
+| `videodb/scene.py` | `src/core/scene.ts` | Scene class |
+| `videodb/shot.py` | `src/core/shot.ts` | Shot class |
+| `videodb/timeline.py` | `src/core/timeline.ts` | Timeline class |
+| `videodb/search.py` | `src/core/search/` | Search functionality |
+| `videodb/_constants.py` | `src/constants.ts` | Constants and enums |
+| `videodb/_utils/` | `src/utils/` | Utility functions |
+| Type definitions | `src/types/` | TypeScript interfaces |
+
+## Your Task
+
+1. **Identify which Python files changed** in the diff
+2. **Read the FULL Python file** from `./python-sdk/videodb/` to understand:
+   - The complete context of the change
+   - What class/enum/function the change belongs to
+   - The surrounding code structure
+3. **Find the corresponding Node SDK file** using the mapping table
+4. **Read the Node SDK file** to understand current patterns
+5. **Replicate the exact same changes** in the Node SDK file:
+   - If a new method was added in Python, add the equivalent method in Node
+   - If a constant was added, add it to the same location in constants.ts
+   - If a new class was added, create the corresponding TypeScript class
+   - If parameters were added/changed, update the Node version accordingly
+
+IMPORTANT: Always read the full Python source file, not just the diff, to understand WHERE and HOW to add the code.
+
+## Translation Rules
+
+| Python | TypeScript |
+|--------|------------|
+| `str` | `string` |
+| `int`, `float` | `number` |
+| `bool` | `boolean` |
+| `None` | `null` or `undefined` |
+| `Optional[X]` | `X \| undefined` or `X?` |
+| `List[X]` | `X[]` |
+| `Dict[str, X]` | `Record<string, X>` |
+| `def method(self, ...)` | `async method(...): Promise<...>` |
+| `@dataclass class Foo` | `interface Foo { ... }` |
+| `snake_case` | `camelCase` |
+| `UPPER_SNAKE_CASE` | `UPPER_SNAKE_CASE` (keep same for constants) |
+
+## Node SDK Patterns
+
+- Methods that call the API should be `async` and return `Promise<T>`
+- Use the existing `this.connection.post()` / `this.connection.get()` patterns
+- Types go in `src/types/` directory
+- Exports are managed in `src/index.ts`
+
+## Important
+
+- Do NOT modify `package.json`, `version.ts`, or version numbers
+- Do NOT change existing exports unless adding new ones
+- Do NOT refactor unrelated code
+- ONLY implement what the diff indicates was added/changed
+- Convert `snake_case` to `camelCase` for methods and variables
+- Keep `UPPER_SNAKE_CASE` for constants
