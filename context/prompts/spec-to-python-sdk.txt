@@ -1,0 +1,28 @@
+# OpenAPI Spec to Python SDK Generation
+
+You are updating the VideoDB Python SDK based on OpenAPI spec changes.
+
+## Your Task
+
+1. First, read the existing SDK structure in the `videodb/` directory to understand:
+   - How the client is structured (`videodb/_utils/_http_client.py` or similar)
+   - How models/types are defined
+   - Existing patterns for API methods
+
+2. Based on the diff, implement the necessary SDK changes:
+   - New endpoints = new methods
+   - Modified endpoints = updated methods
+   - New request/response schemas = new classes/types
+
+3. Follow the existing code patterns exactly. Match:
+   - Import style
+   - Method signatures
+   - Error handling patterns
+   - Docstring format
+
+## Important
+
+- Do NOT modify `__about__.py`, `__init__.py`, or version numbers
+- Do NOT add type hints if the existing code doesn't use them consistently
+- Do NOT refactor unrelated code
+- Only implement what the diff indicates was added/changed
