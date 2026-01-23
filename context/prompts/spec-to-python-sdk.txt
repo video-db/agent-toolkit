@@ -20,6 +20,14 @@ You are updating the VideoDB Python SDK based on OpenAPI spec changes.
    - Error handling patterns
    - Docstring format
 
+## Documentation Updates
+
+Check the README.md file to understand what features are currently documented.
+
+- If any feature mentioned in README.md is changed (updated params, new options, modified behavior), update the README.md accordingly
+- If a completely new feature paradigm is added that is significant enough to warrant an example, add it to the README.md
+- Not all changes require README.md updates - minor internal changes, bug fixes, or small parameter additions do not need README.md updates
+
 ## Important
 
 - Do NOT modify `__about__.py`, `__init__.py`, or version numbers
