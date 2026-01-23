@@ -70,6 +70,14 @@ IMPORTANT: Always read the full Python source file, not just the diff, to unders
 - Types go in `src/types/` directory
 - Exports are managed in `src/index.ts`
 
+## Documentation Updates
+
+Check the Readme.md file to understand what features are currently documented.
+
+- If any feature mentioned in Readme.md is changed (updated params, new options, modified behavior), update the Readme.md accordingly
+- If a completely new feature paradigm is added that is significant enough to warrant an example, add it to the Readme.md
+- Not all changes require Readme.md updates - minor internal changes, bug fixes, or small parameter additions do not need Readme.md updates
+
 ## Important
 
 - Do NOT modify `package.json`, `version.ts`, or version numbers
