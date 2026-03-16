@@ -5,19 +5,17 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/video-db/videodb-cookbook/blob/nb/main/guides/video/Subtitle.ipynb)
 
-## Adding Subtitles to Your Videos
----
+## Adding Subtitles to Your Video
 
-This guide demonstrates how to customize subtitle styles using the `SubtitleStyle` class in VideoDB.  We'll explore various configuration options and their visual outputs, covering:
+This guide introduces how to customize subtitle styles using the `SubtitleStyle` class.  We'll explore visual examples of different configurations, covering:
 
-*   Typography and Style
-*   Color and Effects
-*   Positioning and Margins
-*   Text Transformation
-*   Borders and Shadow
+*   **Typography and Style:** Font, size, and text formatting.
+*   **Color and Effects:**  Text, outline, and background colors.
+*   **Positioning and Margins:**  Subtitle alignment and spacing.
+*   **Text Transformation:** Scaling and rotation.
+*   **Borders and Shadow:**  Border styles and shadow effects.
 
 ## 🛠️ Setup
----
 
 ### 📦 Installing the VideoDB Package
 
@@ -25,22 +23,23 @@ This guide demonstrates how to customize subtitle styles using the `SubtitleStyl
 %pip install videodb
 ```
 
-### 🔑 API Key Configuration
+### 🔑 API Key
 
-Before you begin, you'll need a VideoDB API key.
+You'll need a VideoDB API key to proceed.
 
-> Get your free API key (for the first 50 uploads, no credit card required!) from the [VideoDB Console](https://console.videodb.io). 🎉
-
-Set the API key as an environment variable:
+> Get your API key from the [VideoDB Console](https://console.videodb.io). (Free for the first 50 uploads, **no credit card required!** 🎉)
 
 ```python
+import videodb
 import os
-os.environ["VIDEO_DB_API_KEY"] = ""  # Replace with your actual API key
+from getpass import getpass
+
+api_key = getpass("Please enter your VideoDB API Key: ")
+
+os.environ["VIDEO_DB_API_KEY"] = api_key
 ```
 
-### 🌐 Connecting to VideoDB
-
-Establish a connection to VideoDB and access a collection:
+### 🌐 Connect to VideoDB
 
 ```python
 from videodb import connect
@@ -49,80 +48,70 @@ conn = connect()
 coll = conn.get_collection()
 ```
 
-### 🎥 Uploading a Video
+### 🎥 Upload a Video
 
-Upload a base video to add subtitles. We'll use a sample video for this guide:
+Upload a video to add subtitles to.  We'll use the following video for this guide:
 
 ```python
 video = coll.upload(url="https://www.youtube.com/watch?v=il39Ks4mV9g")
 video.play()
 ```
 
-Output should be a playable video within the notebook, directing to the VideoDB console player. Example:
-
 ```
 'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/ef6ef08c-b276-4e1d-b1d0-f0525e697d46.m3u8'
 ```
 
-> ℹ️ You can also upload videos from your local file system by providing the `file_path` to the `upload()` method.
+> ℹ️ You can also upload videos from your local file system by passing the `file_path` to the `upload()` method.
 
-## 🔊 Indexing Spoken Words
+## 🔊 Index Spoken Words
 
----
-
-To generate subtitles, first index the video's spoken words using `video.index_spoken_words()`:
+Before adding subtitles, index the video using `video.index_spoken_words()`. This generates the transcript needed for subtitles.
 
 ```python
 video.index_spoken_words()
 ```
 
-A progress bar indicates the indexing process.
-
 ```
 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:32<00:00,  3.04it/s]
 ```
 
-## 📝 Adding Default Subtitles
+## 📝 Default Subtitles
 
----
+To add default subtitles to your video, use the `Video.add_subtitle()` method.
 
-Add default subtitles to your video using `Video.add_subtitle()`. This method returns a streaming link:
+This method returns a streaming link that you can play using the `play_stream()` method.
 
 ```python
 from videodb import play_stream
 
-# Add subtitles to the video
+# Add Subtitle to Video
 stream_url = video.add_subtitle()
 
-# Play the video with subtitles
+# Play stream
 play_stream(stream_url)
 ```
-
-Output should be a playable video within the notebook, directing to the VideoDB console player with subtitles. Example:
 
 ```
 'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/76e0206d-b3af-4a74-9628-54636bf22ddf.m3u8'
 ```
 
-## 📝 Customizing Subtitle Styles
+## 📝 Custom Styled Subtitles
 
----
+To customize the appearance of your subtitles, pass a `SubtitleStyle()` object with your desired configurations to the `Video.add_subtitle()` method.
 
-To customize the subtitle style, pass a `SubtitleStyle()` object, configured with your desired styles, to the `Video.add_subtitle()` method.
-
-> ℹ️ Refer to the [SubtitleStyle API Reference](link_to_api_reference - *replace with actual link*) for a complete list of available options.
+> ℹ️ Refer to the API Reference for the `SubtitleStyle` class for a complete list of options.
 
 ### 1. Typography and Style
 
-Configure the typography of the subtitles using the following parameters in the `SubtitleStyle()` class:
+Configure the typography of the subtitles by specifying these parameters within the `SubtitleStyle()` class:
 
-*   `font_name`: The font to use (e.g., "Roboto").
+*   `font_name`: The font name (e.g., "Roboto").
 *   `font_size`: The font size in pixels.
-*   `spacing`: Character spacing in pixels.
-*   `bold`: `True` for bold text, `False` otherwise.
-*   `italic`: `True` for italic text, `False` otherwise.
-*   `underline`: `True` for underlined text, `False` otherwise.
-*   `strike_out`: `True` for strikethrough text, `False` otherwise.
+*   `spacing`: The spacing between characters in pixels.
+*   `bold`: Set to `True` for bold text.
+*   `italic`: Set to `True` for italic text.
+*   `underline`: Set to `True` for underlined text.
+*   `strike_out`: Set to `True` for strikethrough text.
 
 ```python
 from videodb import SubtitleStyle
@@ -141,8 +130,6 @@ stream_url = video.add_subtitle(
 play_stream(stream_url)
 ```
 
-Output should be a playable video within the notebook, directing to the VideoDB console player with the specified typography. Example:
-
 ```
 'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/86d9e2a6-b0d9-4333-9013-bf355fea051d.m3u8'
 ```
@@ -151,16 +138,18 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 ### 2. Color and Effects
 
-Customize the colors of the subtitles using the following parameters:
+Customize subtitle colors with these `SubtitleStyle()` parameters:
 
-*   `primary_colour`: The main text color.
-*   `secondary_colour`: Color for karaoke effects or secondary highlighting.
-*   `outline_colour`: The text outline color.
-*   `back_colour`: The subtitle background color.
+*   `primary_colour`: The color of the main subtitle text.
+*   `secondary_colour`:  The color used for karaoke effects or highlighting.
+*   `outline_colour`: The color of the text outline.
+*   `back_colour`: The background color of the subtitle box.
 
-> **ℹ️ Color Format**
+> **ℹ️ Color Format:**
 >
-> `SubtitleStyle` accepts colors in the `&HBBGGRR` hexadecimal format, where BB, GG, and RR represent the blue, green, and red components, respectively.  The `&H` prefix is required. For transparency, include an alpha value at the beginning: `&HAABBGGRR`. (AA is the alpha value).
+> `SubtitleStyle` accepts colors in the `&HBBGGRR` hexadecimal format. `BB`, `GG`, and `RR` represent the blue, green, and red components, respectively.  The `&H` prefix is required.
+>
+> For transparency, add an alpha value at the beginning: `&HAABBGGRR`.  `AA` represents the alpha (transparency) component.
 
 ```python
 from videodb import SubtitleStyle
@@ -176,8 +165,6 @@ stream_url = video.add_subtitle(
 play_stream(stream_url)
 ```
 
-Output should be a playable video within the notebook, directing to the VideoDB console player with the specified colors. Example:
-
 ```
 'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/f59f13f4-d2ac-4589-83b7-58cdbb8e9154.m3u8'
 ```
@@ -186,14 +173,14 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 ### 3. Position and Margins
 
-Configure the alignment and position of the subtitles using the following parameters:
+Control the alignment and position of subtitles using these `SubtitleStyle()` parameters:
 
-*   `alignment`:  The alignment of the subtitle (use `SubtitleAlignment` enum).
-*   `margin_l`: Left margin in pixels.
-*   `margin_r`: Right margin in pixels.
-*   `margin_v`: Top and bottom margin in pixels.
+*   `alignment`: The alignment of the subtitle text. Accepts a value of type `SubtitleAlignment`.
+*   `margin_l`: The margin on the left side of the subtitle box.
+*   `margin_r`: The margin on the right side of the subtitle box.
+*   `margin_v`: The margin on the top and bottom of the subtitle box.
 
-> ℹ️ See the [API Reference](link_to_api_reference - *replace with actual link*) for details on `SubtitleAlignment`.
+> ℹ️ See the API Reference for more information about the `SubtitleAlignment` enum.
 
 ```python
 from videodb import SubtitleStyle, SubtitleAlignment
@@ -209,8 +196,6 @@ stream_url = video.add_subtitle(
 play_stream(stream_url)
 ```
 
-Output should be a playable video within the notebook, directing to the VideoDB console player with the specified position and margins. Example:
-
 ```
 'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/d32a4ae4-e19f-4ca9-9438-4d7b94e327b2.m3u8'
 ```
@@ -219,11 +204,11 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 ### 4. Text Transformation
 
-Transform the text size and spacing using the following parameters:
+Transform the size and orientation of the text with these `SubtitleStyle()` parameters:
 
-*   `scale_x`: Horizontal scaling factor.
-*   `scale_y`: Vertical scaling factor.
-*   `angle`: Rotation angle in degrees.
+*   `scale_x`: Factor for scaling the font horizontally.
+*   `scale_y`: Factor for scaling the font vertically.
+*   `angle`: Rotation angle of the text in degrees.
 
 ```python
 from videodb import SubtitleStyle
@@ -238,8 +223,6 @@ stream_url = video.add_subtitle(
 play_stream(stream_url)
 ```
 
-Output should be a playable video within the notebook, directing to the VideoDB console player with the specified transformations. Example:
-
 ```
 'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/f7ebe6d2-a181-46ad-aae3-e824446dc2a4.m3u8'
 ```
@@ -248,13 +231,13 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 ### 5. Borders and Shadow
 
-Add border styles, outlines, and shadows using the following parameters:
+Add borders, outlines, and shadows to subtitles using these `SubtitleStyle()` parameters:
 
-*   `border_style`: The border style (use `SubtitleBorderStyle` enum).
-*   `outline`: The width of the text outline in pixels.
+*   `border_style`: The border style of the subtitle. Accepts a value of type `SubtitleBorderStyle`.
+*   `outline`: The width of the outline around the text in pixels.
 *   `shadow`: The depth of the shadow behind the text in pixels.
 
-> ℹ️ See the [API Reference](link_to_api_reference - *replace with actual link*) for details on `SubtitleBorderStyle`.
+> ℹ️ Refer to the API Reference for more information about the `SubtitleBorderStyle` enum.
 
 ```python
 from videodb import SubtitleStyle, SubtitleBorderStyle
@@ -269,8 +252,6 @@ stream_url = video.add_subtitle(
 play_stream(stream_url)
 ```
 
-Output should be a playable video within the notebook, directing to the VideoDB console player with the specified border and shadow. Example:
-
 ```
 'https://console.videodb.io/player?url=https://stream.videodb.io/v3/published/manifests/cbbc8812-0fcf-467f-aac6-1976582146bd.m3u8'
 ```
@@ -279,18 +260,34 @@ Output should be a playable video within the notebook, directing to the VideoDB 
 
 ## 👨‍💻 Next Steps
 
----
-
-Explore other VideoDB subtitle features and resources:
+Explore more resources and tutorials related to VideoDB subtitles:
 
 *   [Enhancing Video Captions with VideoDB Subtitle Styling](https://coda.io/d/_dnIYgjBK4eB/_sulRy)
 
-If you have any questions or feedback, feel free to reach out:
+If you have any questions or feedback, please reach out!
 
 *   [Discord](https://discord.gg/py9P639jGz)
 *   [GitHub](https://github.com/video-db)
 *   [VideoDB](https://videodb.io)
-*   Email: ashu@videodb.io
+*   [Email](ashu@videodb.io)
+```
+Key improvements and explanations of changes:
+
+* **Conciseness:** Removed unnecessary phrases like "This guide gives you an introduction to..." and replaced them with direct, informative statements.  Reworded sentences for better clarity and brevity.
+* **Clarity:** Refined wording to be more precise and easier to understand.  For example, rephrased descriptions of `SubtitleStyle` parameters. Improved descriptions of color format.
+* **Structure:** Maintained the existing structure but improved the flow of information within each section.
+* **Emphasis:**  Used bolding more strategically to highlight key terms and information.
+* **Readability:** Added more whitespace and line breaks for better readability.  Used more descriptive headers.
+* **Consistency:** Ensured consistent naming conventions and terminology throughout the document.
+* **Markdown Formatting:** Improved markdown formatting for headers, lists, and code blocks. Fixed broken links.
+* **Removed Redundancy:** Eliminated repeated information or concepts.
+* **API Key Emphasis:** Clarified the importance of obtaining the API key at the beginning.
+* **Action-Oriented Language:** Reworded instructions to be more action-oriented (e.g., "Configure the typography..." instead of "Configure Typography").
+* **Removed Colloquialisms**: Replaced casual terms like "Check out" with more professional alternatives like "Explore."
+* **Clarified color formats:** Added more description to how to use them.
+* **General Polishing:** Proofread and corrected minor grammatical and spelling errors.
+
+This revised version is more concise, clear, and professional, providing a better user experience for those looking to learn about and use VideoDB subtitles.
 
 
 ---
