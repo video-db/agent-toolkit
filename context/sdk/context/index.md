@@ -11,12 +11,13 @@ About information for videodb sdk
 
 ## Default Module videodb (from videodb import class, func)
 
-### videodb.connect(api_key: str | None = None, base_url: str | None = 'https://api.videodb.io', log_level: int | None = 20, \*\*kwargs) → [Connection](#videodb.client.Connection)
+### videodb.connect(api_key: str | None = None, session_token: str | None = None, base_url: str | None = 'https://api.videodb.io', log_level: int | None = 20, \*\*kwargs) → [Connection](#videodb.client.Connection)
 
 A client for interacting with a videodb via REST API
 
 * **Parameters:**
   * **api_key** (*str*) – The api key to use for authentication
+  * **session_token** (*str*) – The session token to use for authentication (alternative to api_key)
   * **base_url** (*str*) – (optional) The base url to use for the api
   * **log_level** (*int*) – (optional) The log level to use for the logger
 * **Returns:**
@@ -57,7 +58,9 @@ Raised when a search is invalid.
 
 #### spoken_word *= 'spoken_word'*
 
-### *class* videodb.MediaType
+### *class* videodb.MediaType(value)
+
+An enumeration.
 
 #### audio *= 'audio'*
 
@@ -80,6 +83,8 @@ Raised when a search is invalid.
 #### shot_based *= 'shot'*
 
 #### time_based *= 'time'*
+
+#### transcript *= 'transcript'*
 
 ### *class* videodb.Segmenter
 
@@ -123,13 +128,13 @@ Raised when a search is invalid.
 
 ## Module : videodb.client (from videodb.client import class, func)
 
-### *class* videodb.client.Connection(api_key: str, base_url: str, \*\*kwargs)
+### *class* videodb.client.Connection(api_key: str | None = None, session_token: str | None = None, base_url: str | None = None, \*\*kwargs)
 
 Bases: `HttpClient`
 
 Connection class to interact with the VideoDB
 
-#### \_\_init_\_(api_key: str, base_url: str, \*\*kwargs) → [Connection](#videodb.client.Connection)
+#### \_\_init_\_(api_key: str | None = None, session_token: str | None = None, base_url: str | None = None, \*\*kwargs) → [Connection](#videodb.client.Connection)
 
 Initializes a new instance of the Connection class with specified API credentials.
 
@@ -138,9 +143,10 @@ Instead use [`videodb.connect()`](#videodb.connect)
 
 * **Parameters:**
   * **api_key** (*str*) – API key for authentication
+  * **session_token** (*str*) – Session token for authentication (alternative to api_key)
   * **base_url** (*str*) – Base URL of the VideoDB API
 * **Raises:**
-  **ValueError** – If the API key is not provided
+  **ValueError** – If neither API key nor session token is provided
 * **Returns:**
   [`Connection`](#videodb.client.Connection) object, to interact with the VideoDB
 * **Return type:**
@@ -154,6 +160,32 @@ Check the usage.
   Usage data
 * **Return type:**
   dict
+
+#### connect_websocket(collection_id: str = 'default') → WebSocketConnection
+
+Connect to the VideoDB WebSocket service.
+
+* **Parameters:**
+  **collection_id** (*str*) – ID of the collection (default: “default”)
+* **Returns:**
+  `WebSocketConnection` object
+* **Return type:**
+  `videodb.websocket_client.WebSocketConnection`
+
+#### create_capture_session(end_user_id: str, collection_id: str = 'default', callback_url: str | None = None, ws_connection_id: str | None = None, metadata: dict | None = None) → CaptureSession
+
+Create a capture session.
+
+* **Parameters:**
+  * **end_user_id** (*str*) – ID of the end user
+  * **collection_id** (*str*) – ID of the collection (default: “default”)
+  * **callback_url** (*str*) – URL to receive callback (optional)
+  * **ws_connection_id** (*str*) – WebSocket connection ID (optional)
+  * **metadata** (*dict*) – Custom metadata (optional)
+* **Returns:**
+  `CaptureSession` object
+* **Return type:**
+  `videodb.capture_session.CaptureSession`
 
 #### create_collection(name: str, description: str, is_public: bool = False) → [Collection](#videodb.collection.Collection)
 
@@ -191,6 +223,29 @@ Download a file from a stream link.
   Download response data
 * **Return type:**
   dict
+
+#### generate_client_token(expires_in: int = 86400) → str
+
+Generate a client token for capture operations.
+
+* **Parameters:**
+  **expires_in** (*int*) – Expiration time in seconds (default: 86400)
+* **Returns:**
+  Client token string
+* **Return type:**
+  str
+
+#### get_capture_session(session_id: str, collection_id: str = 'default') → CaptureSession
+
+Get a capture session by its ID.
+
+* **Parameters:**
+  * **session_id** (*str*) – ID of the capture session
+  * **collection_id** (*str*) – ID of the collection (default: “default”)
+* **Returns:**
+  `CaptureSession` object
+* **Return type:**
+  `videodb.capture_session.CaptureSession`
 
 #### get_collection(collection_id: str | None = 'default') → [Collection](#videodb.collection.Collection)
 
@@ -242,6 +297,18 @@ Get the details of a transcode job.
   Details of the transcode job
 * **Return type:**
   dict
+
+#### list_capture_sessions(collection_id: str = 'default', status: str | None = None) → list[CaptureSession]
+
+List capture sessions.
+
+* **Parameters:**
+  * **collection_id** (*str*) – ID of the collection (default: “default”)
+  * **status** (*str*) – Filter sessions by status (optional)
+* **Returns:**
+  List of `CaptureSession` objects
+* **Return type:**
+  list[`videodb.capture_session.CaptureSession`]
 
 #### list_events()
 
@@ -340,16 +407,36 @@ Instead use [`Connection.get_collection()`](#videodb.client.Connection.get_colle
 
 #### \_\_init_\_(\_connection, id: str, name: str | None = None, description: str | None = None, is_public: bool = False)
 
-#### connect_rtstream(url: str, name: str, sample_rate: int | None = None) → RTStream
+#### connect_rtstream(url: str, name: str, media_types: List[str] | None = None, sample_rate: int | None = None, store: bool | None = None, enable_transcript: bool | None = None, ws_connection_id: str | None = None) → RTStream
 
 Connect to an rtstream.
 
 * **Parameters:**
   * **url** (*str*) – URL of the rtstream
   * **name** (*str*) – Name of the rtstream
-  * **sample_rate** (*int*) – Sample rate of the rtstream (optional)
+  * **media_types** (*list*) – List of media types to capture (default: [MediaType.video]).
+    Valid values: `MediaType.audio`, `MediaType.video`
+  * **sample_rate** (*int*) – Sample rate of the rtstream (optional, server default: 30)
+  * **store** (*bool*) – Enable recording storage (optional, default: False).
+    When True, the stream recording is stored and can be exported via `RTStream.export()`.
+  * **enable_transcript** (*bool*) – Enable real-time transcription (optional)
+  * **ws_connection_id** (*str*) – WebSocket connection ID for receiving events (optional)
 * **Returns:**
   `RTStream` object
+
+#### create_capture_session(end_user_id: str, callback_url: str | None = None, ws_connection_id: str | None = None, metadata: dict | None = None) → CaptureSession
+
+Create a capture session.
+
+* **Parameters:**
+  * **end_user_id** (*str*) – ID of the end user
+  * **callback_url** (*str*) – URL to receive callback (optional)
+  * **ws_connection_id** (*str*) – WebSocket connection ID (optional)
+  * **metadata** (*dict*) – Custom metadata (optional)
+* **Returns:**
+  `CaptureSession` object
+* **Return type:**
+  `videodb.capture_session.CaptureSession`
 
 #### delete() → None
 
@@ -519,6 +606,17 @@ Get all the audios in the collection.
 * **Return type:**
   List[[`videodb.audio.Audio`](#videodb.audio.Audio)]
 
+#### get_capture_session(session_id: str) → CaptureSession
+
+Get a capture session by its ID.
+
+* **Parameters:**
+  **session_id** (*str*) – ID of the capture session
+* **Returns:**
+  `CaptureSession` object
+* **Return type:**
+  `videodb.capture_session.CaptureSession`
+
 #### get_image(image_id: str) → [Image](#videodb.image.Image)
 
 Get an image by its ID.
@@ -581,10 +679,27 @@ Get all the videos in the collection.
 * **Return type:**
   List[[`videodb.video.Video`](#videodb.video.Video)]
 
-#### list_rtstreams() → List[RTStream]
+#### list_capture_sessions(status: str | None = None) → list[CaptureSession]
+
+List capture sessions.
+
+* **Parameters:**
+  **status** (*str*) – Filter sessions by status (optional)
+* **Returns:**
+  List of `CaptureSession` objects
+* **Return type:**
+  list[`videodb.capture_session.CaptureSession`]
+
+#### list_rtstreams(limit: int | None = None, offset: int | None = None, status: str | None = None, name: str | None = None, ordering: str | None = None) → List[RTStream]
 
 List all rtstreams in the collection.
 
+* **Parameters:**
+  * **limit** (*int*) – Number of rtstreams to return (optional)
+  * **offset** (*int*) – Number of rtstreams to skip (optional)
+  * **status** (*str*) – Filter by status (optional)
+  * **name** (*str*) – Filter by name (optional)
+  * **ordering** (*str*) – Order results by field (optional)
 * **Returns:**
   List of `RTStream` objects
 * **Return type:**
@@ -625,7 +740,7 @@ Record a meeting and upload it to this collection.
 * **Return type:**
   `videodb.meeting.Meeting`
 
-#### search(query: str, search_type: str | None = 'semantic', index_type: str | None = 'spoken_word', result_threshold: int | None = None, score_threshold: float | None = None, dynamic_score_percentage: float | None = None, filter: List[Dict[str, Any]] = []) → [SearchResult](#videodb.search.SearchResult)
+#### search(query: str, search_type: str | None = 'semantic', index_type: str | None = 'spoken_word', result_threshold: int | None = None, score_threshold: float | None = None, dynamic_score_percentage: float | None = None, filter: List[Dict[str, Any]] = [], sort_docs_on: str | None = None, namespace: str | None = None, scene_index_id: str | None = None) → [SearchResult](#videodb.search.SearchResult) | RTStreamSearchResult
 
 Search for a query in the collection.
 
@@ -636,12 +751,18 @@ Search for a query in the collection.
   * **result_threshold** (*int*) – Number of results to return (optional)
   * **score_threshold** (*float*) – Threshold score for the search (optional)
   * **dynamic_score_percentage** (*float*) – Percentage of dynamic score to consider (optional)
+  * **filter** (*list*) – Additional metadata filters (optional)
+  * **sort_docs_on** (*str*) – Sort docs within each video by “score” or “start” (optional)
+  * **namespace** (*str*) – Search namespace (optional, “rtstream” to search RTStreams)
+  * **scene_index_id** (*str*) – Filter by specific scene index (optional)
 * **Raises:**
   [**SearchError**](#videodb.SearchError) – If the search fails
 * **Returns:**
-  `SearchResult` object
+  `SearchResult` or
+  `RTStreamSearchResult` object
 * **Return type:**
-  [`videodb.search.SearchResult`](#videodb.search.SearchResult)
+  Union[[`videodb.search.SearchResult`](#videodb.search.SearchResult),
+  `videodb.rtstream.RTStreamSearchResult`]
 
 #### search_title(query) → List[[Video](#videodb.video.Video)]
 
@@ -693,6 +814,15 @@ Add subtitles to the video.
   The stream url of the video with subtitles
 * **Return type:**
   str
+
+#### clip(prompt: str, content_type: Literal['spoken', 'visual', 'multimodal'], model_name: Literal['basic', 'pro', 'ultra']) → [SearchResult](#videodb.search.SearchResult)
+
+Generate a clip from the video using a prompt.
+:param str prompt: Prompt to generate the clip
+:param str content_type: Content type for the clip. Valid options: “spoken”, “visual”, “multimodal”
+:param str model_name: Model tier for generation. Valid options: “basic”, “pro”, “ultra”
+:return: The search result of the generated clip
+:rtype: `SearchResult`
 
 #### delete() → None
 
@@ -801,12 +931,13 @@ Generate the thumbnail of the video.
 * **Return type:**
   Union[str, [`videodb.image.Image`](#videodb.image.Image)]
 
-#### generate_transcript(force: bool | None = None) → str
+#### generate_transcript(force: bool | None = None, language_code: str | None = None) → str
 
 Generate transcript for the video.
 
 * **Parameters:**
-  **force** (*bool*) – Force generate new transcript
+  * **force** (*bool*) – Force generate new transcript
+  * **language_code** (*str*) – (optional) Language code of the video
 * **Returns:**
   Full transcript text as string
 * **Return type:**
@@ -897,6 +1028,30 @@ Get plain text transcript for the video.
 * **Return type:**
   str
 
+#### index_audio(prompt: str | None = None, model_name: str | None = None, model_config: Dict | None = None, language_code: str | None = None, batch_config: Dict | None = None, name: str | None = None, callback_url: str | None = None) → str | None
+
+Index audio by processing transcript segments through an LLM.
+
+Segments the video transcript, processes each segment with the given
+prompt using the specified model, and indexes the results as scene
+records for semantic search.
+
+* **Parameters:**
+  * **prompt** (*str*) – (optional) Prompt for processing transcript segments
+  * **model_name** (*str*) – (optional) LLM tier to use (e.g. “basic”, “pro”, “ultra”)
+  * **model_config** (*dict*) – (optional) Model configuration
+  * **language_code** (*str*) – (optional) Language code for transcription
+  * **batch_config** (*dict*) – (optional) Segmentation config with keys:
+    - “type”: Segmentation type (“word”, “sentence”, or “time”)
+    - “value”: Segment length (words, sentences, or seconds)
+    Defaults to {“type”: “word”, “value”: 10}
+  * **name** (*str*) – (optional) Name for the scene index
+  * **callback_url** (*str*) – (optional) URL to receive the callback
+* **Returns:**
+  The scene index id
+* **Return type:**
+  str
+
 #### index_scenes(extraction_type: [SceneExtractionType](#videodb.SceneExtractionType) = 'shot', extraction_config: Dict = {}, prompt: str | None = None, metadata: Dict = {}, model_name: str | None = None, model_config: Dict | None = None, name: str | None = None, scenes: List[[Scene](#videodb.scene.Scene)] | None = None, callback_url: str | None = None) → str | None
 
 Index the scenes of the video.
@@ -934,12 +1089,13 @@ Index the scenes of the video.
 * **Return type:**
   str
 
-#### index_spoken_words(language_code: str | None = None, force: bool = False, callback_url: str | None = None) → None
+#### index_spoken_words(language_code: str | None = None, segmentation_type: SegmentationType | None = 'sentence', force: bool = False, callback_url: str | None = None) → None
 
 Semantic indexing of spoken words in the video.
 
 * **Parameters:**
   * **language_code** (*str*) – (optional) Language code of the video
+  * **segmentation_type** (*SegmentationType*) – (optional) Segmentation type used for indexing, `SegmentationType` object
   * **force** (*bool*) – (optional) Force to index the video
   * **callback_url** (*str*) – (optional) URL to receive the callback
 * **Raises:**
@@ -948,6 +1104,26 @@ Semantic indexing of spoken words in the video.
   None if the indexing is successful
 * **Return type:**
   None
+
+#### index_visuals(prompt: str | None = None, batch_config: Dict | None = None, model_name: str | None = None, model_config: Dict | None = None, name: str | None = None, callback_url: str | None = None) → str | None
+
+Index visuals (scenes) from the video.
+
+* **Parameters:**
+  * **prompt** (*str*) – Prompt for scene description
+  * **batch_config** (*dict*) – Frame extraction config with keys:
+    - “type”: Extraction type (“time” or “shot”). Default is “time”.
+    - “value”: Window size in seconds (for time) or threshold (for shot). Default is 10.
+    - “frame_count”: Number of frames to extract per window. Default is 1.
+    - “select_frames”: Which frames to select (e.g., [“first”, “middle”, “last”]). Default is [“first”].
+  * **model_name** (*str*) – Name of the model
+  * **model_config** (*dict*) – Configuration for the model
+  * **name** (*str*) – Name of the visual index
+  * **callback_url** (*str*) – URL to receive the callback (optional)
+* **Returns:**
+  The scene index id
+* **Return type:**
+  str
 
 #### insert_video(video, timestamp: float) → str
 
@@ -1063,6 +1239,13 @@ Translate transcript of a video to a given language.
   List of translated transcript
 * **Return type:**
   List[dict]
+
+#### update(name: str | None = None) → None
+
+Update the video’s metadata.
+
+* **Parameters:**
+  **name** (*str*) – (optional) New name for the video
 
 ## Module : videodb.audio (from videodb.audio import class, func)
 
@@ -1299,13 +1482,14 @@ Scene class to interact with video scenes
   * **frames** (*List* *[*[*Frame*](#videodb.image.Frame) *]*) – List of frames in the scene
   * **description** (*str*) – Description of the scene contents
 
-#### describe(prompt: str | None = None, model_name=None) → None
+#### describe(prompt: str | None = None, model_name: str | None = None, model_config: Dict | None = None) → None
 
 Describe the scene.
 
 * **Parameters:**
   * **prompt** (*str*) – (optional) The prompt to use for the description
   * **model_name** (*str*) – (optional) The model to use for the description
+  * **model_config** (*dict*) – (optional) The model configuration for the description
 * **Returns:**
   The description of the scene
 * **Return type:**
@@ -1374,7 +1558,7 @@ Generate a stream url for the shot and open it in the default browser.
 
 ## Module : videodb.shot (from videodb.shot import class, func)
 
-### *class* videodb.shot.Shot(\_connection, video_id: str, video_length: float, video_title: str, start: float, end: float, text: str | None = None, search_score: int | None = None)
+### *class* videodb.shot.Shot(\_connection, video_id: str, video_length: float, video_title: str, start: float, end: float, text: str | None = None, search_score: int | None = None, scene_index_id: str | None = None, scene_index_name: str | None = None, metadata: dict | None = None, stream_url: str | None = None, player_url: str | None = None)
 
 Bases: `object`
 
@@ -1390,6 +1574,9 @@ Shot class to interact with video shots
   * **search_score** (*int*) – Search relevance score
   * **stream_url** (*str*) – URL to stream the shot
   * **player_url** (*str*) – URL to play the shot in a player
+  * **scene_index_id** (*Optional* *[**str* *]*) – ID of the scene index for scene search results
+  * **scene_index_name** (*Optional* *[**str* *]*) – Name of the scene index for scene search results
+  * **metadata** (*Optional* *[**dict* *]*) – Additional metadata for the shot
 
 #### generate_stream() → str
 
