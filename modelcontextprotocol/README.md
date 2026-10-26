@@ -1,4 +1,4 @@
-[![smithery badge](https://smithery.ai/badge/@video-db/agent-toolkit)](https://smithery.ai/server/@video-db/agent-toolkit)
+[![LightNow capabilities](https://lightnow.ai/badge/io.github.video-db/modelcontextprotocol)](https://lightnow.ai/servers/io.github.video-db/modelcontextprotocol)
 
 To add the MCP server in any config driven MCP Client, following is how the commands and arguments will look like
 
